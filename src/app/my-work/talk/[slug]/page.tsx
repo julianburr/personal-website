@@ -1,9 +1,10 @@
 import dayjs from "dayjs";
-import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getPageFromPath } from "@/utils/getPageFromPath";
+
+import type { Metadata } from "next";
 
 import "@/styles/talk-details.css";
 

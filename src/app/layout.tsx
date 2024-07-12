@@ -1,10 +1,5 @@
 import {
-  Alegreya,
-  Alegreya_Sans,
   IBM_Plex_Mono,
-  Inter,
-  Lato,
-  Libre_Baskerville,
   Noto_Sans,
   Staatliches,
 } from "next/font/google";

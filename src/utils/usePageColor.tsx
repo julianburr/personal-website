@@ -1,9 +1,11 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { HTMLAttributes, useLayoutEffect, useMemo } from "react";
+import { useLayoutEffect, useMemo } from "react";
 
 import { getPathnameColor } from "@/utils/getPathnameColor";
+
+import type { HTMLAttributes} from "react";
 
 export function BodyWithColor(props: HTMLAttributes<HTMLBodyElement>) {
   const pathname = usePathname();

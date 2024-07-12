@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ComponentProps } from "react";
+
+import type { ComponentProps } from "react";
 
 type Props = {
   href: ComponentProps<typeof Link>["href"];

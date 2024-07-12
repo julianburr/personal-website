@@ -1,5 +1,6 @@
-import { Metadata } from "next";
 import Link from "next/link";
+
+import type { Metadata } from "next";
 
 const metadata: Metadata = {
   title: "My work — Julian Burr",

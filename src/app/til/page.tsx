@@ -1,11 +1,11 @@
-import classNames from "classnames";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { Metadata } from "next";
-import Link from "next/link";
 
 import { Spacer } from "@/components/spacer";
+import { TilList } from "@/features/til/TilList";
 import { getPagesFromPath } from "@/utils/getPagesFromPath";
+
+import type { Metadata } from "next";
 
 dayjs.extend(customParseFormat);
 
@@ -13,44 +13,11 @@ export const metadata: Metadata = {
   title: "Today I learned — Julian Burr",
 };
 
-export default async function TilPage({ searchParams }: any) {
-  const activeTags: string[] =
-    searchParams?.tags?.split(",").filter(Boolean) || [];
+type Props = {
+  searchParams: any;
+};
 
-  let pages = await getPagesFromPath("til");
-
-  const filtered = pages
-    ?.filter((page: any) => dayjs(page.meta.date).isBefore(dayjs()))
-    ?.filter((page) =>
-      activeTags?.length
-        ? page?.meta?.tags
-            .split(",")
-            ?.map((tag: string) => tag?.trim?.())
-            ?.filter(Boolean)
-            ?.find((tag: string) => activeTags.includes(tag))
-        : true
-    )
-    ?.sort((a, b) => (a?.meta?.date > b?.meta?.date ? -1 : 1));
-
-  const tags = pages
-    .reduce((all: any[], page: any) => {
-      (page.meta?.tags as string)
-        ?.split?.(",")
-        ?.map((tag) => tag?.trim?.())
-        ?.filter(Boolean)
-        ?.forEach((tag) => {
-          const existing = all.find((i) => i.name === tag);
-          if (!existing) {
-            all.push({ name: tag, count: 1 });
-          } else {
-            existing.count++;
-          }
-        });
-
-      return all;
-    }, [])
-    ?.sort((a, b) => (a.name > b.name ? 1 : -1));
-
+export default async function TilPage({ searchParams }: Props) {
   return (
     <>
       <h1>Today I learned</h1>
@@ -63,6 +30,7 @@ export default async function TilPage({ searchParams }: any) {
       </p>
 
       <Spacer h="1.6rem" />
+      <TilList searchParams={searchParams} />
     </>
   );
 }

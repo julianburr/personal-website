@@ -1,11 +1,15 @@
 import classNames from "classnames";
-import Link from "next/link";
 import dayjs from "dayjs";
+import Link from "next/link";
 
 import { Spacer } from "@/components/spacer";
 import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
-export async function TilList({ searchParams }: any) {
+type Props = {
+  searchParams: any;
+};
+
+export async function TilList({ searchParams }: Props) {
   const activeTags: string[] =
     searchParams?.tags?.split(",").filter(Boolean) || [];
 

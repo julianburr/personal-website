@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 const metadata: Metadata = {
   title: "Hi. — Julian Burr",
