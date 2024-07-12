@@ -39,12 +39,20 @@ export default async function TilDetailsPage({ params }: Props) {
         {dayjs(page?.meta?.date).format("MMMM D, YYYY")}
       </p>
       <h1>{page.meta.title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: page.meta.mdDescription.html }} />
+      <p
+        dangerouslySetInnerHTML={{
+          __html: page.meta.mdDescription.html,
+        }}
+      />
 
       <img src={page.meta.heroSrc} className="shadow-lg my-[2rem]" />
       <div
         className="talk-details grid grid-cols-1 md:grid-cols-2 gap-[1.6rem]"
-        dangerouslySetInnerHTML={{ __html: page.content.html }}
+        dangerouslySetInnerHTML={{
+          __html: page.content.html
+            .replaceAll("<blockquote>", "<section>")
+            .replaceAll("</blockquote>", "</section>"),
+        }}
       />
     </>
   );
