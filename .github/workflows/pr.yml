@@ -93,5 +93,5 @@ jobs:
           pr-number: ${{ github.event.number }}
           id: ${{ github.event.number }}-pr-env-deployment
           content: |
-            ### PR environment has been deployed successfully\n
-            PR has been deployed to ${{ steps.deploy.outputs.url }}
+            ### PR deployed successfully
+            PR environment has been deployed to ${{ steps.deploy.outputs.url }}
