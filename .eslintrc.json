@@ -3,13 +3,7 @@
   "plugins": ["@typescript-eslint", "unused-imports", "import"],
   "rules": {
     "max-lines": "error",
-
     "unused-imports/no-unused-imports": "error",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { "ignoreRestSiblings": true }
-    ],
-    "@typescript-eslint/consistent-type-imports": "error",
 
     "import/order": [
       "error",
@@ -34,6 +28,18 @@
       }
     ]
   },
+  "overrides": [
+    {
+      "files": ["**/*.{ts,tsx}"],
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          { "ignoreRestSiblings": true }
+        ],
+        "@typescript-eslint/consistent-type-imports": "error"
+      }
+    }
+  ],
   "settings": {
     "import/internal-regex": "^@/"
   }
