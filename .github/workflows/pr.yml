@@ -39,7 +39,7 @@ jobs:
         run: yarn --cwd=.github/shared
 
       - name: Cache node modules
-        uses: .github/shared/cache-node-modules
+        uses: ./.github/shared/cache-node-modules
 
       - name: Install dependencies
         run: yarn
@@ -72,14 +72,14 @@ jobs:
         run: yarn --cwd=.github/shared
 
       - name: Cache node modules
-        uses: .github/shared/cache-node-modules
+        uses: ./.github/shared/cache-node-modules
 
       - name: Install dependencies
         run: yarn
 
       - name: Deploy app to vercel
         id: deploy
-        uses: .github/shared/src/vercel-deploy-app
+        uses: ./.github/shared/src/vercel-deploy-app
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
@@ -89,11 +89,11 @@ jobs:
           is-production: ${{ inputs.is-production }}
 
       - name: Add comment with deployment url
-        uses: .github/shared/github-create-comment
+        uses: ./.github/shared/github-create-comment
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pr-number: ${{ github.event.number }}
           id: ${{ github.event.number }}-pr-env-deployment
           content: |
-            ### PR environment has been deployed\n
-            ${{ steps.deploy.outputs.url }}
+            ### PR environment has been deployed successfully\n
+            PR has been deployed to ${{ steps.deploy.outputs.url }}
