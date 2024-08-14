@@ -9,9 +9,19 @@ const nextConfig = {
       use: {
         loader: "@svgr/webpack",
         options: {
-          dimensions: true,
-          svgo: true,
-          svgoConfig: require.resolve("./svgo.config.js"),
+          svgoConfig: {
+            plugins: [
+              // Use default presets except removing the view box
+              {
+                name: "preset-default",
+                params: {
+                  overrides: {
+                    removeViewBox: false,
+                  },
+                },
+              },
+            ],
+          },
         },
       },
     });
