@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: julianburr/github-actions
-          path: .github/shared
+          path: ./.github/shared
 
       - name: Install actions dependencies
         shell: bash
@@ -64,7 +64,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: julianburr/github-actions
-          path: .github/shared
+          path: ./.github/shared
 
       - name: Install actions dependencies
         shell: bash
@@ -78,7 +78,7 @@ jobs:
 
       - name: Deploy app to vercel
         id: deploy
-        uses: ./.github/shared/src/vercel-deploy-app
+        uses: ./.github/shared/vercel-deploy-app
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
