@@ -13,6 +13,7 @@ export function useTwitterEmojis() {
       twemoji.parse(window.document.body, {
         ext: ".svg",
         size: "svg",
+        base: "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/",
       });
     }
   }, [pathname]);

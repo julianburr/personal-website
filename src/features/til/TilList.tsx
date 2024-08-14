@@ -5,13 +5,8 @@ import Link from "next/link";
 import { Spacer } from "@/components/spacer";
 import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
-type Props = {
-  searchParams: any;
-};
-
-export async function TilList({ searchParams }: Props) {
-  const activeTags: string[] =
-    searchParams?.tags?.split(",").filter(Boolean) || [];
+export async function TilList() {
+  const activeTags: string[] = []; // searchParams?.tags?.split(",").filter(Boolean) || [];
 
   let pages = await getPagesFromPath("til");
 
@@ -97,7 +92,7 @@ export async function TilList({ searchParams }: Props) {
                 </span>{" "}
                 {page?.meta?.title}
               </h2>
-              <p className="p-0 text-xs text-black/80">
+              <p className="p-0 text-sm text-black/80">
                 {page?.meta?.description}
               </p>
             </Link>

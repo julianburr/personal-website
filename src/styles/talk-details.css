@@ -1,11 +1,7 @@
-.talk-details blockquote {
+.talk-details section {
   @apply pb-[.8rem] md:py-[.8rem];
 }
 
 .talk-details img {
-  @apply m-[.rem] shadow-lg w-[calc(100%_-_1rem)] mx-auto;
-}
-
-.talk-details .katex-mathml + .katex-html {
-  @apply hidden;
+  @apply m-[.5rem] shadow-lg w-[calc(100%_-_1rem)] mx-auto;
 }

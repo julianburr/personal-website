@@ -11,7 +11,7 @@ export default function Home() {
       <p className="w-full max-w-[32rem]">
         My name is Julian Burr, I’m originally from Germany but currently living
         and working in Australia. I’m a software developer, always looking for
-        new things to learn and experiment with. I also like kittens. 🐸
+        new things to learn and experiment with.
       </p>
     </>
   );

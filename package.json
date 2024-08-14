@@ -10,6 +10,7 @@
     "typecheck": "tsc -p ./tsconfig.json"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.7",
     "@remark-embedder/core": "^3.0.3",
     "@remark-embedder/transformer-oembed": "^5.0.0",
     "classnames": "^2.5.1",
@@ -17,6 +18,7 @@
     "eslint-plugin-unused-imports": "^4.0.0",
     "glob": "^11.0.0",
     "gray-matter": "^4.0.3",
+    "mapbox-gl": "^3.5.2",
     "next": "14.2.5",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.29.0",
@@ -27,6 +29,7 @@
     "rehype-prism": "^2.3.2",
     "rehype-stringify": "^10.0.0",
     "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
     "remark-math": "^6.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.0",

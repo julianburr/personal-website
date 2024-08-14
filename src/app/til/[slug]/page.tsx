@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getPageFromPath } from "@/utils/getPageFromPath";
+import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
 import type { Metadata } from "next";
 
@@ -44,4 +45,12 @@ export default async function TilDetailsPage({ params }: Props) {
       <div dangerouslySetInnerHTML={{ __html: page.content.html }} />
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = await getPagesFromPath("til");
+
+  return posts.map((post) => ({
+    slug: post?.pathname.replace(/^\/til\//, ""),
+  }));
 }

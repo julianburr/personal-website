@@ -1,9 +1,4 @@
-const colors = {
-  twitter: "twitter-blue",
-  medium: "medium-green",
-  github: "github-grey",
-  linkedin: "linkedin-blue",
-};
+import classNames from "classnames";
 
 type Props = {
   id: string;
@@ -13,17 +8,23 @@ type Props = {
 };
 
 export function SocialNavigationItem({ id, href, title, Icon }: Props) {
-  const color = colors[id as keyof typeof colors];
   return (
-    <li>
+    <li
+      className={classNames({
+        "text-twitter-blue": id === "twitter",
+        "text-medium-green": id === "medium",
+        "text-github-grey": id === "github",
+        "text-linkedin-blue": id === "linkedin",
+      })}
+    >
       <a
         href={href}
         title={title}
         target="_blank"
         rel="noreferrer"
-        className={`flex p-[.4rem] sm:p-[.1rem] transition-all group text-inherit hover:text-${color}`}
+        className={`flex p-[.4rem] sm:p-[.1rem] group text-black hover:text-[currentColor]`}
       >
-        <Icon className="h-[2.4rem] sm:h-[1.6rem] w-auto transition-all group-hover:translate-y-[-.2rem]" />
+        <Icon className="h-[2.4rem] sm:h-[1.6rem] w-auto transition-all  group-hover:translate-y-[-.2rem]" />
       </a>
     </li>
   );

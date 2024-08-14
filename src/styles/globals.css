@@ -27,7 +27,7 @@ h2 {
 
 /* Paragraphs */
 p {
-  @apply py-2;
+  @apply py-[.4rem];
 }
 
 a {
@@ -39,7 +39,27 @@ img.emoji {
   @apply h-[1.2rem] w-auto mx-[.2rem] inline align-middle translate-y-[-.2rem];
 }
 
-/* Code */
-body pre[class*="language-"] {
-  @apply rounded-none border-none text-xs leading-[1.6] font-mono mx-[.4rem] my-[1.6rem] w-[calc(100%_-.8rem)] p-[1.2rem] sm:mx-[1rem] sm:p-[1.6rem] sm:text-sm;
+/* Markdown */
+main ul {
+  @apply py-[.2rem] pl-[2rem];
+}
+
+main ul li {
+  @apply py-[.2rem] list-none relative before:content-["—"] before:absolute before:left-[-1.2rem];
+}
+
+main code {
+  @apply bg-grey-medium px-[.2rem] rounded-sm font-mono text-[.9em];
+}
+
+main .katex-mathml + .katex-html {
+  @apply hidden;
+}
+
+main pre[class*="language-"] {
+  @apply rounded-none border-none text-[.9em] leading-[1.6] font-mono mx-[.4rem] my-[1.6rem] w-[calc(100%_-.8rem)] p-[1.2rem] sm:mx-[1rem] sm:p-[1.6rem];
+}
+
+main pre[class*="language-"] code {
+  @apply bg-transparent p-0;
 }

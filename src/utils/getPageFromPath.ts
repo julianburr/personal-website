@@ -8,6 +8,7 @@ import rehypeExternalLinks from "rehype-external-links";
 import rehypeKatex from "rehype-katex";
 import rehypePrism from "rehype-prism";
 import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
@@ -27,6 +28,7 @@ async function parseMarkdown(raw: string) {
   const remarkResult = await unified()
     .use(remarkParse)
     .use(remarkEmbedder, { transformers: [oembedTransformer] })
+    .use(remarkGfm)
     .use(remarkMath)
     .use(remarkRehype)
     .use(rehypePrism)
@@ -48,7 +50,6 @@ export async function getPageFromPath(relFilePath: string) {
     // We want to be able to add some markdown in the frontmatter metadata
     // as well, so here we check for the prefix `md*` pattern to parse those
     // meta fields
-    console.log({ data });
     let meta: any = {};
     for (let key in data) {
       if (key.match(/^md[A-Z]{1}/)) {

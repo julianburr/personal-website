@@ -1,6 +1,7 @@
 import LogoGithub from "@/assets/social/github.svg";
 import LogoLinkedIn from "@/assets/social/linkedin.svg";
 import LogoMedium from "@/assets/social/medium.svg";
+import LogoNotist from "@/assets/social/notist.svg";
 import LogoTwitter from "@/assets/social/twitter.svg";
 
 const items = [
@@ -48,6 +49,12 @@ const socials = [
     href: "https://medium.com/@julianburr",
     title: "@julianburr on Medium",
     Icon: LogoMedium,
+  },
+  {
+    id: "notist",
+    href: "https://noti.st/jburr90",
+    title: "@jburr90 on Notist",
+    Icon: LogoNotist,
   },
   {
     id: "twitter",

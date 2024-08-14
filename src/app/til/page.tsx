@@ -1,9 +1,9 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import { Suspense } from "react";
 
 import { Spacer } from "@/components/spacer";
 import { TilList } from "@/features/til/TilList";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
 import type { Metadata } from "next";
 
@@ -13,11 +13,7 @@ export const metadata: Metadata = {
   title: "Today I learned — Julian Burr",
 };
 
-type Props = {
-  searchParams: any;
-};
-
-export default async function TilPage({ searchParams }: Props) {
+export default async function TilPage() {
   return (
     <>
       <h1>Today I learned</h1>
@@ -30,15 +26,9 @@ export default async function TilPage({ searchParams }: Props) {
       </p>
 
       <Spacer h="1.6rem" />
-      <TilList searchParams={searchParams} />
+      <Suspense fallback={null}>
+        <TilList />
+      </Suspense>
     </>
   );
-}
-
-export async function generateStaticParams() {
-  const posts = await getPagesFromPath("til");
-
-  return posts.map((post) => ({
-    slug: post?.pathname.replace(/^\/til\//, ""),
-  }));
 }

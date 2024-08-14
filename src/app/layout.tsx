@@ -1,8 +1,4 @@
-import {
-  IBM_Plex_Mono,
-  Noto_Sans,
-  Staatliches,
-} from "next/font/google";
+import { IBM_Plex_Mono, Lato, Staatliches } from "next/font/google";
 
 import { Navigation } from "@/components/navigation";
 import { UseHistory } from "@/utils/useHistory";
@@ -15,7 +11,7 @@ import type { Metadata } from "next";
 
 import "@/styles/globals.css";
 
-const lato = Noto_Sans({
+const lato = Lato({
   weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--font--default",
