@@ -1,12 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { render } from "react-dom";
 
 import "./styles.css";
 
-type Destination = {
+type Destination = null | {
   pathname: string;
   meta: {
     country: string;
@@ -14,30 +12,8 @@ type Destination = {
     type: string;
     latlng: string;
   };
+  content: any;
 };
-
-type PopoutProps = {
-  imgSrc?: string;
-  title: string;
-  subTitle?: string;
-  slug?: string;
-};
-
-function Popout({ title, subTitle, imgSrc, slug }: PopoutProps) {
-  return (
-    <div>
-      {imgSrc && <img src={imgSrc} />}
-      {slug ? (
-        <Link href={slug}>
-          <h2>{title}</h2>
-        </Link>
-      ) : (
-        <h2>{title}</h2>
-      )}
-      {subTitle && <span>{subTitle}</span>}
-    </div>
-  );
-}
 
 let lastZoom = 0.9;
 let lastCenter: [number, number] = [26.3824618, 26.8447825];
@@ -78,7 +54,7 @@ export function WorldMap({ destinations }: WorldMapProps) {
             data: {
               type: "FeatureCollection",
               features: destinations.reduce<any[]>((all, dest) => {
-                if (!dest.meta.latlng) {
+                if (!dest?.meta.latlng) {
                   return all;
                 }
                 all.push({
@@ -151,57 +127,6 @@ export function WorldMap({ destinations }: WorldMapProps) {
             },
           });
 
-          map.on("click", "clusters", (e: any) => {
-            const features = map.queryRenderedFeatures(e.point, {
-              layers: ["clusters"],
-            });
-            const clusterId = features?.[0]?.properties?.cluster_id;
-            map
-              ?.getSource("places")
-              ?.getClusterExpansionZoom?.(
-                clusterId,
-                (err: any, zoom: number) => {
-                  if (err) return;
-
-                  map.easeTo({
-                    center: features[0].geometry.coordinates,
-                    zoom: zoom,
-                  });
-                }
-              );
-          });
-
-          map.on("click", "unclustered-point", (e: any) => {
-            const node = e.features[0];
-            const coordinates = node.geometry.coordinates.slice();
-            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-              coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-            }
-
-            // const html = node.properties.html;
-            const fields = JSON.parse(node.properties.fields);
-            const frontmatter = JSON.parse(node.properties.frontmatter);
-
-            const popupNode = document.createElement("div");
-            render(
-              <Popout
-                title={frontmatter?.place}
-                subTitle={frontmatter?.country}
-                imgSrc={
-                  frontmatter?.thumb ? `${frontmatter.thumb}=w500` : undefined
-                }
-                slug={frontmatter.images?.length ? fields.slug : undefined}
-                // html={html}
-              />,
-              popupNode
-            );
-
-            new mapboxgl.Popup()
-              .setLngLat(coordinates)
-              .setDOMContent(popupNode)
-              .addTo(map);
-          });
-
           map
             .on("mouseenter", "clusters", () => {
               map.getCanvas().style.cursor = "pointer";
@@ -221,12 +146,12 @@ export function WorldMap({ destinations }: WorldMapProps) {
           });
 
           map.on("moveend", () => {
-            lastCenter = map.getCenter();
+            lastCenter = map.getCenter().toArray();
           });
         });
       }
     );
-  }, []);
+  }, [destinations]);
 
   return <div id="map" className="absolute inset-0" />;
 }

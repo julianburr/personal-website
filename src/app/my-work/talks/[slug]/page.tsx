@@ -30,7 +30,7 @@ type Props = {
 export default async function TilDetailsPage({ params }: Props) {
   const page = await getPageFromPath(`my-work/talks/${params.slug}.md`);
 
-  if (!page) {
+  if (!page?.content?.html) {
     return notFound();
   }
 
@@ -69,7 +69,9 @@ export default async function TilDetailsPage({ params }: Props) {
 export async function generateStaticParams() {
   const posts = await getPagesFromPath("my-work/talks");
 
-  return posts.map((post) => ({
-    slug: post?.pathname.replace(/^\/my-work\/talks\//, ""),
-  }));
+  return posts
+    .filter((post) => !!post?.content?.html)
+    .map((post) => ({
+      slug: post?.pathname.replace(/^\/my-work\/talks\//, ""),
+    }));
 }
