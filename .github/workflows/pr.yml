@@ -84,8 +84,6 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-project-name: ${{ secrets.VERCEL_PROJECT_NAME }}
-          alias: ${{ inputs.alias }}
-          is-production: ${{ inputs.is-production }}
 
       - name: Add comment with deployment url
         uses: ./.github/shared/github-create-comment
