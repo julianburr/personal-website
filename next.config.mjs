@@ -9,7 +9,9 @@ const nextConfig = {
       use: {
         loader: "@svgr/webpack",
         options: {
-          svgoConfig: "svgo.config.js",
+          dimensions: true,
+          svgo: true,
+          svgoConfig: require.resolve("./svgo.config.js"),
         },
       },
     });
