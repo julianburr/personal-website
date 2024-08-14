@@ -40,8 +40,6 @@ export function UseHistory() {
     return null;
   }
 
-  console.log({ group, history });
-
   return (
     <nav className="fixed hidden sm:flex flex-row flex-wrap gap-1 left-[5rem] bottom-[5rem] w-[5.4rem]">
       {history.map((item) => (
