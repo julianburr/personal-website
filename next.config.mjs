@@ -9,7 +9,7 @@ const nextConfig = {
       use: {
         loader: "@svgr/webpack",
         options: {
-          removeViewBox: false,
+          dimensions: true,
         },
       },
     });
