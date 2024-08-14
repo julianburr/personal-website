@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc -p ./tsconfig.json"
+    "typecheck": "tsc -p ./tsconfig.json",
+    "test": "echo 'TODO'"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.7",
