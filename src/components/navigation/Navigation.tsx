@@ -9,6 +9,7 @@ import { Spacer } from "@/components/spacer";
 
 export function Navigation() {
   const [active, setActive] = useState(false);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       if (active) {

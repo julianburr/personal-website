@@ -4,8 +4,9 @@ date: 2024-03-16
 tags: testing
 platform: Conference
 event: DDD Melbourne
+cover: /assets/talk-covers/is-it-a-bird-is-it-a-plane--ddd-melbourne-2024.png
 eventUrl: https://www.dddmelbourne.com/
 eventLocation: Melbourne, VIC, Australia
 videoUrl: https://www.youtube.com/watch?v=FO0Qn_5NLSY
-slidesUrl: /assets/mywork/talk/is-it-a-bird-is-it-a-plane/slides--ddd-melbourne-2024.pdf
+slidesUrl: /assets/talk-slides/is-it-a-bird-is-it-a-plane--ddd-melbourne-2024.pdf
 ---

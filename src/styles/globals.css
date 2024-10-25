@@ -57,9 +57,13 @@ main .katex-mathml + .katex-html {
 }
 
 main pre[class*="language-"] {
-  @apply rounded-none border-none text-[.9em] leading-[1.6] font-mono mx-[.4rem] my-[1.6rem] w-[calc(100%_-.8rem)] p-[1.2rem] sm:mx-[1rem] sm:p-[1.6rem];
+  @apply rounded-none border-none text-[.9em] leading-[1.6] font-mono mx-[.2rem] my-[1.4rem] w-[calc(100%_-.4rem)] p-[1.2rem] sm:mx-[.4rem] sm:p-[1.4rem] sm:w-[calc(100%_-.8rem)];
 }
 
 main pre[class*="language-"] code {
   @apply bg-transparent p-0;
+}
+
+main hr {
+  @apply bg-grey-light my-[2.4rem] mx-auto w-full max-w-[12rem];
 }

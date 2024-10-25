@@ -13,6 +13,7 @@ export function SocialNavigationItem({ id, href, title, Icon }: Props) {
       className={classNames({
         "text-twitter-blue": id === "twitter",
         "text-medium-green": id === "medium",
+        "text-notist-grey": id === "notist",
         "text-github-grey": id === "github",
         "text-linkedin-blue": id === "linkedin",
       })}

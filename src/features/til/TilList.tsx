@@ -1,14 +1,29 @@
+"use client";
+
 import classNames from "classnames";
 import dayjs from "dayjs";
-import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
+import { List } from "@/components/list/List";
+import { ListItem } from "@/components/list/ListItem";
 import { Spacer } from "@/components/spacer";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
-export async function TilList() {
-  const activeTags: string[] = []; // searchParams?.tags?.split(",").filter(Boolean) || [];
+type Props = {
+  pages: any[];
+};
 
-  let pages = await getPagesFromPath("til");
+export function TilList({ pages }: Props) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const initialTags =
+    searchParams.get("tags")?.split(",").filter(Boolean) || [];
+  const [activeTags, setActiveTags] = useState<string[]>(initialTags);
+
+  useEffect(() => {
+    router.push(activeTags?.length ? `?tags=${activeTags.join(",")}` : ``);
+  }, [router, activeTags]);
 
   const filtered = pages
     ?.filter((page: any) => dayjs(page.meta.date).isBefore(dayjs()))
@@ -48,21 +63,14 @@ export async function TilList() {
         {tags.map((tag) => {
           const isActive = activeTags.includes(tag.name);
           return (
-            <Link
+            <button
               key={tag.name}
-              href={
-                isActive && activeTags.length === 1
-                  ? `/til`
-                  : `/til?tags=${
-                      isActive
-                        ? activeTags
-                            .filter((item) => item !== tag.name)
-                            .join(",")
-                        : activeTags
-                            .concat([tag.name])
-                            .filter(Boolean)
-                            .join(",")
-                    }`
+              onClick={() =>
+                setActiveTags(
+                  isActive
+                    ? activeTags.filter((item) => tag.name !== item)
+                    : [...activeTags, tag.name]
+                )
               }
               className={classNames(
                 "flex bg-grey-medium text-inherit py-[.2rem] px-[.6rem] font-heading transition-all hover:bg-[var(--page--color)] hover:text-white hover:no-underline",
@@ -72,33 +80,25 @@ export async function TilList() {
               )}
             >
               {tag.name}
-            </Link>
+            </button>
           );
         })}
       </div>
 
       <Spacer h="1.6rem" />
-      <div className="flex flex-col gap-1">
+      <List>
         {filtered.map((page) => {
           return (
-            <Link
+            <ListItem
               key={page?.pathname}
-              href={page?.pathname as string}
-              className="flex flex-col p-[.8rem] transition-all text-inherit font-normal bg-grey-light hover:bg-grey-medium hover:no-underline"
-            >
-              <h2 className="p-0 text-xl leading-[1.3]">
-                <span className="text-[var(--page--color)] text-sm mt-[-.8rem] inline-flex pr-[.2rem] translate-y-[-.1rem]">
-                  {dayjs(page?.meta?.date).format("MMMM D, YYYY")} —
-                </span>{" "}
-                {page?.meta?.title}
-              </h2>
-              <p className="p-0 text-sm text-black/80">
-                {page?.meta?.description}
-              </p>
-            </Link>
+              date={page?.meta?.date}
+              meta={page?.meta?.tags}
+              title={page?.meta?.title}
+              href={page?.pathname}
+            />
           );
         })}
-      </div>
+      </List>
     </>
   );
 }

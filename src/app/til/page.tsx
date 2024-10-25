@@ -1,19 +1,18 @@
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
 import { Suspense } from "react";
 
 import { Spacer } from "@/components/spacer";
 import { TilList } from "@/features/til/TilList";
+import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
 import type { Metadata } from "next";
-
-dayjs.extend(customParseFormat);
 
 export const metadata: Metadata = {
   title: "Today I learned — Julian Burr",
 };
 
 export default async function TilPage() {
+  let pages = await getPagesFromPath("til");
+
   return (
     <>
       <h1>Today I learned</h1>
@@ -27,7 +26,7 @@ export default async function TilPage() {
 
       <Spacer h="1.6rem" />
       <Suspense fallback={null}>
-        <TilList />
+        <TilList pages={pages} />
       </Suspense>
     </>
   );

@@ -1,4 +1,3 @@
-import { ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,10 +7,11 @@ import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
 import type { Metadata } from "next";
 
-import "@/styles/talk-details.css";
+import "@/styles/details.css";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  const page = await getPageFromPath(`my-work/talks/${params.slug}.md`);
+  const { slug } = await params;
+  const page = await getPageFromPath(`my-work/talks/${slug}.md`);
 
   if (!page) {
     return notFound();
@@ -27,39 +27,26 @@ type Props = {
   };
 };
 
-export default async function TilDetailsPage({ params }: Props) {
-  const page = await getPageFromPath(`my-work/talks/${params.slug}.md`);
+export default async function TalkDetailsPage({ params }: Props) {
+  const { slug } = await params;
+  const page = await getPageFromPath(`my-work/talks/${slug}.md`);
 
-  if (!page?.content?.html) {
+  if (!page) {
     return notFound();
   }
 
   return (
     <>
-      <p className="font-heading">
-        <Link href="/my-work">
-          <ArrowLeft weight="bold" className="inline-flex" /> Back to overview
-        </Link>{" "}
-        — {dayjs(page?.meta?.date).format("MMMM D, YYYY")}
+      <p className="font-heading p-0 leading-[1.2]">
+        <Link href="/my-work">My work</Link> —{" "}
+        {dayjs(page?.meta?.date).format("MMMM D, YYYY")} — {page?.meta?.event}
       </p>
-      <h1>{page.meta.title}</h1>
-      <p
-        dangerouslySetInnerHTML={{
-          __html: page.meta.mdDescription.html,
-        }}
-      />
+      <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>
 
-      <img
-        sizes="100vw"
-        src={page.meta.heroUrl}
-        className="shadow-lg my-[2rem]"
-      />
       <div
-        className="talk-details grid grid-cols-1 md:grid-cols-2 gap-[1.6rem]"
+        className="details"
         dangerouslySetInnerHTML={{
-          __html: page.content.html
-            .replaceAll("<blockquote>", "<section>")
-            .replaceAll("</blockquote>", "</section>"),
+          __html: page?.content?.html || "",
         }}
       />
     </>
@@ -69,9 +56,7 @@ export default async function TilDetailsPage({ params }: Props) {
 export async function generateStaticParams() {
   const posts = await getPagesFromPath("my-work/talks");
 
-  return posts
-    .filter((post) => !!post?.content?.html)
-    .map((post) => ({
-      slug: post?.pathname.replace(/^\/my-work\/talks\//, ""),
-    }));
+  return posts.map((post) => ({
+    slug: post?.pathname.replace(/^\/my-work\/talks\//, ""),
+  }));
 }

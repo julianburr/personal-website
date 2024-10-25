@@ -17,6 +17,7 @@ export const COLORS = {
 
   "twitter-blue": "#1EA1F2",
   "medium-green": "#029E74",
-  "github-grey": "#55554C",
-  "linkedin-blue": "#0b66c2",
+  "github-grey": "#3A3A1A",
+  "notist-grey": "#3A3A1A",
+  "linkedin-blue": "#0B66C2",
 };

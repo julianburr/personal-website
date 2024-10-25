@@ -12,13 +12,13 @@ import "@/styles/details.css";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { slug } = await params;
-  const page = await getPageFromPath(`til/${slug}.md`);
+  const page = await getPageFromPath(`my-work/blog/${slug}.md`);
 
   if (!page) {
     return notFound();
   }
 
-  const title = `Today I learned: ${page.meta.title} — Julian Burr`;
+  const title = `Blog: ${page.meta.title} — Julian Burr`;
   return { title };
 }
 
@@ -28,9 +28,9 @@ type Props = {
   };
 };
 
-export default async function TilDetailsPage({ params }: Props) {
+export default async function BlogDetailsPage({ params }: Props) {
   const { slug } = await params;
-  const page = await getPageFromPath(`til/${slug}.md`);
+  const page = await getPageFromPath(`my-work/blog/${slug}.md`);
 
   if (!page) {
     return notFound();
@@ -39,25 +39,26 @@ export default async function TilDetailsPage({ params }: Props) {
   return (
     <>
       <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/til">Today I learned</Link> —{" "}
+        <Link href="/my-work">My work</Link> —{" "}
         {dayjs(page?.meta?.date).format("MMMM D, YYYY")} —{" "}
         {getTimeToRead(page?.content?.raw)} min read
-        {page?.meta?.tags && ` — ${page?.meta?.tags}`}
       </p>
       <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>
 
       <div
         className="details"
-        dangerouslySetInnerHTML={{ __html: page?.content?.html || "" }}
+        dangerouslySetInnerHTML={{
+          __html: page?.content?.html || "",
+        }}
       />
     </>
   );
 }
 
 export async function generateStaticParams() {
-  const posts = await getPagesFromPath("til");
+  const posts = await getPagesFromPath("my-work/blog");
 
   return posts.map((post) => ({
-    slug: post?.pathname.replace(/^\/til\//, ""),
+    slug: post?.pathname.replace(/^\/my-work\/blog\//, ""),
   }));
 }

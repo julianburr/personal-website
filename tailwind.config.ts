@@ -25,6 +25,9 @@ const config: Config = {
       boxShadow: {
         lg: "0 .3rem 1.2rem rgba(0, 0, 0, .1)",
       },
+      dropShadow: {
+        lg: "0 .3rem .8rem rgba(0, 0, 0, .1)",
+      },
     },
   },
   plugins: [],

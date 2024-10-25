@@ -58,7 +58,7 @@ const socials = [
   },
   {
     id: "twitter",
-    href: "https://mobile.twitter.com/jburr90",
+    href: "https://twitter.com/jburr90",
     title: "@jburr90 on Twitter",
     Icon: LogoTwitter,
   },

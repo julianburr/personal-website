@@ -3,9 +3,6 @@ title: Quantum Computing for Classical Developers
 date: 2024-07-02
 tags: quantum computing
 platform: Conference
-event: DWX Developer Week
-eventUrl: https://www.developer-week.de/en/
-eventLocation: Nuremberg, Germany
 heroUrl: /assets/my-work/talks/quantum-computing-for-classical-developers/slide-000-hero.png
 mdDescription:
   This is the transcript-like write-up and slides from a talk I've given on an introduction to quantum computing, what it is (and isn't), how it differs from classical computing, what it's applications might be and how it might affect us "classical" developers in the future.
