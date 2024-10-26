@@ -6,6 +6,6 @@ cover: /assets/talk-covers/yes-your-browser-can-do-that-probably--webdirections-
 event: Web Directions Code
 eventUrl: https://webdirections.org/code/
 eventLocation: Melbourne, VIC, Australia
-slidesUrl: /assets/mywork/talks/yes-your-browser-can-do-that-probably/slides--web-directions-code-2024.pdf
 videoUrl: https://conffab.com/presentation/yes-your-browser-can-do-that-probably-a-look-at-modern-web-apis-you-might-not-know/?gl=iaoZL5DJZO30
+slidesUrl: https://storage.cloud.google.com/julianburr-me/talk-slides/yes-your-browser-can-do-that-probably--web-directions-code-2024.pdf
 ---

@@ -8,6 +8,7 @@ event: DWX Developer Week
 eventUrl: https://www.developer-week.de/en/
 eventLocation: Nuremberg, Germany
 detailsUrl: /my-work/transcripts/quantum-computing-for-classical-developers
+slidesUrl: https://storage.cloud.google.com/julianburr-me/talk-slides/quantum-computing-for-classical-developers--dwx-2024.pdf
 ---
 
 Quantum computing has been in and out of the news for quite some time now, with promises to break encryption and revolutionise AI, simulations and whole industries. However, for a major part of the public, and even most developers, it remains a bit of a mystery.

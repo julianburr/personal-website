@@ -9,5 +9,5 @@ eventUrl: https://www.dddmelbourne.com/
 eventLocation: Melbourne, VIC, Australia
 videoEmbed: https://www.youtube.com/embed/FO0Qn_5NLSY
 videoUrl: https://www.youtube.com/watch?v=FO0Qn_5NLSY
-slidesUrl: /assets/talk-slides/is-it-a-bird-is-it-a-plane--ddd-melbourne-2024.pdf
+slidesUrl: https://storage.cloud.google.com/julianburr-me/talk-slides/is-it-a-bird-is-it-a-plane--ddd-melbourne-2024.pdf
 ---
