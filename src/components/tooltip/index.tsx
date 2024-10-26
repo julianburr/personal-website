@@ -1,7 +1,8 @@
 "use client";
 
 import { computePosition, flip, offset } from "@floating-ui/dom";
-import { useEffect, useId, useRef } from "react";
+import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import type { Placement } from "@floating-ui/dom";
 import type { HTMLProps, ReactNode } from "react";
@@ -19,30 +20,38 @@ export function Tooltip({
   ...props
 }: Props) {
   const id = useId();
+
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseOver = () => {
-    const triggerElement = containerRef?.current?.firstElementChild;
-    const tooltipElement = tooltipRef?.current;
-    if (triggerElement && tooltipElement) {
-      tooltipElement.showPopover();
-      console.log("calc");
-      computePosition(triggerElement, tooltipElement, {
-        placement,
-        middleware: [flip(), offset(offsetProp)],
-      }).then(({ x, y }) => {
-        tooltipElement.style.left = `${x}px`;
-        tooltipElement.style.top = `${y}px`;
-      });
+  const [portalTarget, setPortalTarget] = useState<Element | undefined>();
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setPortalTarget(window.document.body);
     }
-  };
-
-  const handleMouseLeave = () => {
-    tooltipRef?.current?.hidePopover();
-  };
+  }, []);
 
   useEffect(() => {
+    const handleMouseOver = () => {
+      const triggerElement = containerRef?.current?.firstElementChild;
+      const tooltipElement = tooltipRef?.current;
+
+      if (triggerElement && tooltipElement) {
+        tooltipElement.showPopover();
+        computePosition(triggerElement, tooltipElement, {
+          placement,
+          middleware: [flip(), offset(offsetProp)],
+        }).then(({ x, y }) => {
+          tooltipElement.style.left = `${x}px`;
+          tooltipElement.style.top = `${y}px`;
+        });
+      }
+    };
+
+    const handleMouseLeave = () => {
+      tooltipRef?.current?.hidePopover();
+    };
+
     const triggerElement = containerRef?.current?.firstElementChild;
     const tooltipElement = tooltipRef?.current;
     if (triggerElement && tooltipElement) {
@@ -57,7 +66,7 @@ export function Tooltip({
         triggerElement.removeEventListener("blur", handleMouseLeave);
       };
     }
-  }, [id, placement]);
+  }, [id, offsetProp, placement, portalTarget]);
 
   return (
     <>
@@ -67,15 +76,19 @@ export function Tooltip({
         ref={containerRef}
         popoverTarget={`popover-${id}`}
       />
-      <div
-        role="tooltip"
-        popover="auto"
-        id={`popover-${id}`}
-        className="absolute top-0 left-0 m-0"
-        ref={tooltipRef}
-      >
-        {content}
-      </div>
+      {portalTarget &&
+        createPortal(
+          <div
+            role="tooltip"
+            popover="auto"
+            id={`popover-${id}`}
+            className="absolute top-0 left-0 m-0"
+            ref={tooltipRef}
+          >
+            {content}
+          </div>,
+          portalTarget
+        )}
     </>
   );
 }

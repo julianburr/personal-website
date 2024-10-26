@@ -6,5 +6,6 @@ cover: /assets/talk-covers/yes-your-browser-can-do-that-probably--slashnew-2024.
 event: ../NEW
 eventUrl: https://slashnew.tech/
 eventLocation: Newcastle, NSW, Australia
-videoSrc: https://www.youtube.com/watch?v=8gvEy3KXYfQ
+videoEmbed: https://www.youtube.com/embed/8gvEy3KXYfQ
+videoUrl: https://www.youtube.com/watch?v=8gvEy3KXYfQ
 ---

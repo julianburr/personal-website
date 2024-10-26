@@ -68,7 +68,7 @@ export default async function MyWorkPage() {
                   },
                   {
                     icon: <Pen />,
-                    label: "Transcription",
+                    label: "Transcript",
                     href: talk?.meta?.detailsUrl,
                   },
                 ]}

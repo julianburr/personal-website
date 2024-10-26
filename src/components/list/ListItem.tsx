@@ -13,7 +13,7 @@ type Props = {
   date?: Date | string;
   dateFormat?: string;
   meta?: string;
-  title: string;
+  title: ReactNode;
   description?: string;
   actions?: {
     href: string;

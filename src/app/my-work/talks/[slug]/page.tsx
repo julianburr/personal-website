@@ -1,7 +1,16 @@
+import {
+  MicrophoneStage,
+  MonitorPlay,
+  Pen,
+  ProjectorScreen,
+} from "@phosphor-icons/react/dist/ssr";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { Grid } from "@/components/list/Grid";
+import { ListItem } from "@/components/list/ListItem";
+import { Spacer } from "@/components/spacer";
 import { getPageFromPath } from "@/utils/getPageFromPath";
 import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
@@ -27,6 +36,32 @@ export default async function TalkDetailsPage({ params }: any) {
     return notFound();
   }
 
+  const links = [
+    {
+      icon: <MicrophoneStage />,
+      label: "External event link",
+      href: page?.meta?.eventUrl,
+      target: "_blank" as const,
+    },
+    {
+      icon: <ProjectorScreen />,
+      label: "Slides",
+      href: page?.meta?.slidesUrl,
+      target: "_blank" as const,
+    },
+    {
+      icon: <MonitorPlay />,
+      label: "Video",
+      href: page?.meta?.videoUrl,
+      target: "_blank" as const,
+    },
+    {
+      icon: <Pen />,
+      label: "Transcript",
+      href: page?.meta?.detailsUrl,
+    },
+  ].filter((action) => !!action.href);
+
   return (
     <>
       <p className="font-heading p-0 leading-[1.2]">
@@ -34,6 +69,41 @@ export default async function TalkDetailsPage({ params }: any) {
         {dayjs(page?.meta?.date).format("MMMM D, YYYY")} — {page?.meta?.event}
       </p>
       <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>
+
+      {page?.meta?.videoEmbed && (
+        <>
+          <iframe
+            className="video-embed"
+            src={page?.meta?.videoEmbed}
+            title="Video embed player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+          <Spacer h="1.8rem" />
+        </>
+      )}
+
+      {!!links?.length && (
+        <>
+          <Grid>
+            {links.map((link) => (
+              <ListItem
+                key={link.href}
+                title={
+                  <span className="flex flex-row items-center gap-2">
+                    <span className="text-[1.4rem]">{link.icon}</span>
+                    <span>{link.label}</span>
+                  </span>
+                }
+                href={link.href}
+                target={link.target}
+              />
+            ))}
+          </Grid>
+          <Spacer h="1.8rem" />
+        </>
+      )}
 
       <div
         className="details"

@@ -76,13 +76,17 @@ main .details img:not(.emoji) {
   @apply m-[.5rem] shadow-lg w-[calc(100%_-_1rem)] mx-auto;
 }
 
+main iframe.video-embed {
+  @apply w-full aspect-[16/9];
+}
+
 /* Tooltips -- NOTE: doesn't work nicely with tailwind for some reason, so using plain CSS here :| */
 [role="tooltip"] {
   @apply shadow-lg p-[.6rem] text-xs font-default bg-black text-white;
 
   transition:
-    opacity 0.4s,
-    display 0.4s allow-discrete;
+    opacity 0.2s,
+    display 0.2s allow-discrete;
 
   opacity: 0;
 }

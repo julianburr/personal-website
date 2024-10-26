@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import dayjs from "dayjs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -40,16 +41,20 @@ export default async function TranscriptDetailsPage({ params }: any) {
       {page?.meta?.mdDescription?.html && (
         <p
           dangerouslySetInnerHTML={{
-            __html: page?.meta?.mdDescription?.html,
+            __html: page?.meta?.mdDescription?.html || "",
           }}
         />
       )}
 
-      <img
-        sizes="100vw"
-        src={page?.meta?.heroUrl}
-        className="shadow-lg my-[2rem]"
-      />
+      {page?.meta?.coverUrl && (
+        <img
+          alt="Cover slide"
+          sizes="100vw"
+          src={page?.meta?.coverUrl}
+          className="shadow-lg my-[2rem]"
+        />
+      )}
+
       <div
         className="details grid grid-cols-1 md:grid-cols-2 gap-[1.6rem]"
         dangerouslySetInnerHTML={{
