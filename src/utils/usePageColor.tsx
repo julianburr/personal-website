@@ -5,7 +5,7 @@ import { useLayoutEffect, useMemo } from "react";
 
 import { getPathnameColor } from "@/utils/getPathnameColor";
 
-import type { HTMLAttributes} from "react";
+import type { HTMLAttributes } from "react";
 
 export function BodyWithColor(props: HTMLAttributes<HTMLBodyElement>) {
   const pathname = usePathname();

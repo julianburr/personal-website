@@ -3,6 +3,8 @@ import classNames from "classnames";
 import dayjs from "dayjs";
 import Link from "next/link";
 
+import { Tooltip } from "@/components/tooltip";
+
 import type { ReactNode } from "react";
 
 type Props = {
@@ -93,18 +95,20 @@ export function ListItem({
         <div className="absolute right-0 top-0 p-1 flex flex-row flex-wrap gap-1 transition-all opacity-0 group-hover:opacity-100 group-focus-within:opacity-100">
           {effectiveActions?.map((action) => {
             return (
-              <Link
-                key={action.href}
-                href={action.href}
-                target={action.target}
-                rel={
-                  action.target === "_blank" ? "noopener noreferrer" : undefined
-                }
-                title={action.label}
-                className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-light shadow-none opacity-60 hover:shadow-lg hover:opacity-100"
-              >
-                <span className="flex text-[1.4rem]">{action.icon}</span>
-              </Link>
+              <Tooltip key={action.href} content={action.label}>
+                <Link
+                  href={action.href}
+                  target={action.target}
+                  rel={
+                    action.target === "_blank"
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-light shadow-none opacity-60 hover:shadow-lg hover:opacity-100"
+                >
+                  <span className="flex text-[1.4rem]">{action.icon}</span>
+                </Link>
+              </Tooltip>
             );
           })}
         </div>

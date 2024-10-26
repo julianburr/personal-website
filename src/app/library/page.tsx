@@ -3,13 +3,16 @@ import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
 import { Grid } from "@/components/list/Grid";
 import { ListItem } from "@/components/list/ListItem";
 import { Spacer } from "@/components/spacer";
+import { Tooltip } from "@/components/tooltip";
 import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
 export default async function LibraryPage() {
   const books = await getPagesFromPath("library");
   return (
     <>
-      <h1>Library</h1>
+      <Tooltip content={<p>Hello world!</p>}>
+        <h1>Library</h1>
+      </Tooltip>
       <p>
         Just a collection of books I’ve been reading that I would recommend.
         This is by no means a complete list or anything, and you’ll also find
@@ -18,7 +21,7 @@ export default async function LibraryPage() {
       </p>
 
       <Spacer h="1.2rem" />
-      <Grid>
+      <Grid size="small">
         {books.map((book) => {
           return (
             <ListItem

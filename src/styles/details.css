@@ -1,7 +1,0 @@
-.details section {
-  @apply pb-[.8rem] md:py-[.8rem];
-}
-
-.details img:not(.emoji) {
-  @apply m-[.5rem] shadow-lg w-[calc(100%_-_1rem)] mx-auto;
-}

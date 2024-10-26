@@ -8,8 +8,6 @@ import { getTimeToRead } from "@/utils/getTimeToRead";
 
 import type { Metadata } from "next";
 
-import "@/styles/details.css";
-
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { slug } = await params;
   const page = await getPageFromPath(`my-work/transcripts/${slug}.md`);
@@ -22,13 +20,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   return { title };
 }
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function TranscriptDetailsPage({ params }: Props) {
+export default async function TranscriptDetailsPage({ params }: any) {
   const { slug } = await params;
   const page = await getPageFromPath(`my-work/transcripts/${slug}.md`);
 

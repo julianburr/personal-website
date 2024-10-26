@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 
 export function usePersistedState<T = any>(key: string, fallback: T) {
-  const fromStorage = window.localStorage?.getItem(key);
+  const fromStorage =
+    typeof window !== "undefined"
+      ? window.localStorage?.getItem(key)
+      : undefined;
   const fallbackValue = fromStorage
     ? (JSON.parse(fromStorage)?.value ?? fallback)
     : fallback;

@@ -1,12 +1,12 @@
+import dayjs from "dayjs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getPageFromPath } from "@/utils/getPageFromPath";
 import { getPagesFromPath } from "@/utils/getPagesFromPath";
+import { getTimeToRead } from "@/utils/getTimeToRead";
 
 import type { Metadata } from "next";
-
-import "@/styles/details.css";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { slug } = await params;
@@ -20,13 +20,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   return { title };
 }
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default async function LibraryDetailsPage({ params }: Props) {
+export default async function LibraryDetailsPage({ params }: any) {
   const { slug } = await params;
   const page = await getPageFromPath(`library/${slug}.md`);
 
@@ -37,7 +31,9 @@ export default async function LibraryDetailsPage({ params }: Props) {
   return (
     <>
       <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/library">Library</Link> — {page?.meta?.author}
+        <Link href="/library">Library</Link> —{" "}
+        {dayjs(page?.meta?.date).format("MMMM D, YYYY")} —{" "}
+        {getTimeToRead(page?.content?.raw)} min read
       </p>
       <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>
 
