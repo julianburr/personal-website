@@ -1,4 +1,5 @@
 import { IBM_Plex_Mono, Lato, Staatliches } from "next/font/google";
+import { Suspense } from "react";
 
 import { Navigation } from "@/components/navigation";
 import { UseHistory } from "@/utils/useHistory";
@@ -36,7 +37,6 @@ export const metadata: Metadata = {
 
 type Props = {
   children: React.ReactNode;
-  pathname: string;
 };
 
 export default function RootLayout({ children }: Props) {
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: Props) {
           <div className="w-full min-h-full p-[.6rem] sm:p-[3rem] font-default flex flex-row items-start">
             <Navigation />
             <main className="p-[1.6rem] pl-[5rem] pt-[5rem] sm:p-[4rem] flex flex-col flex-1 w-full max-w-[54rem] overflow-hidden">
-              {children}
+              <Suspense fallback={null}>{children}</Suspense>
             </main>
           </div>
 
