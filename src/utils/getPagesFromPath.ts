@@ -4,7 +4,7 @@ import { glob } from "glob";
 
 import { getPageFromPath } from "@/utils/getPageFromPath";
 
-const contentRoot = path.resolve(process.cwd(), "./src/content");
+const contentRoot = path.resolve(process.cwd(), "./content");
 
 export async function getPagesFromPath(dirPath: string) {
   const filePaths = await glob(`${dirPath}/**/*.md`, {

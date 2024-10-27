@@ -1,9 +1,11 @@
 "use client";
 
-import "./styles.css";
+import "@/styles/world-map.css";
 
 import { useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
+
+import { usePersistedState } from "@/utils/usePersistedState";
 
 import { LocationPopout } from "./LocationPopout";
 
@@ -18,15 +20,18 @@ type Destination = null | {
   content: any;
 };
 
-let lastZoom = 0.9;
-let lastCenter: [number, number] = [26.3824618, 26.8447825];
-
 type WorldMapProps = {
   destinations: Destination[];
 };
 
 export function WorldMap({ destinations }: WorldMapProps) {
   const popupRef = useRef<any>();
+
+  const [lastZoom, setLastZoom] = usePersistedState("worldmap/lastZoom", 0.9);
+  const [lastCenter, setLastCenter] = usePersistedState<[number, number]>(
+    "worldmap/setLastCenter",
+    [26.3824618, 26.8447825]
+  );
 
   useEffect(() => {
     Promise.all([
@@ -56,7 +61,10 @@ export function WorldMap({ destinations }: WorldMapProps) {
               }
               all.push({
                 type: "Feature",
-                properties: dest.meta,
+                properties: {
+                  ...dest.meta,
+                  pathname: dest.pathname,
+                },
                 geometry: {
                   type: "Point",
                   coordinates: dest.meta.latlng
@@ -139,11 +147,11 @@ export function WorldMap({ destinations }: WorldMapProps) {
           });
 
         map.on("zoomend", () => {
-          lastZoom = map.getZoom();
+          setLastZoom(map.getZoom());
         });
 
         map.on("moveend", () => {
-          lastCenter = map.getCenter().toArray();
+          setLastCenter(map.getCenter().toArray());
         });
 
         map.on("click", "clusters", (e) => {
@@ -175,16 +183,16 @@ export function WorldMap({ destinations }: WorldMapProps) {
             latlng[0] += e.lngLat.lng > latlng[0] ? 360 : -360;
           }
 
-          console.log({ props: node.properties, geo: node.geometry, latlng });
-
           const popupNode = document.createElement("div");
           const root = createRoot(popupNode);
           root.render(
             <LocationPopout
+              pathname={node.properties.pathname}
               place={node.properties.place}
               region={node.properties.region}
               country={node.properties.country}
               thumb={node.properties.thumb}
+              images={node.properties.images}
             />
           );
 

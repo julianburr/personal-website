@@ -22,7 +22,7 @@ import "prismjs/components/prism-yaml";
 
 import "prism-themes/themes/prism-lucario.css";
 
-const contentRoot = path.resolve(process.cwd(), "./src/content");
+const contentRoot = path.resolve(process.cwd(), "./content");
 
 async function parseMarkdown(raw: string) {
   const remarkResult = await unified()
