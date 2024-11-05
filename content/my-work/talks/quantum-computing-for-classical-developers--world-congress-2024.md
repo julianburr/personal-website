@@ -7,7 +7,7 @@ cover: /assets/talk-covers/quantum-computing-for-classical-developers--world-con
 event: WAD World Congress
 eventUrl: https://www.wearedevelopers.com/world-congress/
 eventLocation: Berlin, Germany
-detailsUrl: /my-work/transcripts/quantum-computing-for-classical-developers
+transcriptUrl: /my-work/transcripts/quantum-computing-for-classical-developers
 videoUrl: https://www.wearedevelopers.com/en/videos/1153/quantum-computing-for-classical-developers
 slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--world-congress-2024.pdf
 ---

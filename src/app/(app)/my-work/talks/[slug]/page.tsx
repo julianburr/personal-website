@@ -1,6 +1,7 @@
 import {
   MicrophoneStage,
   MonitorPlay,
+  Newspaper,
   Pen,
   ProjectorScreen,
 } from "@phosphor-icons/react/dist/ssr";
@@ -56,9 +57,17 @@ export default async function TalkDetailsPage({ params }: any) {
       target: "_blank" as const,
     },
     {
+      icon: <Newspaper />,
+      label: "Blog",
+      href: page?.meta?.blogUrl,
+      target: page?.meta?.blogUrl?.startsWith("http")
+        ? ("_blank" as const)
+        : undefined,
+    },
+    {
       icon: <Pen />,
       label: "Transcript",
-      href: page?.meta?.detailsUrl,
+      href: page?.meta?.transcriptUrl,
     },
   ].filter((action) => !!action.href);
 

@@ -2,8 +2,8 @@
 
 import classNames from "classnames";
 import dayjs from "dayjs";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useCallback, useState } from "react";
 
 import { List } from "@/components/list/List";
 import { ListItem } from "@/components/list/ListItem";
@@ -15,15 +15,24 @@ type Props = {
 
 export function TilList({ pages }: Props) {
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
 
   const initialTags =
     searchParams.get("tags")?.split(",").filter(Boolean) || [];
-  const [activeTags, setActiveTags] = useState<string[]>(initialTags);
+  const [activeTags, _setActiveTags] = useState<string[]>(initialTags);
 
-  useEffect(() => {
-    router.push(activeTags?.length ? `?tags=${activeTags.join(",")}` : ``);
-  }, [router, activeTags]);
+  const setActiveTags = useCallback(
+    (activeTags: string[]) => {
+      _setActiveTags(activeTags);
+      router.replace(
+        activeTags?.length
+          ? `${pathname}?tags=${activeTags.join(",")}`
+          : pathname
+      );
+    },
+    [pathname, router]
+  );
 
   const filtered = pages
     ?.filter((page: any) => dayjs(page.meta.date).isBefore(dayjs()))
@@ -73,8 +82,9 @@ export function TilList({ pages }: Props) {
                 )
               }
               className={classNames(
-                "flex bg-grey-medium text-inherit py-[.2rem] px-[.6rem] font-heading transition-all hover:bg-[var(--page--color)] hover:text-white hover:no-underline",
+                "flex text-inherit py-[.2rem] px-[.6rem] font-heading transition-all hover:bg-[var(--page--color)] hover:text-white hover:no-underline",
                 {
+                  "bg-grey-medium": !isActive,
                   "bg-[var(--page--color)] text-white": isActive,
                 }
               )}

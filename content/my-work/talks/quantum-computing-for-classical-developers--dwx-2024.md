@@ -7,7 +7,7 @@ cover: /assets/talk-covers/quantum-computing-for-classical-developers--dwx-2024.
 event: DWX Developer Week
 eventUrl: https://www.developer-week.de/en/
 eventLocation: Nuremberg, Germany
-detailsUrl: /my-work/transcripts/quantum-computing-for-classical-developers
+transcriptUrl: /my-work/transcripts/quantum-computing-for-classical-developers
 slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--dwx-2024.pdf
 ---
 

@@ -8,5 +8,6 @@ eventUrl: https://webdirections.org/summit/
 eventLocation: Sydney, NSW, Australia
 videoUrl: https://conffab.com/presentation/how-server-components-change-the-game-using-old-ideas/?gl=55m4IsQp7jsG
 slidesUrl: https://talk-server-components.vercel.app
+blogUrl: https://medium.com/@julianburr/deja-vu-how-server-components-are-changing-the-game-using-old-ideas-f4defc1681
 cover: /assets/talk-covers/dejavu-how-server-components-change-the-game--webdirections-summit-2023.png
 ---

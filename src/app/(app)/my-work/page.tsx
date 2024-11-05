@@ -1,6 +1,7 @@
 import {
   MicrophoneStage,
   MonitorPlay,
+  Newspaper,
   Pen,
   ProjectorScreen,
 } from "@phosphor-icons/react/dist/ssr";
@@ -67,9 +68,17 @@ export default async function MyWorkPage() {
                     target: "_blank",
                   },
                   {
+                    icon: <Newspaper />,
+                    label: "Blog",
+                    href: talk?.meta?.blogUrl,
+                    target: talk?.meta?.blogUrl?.startsWith("http")
+                      ? ("_blank" as const)
+                      : undefined,
+                  },
+                  {
                     icon: <Pen />,
                     label: "Transcript",
-                    href: talk?.meta?.detailsUrl,
+                    href: talk?.meta?.transcriptUrl,
                   },
                 ]}
               />
@@ -109,8 +118,8 @@ export default async function MyWorkPage() {
       <Spacer h="1.2rem" />
       <h2>Open Source</h2>
       <p>
-        Besides contributions to open source libraries, I created{" "}
-        <a href="#">a few of my own</a>.
+        Besides contributions to open source libraries, I created a few of my
+        own.
       </p>
 
       <Spacer h=".8rem" />

@@ -7,4 +7,5 @@ event: ReactBris
 eventUrl: https://www.meetup.com/en-AU/reactbris/
 eventLocation: Brisbane, QLD, Australia
 slidesUrl: https://github.com/julianburr/talk-redux-is-not-dead
+blogUrl: https://medium.com/rexlabs/redux-is-dead-long-live-redux-745d0cb26423
 ---

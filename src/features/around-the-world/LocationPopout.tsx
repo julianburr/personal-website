@@ -23,7 +23,7 @@ function LocationPopout({
       {thumb && <img className="w-full h-[7rem] object-fill" src={thumb} />}
       <div className="p-[.6rem] flex flex-col">
         {!!images?.length && !!pathname ? (
-          <Link href={pathname} className="text-inherit" target="_blank">
+          <Link href={pathname} className="text-inherit">
             <h1 className="text-base m-0 p-0 leading-[1.1]">{place}</h1>
           </Link>
         ) : (

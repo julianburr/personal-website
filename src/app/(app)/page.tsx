@@ -38,21 +38,20 @@ export default function Home() {
           href="/around-the-world"
           className="flex absolute bottom-[calc(4rem_+_4vh)] ml-[100vh]"
         >
-          <GlobeIllustrationSvg className="h-[16vh] w-auto transition-all hover:drop-shadow-lg" />
+          <GlobeIllustrationSvg className="h-[18vh] w-auto transition-all hover:drop-shadow-lg" />
         </Link>
         <TurnableBox className="absolute bottom-[calc(4rem_+_4vh)] ml-[130vh] h-[14vh] w-[14vh] bg-[#d2be87]" />
-        <LampIllustrationSvg className="absolute bottom-[calc(4rem_+_23vh)] ml-[114vh] h-[20vh] w-auto" />
+        <LampIllustrationSvg className="absolute bottom-[calc(4rem_+_23vh)] ml-[112vh] h-[20vh] w-auto" />
         <div className="flex absolute bottom-[calc(4rem_+_3vh)] ml-[112vh] h-[20vh] w-[20vh] bg-[#ddcea5]" />
 
         <Link
           href="/library"
-          className="flex absolute bottom-[calc(4rem_+_2vh)] ml-[105vh] "
+          className="flex absolute bottom-[calc(1rem_+_4vh)] ml-[151vh] "
         >
-          <BooksIllustrationSvg className="h-[14vh] w-auto transition-all hover:drop-shadow-lg" />
+          <BooksIllustrationSvg className="h-[13vh] w-auto transition-all hover:drop-shadow-lg" />
         </Link>
-
-        <div className="flex absolute bottom-[4vh] ml-[158vh] h-[27vh] w-[27vh] bg-[#e8dec3]" />
-        <div className="flex absolute bottom-[3vh] ml-[180vh] h-[30vh] w-[27vh] bg-[#eee6d1]" />
+        <div className="flex absolute bottom-[4vh] ml-[164vh] h-[27vh] w-[27vh] bg-[#e8dec3]" />
+        <div className="flex absolute bottom-[3vh] ml-[186vh] h-[30vh] w-[27vh] bg-[#eee6d1]" />
       </div>
     </>
   );
