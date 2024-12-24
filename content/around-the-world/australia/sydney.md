@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: New South Wales
-place: Sydney
+city: Sydney
 type: location
 date: 2014-12-10
 latlng: -33.868,151.21

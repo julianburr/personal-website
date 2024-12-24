@@ -1,7 +1,7 @@
 ---
 country: Sri Lanka
 region: Dayagama
-place: Horton Plains
+city: Horton Plains
 type: national park
 date: 2013-11-02
 latlng: 6.809341390868454,80.7835549818023

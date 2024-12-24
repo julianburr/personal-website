@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: West Coast
-place: Franz Joseph Glacier
+city: Franz Joseph Glacier
 type: landscape
 date: 2014-11-01
 latlng: -43.39446,170.180309

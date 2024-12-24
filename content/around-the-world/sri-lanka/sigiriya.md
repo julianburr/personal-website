@@ -1,7 +1,7 @@
 ---
 country: Sri Lanka
 region: Matale
-place: Sigiriya
+city: Sigiriya
 type: landmark
 date: 2013-11-05
 latlng: 7.956394941551807,80.75737927404987

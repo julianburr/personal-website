@@ -1,7 +1,7 @@
 ---
 country: Vietnam
 region: Dong Phu
-place: Dong Hoi
+city: Dong Hoi
 type: location
 date: 2014-03-03
 latlng: 17.476970683800147,106.61370053763312

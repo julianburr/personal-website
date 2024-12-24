@@ -1,6 +1,6 @@
 ---
 country: China
-place: Guangzhou
+city: Guangzhou
 type: location
 date: 2014-05-08
 latlng: 23.141922249098457, 113.25211632519517

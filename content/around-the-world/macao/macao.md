@@ -1,6 +1,6 @@
 ---
 country: Macao
-place: Macao
+city: Macao
 type: location
 date: 2014-05-02
 latlng: 22.175294143611254,113.54061447247364

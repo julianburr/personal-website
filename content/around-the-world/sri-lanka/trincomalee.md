@@ -1,7 +1,7 @@
 ---
 country: Sri Lanka
 region: Trincomalee
-place: Trincomalee
+city: Trincomalee
 type: location
 date: 2013-11-09
 latlng: 8.567215464445539,81.24395384831945

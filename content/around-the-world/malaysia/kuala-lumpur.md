@@ -1,7 +1,7 @@
 ---
 country: Malaysia
 region: Kuala Lumpur
-place: Kuala Lumpur
+city: Kuala Lumpur
 type: location
 date: 2014-01-20
 latlng: 3.13564143753608,101.66677131009726

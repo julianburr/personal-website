@@ -1,7 +1,7 @@
 ---
 country: Vietnam
 region: Quang Nam
-place: Hoi An
+city: Hoi An
 type: location
 date: 2014-02-25
 latlng: 15.886150805060495,108.32440781739814

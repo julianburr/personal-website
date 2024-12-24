@@ -1,7 +1,7 @@
 ---
 country: India
 region: Rajasthan
-place: Udaipur
+city: Udaipur
 type: location
 date: 2013-12-02
 latlng: 24.58333,73.68333

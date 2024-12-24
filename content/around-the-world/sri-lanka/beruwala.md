@@ -1,7 +1,7 @@
 ---
 country: Sri Lanka
 region: Kalutara
-place: Beruwala
+city: Beruwala
 type: location
 date: 2013-10-21
 latlng: 6.460387,79.982049

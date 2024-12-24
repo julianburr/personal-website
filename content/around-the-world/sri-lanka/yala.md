@@ -1,7 +1,7 @@
 ---
 country: Sri Lanka
 region: Monaragala
-place: Yala
+city: Yala
 type: national park
 date: 2013-10-30
 latlng: 6.549243692968261,81.52095209154419

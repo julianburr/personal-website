@@ -1,7 +1,7 @@
 ---
 country: Indonesia
 region: East Java
-place: Banyuwangi
+city: Banyuwangi
 type: location
 date:
 latlng: -8.21861,114.36694

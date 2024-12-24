@@ -7,7 +7,7 @@ type Entry = {
   meta: {
     title?: string;
     subtitle?: string;
-    place: string;
+    city: string;
     region?: string;
     country: string;
     type?: string;
@@ -55,7 +55,7 @@ function LocationPopout({ entries }: Props) {
           >
             <span className="flex flex-col flex-1">
               <h1 className="text-base m-0 p-0 leading-[1.1] font-bold group-hover:underline group-focus:underline">
-                {entry?.meta?.title || entry?.meta?.place}
+                {entry?.meta?.title || entry?.meta?.city}
               </h1>
               <span className="text-xs opacity-[.64] leading-[1.1]">
                 {entry?.meta?.subtitle ? (
@@ -73,7 +73,7 @@ function LocationPopout({ entries }: Props) {
         ) : (
           <div className="flex flex-col p-[.6rem]">
             <h1 className="text-base m-0 p-0 leading-[1.1]">
-              {entry?.meta?.title || entry?.meta?.place}
+              {entry?.meta?.title || entry?.meta?.city}
             </h1>
             <span className="text-xs opacity-[.64] leading-[1.1]">
               {entry?.meta?.region ? (
@@ -94,7 +94,7 @@ function LocationPopout({ entries }: Props) {
     <div className="w-[12rem]">
       {thumb && (
         <img
-          alt={`${entries?.[0]?.meta?.place} thumbnail`}
+          alt={`${entries?.[0]?.meta?.city} thumbnail`}
           className="w-full h-[7rem] object-fill bg-grey-medium"
           src={thumb}
         />

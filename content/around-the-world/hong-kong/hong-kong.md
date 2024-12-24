@@ -1,6 +1,6 @@
 ---
 country: Hong Kong
-place: Hong Kong
+city: Hong Kong
 type: location
 date: 2014-04-30
 latlng: 22.27833,114.15861

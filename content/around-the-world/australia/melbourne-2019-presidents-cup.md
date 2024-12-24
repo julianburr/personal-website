@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: Victoria
-place: Melbourne
+city: Melbourne
 title: Presidents Cup 2019
 type: event
 date: 2019-12-14

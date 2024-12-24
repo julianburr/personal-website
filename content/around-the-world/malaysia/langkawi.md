@@ -1,7 +1,7 @@
 ---
 country: Malaysia
 region: Kedah
-place: Langkawi
+city: Langkawi
 type: location
 date: 2014-01-27
 latlng: 6.330049569716493,99.8270789603846

@@ -1,6 +1,6 @@
 ---
 country: Cambodia
-place: Siem Reap
+city: Siem Reap
 type: location
 date: 2014-04-20
 latlng: 13.366432890797356,103.8506377939811

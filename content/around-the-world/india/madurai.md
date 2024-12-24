@@ -1,7 +1,7 @@
 ---
 country: India
 region: Tamil Nadu
-place: Madurai
+city: Madurai
 type: location
 date: 2013-11-19
 latlng: 9.91966,78.11939

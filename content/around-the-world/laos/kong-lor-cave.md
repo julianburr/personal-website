@@ -1,7 +1,7 @@
 ---
 country: Laos
 region: Khammouane
-place: Kong Lor Cave
+city: Kong Lor Cave
 type: landmark
 date: 2014-04-02
 latlng: 17.962,104.744081

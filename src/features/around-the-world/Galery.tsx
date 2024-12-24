@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { Tooltip } from "@/components/tooltip";
 
 type Props = {
-  place: string;
+  city: string;
   region?: string;
   country: string;
   title?: string;
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export function Galery({
-  place,
+  city,
   region,
   country,
   title,
@@ -88,7 +88,7 @@ export function Galery({
             }}
           >
             <h3 className="whitespace-nowrap break-all text-ellipsis overflow-hidden text-xl leading-[1.1] group-hover:underline group-focus:underline">
-              {title || place}
+              {title || city}
             </h3>
             <span className="text-xs opacity-[.64] leading-[1.1] whitespace-nowrap break-all text-ellipsis mt-[-.2rem]">
               {dayjs(date).format("MMM YYYY")} —{" "}

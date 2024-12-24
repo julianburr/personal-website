@@ -1,6 +1,6 @@
 ---
 country: China
-place: Beijing
+city: Beijing
 type: location
 date: 2015-07-05
 latlng: 39.905,116.39139

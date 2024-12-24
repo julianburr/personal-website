@@ -1,7 +1,7 @@
 ---
 country: Malaysia
 region: Pahang
-place: Cameron Highlands
+city: Cameron Highlands
 type: national park
 date: 2014-01-22
 latlng: 4.491031,101.386912

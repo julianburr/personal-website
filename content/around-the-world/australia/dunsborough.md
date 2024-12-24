@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: Western Australia
-place: Dunsborough
+city: Dunsborough
 type: location
 date: 2014-06-04
 latlng: -33.615437,115.10629

@@ -1,7 +1,7 @@
 ---
 country: Malaysia
 region: Malacca
-place: Melaka
+city: Melaka
 type: location
 date: 2014-02-07
 latlng: 2.18889,102.25111

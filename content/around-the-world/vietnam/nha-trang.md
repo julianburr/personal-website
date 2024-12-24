@@ -1,7 +1,7 @@
 ---
 country: Vietnam
 region: Kanh Hoa
-place: Nha Trang
+city: Nha Trang
 type: location
 date: 2014-02-20
 latlng: 12.242979689780412,109.19008100515151

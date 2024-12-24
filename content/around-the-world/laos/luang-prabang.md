@@ -1,7 +1,7 @@
 ---
 country: Laos
 region: Luang Prabang
-place: Luang Prabang
+city: Luang Prabang
 type: location
 date: 2014-03-16
 latlng: 19.890337,102.132951

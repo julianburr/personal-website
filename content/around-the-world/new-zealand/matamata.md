@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Waikato
-place: Matamata
+city: Matamata
 type: location
 date: 2014-10-20
 latlng: -37.81,175.77

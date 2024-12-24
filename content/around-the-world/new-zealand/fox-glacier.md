@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: West Coast
-place: Fox Glacier
+city: Fox Glacier
 type: landscape
 date: 2014-11-01
 latlng: -43.5011165,170.08104425

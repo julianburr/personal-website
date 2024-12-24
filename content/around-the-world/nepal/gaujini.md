@@ -1,7 +1,7 @@
 ---
 country: Nepal
 region: Kathmandu Valley
-place: Gaujini
+city: Gaujini
 type: location
 date: 2013-12-24
 latlng: 27.755519051024308,85.26354199000718

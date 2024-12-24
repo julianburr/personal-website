@@ -1,6 +1,6 @@
 ---
 country: Cambodia
-place: Sihanoukville
+city: Sihanoukville
 type: location
 date: 2014-04-13
 latlng: 10.624371900571376,103.51970694996419

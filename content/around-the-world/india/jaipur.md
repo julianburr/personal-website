@@ -1,7 +1,7 @@
 ---
 country: India
 region: Rejasthan
-place: Jaipur
+city: Jaipur
 type: location
 date: 2013-12-04
 latlng: 26.915426337066933,75.82417315211222

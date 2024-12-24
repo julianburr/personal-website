@@ -1,7 +1,7 @@
 ---
 country: India
 region: Kerala
-place: Kochi
+city: Kochi
 type: location
 date: 2013-11-21
 latlng: 9.986331,76.236767

@@ -14,8 +14,9 @@ import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { slug } = await params;
-  const page = await getPageFromPath(`my-work/talks/${slug}.md`);
-  console.log({ page });
+  const page = await getPageFromPath<TalkFrontmatter>(
+    `my-work/talks/${slug}.md`
+  );
 
   if (!page) {
     return notFound();

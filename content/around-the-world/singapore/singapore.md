@@ -1,6 +1,6 @@
 ---
 country: Singapore
-place: Singapore
+city: Singapore
 type: location
 date: 2014-02-02
 latlng: 1.3516161224392,103.808052586332

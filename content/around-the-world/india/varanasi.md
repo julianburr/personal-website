@@ -1,7 +1,7 @@
 ---
 country: India
 region: Uttar Pradesh
-place: Varanasi
+city: Varanasi
 type: location
 date: 2013-12-08
 latlng: 25.30694,83.00611

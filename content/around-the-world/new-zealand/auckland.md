@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Auckland
-place: Auckland
+city: Auckland
 type: location
 date: 2014-10-09
 latlng: -36.85,174.78333

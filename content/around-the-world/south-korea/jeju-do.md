@@ -1,6 +1,6 @@
 ---
 country: South Korea
-place: Jeju-do
+city: Jeju-do
 type: location
 date: 2015-05-26
 latlng: 33.50972,126.52194

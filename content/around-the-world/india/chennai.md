@@ -1,7 +1,7 @@
 ---
 country: India
 region: Tamil Nadu
-place: Chennai
+city: Chennai
 type: location
 date: 2013-11-17
 latlng: 13.09,80.27

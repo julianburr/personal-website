@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Wellington
-place: Wellington
+city: Wellington
 type: location
 date: 2014-10-25
 latlng: -41.28889,174.77722

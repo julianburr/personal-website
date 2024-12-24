@@ -1,7 +1,7 @@
 ---
 country: United States
 region: Texas
-place: Austin
+city: Austin
 title: SXSW 2018
 type: location
 date: 2018-03-07

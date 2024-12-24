@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: Queensland
-place: Brisbane
+city: Brisbane
 type: location
 date: 2016-09-01
 latlng: -27.469,153.0235

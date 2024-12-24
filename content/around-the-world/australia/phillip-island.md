@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: Victoria
-place: Phillip Island
+city: Phillip Island
 type: national park
 date: 2014-11-26
 latlng: -38.5214325,145.3268375

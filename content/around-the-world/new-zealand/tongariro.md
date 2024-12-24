@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Manawatu-Wanganui
-place: Tongariro
+city: Tongariro
 type: national park
 date: 2014-10-23
 latlng: -39.201232,175.537362

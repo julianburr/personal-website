@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Waikato
-place: Taupo
+city: Taupo
 type: location
 date: 2014-10-22
 latlng: -38.68517375560219,176.07526624351152

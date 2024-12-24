@@ -1,7 +1,7 @@
 ---
 country: Thailand
 region: Bangkok
-place: Bangkok
+city: Bangkok
 type: location
 date: 2014-04-27
 latlng: 13.767047785352133,100.49131664162036

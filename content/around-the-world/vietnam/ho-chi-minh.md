@@ -1,6 +1,6 @@
 ---
 country: Vietnam
-place: Ho Chi Minh
+city: Ho Chi Minh
 type: location
 date: 2014-02-12
 latlng: 10.80811354876272,106.68903230407147

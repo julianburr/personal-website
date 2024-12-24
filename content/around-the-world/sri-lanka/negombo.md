@@ -1,7 +1,7 @@
 ---
 country: Sri Lanka
 region: Gampaha
-place: Negombo
+city: Negombo
 type: location
 date: 2013-10-18
 latlng: 7.206416,79.843249

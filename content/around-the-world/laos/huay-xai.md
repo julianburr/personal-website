@@ -1,7 +1,7 @@
 ---
 country: Laos
 region: Bokeo
-place: Huay Xai
+city: Huay Xai
 type: location
 date: 2014-03-18
 latlng: 20.285299,100.406961

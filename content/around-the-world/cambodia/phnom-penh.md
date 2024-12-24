@@ -1,6 +1,6 @@
 ---
 country: Cambodia
-place: Phnom Penh
+city: Phnom Penh
 type: location
 date: 2014-04-09
 latlng: 11.570075311726157,104.91742616646934

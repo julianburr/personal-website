@@ -1,7 +1,7 @@
 ---
 country: Sri Lanka
 region: Ratnapura
-place: Adam's Peak
+city: Adam's Peak
 type: landmark
 date: 2013-11-12
 latlng: 6.809625268210368,80.49928285405514

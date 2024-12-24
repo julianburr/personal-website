@@ -1,7 +1,7 @@
 ---
 country: United States
 region: New York
-place: New York City
+city: New York City
 title: New York City (2023)
 type: location
 date: 2023-02-25

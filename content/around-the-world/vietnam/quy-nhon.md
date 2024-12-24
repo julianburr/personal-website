@@ -1,7 +1,7 @@
 ---
 country: Vietnam
 region: Binh Dinh
-place: Quy Nhon
+city: Quy Nhon
 type: location
 date: 2014-02-22
 latlng: 13.770532649575955,109.23107671406785

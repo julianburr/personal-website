@@ -1,6 +1,6 @@
 ---
 country: Laos
-place: Luang Namtha
+city: Luang Namtha
 type: location
 date: 2014-03-22
 latlng: 21.00285,101.40915

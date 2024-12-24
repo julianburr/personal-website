@@ -1,7 +1,7 @@
 ---
 country: Vietnam
 region: Phu Mau
-place: Hue
+city: Hue
 type: location
 date: 2014-02-28
 latlng: 16.500181392767118,107.57765985968467

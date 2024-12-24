@@ -1,6 +1,6 @@
 ---
 country: South Korea
-place: Seoul
+city: Seoul
 type: location
 date: 2015-05-16
 latlng: 37.5683602848854,126.9779823737835

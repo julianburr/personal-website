@@ -1,6 +1,6 @@
 ---
 country: India
-place: Delhi
+city: Delhi
 type: location
 date: 2013-12-11
 latlng: 28.62595273374025,77.22114731429559

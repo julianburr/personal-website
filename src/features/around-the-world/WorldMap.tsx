@@ -8,6 +8,9 @@ import { createRoot } from "react-dom/client";
 
 import { usePersistedState } from "@/utils/usePersistedState";
 
+import type { TalkFrontmatter } from "@/features/my-work/TalkListItem";
+import type { getPagesFromPath } from "@/utils/getPagesFromPath";
+
 import { LocationPopout } from "./LocationPopout";
 
 type Destination = null | {
@@ -15,7 +18,7 @@ type Destination = null | {
   meta: {
     country: string;
     region?: string;
-    place: string;
+    city: string;
     title?: string;
     subtitle?: string;
     type: string;
@@ -26,7 +29,7 @@ type Destination = null | {
 
 type WorldMapProps = {
   destinations: Destination[];
-  talks: any[]; // TODO
+  talks: Awaited<ReturnType<typeof getPagesFromPath<TalkFrontmatter>>>;
 };
 
 export function WorldMap({ destinations, talks }: WorldMapProps) {
@@ -51,26 +54,29 @@ export function WorldMap({ destinations, talks }: WorldMapProps) {
       }
     });
 
-    talks.forEach((talk) => {
-      console.log({ talk });
-      if (talk?.meta?.latlng) {
-        const fixedLatLng = talk.meta.latlng?.replace(/\s/g, "");
-        if (!grouped[fixedLatLng]) {
-          grouped[fixedLatLng] = [];
+    talks?.forEach?.((talk) => {
+      Object.values(talk?.meta?.events || {})?.forEach((event) => {
+        if (event?.place?.latlng) {
+          const fixedLatLng = event.place.latlng?.replace(/\s/g, "");
+          if (!grouped[fixedLatLng]) {
+            grouped[fixedLatLng] = [];
+          }
+          grouped[fixedLatLng].push({
+            pathname: talk?.pathname,
+            meta: {
+              country: event.place?.country!,
+              region: event.place?.region,
+              city: event.place?.city!,
+              latlng: event.place?.latlng,
+              title: `${event.name} ${dayjs(event.date).format("YYYY")}`,
+              subtitle: talk?.meta.title,
+              type: "talk",
+              date: event.date.toString(),
+            },
+          });
         }
-        grouped[fixedLatLng].push({
-          pathname: talk.pathname,
-          meta: {
-            country: talk.meta.country,
-            place: talk.meta.place,
-            title: `${talk.meta.event} ${dayjs(talk.meta.date).format("YYYY")}`,
-            subtitle: talk.meta.title,
-            type: "talk",
-            latlng: talk.meta.latlng,
-            date: talk.meta.date,
-          },
-        });
-      }
+      });
+      console.log({ talk });
     });
 
     return grouped;

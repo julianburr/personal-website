@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: Victoria
-place: Wilson National Park
+city: Wilson National Park
 type: national park
 date: 2014-11-25
 latlng: -38.97053542556008,146.36464826963953

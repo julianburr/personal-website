@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Northland
-place: Bay of Islands
+city: Bay of Islands
 type: landscape
 date: 2014-10-15
 latlng: -35.263148,173.912508

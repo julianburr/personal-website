@@ -1,7 +1,7 @@
 ---
 country: India
 region: Maharashtra
-place: Mumbai
+city: Mumbai
 type: location
 date: 2013-11-29
 latlng: 18.96667,72.83333

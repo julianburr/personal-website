@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: Victoria
-place: Melbourne
+city: Melbourne
 type: location
 date: 2014-10-08
 latlng: -37.9725665,145.0531353

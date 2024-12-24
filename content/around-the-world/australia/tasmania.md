@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: Tasmania
-place: Tasmania
+city: Tasmania
 type: location
 date: 2014-11-29
 latlng: -42.0173821228,146.625672025521

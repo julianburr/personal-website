@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Northland
-place: Cape Reinga
+city: Cape Reinga
 type: location
 date: 2014-10-17
 latlng: -34.750202,173.059029

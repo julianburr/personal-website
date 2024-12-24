@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Otago
-place: Dunedin
+city: Dunedin
 type: location
 date: 2014-11-06
 latlng: -45.86667,170.5

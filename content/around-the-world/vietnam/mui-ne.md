@@ -1,7 +1,7 @@
 ---
 country: Vietnam
 region: Binh Thuan
-place: Mui Ne
+city: Mui Ne
 type: location
 date: 2014-02-14
 latlng: 10.943773236239565,108.28261888439778

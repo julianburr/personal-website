@@ -1,7 +1,7 @@
 ---
 country: Australia
 region: Western Australia
-place: Exmouth
+city: Exmouth
 type: location
 date: 2015-03-12
 latlng: -21.9324,114.1258

@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Southland
-place: Milford Sound
+city: Milford Sound
 type: landscape
 date: 2014-11-05
 latlng: -44.673199,167.924255

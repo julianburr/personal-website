@@ -1,7 +1,7 @@
 ---
 country: Vietnam
 region: Quang Ninh
-place: Bai Tu Long Bay
+city: Bai Tu Long Bay
 type: nature
 date: 2014-03-07
 latlng: 20.83804585385745,107.17349486018787

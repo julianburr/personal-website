@@ -1,6 +1,6 @@
 ---
 country: Vietnam
-place: Hanoi
+city: Hanoi
 type: location
 date: 2014-03-06
 latlng: 21.061399092503265,105.8497470004296

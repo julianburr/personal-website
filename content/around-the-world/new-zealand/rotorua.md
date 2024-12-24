@@ -1,7 +1,7 @@
 ---
 country: New Zealand
 region: Rotorua
-place: Rotorua
+city: Rotorua
 type: location
 date: 2014-10-21
 latlng: -38.137065104635646,176.25284918434937

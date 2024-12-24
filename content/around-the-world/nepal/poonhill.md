@@ -1,7 +1,7 @@
 ---
 country: Nepal
 region: Gandaki
-place: Poon Hill
+city: Poon Hill
 type: mountain tracking
 date: 2014-01-10
 latlng: 28.415814706814643,83.854152853772

@@ -1,7 +1,7 @@
 ---
 country: United States
 region: Texas
-place: Austin
+city: Austin
 title: SXSW 2023
 type: location
 date: 2023-03-10
