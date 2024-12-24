@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, X } from "@phosphor-icons/react";
+import dayjs from "dayjs";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -8,11 +9,22 @@ import { useEffect, useState } from "react";
 import { Tooltip } from "@/components/tooltip";
 
 type Props = {
-  place?: string;
+  place: string;
+  region?: string;
+  country: string;
+  title?: string;
   images?: string[];
+  date: string;
 };
 
-export function Galery({ place, images = [] }: Props) {
+export function Galery({
+  place,
+  region,
+  country,
+  title,
+  date,
+  images = [],
+}: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -67,7 +79,7 @@ export function Galery({ place, images = [] }: Props) {
         <div className="flex flex-row bg-white shadow-lg items-center justify-between overflow-hidden">
           <Link
             href="?image=0"
-            className="text-inherit font-normal text-xl overflow-hidden h-[3.2rem] sm:h-[4.2rem] px-[.8rem] sm:px-[1.2rem] flex justify-center items-center bg-white hover:bg-grey-light focus:bg-grey-light"
+            className="flex flex-col text-inherit font-normal overflow-hidden h-[3.2rem] sm:h-[4.2rem] px-[.8rem] sm:px-[1.2rem] justify-center bg-white hover:bg-grey-light focus:bg-grey-light group hover:no-underline focus:no-underline"
             aria-label="Go to overview"
             onClick={(e) => {
               e.preventDefault();
@@ -75,8 +87,18 @@ export function Galery({ place, images = [] }: Props) {
               setImageIndex(0);
             }}
           >
-            <span className="whitespace-nowrap break-all text-ellipsis overflow-hidden">
-              {place}
+            <h3 className="whitespace-nowrap break-all text-ellipsis overflow-hidden text-xl leading-[1.1] group-hover:underline group-focus:underline">
+              {title || place}
+            </h3>
+            <span className="text-xs opacity-[.64] leading-[1.1] whitespace-nowrap break-all text-ellipsis mt-[-.2rem]">
+              {dayjs(date).format("MMM YYYY")} —{" "}
+              {region ? (
+                <>
+                  {region}, {country}
+                </>
+              ) : (
+                <>{country}</>
+              )}
             </span>
           </Link>
           <div className="h-[3.2rem] sm:h-[4.2rem] px-[.8rem] sm:px-[1.2rem] font-heading text-xl flex flex-row flex-shrink-0 items-center border-l-grey-medium/50 border-l-[1px]">

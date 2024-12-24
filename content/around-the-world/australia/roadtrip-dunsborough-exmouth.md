@@ -1,9 +1,7 @@
 ---
 country: Australia
-place: Dunsborough to Exmouth
+title: "Roadtrip: Dunsborough to Exmouth"
 type: roadtrip
 date: 2014-01
-latlng:
+latlng: -26.4412443,114.1805088
 ---
-
-TODO

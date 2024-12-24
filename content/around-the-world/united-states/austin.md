@@ -2,7 +2,8 @@
 country: United States
 region: Texas
 place: Austin
+title: SXSW 2018
 type: location
-date:
-latlng: 30.2711, -97.7437
+date: 2018-03-07
+latlng: 30.2711,-97.7437
 ---

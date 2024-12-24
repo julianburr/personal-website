@@ -4,15 +4,22 @@ region: Kuala Lumpur
 place: Kuala Lumpur
 type: location
 date: 2014-01-20
-latlng: 3.13564143753608, 101.66677131009726
-thumb: https://lh3.googleusercontent.com/b5_efwhrE0_1r1J3VtQYYEExso0lt-Hth_mvUn1DlA4p0ppAIBfkAjh88mhJwSwSEQPQ2ya0vPaBjTPmd0PekR8RS4lho3eFdXyPzovnBCJbSXrsPydi0hn2jpukMuUAmR3gvVn3bw
+latlng: 3.13564143753608,101.66677131009726
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2800--thumb.JPG
 images:
-  - https://lh3.googleusercontent.com/QvcxuVaqHgCvQWQIU1GV_iQ5EdXFuttW7jgcAr9gbbrPFcNTDSG43qZaw1Exgxf6q3XeDvSBuhOwizaj02xpfckpLoPZiJY2wmBiogxxgFjfUXWuPyVnyL5W4y0TZyo8NJ0fRqCo4Q
-  - https://lh3.googleusercontent.com/XbOEf-kSvtBLN7Z3TNPyxNbURFcn8lmtRG6o-z8bniP6TayM09zkN-kqvka5H2JaZ9zOtFEJUjeNM6REE7Qbi9UXGNurvxVwn4jLxImb3vKzjCG4ireXXvN37JpvYOLlTiklyY7OQA
-  - https://lh3.googleusercontent.com/XbOEf-kSvtBLN7Z3TNPyxNbURFcn8lmtRG6o-z8bniP6TayM09zkN-kqvka5H2JaZ9zOtFEJUjeNM6REE7Qbi9UXGNurvxVwn4jLxImb3vKzjCG4ireXXvN37JpvYOLlTiklyY7OQA
-  - https://lh3.googleusercontent.com/ogtr0Y5hbi-hQF93MZ9YsACFMkJuwW9MkBt3Cm33yK2dx3eTS0wJx0tarl7nHCsZDypqShqjRzIpV9pfLYT6PS-UHjeirK4uN4QRYYd7n5EX3m53cs2-yhniFEwDc_M6RA4zC67QVg
-  - https://lh3.googleusercontent.com/b5_efwhrE0_1r1J3VtQYYEExso0lt-Hth_mvUn1DlA4p0ppAIBfkAjh88mhJwSwSEQPQ2ya0vPaBjTPmd0PekR8RS4lho3eFdXyPzovnBCJbSXrsPydi0hn2jpukMuUAmR3gvVn3bw
-  - https://lh3.googleusercontent.com/7JcE2Q9glz3SlzDgol-Chzp8OyuuhRKZh2IRGZ0KHiXpLJHhXrE5aCyg6lmdl9L8zw9kccGDgFVpE0xBx9YAOafZ6D99kDc9EtmP--ga8ozaCNFehIjOrTI-VCHhD3KHFIQ_elTzgg
-  - https://lh3.googleusercontent.com/f37zafH6Aup0DC8J1oEwbGkrba4tLi7ob-o6bM834SRa1McpWGlP-7WGNXIYLEeTmqn_w6u4YqETlXRL4aB3qzGU8yn2ovQ0T_WKzJ8WEYuzrq0v01Qma7oVXLkdwhNOYDJLXZBvDA
-  - https://lh3.googleusercontent.com/_wBxuhjL98oqfMkxTBRj6igR7vPXgWNtsjZxlWcVrT0VXlxtn95GcubWcRNoMFpmuwTiFhbC67kgjYaN4Aqt5Pi0hTydII1bZUX73Jz8YFes-ooaf_nRv28mPiYLxN2YmzAvDIz4HQ=w2400
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2237.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2233.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2260.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2270.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2258.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2264.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2801.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2234.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2268.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2800.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2261.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2249.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2204.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2209.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/malaysia/kuala-lumpur/IMG_2799.JPG
 ---

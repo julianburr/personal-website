@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+.mapboxgl-popup-tip.mapboxgl-popup-tip {
+  display: none;
+}
+
 .mapboxgl-popup-close-button.mapboxgl-popup-close-button {
   display: none;
 }
@@ -17,5 +21,8 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+}
+
+.mapboxgl-canvas.mapboxgl-canvas {
   filter: brightness(1.14);
 }

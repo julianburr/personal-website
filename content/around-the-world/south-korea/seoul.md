@@ -3,12 +3,36 @@ country: South Korea
 place: Seoul
 type: location
 date: 2015-05-16
-latlng: 37.5683602848854, 126.9779823737835
-thumb: https://lh3.googleusercontent.com/iU7aciC5N2i0uMJ3VEI093HCrPdrp_8l-vIQeJlrwA9QlGSSPGm212xk7HJ-2XfJTHvm4AzVsZcnNpdqmSnTeum3C8P6s_HZ8C_dPzCBSV9mLeZNLo4DwE74BbRLnW7-5erKD4Hb18w
+latlng: 37.5683602848854,126.9779823737835
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9212--thumb.JPG
 images:
-  - https://lh3.googleusercontent.com/iU7aciC5N2i0uMJ3VEI093HCrPdrp_8l-vIQeJlrwA9QlGSSPGm212xk7HJ-2XfJTHvm4AzVsZcnNpdqmSnTeum3C8P6s_HZ8C_dPzCBSV9mLeZNLo4DwE74BbRLnW7-5erKD4Hb18w
-  - https://lh3.googleusercontent.com/ra8MyUPO3c-1yu0ImDskWXE5WVOvXimY35edeMTYSjJeWMrByZv78fJjKS5CqkOga6b4lnw4WFZoyolbFCj-3UcqDNrvzO0hXl65t4T8UlFlSPDIrBftfG8pa8mQ028zsRO8qDFuLws
-  - https://lh3.googleusercontent.com/0N4kLd3pASRADH5juHyAcdUEkRKUtu4tZUhhH13lxH8FDLp1l5SLdrvMRwKEvgY3iblq7bt92-_Hf4C5MrBB46GulNBZdZoheBYO0X7wnuTlm5K_-Gz1FKN_F9QQhpEZDQiTe1agd4Y
-  - https://lh3.googleusercontent.com/Y7zqqi3lwbnJOvW19wrn7hKHuHF5fUDBQxWFO2FaiY0762NeLtRxapuR35bwnXal61ivvqnXTlDM5kvaFaTXDQkWIZWsKdOPix14rNY9uzJ8XgtpksgznjIgAtm5bCW1EDM3iyrxIM4
-  - https://lh3.googleusercontent.com/XGZQJcweP64v_shsIrHufNllzqqLe5Aa907_xbv-Xldp8QaEcJHkgeWv1QbUFeQP-RyeRr_MkY-8514xo-Sh7o56uDRz8sOjbtetUSpYz9gXMlZSqV-XcQE_5k2vmb-QLzRGCZu3VWw
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9152.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9298.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9405.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9154.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9278.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9187.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9239.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9357.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9212.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9240.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9334.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9232.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9213.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9320.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9302.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9160.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9241.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9312.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9228.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9167.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9191.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9354.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9237.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9417.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9220.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9249.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9383.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9177.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/south-korea/seoul/IMG_9382.JPG
 ---

@@ -4,8 +4,11 @@ region: Trincomalee
 place: Trincomalee
 type: location
 date: 2013-11-09
-latlng: 8.567215464445539, 81.24395384831945
-thumb: https://lh3.googleusercontent.com/6TsglpvPFLC3Aj8F_LnUL2T3aCAQYsON4hnxdNsiWBI_SfWB_US7SwpNSAplS6XuFmaODmj5gUjrhWU-uqBR_-ytvIr4Td5A8DoLOYIMiczTuF5LfJDIZFxIIO9OHfCrx4PacIT74A
+latlng: 8.567215464445539,81.24395384831945
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/trincomalee/IMG_1190--thumb.JPG
 images:
-  - https://lh3.googleusercontent.com/6TsglpvPFLC3Aj8F_LnUL2T3aCAQYsON4hnxdNsiWBI_SfWB_US7SwpNSAplS6XuFmaODmj5gUjrhWU-uqBR_-ytvIr4Td5A8DoLOYIMiczTuF5LfJDIZFxIIO9OHfCrx4PacIT74A
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/trincomalee/IMG_1186.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/trincomalee/IMG_1181.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/trincomalee/IMG_1185.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/trincomalee/IMG_1190.JPG
 ---

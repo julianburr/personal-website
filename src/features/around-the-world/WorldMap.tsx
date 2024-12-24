@@ -2,7 +2,8 @@
 
 import "@/styles/world-map.css";
 
-import { useEffect, useRef } from "react";
+import dayjs from "dayjs";
+import { useEffect, useMemo, useRef } from "react";
 import { createRoot } from "react-dom/client";
 
 import { usePersistedState } from "@/utils/usePersistedState";
@@ -10,28 +11,70 @@ import { usePersistedState } from "@/utils/usePersistedState";
 import { LocationPopout } from "./LocationPopout";
 
 type Destination = null | {
-  pathname: string;
+  pathname?: string;
   meta: {
     country: string;
+    region?: string;
     place: string;
+    title?: string;
+    subtitle?: string;
     type: string;
     latlng: string;
+    date: string;
   };
-  content: any;
 };
 
 type WorldMapProps = {
   destinations: Destination[];
+  talks: any[]; // TODO
 };
 
-export function WorldMap({ destinations }: WorldMapProps) {
-  const popupRef = useRef<any>();
+export function WorldMap({ destinations, talks }: WorldMapProps) {
+  const popupRef = useRef<any>(null);
 
   const [lastZoom, setLastZoom] = usePersistedState("worldmap/lastZoom", 0.9);
   const [lastCenter, setLastCenter] = usePersistedState<[number, number]>(
     "worldmap/setLastCenter",
     [26.3824618, 26.8447825]
   );
+
+  const grouped = useMemo(() => {
+    let grouped: { [latlng: string]: Destination[] } = {};
+
+    destinations.forEach((dest) => {
+      if (dest?.meta?.latlng) {
+        const fixedLatLng = dest.meta.latlng?.replace(/\s/g, "");
+        if (!grouped[fixedLatLng]) {
+          grouped[fixedLatLng] = [];
+        }
+        grouped[fixedLatLng].push(dest);
+      }
+    });
+
+    talks.forEach((talk) => {
+      console.log({ talk });
+      if (talk?.meta?.latlng) {
+        const fixedLatLng = talk.meta.latlng?.replace(/\s/g, "");
+        if (!grouped[fixedLatLng]) {
+          grouped[fixedLatLng] = [];
+        }
+        grouped[fixedLatLng].push({
+          pathname: talk.pathname,
+          meta: {
+            country: talk.meta.country,
+            place: talk.meta.place,
+            title: `${talk.meta.event} ${dayjs(talk.meta.date).format("YYYY")}`,
+            subtitle: talk.meta.title,
+            type: "talk",
+            latlng: talk.meta.latlng,
+            date: talk.meta.date,
+          },
+        });
+      }
+    });
+
+    return grouped;
+  }, [destinations, talks]);
 
   useEffect(() => {
     Promise.all([
@@ -55,28 +98,22 @@ export function WorldMap({ destinations }: WorldMapProps) {
           type: "geojson",
           data: {
             type: "FeatureCollection",
-            features: destinations.reduce<any[]>((all, dest) => {
-              if (!dest?.meta.latlng) {
-                return all;
-              }
-              all.push({
+            features: Object.keys(grouped).map((latlng) => {
+              return {
                 type: "Feature",
                 properties: {
-                  ...dest.meta,
-                  pathname: dest.pathname,
+                  latlng,
+                  entries: grouped[latlng],
                 },
                 geometry: {
                   type: "Point",
-                  coordinates: dest.meta.latlng
-                    ? dest.meta.latlng
-                        .split(",")
-                        .map((str) => parseFloat(str))
-                        .reverse()
-                    : undefined,
+                  coordinates: latlng
+                    .split(",")
+                    .map((str) => parseFloat(str))
+                    .reverse(),
                 },
-              });
-              return all;
-            }, []),
+              };
+            }),
           },
           cluster: true,
           clusterRadius: 35,
@@ -185,16 +222,8 @@ export function WorldMap({ destinations }: WorldMapProps) {
 
           const popupNode = document.createElement("div");
           const root = createRoot(popupNode);
-          root.render(
-            <LocationPopout
-              pathname={node.properties.pathname}
-              place={node.properties.place}
-              region={node.properties.region}
-              country={node.properties.country}
-              thumb={node.properties.thumb}
-              images={node.properties.images}
-            />
-          );
+          const entries = JSON.parse(node.properties.entries);
+          root.render(<LocationPopout entries={entries} />);
 
           new mapboxgl.Popup()
             .setLngLat(latlng)

@@ -7,7 +7,11 @@ coverUrl: https://storage.cloud.google.com/julianburr-me-assets/transcript-slide
 mdDescription:
   This is the transcript-like write-up and slides from a talk I've given on an introduction to quantum computing, what it is (and isn't), how it differs from classical computing, what it's applications might be and how it might affect us "classical" developers in the future.
 
-  This talk was first given at [DWX Developer Week 2024](https://google.com) in Nuremberg, and then refined for [WeAreDevelopers World Congress 2024](https://google.com) in Berlin.
+
+  This talk was first given at [DWX Developer Week 2024](https://www.developer-week.de/en/) in Nuremberg, and then refined for [WeAreDevelopers World Congress 2024](https://www.wearedevelopers.com/world-congress/) in Berlin. You can find more details [here](/my-work/talks/quantum-computing-for-classical-developers).
+
+
+  Big shoutout to [Muthi](https://www.fiverr.com/muthianwahida), who made the cat illustrations for this version of the slides 😸
 ---
 
 ![Slide](https://storage.cloud.google.com/julianburr-me-assets/transcript-slides/quantum-computing-for-classical-developers/slide-002.png)

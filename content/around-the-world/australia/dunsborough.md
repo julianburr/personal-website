@@ -4,7 +4,7 @@ region: Western Australia
 place: Dunsborough
 type: location
 date: 2014-06-04
-latlng: -33.615437, 115.10629
+latlng: -33.615437,115.10629
 thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/dunsborough/IMG_5013--thumb.JPG
 images:
   - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/dunsborough/IMG_4918.jpg

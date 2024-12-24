@@ -1,9 +1,7 @@
 ---
 country: Australia
-place: Sydney to Dunsborough
+title: "Roadtrip: Sydney to Dunsborough"
 type: roadtrip
 date: 2014-01
-latlng:
+latlng: -31.5840673,131.0365544
 ---
-
-TODO

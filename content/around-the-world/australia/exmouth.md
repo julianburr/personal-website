@@ -4,8 +4,11 @@ region: Western Australia
 place: Exmouth
 type: location
 date: 2015-03-12
-latlng: -21.9324, 114.1258
-thumb: https://lh3.googleusercontent.com/Hq5PCCemTvqrJBYRxTjnJubTWWOYYSkefvTSqt9vVFPy1nmNPpIAadvOQoqW6ki9hHE5gCVW3p9v2FyrczdsDOU_gHcYDwMjOQc7ZDIZdi5iY-f9bjYV7otxD1gY_kYDyHKzXLTQGg
+latlng: -21.9324,114.1258
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/exmouth/IMG_9150--thumb.JPG
 images:
-  - https://lh3.googleusercontent.com/Hq5PCCemTvqrJBYRxTjnJubTWWOYYSkefvTSqt9vVFPy1nmNPpIAadvOQoqW6ki9hHE5gCVW3p9v2FyrczdsDOU_gHcYDwMjOQc7ZDIZdi5iY-f9bjYV7otxD1gY_kYDyHKzXLTQGg
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/exmouth/IMG_9108.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/exmouth/IMG_9118.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/exmouth/IMG_9134.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/exmouth/IMG_9150.JPG
 ---

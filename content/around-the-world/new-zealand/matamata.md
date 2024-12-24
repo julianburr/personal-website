@@ -4,18 +4,26 @@ region: Waikato
 place: Matamata
 type: location
 date: 2014-10-20
-latlng: -37.81, 175.77
-thumb: https://lh3.googleusercontent.com/VclH0vU3jnTUu5nyT1xgcsWPVfczJXVF21MSEiXfN4YUbkCqTNtJLD-16YxrijhODLETTJsCbckeopnEzsf5K7K05nIiKUEdZN1jDXygG4Wo76Zj90jw34jQxFSIHghQac9F5jOGGQ
+latlng: -37.81,175.77
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6970--thumb.JPG
 images:
-  - https://lh3.googleusercontent.com/QoPuKZJxCmEvwZ0lCirLPmJ-ETrzwLCcsF96F2iGB5SoSPWcv_VS72GKA7vS9OTSKSaA7W8BjT4jyPbduMkWJS9PuaTpWdWwgK-2idWnj1ZcXKaWk0tRzAgw7b1_gWZg5oPsv7nMpA
-  - https://lh3.googleusercontent.com/iKp9yKx6S8w4wNGnaofTUIcoFwoDKXmeVFxHDgOwcwzCVdGsh16D_if1aFLtS-dcoYUtvErZw9aju_g2VTlrLQKnsGgSMk45dbJQHt9DI_QAAVea2kLt6vDNcb_UE7fG2xGYQiy2ng
-  - https://lh3.googleusercontent.com/k38aWRqlJg4N67Ogw0vmsatcX2R3-H4dBZA88VbuJJbX-fBwQdwkK4vaQzeKFbM98EiI_JMfYrqrLKIpGGIlkgf2vYhResuZuTzN08DVCjhVzkA0yRpFVEl1itBogaeXcvBJaXPCxQ
-  - https://lh3.googleusercontent.com/dbA-5xl8XHGo2KkDmHSVBR0Wdj6um8eCGPwzqvZm5MxZsYMGt7J63ufN3bYnAUt8f-_GN4VrlHxxsQLUimCoFoDGJKgsC5mDUqN90xUhVWYTUib90KwGq-gToL3eHuiS3_o6SkN8Qg
-  - https://lh3.googleusercontent.com/3D4LkBrWM_3dhuSnraFWTaypCCnfUBUgc2IZD36YxTsc8RYJ0v8Vqmveyrg8gzdOQOIqF9pkWuy1g2icBIWK2w7WrsOSKlKgWgLBNCVUqAgnCFMop5ijuny30C73z0aIONyWEVZ9QA
-  - https://lh3.googleusercontent.com/VclH0vU3jnTUu5nyT1xgcsWPVfczJXVF21MSEiXfN4YUbkCqTNtJLD-16YxrijhODLETTJsCbckeopnEzsf5K7K05nIiKUEdZN1jDXygG4Wo76Zj90jw34jQxFSIHghQac9F5jOGGQ
-  - https://lh3.googleusercontent.com/ah90j2QOo5Rz8DQ4rQm_O6ukIK_AgMELayPq-2g-TQYHW-8Q0Tr-gVPLuQ4fkZj-GhL_pW4MIpS3TKDiFdio7rxcmj571AnbqxyqZeq67_kw5KK3MtZ4Jr4gpXl1FNrQ6594OLS0TK4
-  - https://lh3.googleusercontent.com/JhEh54n3sy2qSujp_fTZiI2fKNrhNu89CzFCEq5zj2G93OWbPhTE4RL9KiR3RVCoIuNL764qv_h72bz_O38V8fvuUbHTn5hFMyETBxoFjFpQ0Muf25vGrDCpBnifxaIJ5_ftARNsmAU
-  - https://lh3.googleusercontent.com/cwoTM3e774B00vcoFYWanHBDlIpMLNZEAaKY-f32lrfWS6YeqNF4ob6paAyxXY-WOEMISb803ppIwlx-vkXCxQJV-aLb0j8wrgJmuF7Ls0jzF8JaCZOaY3DQtYN_B78wqIvlllCIFtc
-  - https://lh3.googleusercontent.com/cf4H-8gFPNhdsECIN7kXzwQgVdFc24tCNIbHshr5gXv8SydGidLU0zlosK4dGLBZZL4BKyIKfBenUDh-rxkkSUsbVomoPh9rZGtc3y2nDqVy_4QZ6lxEjhgN3SZziPjPN4zS9zluJ60
-  - https://lh3.googleusercontent.com/rXx9M2TU4lxH_u97umaXVqxoZAmBBOkAwVc6u__n4tbHKEv3joEqulTXJi7gNGSboL9hH3n86EkUQWLFp5Kpy1DnesDL9u580r0VlB51v7fk_cfBoQsG1--do85gZnznF-3bRbdO06Q
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6996.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6994.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6981.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6976.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6973.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7030.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7077.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7007.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7029.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6970.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7047.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7086.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6998.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7035.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7098.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7074.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7141.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_6965.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/new-zealand/matamata/IMG_7099.JPG
 ---

@@ -61,6 +61,26 @@ const redirects = [
     destination:
       "https://storage.cloud.google.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--xtremejs-2024.pdf",
   },
+  {
+    source: "react-advanced-2024-slides.pdf",
+    destination: "xxx",
+  },
+  {
+    source: "ddd-perth-2024-slides.pdf",
+    destination: "xxx",
+  },
+  {
+    source: "react-summit-us-2024-slides.pdf",
+    destination: "xxx",
+  },
+  {
+    source: "webdirections-dev-summit-slides.pdf",
+    destination: "xxx",
+  },
+  {
+    source: "ddd-brisbane-2024-slides.pdf",
+    destination: "xxx",
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {

@@ -1,6 +1,6 @@
-import dayjs from "dayjs";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { preconnect } from "react-dom";
 
 import { getPageFromPath } from "@/utils/getPageFromPath";
 import { getPagesFromPath } from "@/utils/getPagesFromPath";
@@ -9,6 +9,8 @@ import { getTimeToRead } from "@/utils/getTimeToRead";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
+  preconnect("https://storage.cloud.google.com");
+
   const { slug } = await params;
   const page = await getPageFromPath(`my-work/transcripts/${slug}.md`);
 
@@ -31,8 +33,7 @@ export default async function TranscriptDetailsPage({ params }: any) {
   return (
     <>
       <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/my-work">My work</Link> —{" "}
-        {dayjs(page?.meta?.date).format("MMMM D, YYYY")} —{" "}
+        <Link href="/my-work">My work</Link> — Talk transcript —{" "}
         {getTimeToRead(page?.content?.raw)} min read
       </p>
       <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>

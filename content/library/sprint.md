@@ -6,6 +6,7 @@ tags: business, process
 author: Jake Knapp
 cover: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1457284924l/25814544._SY475_.jpg
 externalUrl: https://www.goodreads.com/book/show/25814544-sprint
+status: read
 ---
 
 ## TL;DR

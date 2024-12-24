@@ -3,10 +3,16 @@ country: Vietnam
 place: Ho Chi Minh
 type: location
 date: 2014-02-12
-latlng: 10.80811354876272, 106.68903230407147
-thumb: https://lh3.googleusercontent.com/Qwco2ShVrIXpQYzRdPFlCHP8LcJc4-ssTsV_z7mHks-86zRPKY4EehIiae4CWgbxzDPDqcTwu__ZWHRLGvBrIM9HxJvWdmQ68oSuLGgVGDTiq3dMdnKd1I8UbG_VKTGuuifA8cwYfg
+latlng: 10.80811354876272,106.68903230407147
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2806--thumb.JPG
 images:
-  - https://lh3.googleusercontent.com/foZP_fasXPKelapFpbMGOwRwrxdMJddJLxEoQhBj9jA6LdxhvG5VvH2WLJDBnTr5XZf-HNBG00OhFuHr2lIEMwOVjAloP1J1XzTRTgLML7s88DvkYIne6HoKxud8FRPM0ePL8VIoaA
-  - https://lh3.googleusercontent.com/Qwco2ShVrIXpQYzRdPFlCHP8LcJc4-ssTsV_z7mHks-86zRPKY4EehIiae4CWgbxzDPDqcTwu__ZWHRLGvBrIM9HxJvWdmQ68oSuLGgVGDTiq3dMdnKd1I8UbG_VKTGuuifA8cwYfg
-  - https://lh3.googleusercontent.com/XHejVyotozKWXKLcgCffct6J9jeq-B2YmYOzW9ZijnXXA6uE7K9bACjdv4cGDmvi0MQSa4iEjcqXTzb3OPeNtvEPe28x_GZDYD-5NAPAAyfQESBvK60qhTdzK2nJUcHGNZbljHxnNA
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2802.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2806.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2815.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2817.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2818.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2804.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2805.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2828.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/vietnam/ho-chi-minh/IMG_2826.JPG
 ---

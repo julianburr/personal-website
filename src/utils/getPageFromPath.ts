@@ -40,7 +40,7 @@ async function parseMarkdown(raw: string) {
   return { raw, html };
 }
 
-export async function getPageFromPath(relFilePath: string) {
+export async function getPageFromPath<Meta = any>(relFilePath: string) {
   try {
     const filePath = path.resolve(contentRoot, relFilePath);
     const fileContent = fs.readFileSync(filePath);
@@ -61,7 +61,7 @@ export async function getPageFromPath(relFilePath: string) {
 
     return {
       pathname: `/${relFilePath.replace(/\.md$/, "")}`,
-      meta,
+      meta: meta as Meta,
       content: await parseMarkdown(content),
     };
   } catch (e) {

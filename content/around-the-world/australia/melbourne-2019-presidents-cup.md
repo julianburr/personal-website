@@ -1,14 +1,19 @@
 ---
 country: Australia
 region: Victoria
-place: 2019 Presidents Cup
+place: Melbourne
+title: Presidents Cup 2019
 type: event
 date: 2019-12-14
-latlng: -37.9694605, 145.030834
-thumb: https://lh3.googleusercontent.com/6ftTIqOcggf1pOGfyiJLMVQbfaBHVhKLsNaXcHZp8mSYc3mwbzTdzhxcJjITYV_VWTsMw47bKGA5fCQxsjwiSDkdcBX0RZXFhBZuF3orHiPd3ZSpF3FvyOMCEhdZQZcz_EbfFgFMdg
+latlng: -37.9725665,145.0531353
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/MVIMG_20191214_074532--thumb.jpg
 images:
-  - https://lh3.googleusercontent.com/oe07d4RR32CN_9hmGKJHANAwm8222AFsrRtPz_tfu2lnIbpcVH7KoMx2O60zuuS_QOyfQOE-YVhCqpjCqS3r_MCwMOg3GXv4jvxx6MiI-wKlewVsz38_MrO8nTTWdnWtS5U9DoaZLw
-  - https://lh3.googleusercontent.com/UmMnQ4T4TGif5YaM8oSyngC3xUMxbPg8PfXUQpjXGBUuzjOkxQlSRD95GyBa5wCKy1LlG2pq_RnH9HH0ZSHWkQVmAogIfUuGA5Lk1LSxpy_IUUf8M2_u9PV3BEnkg89gpIX3PjdLgg
-  - https://lh3.googleusercontent.com/6ftTIqOcggf1pOGfyiJLMVQbfaBHVhKLsNaXcHZp8mSYc3mwbzTdzhxcJjITYV_VWTsMw47bKGA5fCQxsjwiSDkdcBX0RZXFhBZuF3orHiPd3ZSpF3FvyOMCEhdZQZcz_EbfFgFMdg
-  - https://lh3.googleusercontent.com/9nuD5XbukjDJNIuefbkBGyBepDD16oGL9Nc79MsKpDa621g8JTMz3eoqUvw28cuYJejFXQSxylZkmvDjoa8_dwYR2JdhdpqeX5pZUpxyS2C-QkB4Wd8oyC6KESWp6ggBNYQpVNuxJQ
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/MVIMG_20191214_074532.jpg
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/IMG_20191214_143632.jpg
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/IMG_20191214_181413.jpg
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/IMG_20191215_105001.jpg
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/MVIMG_20191214_181426.jpg
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/IMG_20191215_123342.jpg
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/IMG_20191214_103350.jpg
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/australia/melbourne-2019-presidents-cup/MVIMG_20191214_070032.jpg
 ---

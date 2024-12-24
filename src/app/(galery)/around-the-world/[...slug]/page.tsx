@@ -15,7 +15,7 @@ export default async function AroundTheWorldDetailsPage({ params }: any) {
   return (
     <div className="flex flex-1 bg-white absolute inset-[.6rem] sm:inset-[3rem]">
       <div className="w-full h-full relative">
-        <Galery place={page.meta?.place} images={page.meta?.images} />
+        <Galery {...page.meta} />
       </div>
     </div>
   );

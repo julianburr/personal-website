@@ -3,14 +3,18 @@ country: Cambodia
 place: Phnom Penh
 type: location
 date: 2014-04-09
-latlng: 11.570075311726157, 104.91742616646934
-thumb: https://lh3.googleusercontent.com/tfRgF9CTI1yqZSvptcJvNjf9VTZhDh3PXUBl214u1UAh461KUXiBrheGDZZDUflF2Q3kAZZlskuxUsjciaQMsiK-exootvjo7BkVtB-AplvuXbwMcpkSSESdiUzsrWBAyzV6x_YdHA
+latlng: 11.570075311726157,104.91742616646934
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3760--thumb.JPG
 images:
-  - https://lh3.googleusercontent.com/7Yo7mAXgSJJf_ZsNyoBq7Nv7CKzbqphrTEw53RnkF75yO5iWqj9VvORZ8qXDtk7KIQrwPMhmUlaOaGWfjZ_qPmkH3cz1iSeJ1fZ15xUu-PgWzt22JSEYb4_Kznp2d2Il3L7dXizruw
-  - https://lh3.googleusercontent.com/CuZrsASVQ4LSsxnTJANfOD42qmeVEtWWx0V0QpJ0V8s1SaF73WQXvjcPFfgnSBGKZgnQW3c-MuzOP8KBR9zJEvZJxEEMrme2gaArOpqEi_m8G3PTfnRz1kjGmTG_Bpy87k45cl2Baw
-  - https://lh3.googleusercontent.com/xScCajn-4edJdrm738by8Zils3oScAouYkNBdLX_xf73kiQvE2jUnlpsrbq2r6vVcer_kymcodwKGQ_hxG8WxDdylaLqm9vtQnxfhgkZNJEIG9zPOJ1_MI-6oNfftqGEt8CBO11WDg
-  - https://lh3.googleusercontent.com/XWl6LqmdoOKBPjJo8xQPnEPiy-XWN0m5QLA3ZRP980RWO5WDx3jCPkkbQ14o2DifBPzQRJI2p_d9z_F4ROCHA5qJGbh9OvpBY-jU5iRIU-Suy_vppdcvaDhEfz-WOZbQEgcIUVbcTg
-  - https://lh3.googleusercontent.com/Ifnm4GwL1lixe0_gLsi0sSWbrjEQH1Pf0nui7clZwxQPfmseG4Qk_bYR5ajn8fZJVuk-JJIXF1X6Aa_tuFAjsmwUbMziqvo2__C6nZ6RK3e0OYPkWphGffh4drjxJVShm0E_zNJAmQ
-  - https://lh3.googleusercontent.com/tfRgF9CTI1yqZSvptcJvNjf9VTZhDh3PXUBl214u1UAh461KUXiBrheGDZZDUflF2Q3kAZZlskuxUsjciaQMsiK-exootvjo7BkVtB-AplvuXbwMcpkSSESdiUzsrWBAyzV6x_YdHA
-  - https://lh3.googleusercontent.com/1Ntt5nPlKc3dxAoWtO98n5cO1zQRM1n8MfoDshvblRJWj82fYglGiCarl6PWEXgUYbHX62HuN7FPEV25P96mnhR9NLcn0IT9m2vqCUYRh6kDR9Oh43z1MRnPyuYFzTEvkZCeJWFf6Q
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3726.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3729.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3734.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3740.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3759.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3760.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3762.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3769.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3772.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3786.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/cambodia/phnom-penh/IMG_3795.JPG
 ---

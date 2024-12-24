@@ -4,20 +4,33 @@ region: Matale
 place: Sigiriya
 type: landmark
 date: 2013-11-05
-latlng: 7.956394941551807, 80.75737927404987
-thumb: https://lh3.googleusercontent.com/zx0__t6M8eYxWKjmHRhASI6LByJQX_kosiF6Oo9tUkQbmsWQbUE3f-a2qHdulkGmABGh9x0sufB8ILXcBdK_7n4rbOYynixcyLAze2cU2uW6frm2aoBPUVrfALT-e2lmK6RcV4qWAg
+latlng: 7.956394941551807,80.75737927404987
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0925--thumb.JPG
 images:
-  - https://lh3.googleusercontent.com/orrAofA-WNdGMxrbsCwerJDpjRIkI1wU57PWGryePYi5PjeUP2B-Gq0gM-gkFyQkK1LLDvT6--yLsiEG-LVjRSeRd6RU03KgiNCc7HA7lYkjnCFIWq3iTRWyLjOSampybPIwZCIV8w
-  - https://lh3.googleusercontent.com/wfAuR1EXOqVrk97e1dRhDB5eh6rmH7hVam-o6nCQXVjA925lii_dy-HWfWc_fP5AbfbFQLK83iEIWshu0_81AahV4FmqPBGM1znMK-SC8Shd4Q3awf7QJO3oJ61Jibgy1bGmCv_WOg
-  - https://lh3.googleusercontent.com/zx0__t6M8eYxWKjmHRhASI6LByJQX_kosiF6Oo9tUkQbmsWQbUE3f-a2qHdulkGmABGh9x0sufB8ILXcBdK_7n4rbOYynixcyLAze2cU2uW6frm2aoBPUVrfALT-e2lmK6RcV4qWAg
-  - https://lh3.googleusercontent.com/G0akreoEBqxRD_28hLBnZezJ2HS4Awm78Xy3fP_lXqNJXisenJVEuPlwgtbZBN1zUVXRRIELifx7vKtVYml7vakDAWYTkvMe-pipNsDw4vlIIZa0qytzlu_HMXMGRAF-KYfxvcfNnw
-  - https://lh3.googleusercontent.com/liz9-JvLzkRoe_EM7ZBOltOYtrxRdBo3GCeIKr6lAiokgdGYYFYGZkmv8cg9hajU8KO3N9OfYyr6QmaOLlyz8D4wxq3qPsb-mqKG8Y9c6mgbmexDLFZuC_O7ClYCJzgsIo9UDzy7fQ
-  - https://lh3.googleusercontent.com/zfFWVFXNizNMJUYZoPNqm3KCCvBNecQZAoO4VJvdpkGFkm7U_0FfpXqvkvo9aOLvSQhPwKcLHxZDRuvUQkEo8lACF00DMi3s7uV5QAwsZstfMvU7z742n-4zHof4odLkTkeiJ4yK4A
-  - https://lh3.googleusercontent.com/o-pxqdBkn7Yv4eMM9YMT-ex3DP9xDpR9SCWdXasb_-8I6i9GwySjilIjdcUWVcWoUW3no9pEje7vHg3jTAl0p4j8k0vIzpT_IltLmuqyHbGAtWvG4wsTEIdoKMCHCXkTG0EGQLe8Dg
-  - https://lh3.googleusercontent.com/DAFGxO5QRoVx9N1eDLHqYVoOD9ai6rvnhUu67YBQeKth1yKN6mwwHPj3PeMg6ym-EwALspV5L2UqL8QnacQAAUgJtXzAtD379Zg0arL17abdWrbPkxWNUIwePmn2VdC3zEfdyxFI7Q
-  - https://lh3.googleusercontent.com/j6-WCHNEE2ZCX44eXl_eJvXhjAQuhPJHYz4ambmwEJxClmZR0VzocAHhgSKhap0jOfvVEJwO8AKSw_NONYKLmEtfJCUjae29HGZOG8aNVVR4vSmvHqogeXZT9nBAZL24X1OfSJ-ipA
-  - https://lh3.googleusercontent.com/AH1siyObRlFtgXJhjUrS8xLEPgf11o63qOHH6no_MBCer5G5agE2eJXANrACe3dTZzHhAHD1COuCudeH2qaPG5mULEQKZ3Y0Ptb6CJ2CqfUJ6SkZt6OqN0hrGBBKNSynBvXrCHpVvw
-  - https://lh3.googleusercontent.com/wsU9sZV5tZYyYuW6H-c6HQljwhg39qD3E96MrGbsiNME1ViVyfBsrmEtJbUBoT73RAmiP6iWxy3o3h0RibDYhM7gYN8_Lj3wboiK90HHmeoc1CUcMWOWiK-KOozc18HIPwOYI7VWUQ
-  - https://lh3.googleusercontent.com/S7s92Imsf-LhoY0gr9jTiqZsFrkds1Ikp0TRKzwrAuvRMvqpwj8FnrJMuew_cwOR-au8gXBfnihBsMxoR14BLpkJXmcsfUqB9wdo4feafltV3skFifNaujx3abGvKgtKmmLHl3CzTQ
-  - https://lh3.googleusercontent.com/-CA826Yndp3J6vrGeVzJX2zWDdIAI5FRwdOVViz3kYYJIXaPqq-73KJYU1Wwbg8d8mqX6i4I0ZgeRnz9u9sKgJEEPLH_IlmRd2pDn7gKydUZmkOSiwnwY2lVt0YSJj2671azBcSJ1g
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0993.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0949.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_1001.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0946.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0979.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0978.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0957.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_1013.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0951.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0925.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0994.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_1017.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0943.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0972.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0999.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0965.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0966.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0963.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0952.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0969.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0975.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_1000.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0924.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0954.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0990.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/sri-lanka/sigiriya/IMG_0960.JPG
 ---

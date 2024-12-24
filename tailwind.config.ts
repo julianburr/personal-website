@@ -28,8 +28,23 @@ const config: Config = {
       dropShadow: {
         lg: "0 .3rem .8rem rgba(0, 0, 0, .1)",
       },
+      keyframes: {
+        float: {
+          "0%": { transform: "translate3d(0, -100%, 0)" },
+          "10%": { transform: "translate3d(7%, -96%, 0)" },
+          "30%": { transform: "translate3d(10%, -98%, 0)" },
+          "50%": { transform: "translate3d(11%, -94%, 0)" },
+          "70%": { transform: "translate3d(7%, -99%, 0)" },
+          "80%": { transform: "translate3d(3%, -97%, 0)" },
+          "100%": { transform: "translate3d(0, -100%, 0)" },
+        },
+      },
+      animation: {
+        float: "float 12s ease-in-out infinite",
+      },
     },
   },
+
   plugins: [],
 };
 
