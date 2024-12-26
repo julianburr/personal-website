@@ -30,7 +30,6 @@ events:
     url: https://reactsummit.us/
     type: conference
     slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-summit-us-2024.pdf
-    videoEmbed: https://player.vimeo.com/video/1027567749
     videoUrl: https://gitnation.com/contents/lets-build-suspense
     place:
       country: US
@@ -44,7 +43,6 @@ events:
     url: https://reactadvanced.com/
     type: conference
     slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-advanced-2024.pdf
-    videoEmbed: https://player.vimeo.com/video/1020556090
     videoUrl: https://gitnation.com/contents/lets-build-suspense-2503
     place:
       country: UK
