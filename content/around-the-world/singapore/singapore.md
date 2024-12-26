@@ -1,0 +1,46 @@
+---
+country: Singapore
+city: Singapore
+type: location
+date: 2014-02-02
+latlng: 1.3516161224392,103.808052586332
+thumb: https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2493--thumb.JPG
+images:
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2622.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2674.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2591.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2564.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2572.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2582.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2664.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2480.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2561.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2565.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2653.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2621.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2612.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2597.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2624.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2557.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2589.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2603.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2486.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2659.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2681.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2707.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2581.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2516.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2633.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2548.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2536.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2550.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2555.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2525.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2608.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2782.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2484.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2510.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2493.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2722.JPG
+  - https://storage.cloud.google.com/julianburr-me-assets/around-the-world/singapore/singapore/IMG_2602.JPG
+---

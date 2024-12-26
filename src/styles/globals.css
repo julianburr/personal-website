@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --page--color: #f7f4ee;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  @apply font-heading;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child {
+  @apply first:pt-0;
+}
+
+h1 {
+  @apply text-5xl pt-6 pb-2 leading-[1.15];
+}
+
+h2 {
+  @apply text-2xl pt-4 pb-1 leading-[1.3];
+}
+
+h3 {
+  @apply text-xl pt-4 pb-1 leading-[1.3];
+}
+
+/* Paragraphs */
+p {
+  @apply py-[.4rem];
+}
+
+a {
+  @apply font-bold text-[var(--page--color)] hover:underline;
+}
+
+/* Emojis */
+img.emoji {
+  @apply h-[1.2rem] w-auto mx-[.2rem] inline align-middle translate-y-[-.2rem];
+}
+
+/* Markdown */
+main ul {
+  @apply py-[.2rem] pl-[2rem];
+}
+
+main ul li {
+  @apply py-[.2rem] list-none relative before:content-["—"] before:absolute before:left-[-1.2rem];
+}
+
+main code {
+  @apply bg-grey-medium px-[.2rem] rounded-sm font-mono text-[.9em];
+}
+
+main .katex-mathml + .katex-html {
+  @apply hidden;
+}
+
+main pre[class*="language-"] {
+  @apply rounded-none border-none text-[.9em] leading-[1.6] font-mono mx-[.2rem] my-[1.4rem] w-[calc(100%_-.4rem)] p-[1.2rem] sm:mx-[.4rem] sm:p-[1.4rem] sm:w-[calc(100%_-.8rem)];
+}
+
+main pre[class*="language-"] code {
+  @apply bg-transparent p-0;
+}
+
+main hr {
+  @apply bg-grey-light my-[2.4rem] mx-auto w-full max-w-[12rem];
+}
+
+main .details section {
+  @apply pb-[.8rem] md:py-[.8rem];
+}
+
+main .details img:not(.emoji) {
+  @apply m-[.5rem] shadow-lg w-[calc(100%_-_1rem)] mx-auto;
+}
+
+main iframe.video-embed {
+  @apply w-full aspect-[16/9];
+}
+
+/* Tooltips -- NOTE: doesn't work nicely with tailwind for some reason, so using plain CSS here :| */
+[role="tooltip"] {
+  @apply shadow-lg p-[.6rem] text-xs font-default bg-black text-white;
+
+  transition:
+    opacity 0.2s,
+    display 0.2s allow-discrete;
+
+  opacity: 0;
+}
+
+[role="tooltip"]:popover-open {
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+  }
+}

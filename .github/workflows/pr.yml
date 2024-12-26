@@ -1,0 +1,98 @@
+name: PR
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review, converted_to_draft]
+
+concurrency:
+  group: pr-${{ github.event.number }}
+  cancel-in-progress: true
+
+permissions:
+  issues: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: 20
+
+jobs:
+  tests:
+    name: 🧪 Run tests and linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup node env
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Checkout shared actions repo
+        uses: actions/checkout@master
+        with:
+          repository: julianburr/github-actions
+          path: ./.github/shared
+
+      - name: Install actions dependencies
+        shell: bash
+        run: yarn --cwd=.github/shared
+
+      - name: Cache node modules
+        uses: ./.github/shared/cache-node-modules
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run linter, tests and type checks
+        run: |
+          yarn lint
+          yarn test
+          yarn typecheck
+
+  deploy_preview:
+    name: 🚀 Deploy preview environment
+    runs-on: ubuntu-latest
+    needs: [tests]
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Checkout shared actions repo
+        uses: actions/checkout@master
+        with:
+          repository: julianburr/github-actions
+          path: ./.github/shared
+
+      - name: Install actions dependencies
+        shell: bash
+        run: yarn --cwd=.github/shared
+
+      - name: Cache node modules
+        uses: ./.github/shared/cache-node-modules
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Deploy app to vercel
+        id: deploy
+        uses: ./.github/shared/vercel-deploy-app
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          alias: pr-${{ github.event.number }}--julianburr-me.vercel.app
+
+      - name: Add comment with deployment url
+        uses: ./.github/shared/github-create-comment
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-number: ${{ github.event.number }}
+          id: ${{ github.event.number }}-pr-env-deployment
+          content: |
+            ### PR deployed successfully
+            PR environment has been deployed to ${{ steps.deploy.outputs.url }}

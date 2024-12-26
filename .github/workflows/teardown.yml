@@ -1,0 +1,41 @@
+name: Teardown
+
+on:
+  pull_request:
+    types: [closed]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: 20
+
+jobs:
+  teardown:
+    name: Teardown
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup node env
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Checkout shared actions repo
+        uses: actions/checkout@master
+        with:
+          repository: julianburr/github-actions
+          path: ./.github/shared
+
+      - name: Install actions dependencies
+        run: yarn --cwd=.github/shared
+
+      - name: Remove app alias & clean up deployments 🧹
+        uses: ./.github/shared/vercel/teardown
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-names: |
+            julianburr-me

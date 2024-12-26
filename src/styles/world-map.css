@@ -1,0 +1,28 @@
+.mapboxgl-popup.mapboxgl-popup {
+  filter: drop-shadow(0 0.4rem 1rem rgba(0, 0, 0, 0.5));
+}
+
+.mapboxgl-popup-content.mapboxgl-popup-content {
+  box-shadow: none;
+  border-radius: 0;
+  position: relative;
+  padding: 0;
+}
+
+.mapboxgl-popup-tip.mapboxgl-popup-tip {
+  display: none;
+}
+
+.mapboxgl-popup-close-button.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.mapboxgl-map.mapboxgl-map {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.mapboxgl-canvas.mapboxgl-canvas {
+  filter: brightness(1.14);
+}
