@@ -32,7 +32,7 @@ jobs:
         run: yarn --cwd=.github/shared
 
       - name: Remove app alias & clean up deployments 🧹
-        uses: ./.github/shared/vercel/teardown
+        uses: ./.github/shared/vercel-teardown
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}

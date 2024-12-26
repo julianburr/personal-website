@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { IBM_Plex_Mono, Lato, Staatliches } from "next/font/google";
 import { Suspense } from "react";
 
@@ -58,6 +59,9 @@ export default function RootLayout({ children }: Props) {
       </html>
 
       <UseTwitterEmojis />
+      {process.env.GOOGLE_ANALYTICS_ID && (
+        <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID} />
+      )}
     </>
   );
 }
