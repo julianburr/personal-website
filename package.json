@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^1.6.12",
+    "@next/third-parties": "^15.1.2",
     "@phosphor-icons/react": "^2.1.7",
     "@remark-embedder/core": "^3.0.3",
     "@remark-embedder/transformer-oembed": "^5.0.1",
