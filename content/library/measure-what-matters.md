@@ -1,5 +1,6 @@
 ---
 title: Measure What Matters
+description: "OKRs: The simple idea that drives 10x growth"
 date: 2020-02-12
 tags: business, goals
 author: John Doerr

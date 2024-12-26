@@ -12,6 +12,7 @@ export type BookFrontmatter = {
   cover: string;
   author: string;
   title: string;
+  description?: string;
   externalUrl?: string;
   status: "read" | "reading" | "shelf";
 };

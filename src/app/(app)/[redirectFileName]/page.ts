@@ -63,23 +63,23 @@ const redirects = [
   },
   {
     source: "react-advanced-2024-slides.pdf",
-    destination: "xxx",
-  },
-  {
-    source: "ddd-perth-2024-slides.pdf",
-    destination: "xxx",
+    destination:
+      "https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-advanced-2024.pdf",
   },
   {
     source: "react-summit-us-2024-slides.pdf",
-    destination: "xxx",
+    destination:
+      "https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-summit-us-2024.pdf",
   },
   {
     source: "webdirections-dev-summit-slides.pdf",
-    destination: "xxx",
+    destination:
+      "https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--webdirections-dev-summit-2024.pdf",
   },
   {
     source: "ddd-brisbane-2024-slides.pdf",
-    destination: "xxx",
+    destination:
+      "https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers-ddd-brisbane-2024.pdf",
   },
 ];
 

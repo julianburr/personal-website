@@ -8,11 +8,12 @@ import { getPageFromPath } from "@/utils/getPageFromPath";
 import { getPagesFromPath } from "@/utils/getPagesFromPath";
 import { getTimeToRead } from "@/utils/getTimeToRead";
 
+import type { BookFrontmatter } from "@/app/(app)/library/page";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { slug } = await params;
-  const page = await getPageFromPath(`library/${slug}.md`);
+  const page = await getPageFromPath<BookFrontmatter>(`library/${slug}.md`);
 
   if (!page) {
     return notFound();
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 
 export default async function LibraryDetailsPage({ params }: any) {
   const { slug } = await params;
-  const page = await getPageFromPath(`library/${slug}.md`);
+  const page = await getPageFromPath<BookFrontmatter>(`library/${slug}.md`);
 
   if (!page) {
     return notFound();
@@ -33,8 +34,10 @@ export default async function LibraryDetailsPage({ params }: any) {
   return (
     <>
       <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/library">Library</Link> —{" "}
-        {getTimeToRead(page?.content?.raw)} min summary
+        <Link href="/library">Library</Link>
+        {!!page?.content?.raw && (
+          <> — {getTimeToRead(page?.content?.raw)} min summary</>
+        )}
       </p>
       <h1 className="p-0 mt-1">{page?.meta?.title}</h1>
 
@@ -85,7 +88,7 @@ export default async function LibraryDetailsPage({ params }: any) {
 }
 
 export async function generateStaticParams() {
-  const posts = await getPagesFromPath("library");
+  const posts = await getPagesFromPath<BookFrontmatter>("library");
 
   return posts.map((post) => ({
     slug: post?.pathname.replace(/^\/library\//, ""),
