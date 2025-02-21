@@ -79,7 +79,12 @@ const redirects = [
   {
     source: "ddd-brisbane-2024-slides.pdf",
     destination:
-      "https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers-ddd-brisbane-2024.pdf",
+      "https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--ddd-brisbane-2024.pdf",
+  },
+  {
+    source: "ddd-melbourne-2025-slides.pdf",
+    destination:
+      "https://storage.cloud.google.com/julianburr-me-assets/talk-slides/on-the-shoulder-of-giants--ddd-melbourne-2025.pdf",
   },
 ];
 
