@@ -1,6 +1,6 @@
 ---
 title: (Don’t) Stay Hydrated – A Look at Server Components, Astro, Qwik and Why We Need Them
-coverUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-covers/dont-stay-hydrated.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/dont-stay-hydrated.png
 events:
   ddd-perth-2024:
     date: 2024-11-16
@@ -20,7 +20,7 @@ events:
     type: conference
     videoUrl: https://www.youtube.com/?watch=l9wnzLKjjIE
     videoEmbed: https://www.youtube.com/embed/l9wnzLKjjIE
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/dont-stay-hydrated--react-connection-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/dont-stay-hydrated--react-connection-2024.pdf
     place:
       country: France
       city: Paris
@@ -30,7 +30,7 @@ events:
     name: BrisJS
     url: https://brisjs.org/
     type: meetup
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/dont-stay-hydrated--brisjs-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/dont-stay-hydrated--brisjs-2024.pdf
     place:
       country: Australia
       region: Queensland

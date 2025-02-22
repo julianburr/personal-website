@@ -1,6 +1,6 @@
 ---
 title: Typescript — An Introduction and How To Make It Work In Your Team
-coverUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-covers/typescript-an-introduction-and-how-to-make-it-work-in-your-team.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/typescript-an-introduction-and-how-to-make-it-work-in-your-team.png
 events:
   reactbris-2023:
     date: 2023-04-20

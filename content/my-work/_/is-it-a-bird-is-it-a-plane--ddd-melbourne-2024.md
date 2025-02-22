@@ -12,5 +12,5 @@ cover: /assets/talk-covers/is-it-a-bird-is-it-a-plane--ddd-melbourne-2024.png
 eventUrl: https://www.dddmelbourne.com/
 videoEmbed: https://www.youtube.com/embed/FO0Qn_5NLSY
 videoUrl: https://www.youtube.com/watch?v=FO0Qn_5NLSY
-slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/is-it-a-bird-is-it-a-plane--ddd-melbourne-2024.pdf
+slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/is-it-a-bird-is-it-a-plane--ddd-melbourne-2024.pdf
 ---

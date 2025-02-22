@@ -11,5 +11,5 @@ event: ../NEW
 eventUrl: https://slashnew.tech/
 videoEmbed: https://www.youtube.com/embed/8gvEy3KXYfQ
 videoUrl: https://www.youtube.com/watch?v=8gvEy3KXYfQ
-slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--slashnew-2024.pdf
+slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--slashnew-2024.pdf
 ---

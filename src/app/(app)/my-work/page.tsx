@@ -40,7 +40,7 @@ export default async function MyWorkPage() {
     .reduce<[typeof talks, typeof talks]>(
       (all, talk) => {
         const { __lastEvent, ...rest } = talk;
-        if (talk?.meta?.coverUrl) {
+        if (new Date(talk.__lastEvent!.date)?.getFullYear() >= 2023) {
           all[0].push(rest);
         } else {
           all[1].push(rest);

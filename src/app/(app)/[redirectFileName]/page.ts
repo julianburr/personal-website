@@ -84,7 +84,7 @@ const redirects = [
   {
     source: "ddd-melbourne-2025-slides.pdf",
     destination:
-      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/on-the-shoulder-of-giants--ddd-melbourne-2025.pdf",
+      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/on-the-shoulders-of-giants--ddd-melbourne-2025.pdf",
   },
 ];
 

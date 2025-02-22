@@ -1,13 +1,13 @@
 ---
 title: Let's Build Suspense
-coverUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-covers/lets-build-suspense.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/lets-build-suspense.png
 events:
   brisjs-2024:
     date: 2024-12-02
     name: BrisJS
     url: https://brisjs.org/
     type: meetup
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--brisjs-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/lets-build-suspense--brisjs-2024.pdf
     place:
       country: Australia
       region: Queensland
@@ -18,7 +18,7 @@ events:
     name: Web Directions Dev Summit
     url: https://webdirections.org/dev-summit/
     type: conference
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--webdirections-dev-summit-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/lets-build-suspense--webdirections-dev-summit-2024.pdf
     place:
       country: Australia
       region: New South Wales
@@ -29,7 +29,7 @@ events:
     name: React Summit US
     url: https://reactsummit.us/
     type: conference
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-summit-us-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-summit-us-2024.pdf
     videoUrl: https://gitnation.com/contents/lets-build-suspense
     place:
       country: US
@@ -42,7 +42,7 @@ events:
     name: React Advanced
     url: https://reactadvanced.com/
     type: conference
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-advanced-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-advanced-2024.pdf
     videoUrl: https://gitnation.com/contents/lets-build-suspense-2503
     place:
       country: UK

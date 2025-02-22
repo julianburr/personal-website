@@ -1,6 +1,6 @@
 ---
 title: Quantum Computing for Classical Developers
-coverUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-covers/quantum-computing-for-classical-developers.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/quantum-computing-for-classical-developers.png
 transcriptUrl: /my-work/transcripts/quantum-computing-for-classical-developers
 events:
   ddd-brisbane-2024:
@@ -8,7 +8,7 @@ events:
     name: DDD Brisbane
     url: https://www.dddbrisbane.com/
     type: conference
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--ddd-brisbane-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--ddd-brisbane-2024.pdf
     place:
       country: Australia
       region: Queensland
@@ -20,7 +20,7 @@ events:
     url: https://www.wearedevelopers.com/world-congress/
     type: conference
     videoUrl: https://www.wearedevelopers.com/en/videos/1153/quantum-computing-for-classical-developers
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--world-congress-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--world-congress-2024.pdf
     place:
       country: Germany
       city: Berlin
@@ -30,7 +30,7 @@ events:
     name: DWX Developer Week
     url: https://www.developer-week.de/en/
     type: conference
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--dwx-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--dwx-2024.pdf
     place:
       country: Germany
       region: Bavaria

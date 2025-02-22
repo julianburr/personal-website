@@ -11,7 +11,7 @@ event: WAD World Congress
 eventUrl: https://www.wearedevelopers.com/world-congress/
 transcriptUrl: /my-work/transcripts/quantum-computing-for-classical-developers
 videoUrl: https://www.wearedevelopers.com/en/videos/1153/quantum-computing-for-classical-developers
-slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--world-congress-2024.pdf
+slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/quantum-computing-for-classical-developers--world-congress-2024.pdf
 ---
 
 Quantum computing has been in and out of the news for quite some time now, with promises to break encryption and revolutionise AI, simulations and whole industries. However, for a major part of the public, and even most developers, it remains a bit of a mystery.

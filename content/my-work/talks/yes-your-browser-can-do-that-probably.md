@@ -1,6 +1,6 @@
 ---
 title: Yes, Your Browser Can Do That (Probably)
-coverUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-covers/yes-your-browser-can-do-that-probably.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/yes-your-browser-can-do-that-probably.png
 events:
   ndc-melbourne-2025:
     date: 2025-04-29
@@ -15,7 +15,7 @@ events:
     name: XtremeJS
     url: https://xtremejs.dev/
     type: conference
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--xtremejs-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--xtremejs-2024.pdf
     videoEmbed: https://www.youtube.com/embed/nR7-XkLKqtw
     videoUrl: https://www.youtube.com/watch?v=nR7-XkLKqtw
     place:
@@ -26,7 +26,7 @@ events:
     url: https://xtremejs.dev/
     type: conference
     videoUrl: https://conffab.com/presentation/yes-your-browser-can-do-that-probably-a-look-at-modern-web-apis-you-might-not-know/?gl=iaoZL5DJZO30
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--web-directions-code-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--web-directions-code-2024.pdf
     place:
       country: Australia
       region: Victoria
@@ -39,7 +39,7 @@ events:
     type: conference
     videoEmbed: https://www.youtube.com/embed/8gvEy3KXYfQ
     videoUrl: https://www.youtube.com/watch?v=8gvEy3KXYfQ
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--slashnew-2024.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--slashnew-2024.pdf
     place:
       country: Australia
       region: New South Wales
@@ -50,7 +50,7 @@ events:
     platform: Conference
     name: DDD Brisbane
     url: https://www.dddbrisbane.com/
-    slidesUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--ddd-brisbane-2022.pdf
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--ddd-brisbane-2022.pdf
     place:
       country: Australia
       region: Queensland

@@ -1,6 +1,6 @@
 ---
 title: Web APIs You Might Not Know
-coverUrl: https://storage.cloud.google.com/julianburr-me-assets/talk-covers/web-apis-you-might-not-know.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/web-apis-you-might-not-know.png
 events:
   sydjs-2023:
     date: 2023-12-13
