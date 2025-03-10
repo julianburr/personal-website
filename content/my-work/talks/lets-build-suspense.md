@@ -17,7 +17,6 @@ events:
     date: 2024-11-28
     name: Web Directions Dev Summit
     url: https://webdirections.org/dev-summit/
-    type: conference
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/lets-build-suspense--webdirections-dev-summit-2024.pdf
     place:
       country: Australia
@@ -28,7 +27,6 @@ events:
     date: 2024-11-22
     name: React Summit US
     url: https://reactsummit.us/
-    type: conference
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-summit-us-2024.pdf
     videoUrl: https://gitnation.com/contents/lets-build-suspense
     place:
@@ -41,7 +39,6 @@ events:
     date: 2024-10-28
     name: React Advanced
     url: https://reactadvanced.com/
-    type: conference
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/lets-build-suspense--react-advanced-2024.pdf
     videoUrl: https://gitnation.com/contents/lets-build-suspense-2503
     place:

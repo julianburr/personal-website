@@ -14,7 +14,6 @@ events:
     date: 2024-11-12
     name: XtremeJS
     url: https://xtremejs.dev/
-    type: conference
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--xtremejs-2024.pdf
     videoEmbed: https://www.youtube.com/embed/nR7-XkLKqtw
     videoUrl: https://www.youtube.com/watch?v=nR7-XkLKqtw
@@ -24,7 +23,6 @@ events:
     date: 2024-06-20
     name: Web Directions Code
     url: https://xtremejs.dev/
-    type: conference
     videoUrl: https://conffab.com/presentation/yes-your-browser-can-do-that-probably-a-look-at-modern-web-apis-you-might-not-know/?gl=iaoZL5DJZO30
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--web-directions-code-2024.pdf
     place:
@@ -36,7 +34,6 @@ events:
     date: 2024-05-15
     name: ../NEW
     url: https://slashnew.tech/
-    type: conference
     videoEmbed: https://www.youtube.com/embed/8gvEy3KXYfQ
     videoUrl: https://www.youtube.com/watch?v=8gvEy3KXYfQ
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--slashnew-2024.pdf
@@ -47,7 +44,6 @@ events:
       latlng: -32.9762667,151.5248924
   ddd-brisbane-2024:
     date: 2022-12-03
-    platform: Conference
     name: DDD Brisbane
     url: https://www.dddbrisbane.com/
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--ddd-brisbane-2022.pdf

@@ -5,5 +5,5 @@ tags: history
 author: Jeff Jarvis
 cover: https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1680591638i/62711639.jpg
 externalUrl: https://www.goodreads.com/book/show/62711639-the-gutenberg-parenthesis
-status: reading
+status: read
 ---
