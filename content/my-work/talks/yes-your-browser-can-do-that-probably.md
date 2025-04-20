@@ -6,6 +6,7 @@ events:
     date: 2025-04-29
     name: NDC Melbourne
     url: https://ndcmelbourne.com/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--ndc-melbourne-2025.pdf
     place:
       country: Australia
       region: Victoria
