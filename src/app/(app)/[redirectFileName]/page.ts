@@ -91,6 +91,11 @@ const redirects = [
     destination:
       "https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--ndc-melbourne-2025.pdf",
   },
+  {
+    source: "brisjs-2025-slides.pdf",
+    destination:
+      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--brisjs-2025.pdf",
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {

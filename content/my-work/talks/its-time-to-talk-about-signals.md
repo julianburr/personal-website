@@ -1,6 +1,18 @@
 ---
 title: It's Time to Talk About Signals
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/its-time-to-talk-about-signals.png
 events:
+  brisjs-2025:
+    date: 2025-05-12
+    name: BrisJS
+    url: https://brisjs.org/
+    type: meetup
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--brisjs-2025.pdf
+    place:
+      country: Australia
+      region: Queensland
+      city: Brisbane
+      latlng: -27.469,153.0235
   web-directions-code-2025:
     date: 2025-06-12
     name: Web Directions Code

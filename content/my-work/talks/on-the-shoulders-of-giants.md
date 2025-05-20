@@ -7,7 +7,7 @@ events:
     name: DDD Melbourne
     url: https://www.dddmelbourne.com/
     type: conference
-    videoEmbed: https://www.youtube.com/watch?v=BsrYi-TEzyw
+    videoEmbed: https://www.youtube.com/embed/BsrYi-TEzyw
     videoUrl: https://www.youtube.com/watch?v=BsrYi-TEzyw
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/on-the-shoulders-of-giants--ddd-melbourne-2025.pdf
     place:
