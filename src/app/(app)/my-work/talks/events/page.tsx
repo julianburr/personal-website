@@ -8,9 +8,6 @@ import { getPagesFromPath } from "@/utils/getPagesFromPath";
 
 import type { TalkFrontmatter } from "@/features/my-work/TalkListItem";
 
-// Force dynamic to ensure date filter is working as expected
-export const dynamic = "force-dynamic";
-
 type EnhancedEvent = TalkFrontmatter["events"][string] & {
   talk: Awaited<ReturnType<typeof getPagesFromPath<TalkFrontmatter>>>[number];
 };

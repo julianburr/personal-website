@@ -96,6 +96,11 @@ const redirects = [
     destination:
       "https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--brisjs-2025.pdf",
   },
+  {
+    source: "slashnew-2025-slides.pdf",
+    destination:
+      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/the-web-is-your-a11y--slashnew-2025.pdf",
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {

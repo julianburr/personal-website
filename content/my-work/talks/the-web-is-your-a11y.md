@@ -5,6 +5,8 @@ events:
     date: 2025-05-28
     name: ../NEW
     url: https://slashnew.tech/
+    type: conference
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/the-web-is-your-a11y--slashnew-2025.pdf
     place:
       country: Australia
       region: New South Wales
