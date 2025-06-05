@@ -7,6 +7,8 @@ events:
     name: NDC Melbourne
     url: https://ndcmelbourne.com/
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--ndc-melbourne-2025.pdf
+    videoEmbed: https://www.youtube.com/embed/DkUbP23ytpw
+    videoUrl: https://www.youtube.com/watch?v=DkUbP23ytpw
     place:
       country: Australia
       region: Victoria

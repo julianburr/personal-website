@@ -1,5 +1,6 @@
 ---
 title: The Web Is Your A11y
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/the-web-is-your-a11y.png
 events:
   slashnew-2025:
     date: 2025-05-28
