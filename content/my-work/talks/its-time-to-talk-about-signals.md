@@ -17,6 +17,7 @@ events:
     date: 2025-06-12
     name: Web Directions Code
     url: https://webdirections.org/code/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--web-directions-code-2025.pdf
     place:
       country: Australia
       region: Victoria
