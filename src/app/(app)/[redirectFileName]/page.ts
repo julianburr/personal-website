@@ -106,6 +106,11 @@ const redirects = [
     destination:
       "https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--web-directions-code-2025.pdf",
   },
+  {
+    source: "uxdx-2025-slides.pdf",
+    destination:
+      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--uxdx-2025.pdf",
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {
