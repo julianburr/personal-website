@@ -15,6 +15,8 @@ events:
     name: UXDX
     url: https://uxdx.com/
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--uxdx-2025.pdf
+    videoEmbed: https://www.youtube.com/embed/XCptAIkRRKU
+    videoUrl: https://www.youtube.com/watch?v=XCptAIkRRKU
     place:
       online: true
 ---
