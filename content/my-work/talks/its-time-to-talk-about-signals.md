@@ -23,6 +23,16 @@ events:
       region: Victoria
       city: Melbourne
       latlng: -37.9725665,145.0531353
+  react-summit-us-2025:
+    date: 2025-11-18
+    name: React Summit US
+    url: https://reactsummit.us/
+    place:
+      country: US
+      region: New York
+      city: New York
+      latlng: 40.776269874077315,-73.96851476035752
+      online: true
 ---
 
 With the active TC39 proposal in play, I think it’s about time we talk about Signals.
