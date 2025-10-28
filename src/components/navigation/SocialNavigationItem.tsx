@@ -16,6 +16,7 @@ export function SocialNavigationItem({ id, href, title, Icon }: Props) {
         "text-notist-grey": id === "notist",
         "text-github-grey": id === "github",
         "text-linkedin-blue": id === "linkedin",
+        "text-bluesky-blue": id === "bluesky",
       })}
     >
       <a

@@ -1,8 +1,8 @@
+import LogoBluesky from "@/assets/social/bluesky.svg";
 import LogoGithub from "@/assets/social/github.svg";
 import LogoLinkedIn from "@/assets/social/linkedin.svg";
 import LogoMedium from "@/assets/social/medium.svg";
 import LogoNotist from "@/assets/social/notist.svg";
-import LogoTwitter from "@/assets/social/twitter.svg";
 
 const items = [
   {
@@ -57,10 +57,10 @@ const socials = [
     Icon: LogoNotist,
   },
   {
-    id: "twitter",
-    href: "https://twitter.com/jburr90",
-    title: "@jburr90 on Twitter",
-    Icon: LogoTwitter,
+    id: "bluesky",
+    href: "https://bsky.app/profile/julianburr.de",
+    title: "@julianburr.de on Bluesky",
+    Icon: LogoBluesky,
   },
   {
     id: "github",

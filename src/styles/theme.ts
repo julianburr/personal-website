@@ -20,4 +20,5 @@ export const COLORS = {
   "github-grey": "#3A3A1A",
   "notist-grey": "#3A3A1A",
   "linkedin-blue": "#0B66C2",
+  "bluesky-blue": "#1285FE",
 };
