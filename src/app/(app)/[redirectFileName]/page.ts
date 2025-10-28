@@ -111,6 +111,16 @@ const redirects = [
     destination:
       "https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--uxdx-2025.pdf",
   },
+  {
+    source: "oredev-2025-slides.pdf",
+    destination:
+      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--oredev-2025.pdf",
+  },
+  {
+    source: "react-summit-us-2025-slides.pdf",
+    destination:
+      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/from-pull-to-push--react-summit-us-2025.pdf",
+  }
 ];
 
 export default async function AssetRedirectPage({ params }: any) {
