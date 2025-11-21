@@ -27,6 +27,8 @@ events:
     date: 2025-11-18
     name: React Summit US
     url: https://reactsummit.us/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--react-summit-us-2025.pdf
+    videoUrl: https://gitnation.com/contents/from-pull-to-push-its-time-to-talk-about-signals
     place:
       country: US
       region: New York

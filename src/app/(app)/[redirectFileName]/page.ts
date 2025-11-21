@@ -119,7 +119,7 @@ const redirects = [
   {
     source: "react-summit-us-2025-slides.pdf",
     destination:
-      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/from-pull-to-push--react-summit-us-2025.pdf",
+      "https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--react-summit-us-2025.pdf",
   }
 ];
 
