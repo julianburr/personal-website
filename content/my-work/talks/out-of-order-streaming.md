@@ -10,6 +10,9 @@ events:
       country: Sweden
       city: Malmö
       latlng: 55.5702379,12.9335725
+      slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--oredev-2025.pdf
+      videoEmbed: https://www.youtube.com/embed/TJ2JOa0w6QY
+      videoUrl: https://www.youtube.com/watch?v=TJ2JOa0w6QY
   uxdx-online-2025:
     date: 2025-06-24
     name: UXDX
