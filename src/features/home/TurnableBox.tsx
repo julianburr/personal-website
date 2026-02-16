@@ -9,6 +9,7 @@ export function TurnableBox({ className }: { className: classNames.Argument }) {
   const [turned, setTurned] = usePersistedState("turnable-box", true);
   return (
     <button
+      role="presentation"
       onClick={() => setTurned(!turned)}
       className={classNames(
         className,

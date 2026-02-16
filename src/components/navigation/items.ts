@@ -1,8 +1,8 @@
 import LogoBluesky from "@/assets/social/bluesky.svg";
 import LogoGithub from "@/assets/social/github.svg";
 import LogoLinkedIn from "@/assets/social/linkedin.svg";
-import LogoMedium from "@/assets/social/medium.svg";
 import LogoNotist from "@/assets/social/notist.svg";
+import LogoSubstack from "@/assets/social/substack.svg";
 
 const items = [
   {
@@ -45,12 +45,6 @@ const socials = [
     Icon: LogoLinkedIn,
   },
   {
-    id: "medium",
-    href: "https://medium.com/@julianburr",
-    title: "@julianburr on Medium",
-    Icon: LogoMedium,
-  },
-  {
     id: "notist",
     href: "https://noti.st/jburr90",
     title: "@jburr90 on Notist",
@@ -61,6 +55,12 @@ const socials = [
     href: "https://bsky.app/profile/julianburr.de",
     title: "@julianburr.de on Bluesky",
     Icon: LogoBluesky,
+  },
+  {
+    id:'substack',
+    href: 'https://julianburr.substack.com/',
+    title: '@julianburr on Substack',
+    Icon: LogoSubstack,
   },
   {
     id: "github",

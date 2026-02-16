@@ -1,7 +1,7 @@
 ---
 title: Deja Vu — How Server Components Change The Game With Old Ideas
 coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/dejavu-how-server-components-change-the-game.png
-blogUrl: https://medium.com/@julianburr/deja-vu-how-server-components-are-changing-the-game-using-old-ideas-f4defc168147
+blogUrl: https://julianburr.substack.com/p/deja-vu
 events:
   web-directions-summit-2023:
     date: 2023-10-26

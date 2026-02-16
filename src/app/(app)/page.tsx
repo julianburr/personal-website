@@ -36,6 +36,7 @@ export default function Home() {
 
         <Link
           href="/around-the-world"
+          aria-label="Around the World"
           className="flex absolute bottom-[calc(4rem_+_4vh)] ml-[100vh]"
         >
           <GlobeIllustrationSvg className="h-[18vh] w-auto transition-all hover:drop-shadow-lg" />
@@ -46,7 +47,8 @@ export default function Home() {
 
         <Link
           href="/library"
-          className="flex absolute bottom-[calc(1rem_+_4vh)] ml-[151vh] "
+          aria-label="Library"
+          className="flex absolute bottom-[calc(1rem_+_4vh)] ml-[151vh]"
         >
           <BooksIllustrationSvg className="h-[13vh] w-auto transition-all hover:drop-shadow-lg" />
         </Link>

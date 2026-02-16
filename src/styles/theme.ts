@@ -21,4 +21,5 @@ export const COLORS = {
   "notist-grey": "#3A3A1A",
   "linkedin-blue": "#0B66C2",
   "bluesky-blue": "#1285FE",
+  "substack-orange": "#FF5800",
 };
