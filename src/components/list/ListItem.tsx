@@ -72,8 +72,8 @@ export function ListItem({
             className={classNames(
               "bg-grey-medium/50 w-full aspect-[16/9] object-cover transition-all grayscale opacity-75 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:opacity-100 group-focus-within:opacity-100",
               {
-                "aspect-[14/9]": coverAspectRatio === "landscape",
-                "aspect-[9/14]": coverAspectRatio === "portrait",
+                "aspect-[13/9]": coverAspectRatio === "landscape",
+                "aspect-[9/13]": coverAspectRatio === "portrait",
               }
             )}
           />

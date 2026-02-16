@@ -1,6 +1,7 @@
 ---
 title: It's Time to Talk About Signals
 coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/its-time-to-talk-about-signals.png
+blogUrl: https://julianburr.substack.com/p/its-time-to-talk-about-signals
 events:
   brisjs-2025:
     date: 2025-05-12
@@ -35,6 +36,24 @@ events:
       city: New York
       latlng: 40.776269874077315,-73.96851476035752
       online: true
+  ndc-sydney-2026:
+    date: 2026-04-23
+    name: NDC Sydney
+    url: https://ndcsydney.com/
+    place:
+      country: Australia
+      region: New South Wales
+      city: Sydney
+      latlng: -33.868,151.21
+  tek-js-2026:
+    date: 2026-05-20
+    name: JSTek
+    url: https://jstek.io/
+    place:
+      country: US
+      region: Illinois
+      city: Chicago
+      latlng: 41.8335928,-87.8966857
 ---
 
 With the active TC39 proposal in play, I think it’s about time we talk about Signals.

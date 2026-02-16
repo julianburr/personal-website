@@ -1,6 +1,7 @@
 ---
 title: Out-of-Order Streaming — The Future of Web Development
 coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/out-of-order-streaming.png
+blogUrl: https://julianburr.substack.com/p/out-of-order-streaming
 events:
   oredev-2025:
     date: 2025-11-07
@@ -22,4 +23,13 @@ events:
     videoUrl: https://www.youtube.com/watch?v=XCptAIkRRKU
     place:
       online: true
+  tek-js-2026:
+    date: 2026-05-20
+    name: JSTek
+    url: https://jstek.io/
+    place:
+      country: US
+      region: Illinois
+      city: Chicago
+      latlng: 41.8335928,-87.8966857
 ---

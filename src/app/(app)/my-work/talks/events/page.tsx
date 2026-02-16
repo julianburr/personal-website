@@ -34,6 +34,8 @@ export default async function TalkEventsPage() {
       return all;
     }, {});
 
+  eventsMap['Upcoming'] = eventsMap['Upcoming']?.toReversed?.() || [];
+
   return (
     <>
       <p className="font-heading p-0 leading-[1.2]">
