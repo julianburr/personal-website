@@ -80,9 +80,12 @@ jobs:
         with:
           path: ./.site
 
+      - run: |
+          mv ./.site/* .
+          ls -la
+
       - name: Install dependencies
         run: pnpm install
-        working-directory: ./.site
 
       - name: Deploy app to vercel
         id: deploy
