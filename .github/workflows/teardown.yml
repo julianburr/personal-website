@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: julianburr/github-actions
-          path: ./.github/shared
+          path: ./.shared
 
       - name: Install corepack
         run: npm install -g corepack@latest --force
@@ -29,10 +29,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install actions dependencies
-        run: yarn --cwd=.github/shared
+        run: yarn --cwd=.shared
 
       - name: Remove app alias & clean up deployments 🧹
-        uses: ./.github/shared/vercel-teardown
+        uses: ./.shared/vercel-teardown
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}

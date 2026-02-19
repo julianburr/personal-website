@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: julianburr/github-actions
-          path: ./.github/shared
+          path: ./.shared
 
       - name: Install corepack
         run: npm install -g corepack@latest --force
@@ -36,7 +36,7 @@ jobs:
 
       - name: Install actions dependencies
         shell: bash
-        run: yarn --cwd=.github/shared
+        run: yarn --cwd=.shared
 
       - uses: actions/checkout@master
 
@@ -58,7 +58,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: julianburr/github-actions
-          path: ./.github/shared
+          path: ./.shared
 
       - name: Install corepack
         run: npm install -g corepack@latest --force
@@ -70,7 +70,7 @@ jobs:
 
       - name: Install actions dependencies
         shell: bash
-        run: yarn --cwd=.github/shared
+        run: yarn --cwd=.shared
 
       - uses: actions/checkout@master
 
@@ -79,7 +79,7 @@ jobs:
 
       - name: Deploy app to vercel
         id: deploy
-        uses: ./.github/shared/vercel-deploy-app
+        uses: ./.shared/vercel-deploy-app
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
@@ -87,7 +87,7 @@ jobs:
           alias: pr-${{ github.event.number }}--julianburr-me.vercel.app
 
       - name: Add comment with deployment url
-        uses: ./.github/shared/github-create-comment
+        uses: ./.shared/github-create-comment
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pr-number: ${{ github.event.number }}
