@@ -4,8 +4,12 @@ declare module '*.svg' {
 }
 
 declare module '*.png' {
-  const filePath: string;
-  export default filePath;
+  const fileMeta: {
+    src: string;
+    width: number;
+    height: number;
+  };
+  export default fileMeta;
 }
 
 declare interface Window {
