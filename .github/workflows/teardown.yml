@@ -14,8 +14,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
+      - uses: actions/checkout@master
+      - run: npm install -g corepack@latest --force
 
       - name: Setup node env
         uses: actions/setup-node@v3
