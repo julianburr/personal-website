@@ -40,6 +40,11 @@ jobs:
         run: yarn --cwd=.shared
 
       - uses: actions/checkout@master
+        with:
+          path: ./.site
+      - run: |
+          mv ./.site/* .
+          mv ./.site/.[!.]* .
 
       - name: Install dependencies
         run: pnpm install
@@ -74,6 +79,11 @@ jobs:
         run: yarn --cwd=.shared
 
       - uses: actions/checkout@master
+        with:
+          path: ./.site
+      - run: |
+          mv ./.site/* .
+          mv ./.site/.[!.]* .
 
       - name: Install dependencies
         run: pnpm install
