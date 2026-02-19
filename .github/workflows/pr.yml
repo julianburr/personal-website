@@ -39,11 +39,15 @@ jobs:
         run: yarn --cwd=.shared
 
       - uses: actions/checkout@master
+        with:
+          path: ./.site
 
       - name: Install dependencies
         run: pnpm install
+        working-directory: ./.site
 
       - name: Run linter, tests and type checks
+        working-directory: ./.site
         run: |
           pnpm lint
           pnpm test
@@ -73,9 +77,12 @@ jobs:
         run: yarn --cwd=.shared
 
       - uses: actions/checkout@master
+        with:
+          path: ./.site
 
       - name: Install dependencies
         run: pnpm install
+        working-directory: ./.site
 
       - name: Deploy app to vercel
         id: deploy
