@@ -41,7 +41,9 @@ jobs:
       - uses: actions/checkout@master
         with:
           path: ./.site
-      - run: mv ./.site/* .
+      - run: |
+          mv ./.site/* .
+          mv ./.site/.[!.]* .
 
       - name: Install dependencies
         run: pnpm install
@@ -80,7 +82,7 @@ jobs:
           path: ./.site
       - run: |
           mv ./.site/* .
-          ls -la
+          mv ./.site/.[!.]* .
 
       - name: Install dependencies
         run: pnpm install
