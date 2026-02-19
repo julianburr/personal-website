@@ -72,23 +72,34 @@ export default async function LibraryPage() {
     <>
       <h1>Library</h1>
 
-      <h2>Books read</h2>
+      {!!grouped[1].length && (
+        <>
+          <Spacer h="1.2rem" />
+          <h2>What I’m reading at the moment 🤓</h2>
+          <Spacer h=".4rem" />
+          <Grid size="small">{grouped[1].map(renderBook)}</Grid>
+        </>
+      )}
+
+      <Spacer h="1.2rem" />
+      <h2>Books I have read & recommend</h2>
       <p>
-        This is a collection of books I’ve been reading that I would recommend.
-        It is by no means a complete list or anything, and you’ll also find that
-        it might contain a book or two that have nothing to do with programming
-        or business. I just enjoyed reading them.
+        This is by no means a complete list or anything, and you’ll also find
+        that it might contain a book or two that have nothing to do with
+        programming or business. I just enjoyed reading them.
       </p>
 
       <Spacer h="1.2rem" />
       <Grid size="small">{grouped[0].map(renderBook)}</Grid>
 
       <Spacer h="1.2rem" />
-      <h2>Currently reading</h2>
-      <Grid size="small">{grouped[1].map(renderBook)}</Grid>
-
-      <Spacer h="1.2rem" />
       <h2>Sitting on my bookshelf</h2>
+      <p>
+        I might have a slight problem when it comes being addicted to buying
+        books faster than I can read them, but here we are. A glimpse of what
+        I’m aiming to read next.
+      </p>
+      <Spacer h="1.2rem" />
       <Grid size="small">{grouped[2].map(renderBook)}</Grid>
     </>
   );

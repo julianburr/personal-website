@@ -70,9 +70,9 @@ export function ListItem({
             alt={`${title} hero image`}
             src={cover}
             className={classNames(
-              'bg-grey-medium/50 w-full aspect-video object-cover transition-all grayscale opacity-75 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:opacity-100 group-focus-within:opacity-100',
+              'bg-grey-medium/50 w-full object-cover transition-all grayscale opacity-75 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:opacity-100 group-focus-within:opacity-100',
               {
-                'aspect-13/9': coverAspectRatio === 'landscape',
+                'aspect-video': coverAspectRatio === 'landscape',
                 'aspect-9/13': coverAspectRatio === 'portrait',
               },
             )}
@@ -96,14 +96,14 @@ export function ListItem({
           }
         >
           {!!(date || meta) && (
-            <span className="text-[var(--page--color)] text-xs inline pr-[.2rem] translate-y-[-.1rem] leading-[1.2]">
+            <span className="text-(--page--color) text-xs inline pr-[.2rem] translate-y-[-.1rem] leading-[1.2]">
               {date && `${dayjs(date).format(dateFormat)}`}
               {date && meta && ' — '}
               {meta}
             </span>
           )}
 
-          <h2 className="p-0 mt-[.2rem] text-lg leading-[1.2]">{title}</h2>
+          <h3 className="p-0 mt-[.2rem] text-lg leading-[1.2]">{title}</h3>
           {description && (
             <p className="p-0 text-sm text-black/80 font-default">
               {description}
