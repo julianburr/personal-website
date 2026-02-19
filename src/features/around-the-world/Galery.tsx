@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { ArrowLeft, ArrowRight, X } from "@phosphor-icons/react";
-import dayjs from "dayjs";
-import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import * as Icons from '@phosphor-icons/react';
+import dayjs from 'dayjs';
+import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-import { Tooltip } from "@/components/tooltip";
+import { Tooltip } from '@/components/tooltip';
 
 type Props = {
   city: string;
@@ -29,7 +29,7 @@ export function Galery({
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const searchParamImage = searchParams.get("image");
+  const searchParamImage = searchParams.get('image');
   const initialImageIndex = searchParamImage ? parseInt(searchParamImage) : 0;
 
   const [imageIndex, setImageIndex] = useState<number>(initialImageIndex);
@@ -54,7 +54,7 @@ export function Galery({
         </div>
       ) : (
         <div className="absolute inset-0 bg-white">
-          <a href={images?.[imageIndex - 1]} target="_blank">
+          <a href={images?.[imageIndex - 1]} target="_blank" rel="noreferrer">
             <img
               key={imageIndex}
               src={images?.[imageIndex - 1]}
@@ -72,7 +72,7 @@ export function Galery({
             className="text-inherit h-[3.2rem] w-[3.2rem] sm:h-[4.2rem] sm:w-[4.2rem] flex flex-shrink-0 justify-center items-center shadow-lg bg-white hover:bg-grey-light focus:bg-grey-light"
             aria-label="Go back to map"
           >
-            <X className="text-[1.4em]" />
+            <Icons.XIcon className="text-[1.4em]" />
           </Link>
         </Tooltip>
         <div className="flex flex-1 min-w-[.4rem] w-full" />
@@ -91,7 +91,7 @@ export function Galery({
               {title || city}
             </h3>
             <span className="text-xs opacity-[.64] leading-[1.1] whitespace-nowrap break-all text-ellipsis mt-[-.2rem]">
-              {dayjs(date).format("MMM YYYY")} —{" "}
+              {dayjs(date).format('MMM YYYY')} —{' '}
               {region ? (
                 <>
                   {region}, {country}
@@ -113,7 +113,7 @@ export function Galery({
                   setImageIndex((state) => state - 1);
                 }}
               >
-                <ArrowLeft />
+                <Icons.ArrowLeftIcon />
               </Link>
             )}
             <div className="px-1">
@@ -121,7 +121,7 @@ export function Galery({
                 <>Overview</>
               ) : (
                 <span className="flex flex-row align-top tabular-nums">
-                  {imageIndex} /{" "}
+                  {imageIndex} /{' '}
                   <span className="text-base pl-1 tabular-nums">
                     {images.length}
                   </span>
@@ -139,7 +139,7 @@ export function Galery({
                   setImageIndex((state) => state + 1);
                 }}
               >
-                <ArrowRight />
+                <Icons.ArrowRightIcon />
               </Link>
             )}
           </div>

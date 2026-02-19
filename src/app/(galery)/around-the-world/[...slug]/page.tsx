@@ -1,12 +1,12 @@
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
 
-import { Galery } from "@/features/around-the-world/Galery";
-import { getPageFromPath } from "@/utils/getPageFromPath";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
+import { Galery } from '@/features/around-the-world/Galery';
+import { getPageFromPath } from '@/utils/getPageFromPath';
+import { getPagesFromPath } from '@/utils/getPagesFromPath';
 
 export default async function AroundTheWorldDetailsPage({ params }: any) {
   const { slug } = await params;
-  const page = await getPageFromPath(`around-the-world/${slug.join("/")}.md`);
+  const page = await getPageFromPath(`around-the-world/${slug.join('/')}.md`);
 
   if (!page) {
     return notFound();
@@ -22,12 +22,12 @@ export default async function AroundTheWorldDetailsPage({ params }: any) {
 }
 
 export async function generateStaticParams() {
-  const destinations = await getPagesFromPath("around-the-world");
+  const destinations = await getPagesFromPath('around-the-world');
 
   return destinations.map((destinations) => ({
     slug: destinations?.pathname
-      .replace(/^\/around-the-world\//, "")
-      .split("/")
+      .replace(/^\/around-the-world\//, '')
+      .split('/')
       .map((item) => item.trim())
       .filter(Boolean),
   }));

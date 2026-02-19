@@ -1,11 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import type { ComponentProps } from "react";
+import type { ComponentProps } from 'react';
 
 type Props = {
-  href: ComponentProps<typeof Link>["href"];
-  onClick?: ComponentProps<typeof Link>["onClick"];
-  children: ComponentProps<typeof Link>["children"];
+  href: ComponentProps<typeof Link>['href'];
+  onClick?: ComponentProps<typeof Link>['onClick'];
+  children: ComponentProps<typeof Link>['children'];
 };
 
 export function NavigationItem({ href, onClick, children }: Props) {

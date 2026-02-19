@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import classNames from "classnames";
-import dayjs from "dayjs";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useState } from "react";
+import classNames from 'classnames';
+import dayjs from 'dayjs';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useCallback, useState } from 'react';
 
-import { List } from "@/components/list/List";
-import { ListItem } from "@/components/list/ListItem";
-import { Spacer } from "@/components/spacer";
+import { List } from '@/components/list/List';
+import { ListItem } from '@/components/list/ListItem';
+import { Spacer } from '@/components/spacer';
 
 type Props = {
   pages: any[];
@@ -19,7 +19,7 @@ export function TilList({ pages }: Props) {
   const searchParams = useSearchParams();
 
   const initialTags =
-    searchParams.get("tags")?.split(",").filter(Boolean) || [];
+    searchParams.get('tags')?.split(',').filter(Boolean) || [];
   const [activeTags, _setActiveTags] = useState<string[]>(initialTags);
 
   const setActiveTags = useCallback(
@@ -27,11 +27,11 @@ export function TilList({ pages }: Props) {
       _setActiveTags(activeTags);
       router.replace(
         activeTags?.length
-          ? `${pathname}?tags=${activeTags.join(",")}`
-          : pathname
+          ? `${pathname}?tags=${activeTags.join(',')}`
+          : pathname,
       );
     },
-    [pathname, router]
+    [pathname, router],
   );
 
   const filtered = pages
@@ -39,18 +39,18 @@ export function TilList({ pages }: Props) {
     ?.filter((page) =>
       activeTags?.length
         ? page?.meta?.tags
-            .split(",")
+            .split(',')
             ?.map((tag: string) => tag?.trim?.())
             ?.filter(Boolean)
             ?.find((tag: string) => activeTags.includes(tag))
-        : true
+        : true,
     )
     ?.sort((a, b) => (a?.meta?.date > b?.meta?.date ? -1 : 1));
 
   const tags = pages
     .reduce((all: any[], page: any) => {
       (page.meta?.tags as string)
-        ?.split?.(",")
+        ?.split?.(',')
         ?.map((tag) => tag?.trim?.())
         ?.filter(Boolean)
         ?.forEach((tag) => {
@@ -78,15 +78,15 @@ export function TilList({ pages }: Props) {
                 setActiveTags(
                   isActive
                     ? activeTags.filter((item) => tag.name !== item)
-                    : [...activeTags, tag.name]
+                    : [...activeTags, tag.name],
                 )
               }
               className={classNames(
-                "flex text-inherit py-[.2rem] px-[.6rem] font-heading transition-all hover:bg-[var(--page--color)] hover:text-white hover:no-underline",
+                'flex text-inherit py-[.2rem] px-[.6rem] font-heading transition-all hover:bg-[var(--page--color)] hover:text-white hover:no-underline',
                 {
-                  "bg-grey-medium": !isActive,
-                  "bg-[var(--page--color)] text-white": isActive,
-                }
+                  'bg-grey-medium': !isActive,
+                  'bg-[var(--page--color)] text-white': isActive,
+                },
               )}
             >
               {tag.name}

@@ -1,11 +1,13 @@
-import { ListItem } from "@/components/list/ListItem";
+import { ListItem } from '@/components/list/ListItem';
 
-import type { getPageFromPath } from "@/utils/getPageFromPath";
+import type { getPageFromPath } from '@/utils/getPageFromPath';
 
 export type BlogFrontmatter = {
   title: string;
   date: Date;
+  category?: 'post' | 'write-up';
   externalUrl?: string;
+  coverUrl?: string;
 };
 
 type BlogListItemProps = {
@@ -18,9 +20,10 @@ export function BlogListItem({ page }: BlogListItemProps) {
     <ListItem
       key={page?.pathname}
       date={page?.meta?.date}
+      cover={page?.meta?.coverUrl}
       title={page?.meta?.title}
       href={href}
-      target={page?.content?.raw ? undefined : "_blank"}
+      target={page?.content?.raw ? undefined : '_blank'}
     />
   );
 }

@@ -1,22 +1,22 @@
-import classNames from "classnames";
-import dayjs from "dayjs";
-import Link from "next/link";
+import classNames from 'classnames';
+import dayjs from 'dayjs';
+import Link from 'next/link';
 
-import { Tooltip } from "@/components/tooltip";
+import { Tooltip } from '@/components/tooltip';
 
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react';
 
 type Action = {
   href?: string;
   icon: ReactNode;
   label: string;
-  target?: "_blank";
+  target?: '_blank';
 };
 
 type Props = {
   cover?: string;
   coverVideo?: string;
-  coverAspectRatio?: "landscape" | "portrait";
+  coverAspectRatio?: 'landscape' | 'portrait';
   date?: Date | string;
   dateFormat?: string;
   meta?: string;
@@ -25,8 +25,8 @@ type Props = {
   actions?: Action[];
   actionsInline?: Action[];
   href?: string;
-  target?: "_blank";
-  variant?: "vertical" | "horizontal";
+  target?: '_blank';
+  variant?: 'vertical' | 'horizontal';
 };
 
 function MaybeLink(props: any) {
@@ -36,9 +36,9 @@ function MaybeLink(props: any) {
 export function ListItem({
   cover,
   coverVideo,
-  coverAspectRatio = "landscape",
+  coverAspectRatio = 'landscape',
   date,
-  dateFormat = "MMMM D, YYYY",
+  dateFormat = 'MMMM D, YYYY',
   meta,
   title,
   description,
@@ -56,13 +56,13 @@ export function ListItem({
       <MaybeLink
         href={href}
         target={target}
-        rel={href && target === "_blank" ? "noopener noreferrer" : undefined}
+        rel={href && target === '_blank' ? 'noopener noreferrer' : undefined}
         className={classNames(
-          "flex flex-col flex-1 shadow-none transition-all",
+          'flex flex-col flex-1 shadow-none transition-all',
           {
-            "text-inherit drop-shadow-none hover:no-underline hover:drop-shadow-lg":
+            'text-inherit drop-shadow-none hover:no-underline hover:drop-shadow-lg':
               !!href,
-          }
+          },
         )}
       >
         {cover && (
@@ -70,18 +70,18 @@ export function ListItem({
             alt={`${title} hero image`}
             src={cover}
             className={classNames(
-              "bg-grey-medium/50 w-full aspect-[16/9] object-cover transition-all grayscale opacity-75 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:opacity-100 group-focus-within:opacity-100",
+              'bg-grey-medium/50 w-full aspect-video object-cover transition-all grayscale opacity-75 group-hover:grayscale-0 group-focus-within:grayscale-0 group-hover:opacity-100 group-focus-within:opacity-100',
               {
-                "aspect-[13/9]": coverAspectRatio === "landscape",
-                "aspect-[9/13]": coverAspectRatio === "portrait",
-              }
+                'aspect-13/9': coverAspectRatio === 'landscape',
+                'aspect-9/13': coverAspectRatio === 'portrait',
+              },
             )}
           />
         )}
 
         {coverVideo && (
           <iframe
-            className="bg-grey-medium/50 w-full aspect-[16/9]"
+            className="bg-grey-medium/50 w-full aspect-video"
             src={coverVideo}
             title="Video embed player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -92,12 +92,13 @@ export function ListItem({
 
         <div
           className={
-            "flex flex-1 flex-col p-[.8rem] w-full transition-all text-inherit font-normal bg-grey-light no-underline"
+            'flex flex-1 flex-col p-[.8rem] w-full transition-all text-inherit font-normal bg-grey-light no-underline'
           }
         >
           {!!(date || meta) && (
             <span className="text-[var(--page--color)] text-xs inline pr-[.2rem] translate-y-[-.1rem] leading-[1.2]">
-              {date && `${dayjs(date).format(dateFormat)} — `}
+              {date && `${dayjs(date).format(dateFormat)}`}
+              {date && meta && ' — '}
               {meta}
             </span>
           )}
@@ -118,8 +119,8 @@ export function ListItem({
                       href={action.href!}
                       target={action.target}
                       rel={
-                        action.target === "_blank"
-                          ? "noopener noreferrer"
+                        action.target === '_blank'
+                          ? 'noopener noreferrer'
                           : undefined
                       }
                       className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium/50 shadow-none hover:bg-grey-medium"
@@ -143,8 +144,8 @@ export function ListItem({
                   href={action.href!}
                   target={action.target}
                   rel={
-                    action.target === "_blank"
-                      ? "noopener noreferrer"
+                    action.target === '_blank'
+                      ? 'noopener noreferrer'
                       : undefined
                   }
                   className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-light shadow-none opacity-60 hover:shadow-lg hover:opacity-100"

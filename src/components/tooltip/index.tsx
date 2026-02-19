@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { computePosition, flip, offset } from "@floating-ui/dom";
-import { useEffect, useId, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { computePosition, flip, offset } from '@floating-ui/dom';
+import { useEffect, useId, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
-import type { Placement } from "@floating-ui/dom";
-import type { HTMLProps, ReactNode } from "react";
+import type { Placement } from '@floating-ui/dom';
+import type { HTMLProps, ReactNode } from 'react';
 
-type Props = Omit<HTMLProps<HTMLDivElement>, "content"> & {
+type Props = Omit<HTMLProps<HTMLDivElement>, 'content'> & {
   content: ReactNode;
   placement?: Placement;
   offset?: number;
@@ -15,7 +15,7 @@ type Props = Omit<HTMLProps<HTMLDivElement>, "content"> & {
 
 export function Tooltip({
   content,
-  placement = "top",
+  placement = 'top',
   offset: offsetProp = 8,
   ...props
 }: Props) {
@@ -26,7 +26,7 @@ export function Tooltip({
 
   const [portalTarget, setPortalTarget] = useState<Element | undefined>();
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       setPortalTarget(window.document.body);
     }
   }, []);
@@ -55,15 +55,15 @@ export function Tooltip({
     const triggerElement = containerRef?.current?.firstElementChild;
     const tooltipElement = tooltipRef?.current;
     if (triggerElement && tooltipElement) {
-      triggerElement.addEventListener("mouseenter", handleMouseOver);
-      triggerElement.addEventListener("mouseleave", handleMouseLeave);
-      triggerElement.addEventListener("focus", handleMouseOver);
-      triggerElement.addEventListener("blur", handleMouseLeave);
+      triggerElement.addEventListener('mouseenter', handleMouseOver);
+      triggerElement.addEventListener('mouseleave', handleMouseLeave);
+      triggerElement.addEventListener('focus', handleMouseOver);
+      triggerElement.addEventListener('blur', handleMouseLeave);
       return () => {
-        triggerElement.removeEventListener("mouseenter", handleMouseOver);
-        triggerElement.removeEventListener("mouseleave", handleMouseLeave);
-        triggerElement.removeEventListener("focus", handleMouseOver);
-        triggerElement.removeEventListener("blur", handleMouseLeave);
+        triggerElement.removeEventListener('mouseenter', handleMouseOver);
+        triggerElement.removeEventListener('mouseleave', handleMouseLeave);
+        triggerElement.removeEventListener('focus', handleMouseOver);
+        triggerElement.removeEventListener('blur', handleMouseLeave);
       };
     }
   }, [id, offsetProp, placement, portalTarget]);
@@ -87,7 +87,7 @@ export function Tooltip({
           >
             {content}
           </div>,
-          portalTarget
+          portalTarget,
         )}
     </>
   );

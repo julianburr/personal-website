@@ -1,6 +1,6 @@
-import { MicrophoneStage, PersonSimpleHike } from "@phosphor-icons/react";
-import Link from "next/link";
-import { Fragment, useCallback, useMemo } from "react";
+import * as Icons from '@phosphor-icons/react';
+import Link from 'next/link';
+import { Fragment, useCallback, useMemo } from 'react';
 
 type Entry = {
   pathname?: string;
@@ -30,27 +30,27 @@ function LocationPopout({ entries }: Props) {
         ?.toSorted?.((a, b) => (a?.meta?.date > b?.meta?.date ? -1 : 1))
         ?.reduce<[Entry[], Entry[]]>(
           (all, entry) => {
-            if (entry?.meta?.type === "talk") {
+            if (entry?.meta?.type === 'talk') {
               all[1].push(entry);
             } else {
               all[0].push(entry);
             }
             return all;
           },
-          [[], []]
+          [[], []],
         ) || [],
-    [entries]
+    [entries],
   );
 
   const renderGroup = useCallback((entry: Entry, index: number) => {
     const shouldRenderLink =
       !!entry?.pathname &&
-      (entry?.meta?.type === "talk" || !!entry?.meta?.images?.length);
+      (entry?.meta?.type === 'talk' || !!entry?.meta?.images?.length);
     return (
       <Fragment key={index}>
-        {shouldRenderLink ? (
+        {!!entry?.pathname && shouldRenderLink ? (
           <Link
-            href={entry?.pathname!}
+            href={entry.pathname}
             className="flex text-inherit p-[.6rem] group font-normal hover:bg-grey-light hover:no-underline focus:bg-grey-light focus:no-underline transition-all"
           >
             <span className="flex flex-col flex-1">
@@ -102,7 +102,7 @@ function LocationPopout({ entries }: Props) {
       <div className="p-[.2rem] flex flex-col max-h-[16rem] overflow-auto">
         {!!grouped[0]?.length && (
           <span className="flex items-center p-[.6rem] pb-[.3rem] gap-[.3rem] opacity-[.40] text-xs">
-            <PersonSimpleHike className="h-[1rem] w-auto" />
+            <Icons.PersonSimpleHikeIcon className="h-[1rem] w-auto" />
             <span>Travel</span>
           </span>
         )}
@@ -114,7 +114,7 @@ function LocationPopout({ entries }: Props) {
 
         {!!grouped[1]?.length && (
           <span className="flex items-center p-[.6rem] pb-[.3rem] gap-[.3rem] opacity-[.40] text-xs">
-            <MicrophoneStage className="h-[1rem] w-auto" />
+            <Icons.MicrophoneStageIcon className="h-[1rem] w-auto" />
             <span>Talks</span>
           </span>
         )}

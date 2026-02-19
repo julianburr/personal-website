@@ -1,17 +1,17 @@
-import { Suspense } from "react";
+import { Suspense } from 'react';
 
-import { Spacer } from "@/components/spacer";
-import { TilList } from "@/features/til/TilList";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
+import { Spacer } from '@/components/spacer';
+import { TilList } from '@/features/til/TilList';
+import { getPagesFromPath } from '@/utils/getPagesFromPath';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Today I learned — Julian Burr",
+  title: 'Today I learned — Julian Burr',
 };
 
 export default async function TilPage() {
-  let pages = await getPagesFromPath("til");
+  const pages = await getPagesFromPath('til');
 
   return (
     <>

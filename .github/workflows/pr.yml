@@ -13,7 +13,7 @@ permissions:
   pull-requests: write
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: 24
 
 jobs:
   tests:
@@ -42,13 +42,13 @@ jobs:
         uses: ./.github/shared/cache-node-modules
 
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
 
       - name: Run linter, tests and type checks
         run: |
-          yarn lint
-          yarn test
-          yarn typecheck
+          pnpm lint
+          pnpm test
+          pnpm typecheck
 
   deploy_preview:
     name: 🚀 Deploy preview environment
@@ -76,7 +76,7 @@ jobs:
         uses: ./.github/shared/cache-node-modules
 
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
 
       - name: Deploy app to vercel
         id: deploy

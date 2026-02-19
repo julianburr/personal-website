@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { NavigationItem } from "@/components/navigation/NavigationItem";
-import { SocialNavigationItem } from "@/components/navigation/SocialNavigationItem";
-import { items, socials } from "@/components/navigation/items";
-import { Spacer } from "@/components/spacer";
+import { NavigationItem } from '@/components/navigation/NavigationItem';
+import { SocialNavigationItem } from '@/components/navigation/SocialNavigationItem';
+import { items, socials } from '@/components/navigation/items';
+import { Spacer } from '@/components/spacer';
 
 export function Navigation() {
   const [active, setActive] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       if (active) {
-        window.document.body.style.overflow = "hidden";
+        window.document.body.style.overflow = 'hidden';
       } else {
-        window.document.body.style.overflow = "auto";
+        window.document.body.style.overflow = 'auto';
       }
     }
   }, [active]);

@@ -1,6 +1,6 @@
-import { ListItem } from "@/components/list/ListItem";
+import { ListItem } from '@/components/list/ListItem';
 
-import type { getPageFromPath } from "@/utils/getPageFromPath";
+import type { getPageFromPath } from '@/utils/getPageFromPath';
 
 export type OpenSourceFrontmatter = {
   title: string;

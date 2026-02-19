@@ -1,18 +1,18 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { Grid } from "@/components/list/Grid";
-import { Spacer } from "@/components/spacer";
-import { EventTalkVideoListItem } from "@/features/my-work/EventTalkVideoListItem";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
+import { Grid } from '@/components/list/Grid';
+import { Spacer } from '@/components/spacer';
+import { EventTalkVideoListItem } from '@/features/my-work/EventTalkVideoListItem';
+import { getPagesFromPath } from '@/utils/getPagesFromPath';
 
-import type { TalkFrontmatter } from "@/features/my-work/TalkListItem";
+import type { TalkFrontmatter } from '@/features/my-work/TalkListItem';
 
-type EnhancedEvent = TalkFrontmatter["events"][string] & {
+type EnhancedEvent = TalkFrontmatter['events'][string] & {
   talk: Awaited<ReturnType<typeof getPagesFromPath<TalkFrontmatter>>>[number];
 };
 
 export default async function TalkEventsPage() {
-  const talks = await getPagesFromPath<TalkFrontmatter>("my-work/talks");
+  const talks = await getPagesFromPath<TalkFrontmatter>('my-work/talks');
 
   const [eventsWithEmbed, eventsWithExternalLink] = talks
     ?.reduce<EnhancedEvent[]>((all, talk) => {
@@ -21,7 +21,7 @@ export default async function TalkEventsPage() {
         .map((event) => ({ ...event, talk: talk! }));
       return all.concat(talkEvents);
     }, [])
-    ?.toSorted((a, b) => (a?.date! > b?.date! ? -1 : 1))
+    ?.toSorted((a, b) => (a?.date > b?.date ? -1 : 1))
     .reduce<[EnhancedEvent[], EnhancedEvent[]]>(
       (all, event) => {
         if (event.videoEmbed) {
@@ -31,7 +31,7 @@ export default async function TalkEventsPage() {
         }
         return all;
       },
-      [[], []]
+      [[], []],
     );
 
   return (

@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 
 type Props = {
   id: string;
@@ -11,13 +11,13 @@ export function SocialNavigationItem({ id, href, title, Icon }: Props) {
   return (
     <li
       className={classNames({
-        "text-twitter-blue": id === "twitter",
-        "text-medium-green": id === "medium",
-        "text-notist-grey": id === "notist",
-        "text-github-grey": id === "github",
-        "text-linkedin-blue": id === "linkedin",
-        "text-bluesky-blue": id === "bluesky",
-        "text-substack-orange": id === "substack",
+        'text-twitter-blue': id === 'twitter',
+        'text-medium-green': id === 'medium',
+        'text-notist-grey': id === 'notist',
+        'text-github-grey': id === 'github',
+        'text-linkedin-blue': id === 'linkedin',
+        'text-bluesky-blue': id === 'bluesky',
+        'text-substack-orange': id === 'substack',
       })}
     >
       <a

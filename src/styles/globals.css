@@ -1,106 +1,178 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --page--color: #f7f4ee;
+/* Ensure Tailwind scans all source files (including conditional classNames) */
+@source "../**/*.{js,ts,jsx,tsx,mdx}";
+
+@theme {
+  /* Colors */
+  --color-white: #faf9f6;
+  --color-black: #222;
+  --color-beige: #c5ac8b;
+  --color-grey-light: #f7f4ee;
+  --color-grey-medium: #e8e4de;
+  --color-grey-dark: #cac5be;
+  --color-green: #9cca6c;
+  --color-yellow: #f7ad08;
+  --color-purple: #ca85d8;
+  --color-blue-medium: #599ae5;
+  --color-blue-dark: #3176c5;
+  --color-red: #da7a70;
+  --color-teal: #6ccab9;
+  --color-twitter-blue: #1ea1f2;
+  --color-medium-green: #029e74;
+  --color-github-grey: #3a3a1a;
+  --color-notist-grey: #3a3a1a;
+  --color-linkedin-blue: #0b66c2;
+  --color-bluesky-blue: #1285fe;
+  --color-substack-orange: #ff5800;
+
+  /* Breakpoints */
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1440px;
+
+  /* Shadows */
+  --shadow-lg: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.1);
+  --drop-shadow-lg: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+
+  /* Custom animation */
+  --animate-float: float 12s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      transform: translate3d(0, -100%, 0);
+    }
+    10% {
+      transform: translate3d(7%, -96%, 0);
+    }
+    30% {
+      transform: translate3d(10%, -98%, 0);
+    }
+    50% {
+      transform: translate3d(11%, -94%, 0);
+    }
+    70% {
+      transform: translate3d(7%, -99%, 0);
+    }
+    80% {
+      transform: translate3d(3%, -97%, 0);
+    }
+    100% {
+      transform: translate3d(0, -100%, 0);
+    }
+  }
 }
 
-/* Headings */
-h1,
-h2,
-h3 {
-  @apply font-heading;
+@theme inline {
+  /* Fonts reference CSS vars from layout */
+  --font-default: var(--font--default), 'Open Sans', sans-serif;
+  --font-heading: var(--font--heading), sans-serif;
+  --font-mono: var(--font--mono), monospace;
 }
 
-h1:first-child,
-h2:first-child,
-h3:first-child {
-  @apply first:pt-0;
-}
+/* Base/reset styles in a layer so Tailwind utilities override them when applied */
+@layer base {
+  :root {
+    --page--color: #f7f4ee;
+  }
 
-h1 {
-  @apply text-5xl pt-6 pb-2 leading-[1.15];
-}
+  /* Headings */
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
 
-h2 {
-  @apply text-2xl pt-4 pb-1 leading-[1.3];
-}
+  h1:first-child,
+  h2:first-child,
+  h3:first-child {
+    @apply first:pt-0;
+  }
 
-h3 {
-  @apply text-xl pt-4 pb-1 leading-[1.3];
-}
+  h1 {
+    @apply text-5xl pt-6 pb-2 leading-[1.15];
+  }
 
-/* Paragraphs */
-p {
-  @apply py-[.4rem];
-}
+  h2 {
+    @apply text-2xl pt-4 pb-1 leading-[1.3];
+  }
 
-a {
-  @apply font-bold text-[var(--page--color)] hover:underline;
-}
+  h3 {
+    @apply text-xl pt-4 pb-1 leading-[1.3];
+  }
 
-/* Emojis */
-img.emoji {
-  @apply h-[1.2rem] w-auto mx-[.2rem] inline align-middle translate-y-[-.2rem];
-}
+  /* Paragraphs */
+  p {
+    @apply py-[.4rem];
+  }
 
-/* Markdown */
-main ul {
-  @apply py-[.2rem] pl-[2rem];
-}
+  a {
+    @apply font-bold text-[var(--page--color)] hover:underline;
+  }
 
-main ul li {
-  @apply py-[.2rem] list-none relative before:content-["—"] before:absolute before:left-[-1.2rem];
-}
+  /* Emojis */
+  img.emoji {
+    @apply h-[1.2rem] w-auto mx-[.2rem] inline align-middle translate-y-[-.2rem];
+  }
 
-main code {
-  @apply bg-grey-medium px-[.2rem] rounded-sm font-mono text-[.9em];
-}
+  /* Markdown */
+  main ul {
+    @apply py-[.2rem] pl-[2rem];
+  }
 
-main .katex-mathml + .katex-html {
-  @apply hidden;
-}
+  main ul li {
+    @apply py-[.2rem] list-none relative before:content-["—"] before:absolute before:left-[-1.2rem];
+  }
 
-main pre[class*="language-"] {
-  @apply rounded-none border-none text-[.9em] leading-[1.6] font-mono mx-[.2rem] my-[1.4rem] w-[calc(100%_-.4rem)] p-[1.2rem] sm:mx-[.4rem] sm:p-[1.4rem] sm:w-[calc(100%_-.8rem)];
-}
+  main code {
+    @apply bg-grey-medium px-[.2rem] rounded-sm font-mono text-[.9em];
+  }
 
-main pre[class*="language-"] code {
-  @apply bg-transparent p-0;
-}
+  main .katex-mathml + .katex-html {
+    @apply hidden;
+  }
 
-main hr {
-  @apply bg-grey-light my-[2.4rem] mx-auto w-full max-w-[12rem];
-}
+  main pre[class*='language-'] {
+    @apply rounded-none border-none text-[.9em] leading-[1.6] font-mono mx-[.2rem] my-[1.4rem] w-[calc(100%_-.4rem)] p-[1.2rem] sm:mx-[.4rem] sm:p-[1.4rem] sm:w-[calc(100%_-.8rem)];
+  }
 
-main .details section {
-  @apply pb-[.8rem] md:py-[.8rem];
-}
+  main pre[class*='language-'] code {
+    @apply bg-transparent p-0;
+  }
 
-main .details img:not(.emoji) {
-  @apply m-[.5rem] shadow-lg w-[calc(100%_-_1rem)] mx-auto;
-}
+  main hr {
+    @apply bg-grey-light my-[2.4rem] mx-auto w-full max-w-[12rem];
+  }
 
-main iframe.video-embed {
-  @apply w-full aspect-[16/9];
-}
+  main .details section {
+    @apply pb-[.8rem] md:py-[.8rem];
+  }
 
-/* Tooltips -- NOTE: doesn't work nicely with tailwind for some reason, so using plain CSS here :| */
-[role="tooltip"] {
-  @apply shadow-lg p-[.6rem] text-xs font-default bg-black text-white;
+  main .details img:not(.emoji) {
+    @apply m-[.5rem] shadow-lg w-[calc(100%_-_1rem)] mx-auto;
+  }
 
-  transition:
-    opacity 0.2s,
-    display 0.2s allow-discrete;
+  main iframe.video-embed {
+    @apply w-full aspect-[16/9];
+  }
 
-  opacity: 0;
-}
+  /* Tooltips -- NOTE: doesn't work nicely with tailwind for some reason, so using plain CSS here :| */
+  [role='tooltip'] {
+    @apply shadow-lg p-[.6rem] text-xs font-default bg-black text-white;
 
-[role="tooltip"]:popover-open {
-  opacity: 1;
+    transition:
+      opacity 0.2s,
+      display 0.2s allow-discrete;
 
-  @starting-style {
     opacity: 0;
+  }
+
+  [role='tooltip']:popover-open {
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
   }
 }

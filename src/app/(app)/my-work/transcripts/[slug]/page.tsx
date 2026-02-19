@@ -1,15 +1,15 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { preconnect } from "react-dom";
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { preconnect } from 'react-dom';
 
-import { getPageFromPath } from "@/utils/getPageFromPath";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
-import { getTimeToRead } from "@/utils/getTimeToRead";
+import { getPageFromPath } from '@/utils/getPageFromPath';
+import { getPagesFromPath } from '@/utils/getPagesFromPath';
+import { getTimeToRead } from '@/utils/getTimeToRead';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  preconnect("https://storage.cloud.google.com");
+  preconnect('https://storage.cloud.google.com');
 
   const { slug } = await params;
   const page = await getPageFromPath(`my-work/transcripts/${slug}.md`);
@@ -33,7 +33,7 @@ export default async function TranscriptDetailsPage({ params }: any) {
   return (
     <>
       <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/my-work">My work</Link> — Talk transcript —{" "}
+        <Link href="/my-work">My work</Link> — Talk transcript —{' '}
         {getTimeToRead(page?.content?.raw)} min read
       </p>
       <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>
@@ -41,7 +41,7 @@ export default async function TranscriptDetailsPage({ params }: any) {
       {page?.meta?.mdDescription?.html && (
         <p
           dangerouslySetInnerHTML={{
-            __html: page?.meta?.mdDescription?.html || "",
+            __html: page?.meta?.mdDescription?.html || '',
           }}
         />
       )}
@@ -60,8 +60,8 @@ export default async function TranscriptDetailsPage({ params }: any) {
         dangerouslySetInnerHTML={{
           __html:
             page?.content?.html
-              .replaceAll("<blockquote>", "<section>")
-              .replaceAll("</blockquote>", "</section>") || "",
+              .replaceAll('<blockquote>', '<section>')
+              .replaceAll('</blockquote>', '</section>') || '',
         }}
       />
     </>
@@ -69,9 +69,9 @@ export default async function TranscriptDetailsPage({ params }: any) {
 }
 
 export async function generateStaticParams() {
-  const posts = await getPagesFromPath("my-work/transcripts");
+  const posts = await getPagesFromPath('my-work/transcripts');
 
   return posts.map((post) => ({
-    slug: post?.pathname.replace(/^\/my-work\/transcripts\//, ""),
+    slug: post?.pathname.replace(/^\/my-work\/transcripts\//, ''),
   }));
 }

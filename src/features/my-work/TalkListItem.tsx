@@ -1,6 +1,6 @@
-import { ListItem } from "@/components/list/ListItem";
+import { ListItem } from '@/components/list/ListItem';
 
-import type { getPageFromPath } from "@/utils/getPageFromPath";
+import type { getPageFromPath } from '@/utils/getPageFromPath';
 
 export type TalkFrontmatter = {
   title: string;
@@ -13,7 +13,7 @@ export type TalkFrontmatter = {
       title?: string;
       name: string;
       url?: string;
-      type: "conference" | "meetup" | "workshop";
+      type: 'conference' | 'meetup' | 'workshop';
       slidesUrl?: string;
       videoEmbed?: string;
       videoUrl?: string;

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import classnames from "classnames";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import classnames from 'classnames';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 
-import { getPathnameColor } from "@/utils/getPathnameColor";
-import { getPathnameGroup } from "@/utils/getPathnameGroup";
+import { getPathnameColor } from '@/utils/getPathnameColor';
+import { getPathnameGroup } from '@/utils/getPathnameGroup';
 
 type HistoryItem = {
   group: string;
@@ -23,7 +23,7 @@ export function UseHistory() {
     setHistory((state) =>
       !state.find((h) => h.group === group)
         ? [...state, { group, pathname }]
-        : state
+        : state,
     );
   }, [pathname, group]);
 
@@ -31,7 +31,7 @@ export function UseHistory() {
   // been mounted
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       setMounted(true);
     }
   }, []);
@@ -47,14 +47,14 @@ export function UseHistory() {
           key={item.group}
           href={item.pathname}
           className={classnames(
-            "flex  w-[1.6rem] h-[1.6rem] relative before:absolute before:inset-0 before:border-4 before:border-[var(--history--item-color)] before:transition-all before:opacity-0 hover:before:opacity-100",
+            'flex  w-[1.6rem] h-[1.6rem] relative before:absolute before:inset-0 before:border-4 before:border-[var(--history--item-color)] before:transition-all before:opacity-0 hover:before:opacity-100',
             {
-              "bg-[var(--history--item-color)]": group === item.group,
-              "bg-grey-medium": group !== item.group,
-            }
+              'bg-[var(--history--item-color)]': group === item.group,
+              'bg-grey-medium': group !== item.group,
+            },
           )}
           style={
-            { "--history--item-color": getPathnameColor(item.pathname) } as any
+            { '--history--item-color': getPathnameColor(item.pathname) } as any
           }
         />
       ))}

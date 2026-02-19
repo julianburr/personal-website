@@ -1,29 +1,35 @@
-import Link from "next/link";
-import { preconnect } from "react-dom";
+import Link from 'next/link';
+import { preconnect } from 'react-dom';
 
-import { Grid } from "@/components/list/Grid";
-import { Spacer } from "@/components/spacer";
-import { BlogListItem } from "@/features/my-work/BlogListItem";
-import { OpenSourceListItem } from "@/features/my-work/OpenSourceListItem";
-import { TalkListItem } from "@/features/my-work/TalkListItem";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
+import { Grid } from '@/components/list/Grid';
+import { Spacer } from '@/components/spacer';
+import { BlogListItem } from '@/features/my-work/BlogListItem';
+import { OpenSourceListItem } from '@/features/my-work/OpenSourceListItem';
+import { TalkListItem } from '@/features/my-work/TalkListItem';
+import { getPagesFromPath } from '@/utils/getPagesFromPath';
 
-import type { BlogFrontmatter } from "@/features/my-work/BlogListItem";
-import type { OpenSourceFrontmatter } from "@/features/my-work/OpenSourceListItem";
-import type { TalkFrontmatter } from "@/features/my-work/TalkListItem";
-import type { Metadata } from "next";
+import type { BlogFrontmatter } from '@/features/my-work/BlogListItem';
+import type { OpenSourceFrontmatter } from '@/features/my-work/OpenSourceListItem';
+import type { TalkFrontmatter } from '@/features/my-work/TalkListItem';
+import type { Metadata } from 'next';
+
+const sortByDate = (a: any, b: any) => {
+  return !!a?.meta?.date && !!b?.meta?.date && a?.meta?.date > b?.meta?.date
+    ? -1
+    : 1;
+};
 
 export const metadata: Metadata = {
-  title: "My work — Julian Burr",
+  title: 'My work — Julian Burr',
 };
 
 export default async function MyWorkPage() {
-  preconnect("https://storage.cloud.google.com");
+  preconnect('https://storage.cloud.google.com');
 
-  const talks = await getPagesFromPath<TalkFrontmatter>("my-work/talks");
-  const blogs = await getPagesFromPath<BlogFrontmatter>("my-work/blog");
+  const talks = await getPagesFromPath<TalkFrontmatter>('my-work/talks');
+  const blogs = await getPagesFromPath<BlogFrontmatter>('my-work/blog');
   const openSource = await getPagesFromPath<OpenSourceFrontmatter>(
-    "my-work/open-source"
+    'my-work/open-source',
   );
 
   const [talksWithCover, talksWithoutCover] = talks
@@ -47,8 +53,15 @@ export default async function MyWorkPage() {
         }
         return all;
       },
-      [[], []]
+      [[], []],
     );
+
+  const blogPosts = blogs
+    .filter((blog) => blog?.meta?.category === 'post')
+    .toSorted(sortByDate);
+  const blogWriteUps = blogs
+    .filter((blog) => blog?.meta?.category === 'write-up')
+    .toSorted(sortByDate);
 
   return (
     <>
@@ -59,8 +72,8 @@ export default async function MyWorkPage() {
         Over the last few years I’ve been using opportunities at meetups and
         conferences to improve my skills around public speaking and
         communication more generally. This is a selection of talks I have
-        recently been presenting. You can also see a{" "}
-        <Link href="/my-work/talks/events">list of all events</Link> or a{" "}
+        recently been presenting. You can also see a{' '}
+        <Link href="/my-work/talks/events">list of all events</Link> or a{' '}
         <Link href="/my-work/talks/videos">list of all video recordings</Link>.
       </p>
 
@@ -81,20 +94,24 @@ export default async function MyWorkPage() {
       <Spacer h="1.2rem" />
       <h2>Blog posts</h2>
       <p>
-        On top of the snippets in the <Link href="/til">TIL section</Link>, I am
-        aiming to do a lot more writing in the near future. Similar to public
-        speaking, I like sharing my experiences and my learnings, so writing
-        these up into blog posts will be a fun challenge. Below you find a
-        selection of articles I have written so far.
+        I like to write down my thoughts and learnings, not only to share them
+        with others, but also for future me to come back to. Most of that ends
+        up in small snippets I put into the <Link href="/til">TIL section</Link>
+        , but some of it also ends up in longer blog posts.
       </p>
 
       <Spacer h=".8rem" />
       <Grid>
-        {blogs
-          .toSorted((a, b) => (a?.meta?.date! > b?.meta?.date! ? -1 : 1))
-          .map((blog) => (
-            <BlogListItem key={blog?.pathname} page={blog} />
-          ))}
+        {blogPosts.map((blog) => (
+          <BlogListItem key={blog?.pathname} page={blog} />
+        ))}
+      </Grid>
+
+      <Spacer h="1.2rem" />
+      <Grid>
+        {blogWriteUps.map((blog) => (
+          <BlogListItem key={blog?.pathname} page={blog} />
+        ))}
       </Grid>
 
       <Spacer h="1.2rem" />
@@ -106,11 +123,9 @@ export default async function MyWorkPage() {
 
       <Spacer h=".8rem" />
       <Grid>
-        {openSource
-          .toSorted((a, b) => (a?.meta?.date! > b?.meta?.date! ? -1 : 1))
-          .map((project) => (
-            <OpenSourceListItem key={project?.pathname} page={project} />
-          ))}
+        {openSource?.toSorted?.(sortByDate).map((project) => (
+          <OpenSourceListItem key={project?.pathname} page={project} />
+        ))}
       </Grid>
     </>
   );

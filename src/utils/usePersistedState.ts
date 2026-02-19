@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export function usePersistedState<T = any>(key: string, fallback: T) {
   const fromStorage =
-    typeof window !== "undefined"
+    typeof window !== 'undefined'
       ? window.localStorage?.getItem(key)
       : undefined;
   const fallbackValue = fromStorage
@@ -14,7 +14,7 @@ export function usePersistedState<T = any>(key: string, fallback: T) {
   useEffect(() => {
     window.localStorage?.setItem(
       key,
-      JSON.stringify({ value: state, ts: new Date().getTime() })
+      JSON.stringify({ value: state, ts: new Date().getTime() }),
     );
   }, [state]);
 

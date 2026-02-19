@@ -1,10 +1,10 @@
-import { ListItem } from "@/components/list/ListItem";
+import { ListItem } from '@/components/list/ListItem';
 
-import type { TalkFrontmatter } from "@/features/my-work/TalkListItem";
-import type { getPageFromPath } from "@/utils/getPageFromPath";
+import type { TalkFrontmatter } from '@/features/my-work/TalkListItem';
+import type { getPageFromPath } from '@/utils/getPageFromPath';
 
 type EventTalkVideoListItemProps = {
-  event: TalkFrontmatter["events"][string];
+  event: TalkFrontmatter['events'][string];
   talk: Awaited<ReturnType<typeof getPageFromPath<TalkFrontmatter>>>;
 };
 

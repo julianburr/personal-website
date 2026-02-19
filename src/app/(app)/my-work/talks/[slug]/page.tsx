@@ -1,21 +1,21 @@
-import { Newspaper, Pen } from "@phosphor-icons/react/dist/ssr";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import * as Icons from '@phosphor-icons/react/dist/ssr';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
-import { Grid } from "@/components/list/Grid";
-import { ListItem } from "@/components/list/ListItem";
-import { Spacer } from "@/components/spacer";
-import { EventListItem } from "@/features/my-work/EventListItem";
-import { getPageFromPath } from "@/utils/getPageFromPath";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
+import { Grid } from '@/components/list/Grid';
+import { ListItem } from '@/components/list/ListItem';
+import { Spacer } from '@/components/spacer';
+import { EventListItem } from '@/features/my-work/EventListItem';
+import { getPageFromPath } from '@/utils/getPageFromPath';
+import { getPagesFromPath } from '@/utils/getPagesFromPath';
 
-import type { TalkFrontmatter } from "@/features/my-work/TalkListItem";
-import type { Metadata } from "next";
+import type { TalkFrontmatter } from '@/features/my-work/TalkListItem';
+import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { slug } = await params;
   const page = await getPageFromPath<TalkFrontmatter>(
-    `my-work/talks/${slug}.md`
+    `my-work/talks/${slug}.md`,
   );
 
   if (!page) {
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
 export default async function TalkDetailsPage({ params }: any) {
   const { slug } = await params;
   const page = await getPageFromPath<TalkFrontmatter>(
-    `my-work/talks/${slug}.md`
+    `my-work/talks/${slug}.md`,
   );
 
   if (!page) {
@@ -38,16 +38,16 @@ export default async function TalkDetailsPage({ params }: any) {
 
   const links = [
     {
-      icon: <Newspaper />,
-      label: "Blog",
+      icon: <Icons.NewspaperIcon />,
+      label: 'Blog',
       href: page?.meta?.blogUrl,
-      target: page?.meta?.blogUrl?.startsWith("http")
-        ? ("_blank" as const)
+      target: page?.meta?.blogUrl?.startsWith('http')
+        ? ('_blank' as const)
         : undefined,
     },
     {
-      icon: <Pen />,
-      label: "Transcript",
+      icon: <Icons.PenIcon />,
+      label: 'Transcript',
       href: page?.meta?.transcriptUrl,
     },
   ].filter((action) => !!action.href);
@@ -62,7 +62,7 @@ export default async function TalkDetailsPage({ params }: any) {
       <div
         className="details"
         dangerouslySetInnerHTML={{
-          __html: page?.content?.html || "",
+          __html: page?.content?.html || '',
         }}
       />
 
@@ -122,9 +122,9 @@ export default async function TalkDetailsPage({ params }: any) {
 }
 
 export async function generateStaticParams() {
-  const posts = await getPagesFromPath<TalkFrontmatter>("my-work/talks");
+  const posts = await getPagesFromPath<TalkFrontmatter>('my-work/talks');
 
   return posts.map((post) => ({
-    slug: post?.pathname.replace(/^\/my-work\/talks\//, ""),
+    slug: post?.pathname.replace(/^\/my-work\/talks\//, ''),
   }));
 }

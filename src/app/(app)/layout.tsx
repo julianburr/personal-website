@@ -1,38 +1,38 @@
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { IBM_Plex_Mono, Lato, Staatliches } from "next/font/google";
-import { Suspense } from "react";
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { IBM_Plex_Mono, Lato, Staatliches } from 'next/font/google';
+import { Suspense } from 'react';
 
-import { Navigation } from "@/components/navigation";
-import { UseHistory } from "@/utils/useHistory";
-import { BodyWithColor } from "@/utils/usePageColor";
-import { UseTwitterEmojis } from "@/utils/useTwitterEmojis";
+import { Navigation } from '@/components/navigation';
+import { UseHistory } from '@/utils/useHistory';
+import { BodyWithColor } from '@/utils/usePageColor';
+import { UseTwitterEmojis } from '@/utils/useTwitterEmojis';
 
-import favicon from "@/assets/favicon.png";
+import favicon from '@/assets/favicon.png';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import "@/styles/globals.css";
+import '@/styles/globals.css';
 
 const lato = Lato({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font--default",
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: '--font--default',
 });
 
 const staatliches = Staatliches({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font--heading",
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font--heading',
 });
 
 const robotoMono = IBM_Plex_Mono({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font--mono",
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font--mono',
 });
 
 export const metadata: Metadata = {
-  title: "Julian Burr",
+  title: 'Julian Burr',
   icons: favicon.src,
 };
 

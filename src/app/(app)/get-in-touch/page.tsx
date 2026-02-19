@@ -1,10 +1,10 @@
-import BottleMessageIllustrationSvg from "@/assets/illustrations/bottle-message.svg";
-import PalmTreeIllustrationSvg from "@/assets/illustrations/palm-tree.svg";
+import BottleMessageIllustrationSvg from '@/assets/illustrations/bottle-message.svg';
+import PalmTreeIllustrationSvg from '@/assets/illustrations/palm-tree.svg';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Get in touch — Julian Burr",
+  title: 'Get in touch — Julian Burr',
 };
 
 export default function GetInTouchPage() {
@@ -29,6 +29,7 @@ export default function GetInTouchPage() {
           href="https://twitter.com/messages/compose?recipient_id=866080743834886144"
           target="_blank"
           className="absolute left-[10%] bottom-[1rem] z-2 animate-float"
+          rel="noreferrer"
         >
           <BottleMessageIllustrationSvg className="h-[10rem] w-auto" />
         </a>

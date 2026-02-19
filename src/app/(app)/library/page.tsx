@@ -1,12 +1,12 @@
-import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
+import { ArrowSquareOutIcon } from '@phosphor-icons/react/dist/ssr';
 
-import { Grid } from "@/components/list/Grid";
-import { ListItem } from "@/components/list/ListItem";
-import { Spacer } from "@/components/spacer";
-import { getPagesFromPath } from "@/utils/getPagesFromPath";
+import { Grid } from '@/components/list/Grid';
+import { ListItem } from '@/components/list/ListItem';
+import { Spacer } from '@/components/spacer';
+import { getPagesFromPath } from '@/utils/getPagesFromPath';
 
-import type { getPageFromPath } from "@/utils/getPageFromPath";
-import type { Metadata } from "next";
+import type { getPageFromPath } from '@/utils/getPageFromPath';
+import type { Metadata } from 'next';
 
 export type BookFrontmatter = {
   cover: string;
@@ -14,31 +14,35 @@ export type BookFrontmatter = {
   title: string;
   description?: string;
   externalUrl?: string;
-  status: "read" | "reading" | "shelf";
+  status: 'read' | 'reading' | 'shelf';
 };
 
 type Book = Awaited<ReturnType<typeof getPageFromPath<BookFrontmatter>>>;
 
 export const metadata: Metadata = {
-  title: "Library — Julian Burr",
+  title: 'Library — Julian Burr',
 };
 
 export default async function LibraryPage() {
-  const books = await getPagesFromPath<BookFrontmatter>("library");
+  const books = await getPagesFromPath<BookFrontmatter>('library');
   const grouped = books
-    .toSorted((a, b) => (a?.meta.title! < b?.meta.title! ? -1 : 1))
+    .toSorted((a, b) => {
+      const aTitle = a?.meta.title ?? '';
+      const bTitle = b?.meta.title ?? '';
+      return aTitle < bTitle ? -1 : 1;
+    })
     .reduce<[Book[], Book[], Book[]]>(
       (all, book) => {
-        if (book?.meta?.status === "read") {
+        if (book?.meta?.status === 'read') {
           all[0].push(book);
-        } else if (book?.meta?.status === "reading") {
+        } else if (book?.meta?.status === 'reading') {
           all[1].push(book);
         } else if (book) {
           all[2].push(book);
         }
         return all;
       },
-      [[], [], []]
+      [[], [], []],
     );
 
   const renderBook = (book: Book) => (
@@ -53,10 +57,10 @@ export default async function LibraryPage() {
         book?.meta?.externalUrl
           ? [
               {
-                icon: <ArrowSquareOut />,
-                label: "External link",
+                icon: <ArrowSquareOutIcon />,
+                label: 'External link',
                 href: book?.meta?.externalUrl,
-                target: "_blank",
+                target: '_blank',
               },
             ]
           : []

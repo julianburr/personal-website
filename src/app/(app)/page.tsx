@@ -1,18 +1,18 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { TurnableBox } from "@/features/home/TurnableBox";
+import { TurnableBox } from '@/features/home/TurnableBox';
 
-import BooksIllustrationSvg from "@/assets/illustrations/books.svg";
-import GlobeIllustrationSvg from "@/assets/illustrations/globe.svg";
-import LampIllustrationSvg from "@/assets/illustrations/lamp.svg";
-import PlantIllustrationSvg from "@/assets/illustrations/plant.svg";
+import BooksIllustrationSvg from '@/assets/illustrations/books.svg';
+import GlobeIllustrationSvg from '@/assets/illustrations/globe.svg';
+import LampIllustrationSvg from '@/assets/illustrations/lamp.svg';
+import PlantIllustrationSvg from '@/assets/illustrations/plant.svg';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import "@/styles/home.css";
+import '@/styles/home.css';
 
 const metadata: Metadata = {
-  title: "Hi. — Julian Burr",
+  title: 'Hi. — Julian Burr',
 };
 
 export default function Home() {
