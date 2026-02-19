@@ -8,7 +8,13 @@ import tseslint from 'typescript-eslint';
 
 const eslintConfig = tseslint.config(
   {
-    ignores: ['**/node_modules', '**/.vercel', '**/.next', '**/out'],
+    ignores: [
+      '**/node_modules',
+      '**/out',
+      '**/.vercel',
+      '**/.next',
+      '**/.shared',
+    ],
   },
 
   tseslint.configs.recommended,

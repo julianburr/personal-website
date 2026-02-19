@@ -14,25 +14,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@master
-      - run: npm install -g corepack@latest --force
+      - name: Checkout shared actions repo
+        uses: actions/checkout@master
+        with:
+          repository: julianburr/github-actions
+          path: ./.shared
+
+      - name: Install corepack
+        run: npm install -g corepack@latest --force
 
       - name: Setup node env
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Checkout shared actions repo
-        uses: actions/checkout@master
-        with:
-          repository: julianburr/github-actions
-          path: ./.github/shared
-
       - name: Install actions dependencies
-        run: yarn --cwd=.github/shared
+        run: yarn --cwd=.shared
 
       - name: Remove app alias & clean up deployments 🧹
-        uses: ./.github/shared/vercel-teardown
+        uses: ./.shared/vercel-teardown
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
