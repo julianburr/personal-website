@@ -50,7 +50,7 @@ export default async function TalkEventsPage() {
             {index > 0 && <Spacer h="1.2rem" />}
             <h2>{year}</h2>
 
-            <Spacer h=".8rem" />
+            <Spacer h=".4rem" />
             <Grid>
               {eventsMap[year].map((event) => (
                 <EventTalkListItem

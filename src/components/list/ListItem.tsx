@@ -16,7 +16,7 @@ type Action = {
 type Props = {
   cover?: string;
   coverVideo?: string;
-  coverAspectRatio?: 'landscape' | 'portrait';
+  coverAspectRatio?: 'landscape' | 'portrait' | 'square';
   date?: Date | string;
   dateFormat?: string;
   meta?: string;
@@ -74,6 +74,7 @@ export function ListItem({
               {
                 'aspect-video': coverAspectRatio === 'landscape',
                 'aspect-9/13': coverAspectRatio === 'portrait',
+                'aspect-square': coverAspectRatio === 'square',
               },
             )}
           />

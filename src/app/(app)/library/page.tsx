@@ -74,14 +74,13 @@ export default async function LibraryPage() {
 
       {!!grouped[1].length && (
         <>
-          <Spacer h="1.2rem" />
           <h2>What I’m reading at the moment 🤓</h2>
           <Spacer h=".4rem" />
           <Grid size="small">{grouped[1].map(renderBook)}</Grid>
+          <Spacer h="1.2rem" />
         </>
       )}
 
-      <Spacer h="1.2rem" />
       <h2>Books I have read & recommend</h2>
       <p>
         This is by no means a complete list or anything, and you’ll also find
