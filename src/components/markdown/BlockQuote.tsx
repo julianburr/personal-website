@@ -14,7 +14,7 @@ export function BlockQuote({ children, node, ...props }: Props) {
         {...props}
         className="mx-auto my-[2.4rem] w-[calc(100%-2rem)] max-w-[26rem]"
       >
-        <div className="twitter-embed--content bg-grey-light p-[1.2rem]">
+        <div className="twitter-embed--content bg-grey-light p-[1.2rem] whitespace-pre-line">
           {content}
         </div>
         <p className="twitter-embed--author my-[.3rem] mb-0 text-[.8em] w-full font-serif text-black-subtle text-center whitespace-normal">

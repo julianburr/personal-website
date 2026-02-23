@@ -64,57 +64,61 @@ export default async function TalkDetailsPage({ params }: any) {
       <Spacer h="2rem" />
       <Markdown content={page?.markdown} />
 
-      <Spacer h="1.2rem" />
-      <h2>Events</h2>
-      <Grid>
-        {Object.values(page?.meta?.events)
-          ?.filter((event) => event?.date < new Date())
-          ?.toSorted((a, b) => (a?.date > b?.date ? -1 : 1))
-          ?.map((event) => (
-            <EventListItem key={event.date.toString()} event={event} />
-          ))}
-      </Grid>
-
-      {!!links?.length && (
-        <>
-          <Spacer h="1.2rem" />
-          <h2>Further resources</h2>
-          <Grid>
-            {links.map((link, index) => (
-              <ListItem
-                key={`${link.href}-${index}`}
-                title={
-                  <span className="flex flex-row items-center gap-2">
-                    <span className="text-[1.4rem]">{link.icon}</span>
-                    <span>{link.label}</span>
-                  </span>
-                }
-                href={link.href}
-                target={link.target}
-              />
+      <div className="content markdown flex flex-col">
+        <h2>Events</h2>
+        <Grid>
+          {Object.values(page?.meta?.events)
+            ?.filter((event) => event?.date < new Date())
+            ?.toSorted((a, b) => (a?.date > b?.date ? -1 : 1))
+            ?.map((event) => (
+              <EventListItem key={event.date.toString()} event={event} />
             ))}
-          </Grid>
-          <Spacer h="1.8rem" />
-        </>
-      )}
+        </Grid>
 
-      {Object.values(page?.meta?.events)
-        ?.filter((event) => event?.videoEmbed)
-        ?.map((event) => (
+        {!!links?.length && (
           <>
-            <Spacer h="1.2rem" />
-            <h2>Recording from {event.name}</h2>
-            <iframe
-              className="video-embed"
-              src={event.videoEmbed}
-              title="Video embed player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-            <Spacer h="1.8rem" />
+            <h2>Further resources</h2>
+            <Grid>
+              {links.map((link, index) => (
+                <ListItem
+                  key={`${link.href}-${index}`}
+                  title={
+                    <span className="flex flex-row items-center gap-2">
+                      <span className="text-[1.4rem]">{link.icon}</span>
+                      <span>{link.label}</span>
+                    </span>
+                  }
+                  href={link.href}
+                  target={link.target}
+                />
+              ))}
+            </Grid>
           </>
-        ))}
+        )}
+
+        {!!Object.keys(page?.meta?.events).length && (
+          <>
+            <h2 className="pb-0">Recordings</h2>
+            {Object.values(page?.meta?.events)
+              ?.filter((event) => event?.videoEmbed)
+              ?.map((event) => (
+                <>
+                  <h3 className="pt-[1.2rem] pb-[.2rem]">
+                    {event.name} ({event.date.getFullYear()})
+                  </h3>
+                  <iframe
+                    className="my-0"
+                    src={event.videoEmbed}
+                    title="Video embed player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </>
+              ))}
+          </>
+        )}
+      </div>
     </>
   );
 }

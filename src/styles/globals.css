@@ -118,7 +118,16 @@
   }
 
   a {
-    @apply text-black font-normal underline decoration-(--page--color) decoration-[.15em] hover:decoration-inherit duration-200;
+    @apply text-black font-normal underline decoration-(--page--color) decoration-[.15rem] hover:decoration-inherit duration-200;
+
+    pre {
+      @apply underline decoration-current/30;
+    }
+
+    &:hover pre,
+    &:focus-within pre {
+      @apply decoration-current;
+    }
   }
 
   strong,
@@ -176,8 +185,8 @@
       @apply hidden;
     }
 
-    iframe.video-embed {
-      @apply w-full aspect-[16/9];
+    iframe {
+      @apply w-full h-auto aspect-video my-[1.6rem];
     }
 
     @media (min-width: 1460px) {

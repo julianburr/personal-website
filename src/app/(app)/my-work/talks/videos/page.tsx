@@ -1,6 +1,5 @@
-import Link from 'next/link';
-
 import { Grid } from '@/components/list/Grid';
+import { PageMeta } from '@/components/page/PageMeta';
 import { Spacer } from '@/components/spacer';
 import { EventTalkVideoListItem } from '@/features/my-work/EventTalkVideoListItem';
 import { getPagesFromPath } from '@/utils/getPagesFromPath';
@@ -36,10 +35,11 @@ export default async function TalkEventsPage() {
 
   return (
     <>
-      <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/my-work">My work</Link> — Talks
-      </p>
-      <h1 className="p-0 mt-1">Videos</h1>
+      <PageMeta
+        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
+        meta={['Talks']}
+      />
+      <h1 className="p-0">Videos</h1>
 
       <h2>Recordings on YouTube</h2>
       <Spacer h=".8rem" />

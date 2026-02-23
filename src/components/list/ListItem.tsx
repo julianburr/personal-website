@@ -104,7 +104,7 @@ export function ListItem({
             </span>
           )}
 
-          <h3 className="p-0 mt-[.2rem] text-lg leading-[1.2] font-heading">
+          <h3 className="p-0 mt-[.2rem] text-lg leading-[1.2] font-heading after:hidden after:content-['']">
             {title}
           </h3>
           {description && (

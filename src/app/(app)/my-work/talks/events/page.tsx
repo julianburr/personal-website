@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import Link from 'next/link';
 
 import { Grid } from '@/components/list/Grid';
+import { PageMeta } from '@/components/page/PageMeta';
 import { Spacer } from '@/components/spacer';
 import { EventTalkListItem } from '@/features/my-work/EventTalkListItem';
 import { getPagesFromPath } from '@/utils/getPagesFromPath';
@@ -38,10 +38,11 @@ export default async function TalkEventsPage() {
 
   return (
     <>
-      <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/my-work">My work</Link> — Talks
-      </p>
-      <h1 className="p-0 mt-1">Events</h1>
+      <PageMeta
+        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
+        meta={['Talks']}
+      />
+      <h1 className="p-0">Events</h1>
 
       {Object.keys(eventsMap)
         ?.toSorted((a, b) => (a > b ? -1 : 1))
