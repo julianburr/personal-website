@@ -50,16 +50,16 @@ John Doerr’s points to 4-key values, or "OKR superpowers", good OKRs should ha
 Some key learnings for me from this are around what is needed to make progress and success actually happen:
 
 - **Conversations** - you need to to have a lot of those to make sure everyone understands what you're tryinng to achieve
-- **Data** - you need A LOT of it, you need to ideally be able to measure the impact on everything you do, so if you don't have it in place, start collecting!
-- **Progress** - no progress without progress, you cannot be successful if you're trying to solve the problem of today with the way you did it yesterday without iterating over it
-- **Communication** - objectives need to be communicated, they need to be transparent and accessible to everyone, but even more than that they need to be communicated in a way that doesn't require specific domain knowledge of the team setting them, everyone needs to be able to understand them
+- **Data:** you need A LOT of it, you need to ideally be able to measure the impact on everything you do, so if you don't have it in place, start collecting!
+- **Progress:** no progress without progress, you cannot be successful if you're trying to solve the problem of today with the way you did it yesterday without iterating over it
+- **Communication:** objectives need to be communicated, they need to be transparent and accessible to everyone, but even more than that they need to be communicated in a way that doesn't require specific domain knowledge of the team setting them, everyone needs to be able to understand them
 
-Good objectives:
+### Good objectives:
 
 - should be inspirational - you want everyone in the company to be able to relate to them and rally behind them
 - shouldn't be one dimensional - plainly focusing on sales and profit won't get you there
 
-Good key results:
+### Good key results:
 
 - need to be measurable - you need to be able to tell wheather or not the actions you take actually contrubute positively to your objectives and key results
 - should ideally be based on existing data - e.g. instead of saying I want to sell x, you should say I want to increase sales by x percent

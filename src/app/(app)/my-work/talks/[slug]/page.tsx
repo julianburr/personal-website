@@ -53,6 +53,10 @@ export default async function TalkDetailsPage({ params }: any) {
     },
   ].filter((action) => !!action.href);
 
+  const videoRecordings = Object.values(page?.meta?.events)?.filter(
+    (event) => event?.videoEmbed,
+  );
+
   return (
     <>
       <PageMeta
@@ -61,9 +65,14 @@ export default async function TalkDetailsPage({ params }: any) {
       />
       <h1 className="p-0">{page?.meta?.title}</h1>
 
-      <Spacer h="2rem" />
-      <Markdown content={page?.markdown} />
+      {page?.markdown && (
+        <>
+          <Spacer h="2rem" />
+          <Markdown content={page?.markdown} />
+        </>
+      )}
 
+      <Spacer h="1.2rem" />
       <div className="content markdown flex flex-col">
         <h2>Events</h2>
         <Grid>
@@ -96,26 +105,25 @@ export default async function TalkDetailsPage({ params }: any) {
           </>
         )}
 
-        {!!Object.keys(page?.meta?.events).length && (
+        {!!videoRecordings.length && (
           <>
             <h2 className="pb-0">Recordings</h2>
-            {Object.values(page?.meta?.events)
-              ?.filter((event) => event?.videoEmbed)
-              ?.map((event) => (
-                <>
-                  <h3 className="pt-[1.2rem] pb-[.2rem]">
-                    {event.name} ({event.date.getFullYear()})
-                  </h3>
-                  <iframe
-                    className="my-0"
-                    src={event.videoEmbed}
-                    title="Video embed player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  />
-                </>
-              ))}
+            {videoRecordings?.map((event, i) => (
+              <>
+                {i > 0 && <Spacer h=".8rem" />}
+                <h3 className="pt-[.8rem] pb-[.2rem]">
+                  {event.name} ({event.date.getFullYear()})
+                </h3>
+                <iframe
+                  className="my-0"
+                  src={event.videoEmbed}
+                  title="Video embed player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </>
+            ))}
           </>
         )}
       </div>
