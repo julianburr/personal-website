@@ -1,16 +1,15 @@
-import { COLORS } from '@/styles/theme';
 import { getPathnameGroup } from '@/utils/getPathnameGroup';
 
 const colors = {
-  home: COLORS.beige,
-  'my-work': COLORS.red,
-  til: COLORS['blue-medium'],
-  library: COLORS.green,
-  'around-the-world': COLORS.teal,
-  'get-in-touch': COLORS.purple,
-  'black-lives-matter': COLORS.black,
+  home: 'var(--color-beige)',
+  'my-work': 'var(--color-red)',
+  til: 'var(--color-blue-medium)',
+  library: 'var(--color-green)',
+  'around-the-world': 'var(--color-teal)',
+  'get-in-touch': 'var(--color-purple)',
+  'black-lives-matter': 'var(--color-black)',
 
-  __fallback: COLORS.beige,
+  __fallback: 'var(--color-beige)',
 };
 
 export function getPathnameColor(pathname: string) {

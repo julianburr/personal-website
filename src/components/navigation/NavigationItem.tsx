@@ -14,7 +14,7 @@ export function NavigationItem({ href, onClick, children }: Props) {
       <Link
         href={href}
         onClick={onClick}
-        className="flex py-[.1rem] text-inherit"
+        className="flex py-[.1rem] text-inherit no-underline decoration-black hover:underline focus:underline"
       >
         {children}
       </Link>

@@ -1,7 +1,9 @@
 import dayjs from 'dayjs';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { Markdown } from '@/components/markdown';
+import { PageMeta } from '@/components/page/PageMeta';
+import { Spacer } from '@/components/spacer';
 import { getPageFromPath } from '@/utils/getPageFromPath';
 import { getPagesFromPath } from '@/utils/getPagesFromPath';
 import { getTimeToRead } from '@/utils/getTimeToRead';
@@ -30,18 +32,17 @@ export default async function TilDetailsPage({ params }: any) {
 
   return (
     <>
-      <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/til">Today I learned</Link> —{' '}
-        {dayjs(page?.meta?.date).format('MMMM D, YYYY')} —{' '}
-        {getTimeToRead(page?.content?.raw)} min read
-        {page?.meta?.tags && ` — ${page?.meta?.tags}`}
-      </p>
-      <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>
-
-      <div
-        className="details"
-        dangerouslySetInnerHTML={{ __html: page?.content?.html || '' }}
+      <PageMeta
+        breadcrumbs={[{ title: 'Today I learned', href: '/til' }]}
+        meta={[
+          dayjs(page?.meta?.date).format('MMMM D, YYYY'),
+          `${getTimeToRead(page?.content?.raw)} min read`,
+        ]}
       />
+      <h1 className="p-0">{page?.meta?.title}</h1>
+
+      <Spacer h="2rem" />
+      <Markdown content={page?.content?.raw} />
     </>
   );
 }

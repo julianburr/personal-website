@@ -305,9 +305,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // ...we do this
 ReactDOM.createRoot(document.getElementById(‘root’)).render(<App />);
 
-@@@alt
-All it take to enable concurrent mode is changing one line. Without us needing to add any logic at all. Mind blown 🤯 — Note that this is still in alpha and not ready for production yet!
-@@@
+--alt: All it take to enable concurrent mode is changing one line. Without us needing to add any logic at all. Mind blown 🤯 — Note that this is still in alpha and not ready for production yet!
 ```
 
 To be clear, this will not make the data load any faster, but the user will perceive it as such and the user experience will be dramatically improved.

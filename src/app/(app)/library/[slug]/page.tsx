@@ -2,6 +2,8 @@ import { ArrowSquareOutIcon } from '@phosphor-icons/react/dist/ssr';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { Markdown } from '@/components/markdown';
+import { PageMeta } from '@/components/page/PageMeta';
 import { Spacer } from '@/components/spacer';
 import { Tooltip } from '@/components/tooltip';
 import { getPageFromPath } from '@/utils/getPageFromPath';
@@ -33,20 +35,24 @@ export default async function LibraryDetailsPage({ params }: any) {
 
   return (
     <>
-      <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/library">Library</Link>
-        {!!page?.content?.raw && (
-          <> — {getTimeToRead(page?.content?.raw)} min summary</>
-        )}
-      </p>
-      <h1 className="p-0 mt-1">{page?.meta?.title}</h1>
-
-      <p>
-        {page?.meta?.description
-          ? `${page?.meta?.description} — by ${page?.meta?.author}`
-          : `by ${page?.meta?.author}`}
-      </p>
-
+      <PageMeta
+        breadcrumbs={[{ title: 'Library', href: '/library' }]}
+        meta={[
+          page?.meta?.author,
+          ...(page?.content?.raw
+            ? [`${getTimeToRead(page?.content?.raw)} min summary`]
+            : []),
+        ]}
+      />
+      <h1 className="p-0">{page?.meta?.title}</h1>
+      {page?.meta?.description && (
+        <>
+          <Spacer h=".3rem" />
+          <div className="font-serif italic text-[1.1em] text-black-subtle">
+            <Markdown content={page?.meta?.description} />
+          </div>
+        </>
+      )}
       {page?.meta?.cover && (
         <>
           <Spacer h="1.2rem" />
@@ -75,14 +81,8 @@ export default async function LibraryDetailsPage({ params }: any) {
           </div>
         </>
       )}
-
-      <Spacer h="1.2rem" />
-      <div
-        className="details"
-        dangerouslySetInnerHTML={{
-          __html: page?.content?.html || '',
-        }}
-      />
+      <Spacer h="3.2rem" />
+      <Markdown content={page?.content?.raw} />
     </>
   );
 }

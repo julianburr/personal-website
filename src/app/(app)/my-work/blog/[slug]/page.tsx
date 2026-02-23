@@ -1,7 +1,9 @@
 import dayjs from 'dayjs';
-import Link from 'next/link';
 import { notFound, redirect } from 'next/navigation';
 
+import { Markdown } from '@/components/markdown';
+import { TableOfContents } from '@/components/markdown/TableOfContents';
+import { PageMeta } from '@/components/page/PageMeta';
 import { Spacer } from '@/components/spacer';
 import { getPageFromPath } from '@/utils/getPageFromPath';
 import { getPagesFromPath } from '@/utils/getPagesFromPath';
@@ -40,14 +42,21 @@ export default async function BlogDetailsPage({ params }: any) {
 
   return (
     <>
-      <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/my-work">My work</Link> —{' '}
-        {dayjs(page?.meta?.date).format('MMMM D, YYYY')} —{' '}
-        {getTimeToRead(page?.content?.raw)} min read
-      </p>
-      <h1 className="p-0 mt-1">{page?.meta?.title}</h1>
+      <PageMeta
+        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
+        meta={[
+          dayjs(page?.meta?.date).format('MMMM D, YYYY'),
+          `${getTimeToRead(page?.content?.raw)} min read`,
+        ]}
+      />
+      <h1 className="p-0">{page?.meta?.title}</h1>
       {page?.meta?.description && (
-        <p className="text-[1.3rem]">{page?.meta?.description}</p>
+        <>
+          <Spacer h=".3rem" />
+          <div className="font-serif italic text-[1.1em] text-black-subtle">
+            <Markdown content={page?.meta?.description} />
+          </div>
+        </>
       )}
 
       {page?.meta?.coverUrl && (
@@ -62,12 +71,9 @@ export default async function BlogDetailsPage({ params }: any) {
       )}
 
       <Spacer h="3.2rem" />
-      <div
-        className="details"
-        dangerouslySetInnerHTML={{
-          __html: page?.content?.html || '',
-        }}
-      />
+      <Markdown content={page?.content?.raw} />
+
+      <TableOfContents />
     </>
   );
 }

@@ -41,7 +41,7 @@ export default async function TalkEventsPage() {
       </p>
       <h1 className="p-0 mt-1">Videos</h1>
 
-      <h2>Recordings on YouTube & Vimeo</h2>
+      <h2>Recordings on YouTube</h2>
       <Spacer h=".8rem" />
       <Grid>
         {eventsWithEmbed.map((event) => (
@@ -54,7 +54,7 @@ export default async function TalkEventsPage() {
       </Grid>
 
       <Spacer h="1.2rem" />
-      <h2>External links to recordings</h2>
+      <h2>External links to other recordings</h2>
       <Spacer h=".8rem" />
       <Grid>
         {eventsWithExternalLink.map((event) => (

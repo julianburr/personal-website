@@ -27,6 +27,17 @@ export function UseHistory() {
     );
   }, [pathname, group]);
 
+  // HACK: manual scroll restoration to avoid scroll padding and smooth scrolling
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant',
+      });
+    }
+  }, [pathname]);
+
   // HACK: to avoid hydration errors, we only render after the page has
   // been mounted
   const [mounted, setMounted] = useState(false);

@@ -186,7 +186,7 @@ A variation of the popover you might also be familiar with is “tooltips”. Th
 
 All of these are great examples, because they are extremely common UX patterns, and for years we had to build custom solutions using Javascript because the platform didn’t provide native support for them. But that’s not true anymore!
 
-### Dialogs
+#### Dialogs
 
 Let’s start with the [`dialog` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog). This was introduced a while ago, and has been widely available as a baseline since 2022.
 
@@ -215,17 +215,11 @@ There are a few key parts to notice here:
 Just like the `button` element, the `dialog` element takes care of a lot of functionality for us, including many accessibility concerns. This includes:
 
 - Hiding the content until the dialog is activated
-- Rendering the dialog on top of the current page content when active
-- Trapping the focus within the dialog while it’s active. This means, while the dialog is active, the browser will prevent the user from interacting with anything outside of the dialog, including both trigger and focus interactions.
+- Rendering the dialog [on top of the current page content[^1]]() when active
+- [Trapping the focus[^2]]() within the dialog while it’s active. This means, while the dialog is active, the browser will prevent the user from interacting with anything outside of the dialog, including both trigger and focus interactions.
 - Keyboard accessibility, e.g. closing the dialog by pressing the `escape` key, restoring focus to the last focused element within the document when closing a dialog, etc.
 
 All of this without any Javascript. However, you can use JS with it if you so wish. Like many other HTML elements, the `dialog` DOM element provides additional JS methods to interact with it.
-
-> **Side notes:** A few things worth noting on the above. To “render the dialog on top of the current page content”, the browser uses a different rendering layer for those elements. This means they will always be on top of the document content, independent of any z-index values provided.
->
-> The “trapping of the focus” generally works out-of-the-box with the dialog element. However, if you control the opening of the dialog via Javascript, make sure you use the openModal method (instead of just open), which will also trigger the focus trap.
->
-> Also, when using Javascript, don’t use the close method to close the dialog. Use requestClose instead, which will trigger a close event that you can hook into to prevent the close when necessary (e.g. to prevent unsaved changes from being lost, etc.)
 
 It’s also worth noting that you can fully control the look and feel of the dialog via CSS. E.g. a common thing to customise is the backdrop, the background that will sit on top of the page content but behind the dialog content. You can adjust it via the ::backdrop pseudo selector.
 
@@ -266,13 +260,9 @@ dialog:open {
 }
 ```
 
-Not only can we target the open state of the dialog via the `:open` selector, the new [`starting-style` at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style) allows us to do what we couldn’t before. Animate elements in and out of existence. This is baseline newly available since 2024, meaning it’s been in all major browsers since then.
+Not only can we target the open state of the dialog via the `:open` selector, the new [`starting-style` at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style) allows us to do what we couldn’t before. Animate elements in and out of existence. This is [baseline[^3]]() newly available since 2024, meaning it’s been in all major browsers since then.
 
-> **Side note:** I’ve mentioned baseline a couple of times, and will mention it more times as this blog post goes on. [“Baseline”](https://web.dev/baseline) is a fairly recent initiative driven by the likes of Google and Mozilla to help developers understand whether or not certain web features are safe to use. We distinguish between: “widely available” (it is supported by all major browsers), “newly available” (it is supported by all major browsers, but support has been added recently) and “limited availability” (not supported by all major browsers).
->
-> This doesn’t mean that you can’t use features with “limited availability”, it just helps you understand which of the features you should treat as [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), vs. which of them you can rely on for core functionality without any polyfills or fallbacks. This philosophy is going to be even more important once we start talking about more experimental features later on in this post, e.g. customisable selects and scroll markers for accessible carousels.
-
-### Popovers
+#### Popovers
 
 Popovers don’t have their own HTML element, instead you can turn any element into a popover using the new [`popover` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover) (baseline newly available since 2024).
 
@@ -314,7 +304,7 @@ button[popovertarget='demo-popover'] {
 
 This will automatically position the popover relative to the trigger button, based on whatever value you passed into `position-area`. To play around with different values, I highly recommend reading the [Chrome developer blog](https://developer.chrome.com/blog/anchor-positioning-api) entry and this online tool: https://chrome.dev/anchor-tool/.
 
-### Tooltips
+#### Tooltips
 
 As mentioned, tooltips are really just popovers, but instead of triggering them via click, we usually want to trigger them on hover.
 
@@ -349,11 +339,9 @@ Not only does this allow us to completely customise the looks of the tooltip inc
 }
 ```
 
-And I know I said it before, but I think you cannot stress this enough: all of this without needing a single line of Javascript! Magic!
+And I know I said it before, but I think you cannot stress this enough: all of this [without needing a single line of Javascript![^4]]() Magic!
 
-> **Important:** the [interest API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/interestForElement) is currently still experimental and only supported by Chrome and Chromium browsers like Edge and Brave. But it [is part](https://github.com/web-platform-tests/interop/blob/main/2026/README.md#dialogs-and-popovers) of the [Interop 2026](https://wpt.fyi/interop-2026) list, which is a list of features browser vendors are aiming to collaborate on to align their implementation and overall support. So hopefully we’ll get there soon.
-
-## Accordions
+### Accordions
 
 Another UX pattern that isn’t talked about enough (in my opinion) in the context of native HTML capabilities is accordions.
 
@@ -423,13 +411,13 @@ But also, we can customise the behaviour. E.g. if we want to have a collection o
 <details name="demo-group">...</details>
 ```
 
-## Forms & inputs
+### Forms & inputs
 
 Another thing that’s found in abundance on the web: forms. Most web apps are, in one way or another, really just a collection of tables and forms to update the data shown in the tables.
 
 Now, the `form` element itself is hopefully nothing new, even though we’re using it less and less in the age of JS frameworks and SPAs, but let’s ignore that for a second.
 
-### Form validation and input types
+#### Form validation and input types
 
 One of the capabilities introduced to HTML forms a while ago, but still often under-utilised, is validation.
 
@@ -473,7 +461,7 @@ And the validation capabilities go beyond just required fields. We can use [inpu
 <input type="number" min="5" max="40" />
 ```
 
-### Beyond validation
+#### Beyond validation
 
 Input types do not only give us advanced validation rules. They can also control browser behaviour, e.g. what keyboard to show on mobile devices. E.g. the keyboard for an email input will be different from the standard keyboard, usually exposing characters like `@`, `-`, `_`, etc. The keyboard for an input of type tel will usually just be the keyboard, with access to the `+` character for country codes.
 
@@ -484,7 +472,7 @@ For anything that doesn’t have a dedicated type, you can use the [`pattern` at
 <input type="text" name="otp" pattern="[0-9A-Z]{6}" />
 ```
 
-### Advanced input types and how to customise them
+#### Advanced input types and how to customise them
 
 And then we have even more advanced form inputs that give us extended UIs for users to define specific values.
 
@@ -890,7 +878,7 @@ Testing, especially in the context of accessibility, is extremely nuanced.
 
 We can check for things like missing alt texts, but we can’t really test easily if the alt text we do detect is actually accurate or helpful for the user in this particular instance. We can check that elements that should be focusable are in fact focusable (or vice versa, an element that shouldn’t be isn’t), but we can’t really test easily whether we covered all elements that should or shouldn’t be focusable. We’re limited to the range of elements we identified and added to the tests manually.
 
-[Studies](https://alphagov.github.io/accessibility-tool-audit/) have repeatedly shown that [only 30-40% of accessibility issues are actually being caught by automated testing](https://www.a11yproject.com/posts/automated-tools-can-ensure-full-accessibility-compliance/#:~:text=Studies%20highlight%20this%20gap.%20A%20Government%20Digital%20Service%20(GDS%20audit%20revealed%20that%20even%20the%20best%20automated%20tools%20detect%20only%2030%2D40%25%20of%20known%20accessibility%20issues.%20Accessibility%20expert%20Karl%20Groves%20notes%20that%20only%2025%20to%2033%25%20of%20WCAG%20guidelines%20can%20be%20reliably%20tested%20with%20automation.). Which, in other words, means: 70% of issues aren’t being caught. That’s _a lot_!
+[Studies](https://alphagov.github.io/accessibility-tool-audit/) have repeatedly shown that [only 30-40% of accessibility issues are actually being caught by automated testing](https://www.a11yproject.com/posts/automated-tools-can-ensure-full-accessibility-compliance/). Which, in other words, means: 70% of issues aren’t being caught. That’s _a lot_!
 
 ### Manual testing and debugging through the dev tools
 
@@ -975,3 +963,19 @@ If you cmd+click on a link, and it doesn’t open in a new tab because it’s no
 The first step is accepting that this is the status quo. The next step is to accept that we as developers have the responsibility, but also the opportunity, to fix that.
 
 Not 100%. Not for every website on the planet. But small steps that you can take within your products and your range of influence can go an extremely long way for a lot of people. And those actions can help amplify the importance of this work to encourage others to do the same.
+
+---
+
+[^1]: To “render the dialog on top of the current page content”, the browser uses a different rendering layer for those elements. This means they will always be on top of the document content, independent of any z-index values provided.
+
+[^2]:
+    The “trapping of the focus” generally works out-of-the-box with the dialog element. However, if you control the opening of the dialog via Javascript, make sure you use the [showModal](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) method (instead of just open), which will also trigger the focus trap.
+
+    Also, when using Javascript, don’t use the close method to close the dialog. Use [requestClose](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/requestClose) instead, which will trigger a close event that you can hook into to prevent the close when necessary (e.g. to prevent unsaved changes from being lost, etc.)
+
+[^3]:
+    [“Baseline”](https://web.dev/baseline) is a fairly recent initiative driven by the likes of Google and Mozilla to help developers understand whether or not certain web features are safe to use. We distinguish between: “widely available” (it is supported by all major browsers), “newly available” (it is supported by all major browsers, but support has been added recently) and “limited availability” (not supported by all major browsers).
+
+    This doesn’t mean that you can’t use features with “limited availability”, it just helps you understand which of the features you should treat as [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), vs. which of them you can rely on for core functionality without any polyfills or fallbacks. This philosophy is going to be even more important once we start talking about more experimental features later on in this post, e.g. customisable selects and scroll markers for accessible carousels.
+
+[^4]: Important: the [interest API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/interestForElement) is currently still experimental and only supported by Chrome and Chromium browsers like Edge and Brave. But it [is part](https://github.com/web-platform-tests/interop/blob/main/2026/README.md#dialogs-and-popovers) of the [Interop 2026](https://wpt.fyi/interop-2026) list, which is a list of features browser vendors are aiming to collaborate on to align their implementation and overall support. So hopefully we’ll get there soon.

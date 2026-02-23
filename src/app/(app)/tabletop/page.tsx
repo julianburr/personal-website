@@ -1,5 +1,3 @@
-import { ArrowSquareOutIcon } from '@phosphor-icons/react/dist/ssr';
-
 import { Grid } from '@/components/list/Grid';
 import { ListItem } from '@/components/list/ListItem';
 import { Spacer } from '@/components/spacer';
@@ -53,18 +51,8 @@ export default async function TabletopPage() {
       cover={game?.meta?.cover}
       coverAspectRatio="square"
       title={game?.meta?.title}
-      actions={
-        game?.meta?.externalUrl
-          ? [
-              {
-                icon: <ArrowSquareOutIcon />,
-                label: 'External link',
-                href: game?.meta?.externalUrl,
-                target: '_blank',
-              },
-            ]
-          : []
-      }
+      href={game?.meta?.externalUrl}
+      target="_blank"
     />
   );
 

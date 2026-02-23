@@ -5,13 +5,13 @@ date: 2021-11-03
 tags: js, node, perf
 ---
 
-It's not a secret that [I'm a huge fan](../running-lighthouse-in-node) of [Lighthouse](https://developers.google.com/web/tools/lighthouse), the tool developed by the Chrome team that can help to not only measure performance and identify underlying issues, but that can also go deeper and help with best practises, accessibility, search engine optimisation and even PWA setup.
+It's not a secret that [I'm a huge fan](/til/running-lighthouse-in-node) of [Lighthouse](https://developers.google.com/web/tools/lighthouse), the tool developed by the Chrome team that can help to not only measure performance and identify underlying issues, but that can also go deeper and help with best practises, accessibility, search engine optimisation and even PWA setup.
 
 The team recently added a new and in my opinion extremely powerful feature, so I thought I'd have a bit of a closer look at it here 😊
 
 ## What is Lighthouse
 
-Very brief in a nutshell: it's a tool that let's you measure and test performance and best practises for a given website by analysing various things while the site loads. It's been around for a while now, and comes out of the box in the Chrome Dev Tools. You can also run it manually e.g. using the [node JS client](../running-lighthouse-in-node).
+Very brief in a nutshell: it's a tool that let's you measure and test performance and best practises for a given website by analysing various things while the site loads. It's been around for a while now, and comes out of the box in the Chrome Dev Tools. You can also run it manually e.g. using the [node JS client](/til/running-lighthouse-in-node).
 
 - [About Lighthouse](https://developers.google.com/web/tools/lighthouse)
 - [About Core Web Vitals](https://web.dev/vitals/#core-web-vitals)

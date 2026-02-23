@@ -1,9 +1,10 @@
 import * as Icons from '@phosphor-icons/react/dist/ssr';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { Grid } from '@/components/list/Grid';
 import { ListItem } from '@/components/list/ListItem';
+import { Markdown } from '@/components/markdown';
+import { PageMeta } from '@/components/page/PageMeta';
 import { Spacer } from '@/components/spacer';
 import { EventListItem } from '@/features/my-work/EventListItem';
 import { getPageFromPath } from '@/utils/getPageFromPath';
@@ -54,17 +55,14 @@ export default async function TalkDetailsPage({ params }: any) {
 
   return (
     <>
-      <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/my-work">My work</Link> — Talk details
-      </p>
-      <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>
-
-      <div
-        className="details"
-        dangerouslySetInnerHTML={{
-          __html: page?.content?.html || '',
-        }}
+      <PageMeta
+        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
+        meta={['Talk details']}
       />
+      <h1 className="p-0">{page?.meta?.title}</h1>
+
+      <Spacer h="2rem" />
+      <Markdown content={page?.content?.raw} />
 
       <Spacer h="1.2rem" />
       <h2>Events</h2>
