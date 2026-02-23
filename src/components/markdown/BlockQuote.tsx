@@ -7,12 +7,8 @@ type Props = {
 };
 
 export function BlockQuote({ children, node, ...props }: Props) {
-  console.log('@@blockquote', props.className);
-
   if (props.className) {
     const [content, ...author] = Children.toArray(children);
-    console.log('@@children', children);
-    console.log('@@author', author);
     return (
       <blockquote
         {...props}

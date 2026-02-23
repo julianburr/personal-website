@@ -6,7 +6,8 @@ import { getPagesFromPath } from '@/utils/getPagesFromPath';
 
 export default async function AroundTheWorldDetailsPage({ params }: any) {
   const { slug } = await params;
-  const page = await getPageFromPath(`around-the-world/${slug.join('/')}.md`);
+  const pagePath = `around-the-world/${slug.join('/')}.md`;
+  const page = await getPageFromPath<any>(pagePath);
 
   if (!page) {
     return notFound();

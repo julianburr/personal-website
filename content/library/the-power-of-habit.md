@@ -3,7 +3,7 @@ title: The Power of Habit
 date: 2019-07-22
 tags: habits, self improvement
 author: Charles Duhigg
-cover: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545854312l/12609433._SY475_.jpg
+coverUrl: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545854312l/12609433._SY475_.jpg
 externalUrl: https://www.goodreads.com/book/show/12609433-the-power-of-habit
 status: read
 ---

@@ -9,7 +9,7 @@ import type { getPageFromPath } from '@/utils/getPageFromPath';
 import type { Metadata } from 'next';
 
 export type BookFrontmatter = {
-  cover: string;
+  coverUrl: string;
   author: string;
   title: string;
   description?: string;
@@ -48,7 +48,7 @@ export default async function LibraryPage() {
   const renderBook = (book: Book) => (
     <ListItem
       key={book?.pathname}
-      cover={book?.meta?.cover}
+      cover={book?.meta?.coverUrl}
       coverAspectRatio="portrait"
       meta={book?.meta?.author}
       title={book?.meta?.title}

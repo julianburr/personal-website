@@ -7,7 +7,7 @@ import type { getPageFromPath } from '@/utils/getPageFromPath';
 import type { Metadata } from 'next';
 
 export type GameFrontmatter = {
-  cover: string;
+  coverUrl: string;
   title: string;
   description?: string;
   externalUrl?: string;
@@ -48,7 +48,7 @@ export default async function TabletopPage() {
   const renderGame = (game: Game) => (
     <ListItem
       key={game?.pathname}
-      cover={game?.meta?.cover}
+      cover={game?.meta?.coverUrl}
       coverAspectRatio="square"
       title={game?.meta?.title}
       href={game?.meta?.externalUrl}

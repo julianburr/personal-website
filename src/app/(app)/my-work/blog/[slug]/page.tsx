@@ -36,7 +36,7 @@ export default async function BlogDetailsPage({ params }: any) {
     return notFound();
   }
 
-  if (!page?.content?.raw && page?.meta?.externalUrl) {
+  if (!page?.markdown && page?.meta?.externalUrl) {
     return redirect(page?.meta?.externalUrl);
   }
 
@@ -46,7 +46,7 @@ export default async function BlogDetailsPage({ params }: any) {
         breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
         meta={[
           dayjs(page?.meta?.date).format('MMMM D, YYYY'),
-          `${getTimeToRead(page?.content?.raw)} min read`,
+          `${getTimeToRead(page?.markdown)} min read`,
         ]}
       />
       <h1 className="p-0">{page?.meta?.title}</h1>
@@ -71,7 +71,7 @@ export default async function BlogDetailsPage({ params }: any) {
       )}
 
       <Spacer h="3.2rem" />
-      <Markdown content={page?.content?.raw} />
+      <Markdown content={page?.markdown} />
 
       <TableOfContents />
     </>

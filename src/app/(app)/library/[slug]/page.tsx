@@ -39,8 +39,8 @@ export default async function LibraryDetailsPage({ params }: any) {
         breadcrumbs={[{ title: 'Library', href: '/library' }]}
         meta={[
           page?.meta?.author,
-          ...(page?.content?.raw
-            ? [`${getTimeToRead(page?.content?.raw)} min summary`]
+          ...(page?.markdown
+            ? [`${getTimeToRead(page?.markdown)} min summary`]
             : []),
         ]}
       />
@@ -53,13 +53,13 @@ export default async function LibraryDetailsPage({ params }: any) {
           </div>
         </>
       )}
-      {page?.meta?.cover && (
+      {page?.meta?.coverUrl && (
         <>
           <Spacer h="1.2rem" />
           <div className="flex self-start relative">
             <img
               alt="Cover image"
-              src={page?.meta?.cover}
+              src={page?.meta?.coverUrl}
               className="h-[18rem] w-auto"
             />
             {page?.meta?.externalUrl && (
@@ -82,7 +82,7 @@ export default async function LibraryDetailsPage({ params }: any) {
         </>
       )}
       <Spacer h="3.2rem" />
-      <Markdown content={page?.content?.raw} />
+      <Markdown content={page?.markdown} />
     </>
   );
 }

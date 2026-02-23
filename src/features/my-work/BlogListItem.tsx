@@ -16,10 +16,10 @@ type BlogListItemProps = {
 };
 
 export function BlogListItem({ page }: BlogListItemProps) {
-  const href = page?.content?.raw ? page?.pathname : page?.meta?.externalUrl;
+  const href = page?.markdown ? page?.pathname : page?.meta?.externalUrl;
   const cover = page?.meta?.type === 'blog' ? page?.meta?.coverUrl : undefined;
-  const meta = page?.content?.raw
-    ? `${getTimeToRead(page?.content?.raw)} min`
+  const meta = page?.markdown
+    ? `${getTimeToRead(page?.markdown)} min`
     : undefined;
 
   return (
@@ -30,7 +30,7 @@ export function BlogListItem({ page }: BlogListItemProps) {
       title={page?.meta?.title}
       meta={meta}
       href={href}
-      target={page?.content?.raw ? undefined : '_blank'}
+      target={page?.markdown ? undefined : '_blank'}
     />
   );
 }

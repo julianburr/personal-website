@@ -32,8 +32,10 @@ export default async function TranscriptDetailsPage({ params }: any) {
     return notFound();
   }
 
-  const lines = page?.content?.raw?.split('\n');
-
+  // HACK: to make writing / editing transcripts easier, we add the structure on the fly here
+  // that turns normal paragraphs into callouts, so we get a wrapping element around them so
+  // we can float the text next to the slide images (if screen size allows)
+  const lines = page?.markdown?.split('\n');
   const fixedMarkdown = lines
     ?.map((line, index) =>
       lines[index].startsWith('![') ||
@@ -53,18 +55,17 @@ export default async function TranscriptDetailsPage({ params }: any) {
     <>
       <PageMeta
         breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
-        meta={[
-          'Talk transcript',
-          `${getTimeToRead(page?.content?.raw)} min read`,
-        ]}
+        meta={['Talk transcript', `${getTimeToRead(page?.markdown)} min read`]}
       />
       <h1 className="p-0">{page?.meta?.title}</h1>
 
-      {page?.meta?.mdDescription?.raw && (
+      {page?.meta?.description && (
         <>
           <Spacer h=".3rem" />
           <div className="font-serif italic text-[1.1em] text-black-subtle">
-            <Markdown content={page?.meta?.mdDescription?.raw} />
+            <Markdown
+              content={page?.meta?.description.replace(/\n/g, '\n\n')}
+            />
           </div>
         </>
       )}

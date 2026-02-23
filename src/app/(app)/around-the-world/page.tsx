@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 export default async function AroundTheWorldPage() {
   preconnect('https://storage.cloud.google.com');
 
-  const talks = await getPagesFromPath('my-work/talks');
-  const destinations = await getPagesFromPath('around-the-world');
+  const talks = await getPagesFromPath<any>('my-work/talks');
+  const destinations = await getPagesFromPath<any>('around-the-world');
   return (
     <>
       <h1 className="relative z-10">Around the world</h1>

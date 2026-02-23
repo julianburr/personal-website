@@ -3,7 +3,7 @@ title: The Alignment Problem
 description: Machine Learning and Human Values
 tags: ai, ml, biases
 author: Brian Christian
-cover: https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1598630749i/50489349.jpg
+coverUrl: https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1598630749i/50489349.jpg
 externalUrl: https://www.goodreads.com/book/show/50489349-the-alignment-problem
 status: read
 ---

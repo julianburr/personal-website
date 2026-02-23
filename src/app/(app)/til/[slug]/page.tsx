@@ -36,13 +36,13 @@ export default async function TilDetailsPage({ params }: any) {
         breadcrumbs={[{ title: 'Today I learned', href: '/til' }]}
         meta={[
           dayjs(page?.meta?.date).format('MMMM D, YYYY'),
-          `${getTimeToRead(page?.content?.raw)} min read`,
+          `${getTimeToRead(page?.markdown)} min read`,
         ]}
       />
       <h1 className="p-0">{page?.meta?.title}</h1>
 
       <Spacer h="2rem" />
-      <Markdown content={page?.content?.raw} />
+      <Markdown content={page?.markdown} />
     </>
   );
 }

@@ -62,7 +62,7 @@ export default async function TalkDetailsPage({ params }: any) {
       <h1 className="p-0">{page?.meta?.title}</h1>
 
       <Spacer h="2rem" />
-      <Markdown content={page?.content?.raw} />
+      <Markdown content={page?.markdown} />
 
       <Spacer h="1.2rem" />
       <h2>Events</h2>
