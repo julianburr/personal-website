@@ -14,10 +14,11 @@ export default async function AroundTheWorldPage() {
 
   const talks = await getPagesFromPath<any>('my-work/talks');
   const destinations = await getPagesFromPath<any>('around-the-world');
+
   return (
     <>
       <h1 className="relative z-10">Around the world</h1>
-      <WorldMap destinations={destinations} talks={talks} />
+      <WorldMap destinations={destinations as any} talks={talks} />
     </>
   );
 }

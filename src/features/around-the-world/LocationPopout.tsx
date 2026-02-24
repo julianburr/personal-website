@@ -27,7 +27,11 @@ function LocationPopout({ entries }: Props) {
   const grouped = useMemo(
     () =>
       entries
-        ?.toSorted?.((a, b) => (a?.meta?.date > b?.meta?.date ? -1 : 1))
+        ?.toSorted?.((a, b) =>
+          new Date(a?.meta?.date).getTime() > new Date(b?.meta?.date).getTime()
+            ? -1
+            : 1,
+        )
         ?.reduce<[Entry[], Entry[]]>(
           (all, entry) => {
             if (entry?.meta?.type === 'talk') {
@@ -51,13 +55,13 @@ function LocationPopout({ entries }: Props) {
         {!!entry?.pathname && shouldRenderLink ? (
           <Link
             href={entry.pathname}
-            className="flex text-inherit p-[.6rem] group font-normal hover:bg-grey-light hover:no-underline focus:bg-grey-light focus:no-underline transition-all"
+            className="flex text-inherit p-[.6rem] group font-normal hover:bg-grey-light hover:no-underline focus:bg-grey-light focus:no-underline transition-all no-underline"
           >
             <span className="flex flex-col flex-1">
-              <h1 className="text-base m-0 p-0 leading-[1.1] font-bold group-hover:underline group-focus:underline">
+              <h1 className="text-base m-0 p-0 leading-[1.1] font-bold">
                 {entry?.meta?.title || entry?.meta?.city}
               </h1>
-              <span className="text-xs opacity-[.64] leading-[1.1]">
+              <span className="text-xs text-black-subtle/60 leading-[1.1] font-serif">
                 {entry?.meta?.subtitle ? (
                   <>{entry.meta.subtitle}</>
                 ) : entry?.meta?.region ? (
@@ -75,7 +79,7 @@ function LocationPopout({ entries }: Props) {
             <h1 className="text-base m-0 p-0 leading-[1.1]">
               {entry?.meta?.title || entry?.meta?.city}
             </h1>
-            <span className="text-xs opacity-[.64] leading-[1.1]">
+            <span className="text-xs text-black-subtle/60 leading-[1.1] font-serif">
               {entry?.meta?.region ? (
                 <>
                   {entry.meta.region}, {entry.meta.country}
@@ -101,20 +105,20 @@ function LocationPopout({ entries }: Props) {
       )}
       <div className="p-[.2rem] flex flex-col max-h-[16rem] overflow-auto">
         {!!grouped[0]?.length && (
-          <span className="flex items-center p-[.6rem] pb-[.3rem] gap-[.3rem] opacity-[.40] text-xs">
-            <Icons.PersonSimpleHikeIcon className="h-[1rem] w-auto" />
+          <span className="flex items-center p-[.6rem] pb-[.3rem] gap-[.3rem] text-black-subtle text-xs">
+            <Icons.PersonSimpleHikeIcon className="h-[1em] w-auto" />
             <span>Travel</span>
           </span>
         )}
         {grouped[0].map(renderGroup)}
 
         {!!grouped[0]?.length && !!grouped[1]?.length && (
-          <span className="flex flex-shrink-0 h-[1px] w-[calc(100%+.4rem)] my-[.2rem] mx-[-.2rem] bg-grey-light" />
+          <span className="flex shrink-0 h-px w-[calc(100%+.4rem)] my-[.2rem] mx-[-.2rem] bg-black-subtle/7" />
         )}
 
         {!!grouped[1]?.length && (
-          <span className="flex items-center p-[.6rem] pb-[.3rem] gap-[.3rem] opacity-[.40] text-xs">
-            <Icons.MicrophoneStageIcon className="h-[1rem] w-auto" />
+          <span className="flex items-center p-[.6rem] pb-[.3rem] gap-[.3rem] text-black-subtle text-xs">
+            <Icons.MicrophoneStageIcon className="h-[1em] w-auto" />
             <span>Talks</span>
           </span>
         )}

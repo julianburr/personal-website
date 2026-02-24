@@ -5,9 +5,9 @@
 
 @theme inline {
   /* Fonts reference CSS vars from layout */
-  --font-default: var(--font-sans-serif-default), 'Open Sans', sans-serif;
+  --font-default: var(--font-sans-serif), 'Open Sans', sans-serif;
   --font-heading: var(--font-sans-serif-heading), sans-serif;
-  --font-sub-heading: var(--font-serif-heading), serif;
+  --font-sub-heading: var(--font-serif), serif;
   --font-mono: var(--font-mono), monospace;
   --font-handwriting: var(--font-handwriting), serif;
 
