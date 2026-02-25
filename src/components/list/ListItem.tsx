@@ -97,7 +97,7 @@ export function ListItem({
           }
         >
           {!!(date || meta) && (
-            <span className="text-(--page--color) text-xs inline pr-[.2rem] translate-y-[-.1rem] leading-[1.2]">
+            <span className="text-(--page-color) text-xs inline pr-[.2rem] translate-y-[-.1rem] leading-[1.2]">
               {date && `${dayjs(date).format(dateFormat)}`}
               {date && meta && ' — '}
               {meta}

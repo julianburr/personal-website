@@ -246,7 +246,7 @@ class DynamicData extends Component {
 
 Finally we can place the boundaries and define the fallback component we want to render while the data is fetching. Where? Anywhere we want. As explained before, these boundaries will catch any thrown Promises bubbling up from below them in the tree.
 
-```js
+```js { "alt": "All it take to enable concurrent mode is changing one line. Without us needing to add any logic at all. Mind blown 🤯 — Note that this is still in alpha and not ready for production yet!" }
 class App extends Component {
   render() {
     return (
@@ -304,8 +304,6 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 // ...we do this
 ReactDOM.createRoot(document.getElementById(‘root’)).render(<App />);
-
---alt: All it take to enable concurrent mode is changing one line. Without us needing to add any logic at all. Mind blown 🤯 — Note that this is still in alpha and not ready for production yet!
 ```
 
 To be clear, this will not make the data load any faster, but the user will perceive it as such and the user experience will be dramatically improved.

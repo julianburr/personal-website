@@ -82,10 +82,10 @@ export function TilList({ pages }: Props) {
                 )
               }
               className={classNames(
-                'flex text-inherit py-[.2rem] px-[.6rem] font-heading transition-all hover:bg-[var(--page--color)] hover:text-white hover:no-underline',
+                'flex text-inherit py-[.2rem] px-[.6rem] font-heading transition-all hover:bg-[var(--page-color)] hover:text-white hover:no-underline',
                 {
                   'bg-grey-medium': !isActive,
-                  'bg-[var(--page--color)] text-white': isActive,
+                  'bg-[var(--page-color)] text-white': isActive,
                 },
               )}
             >

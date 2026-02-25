@@ -18,7 +18,7 @@
   --color-beige: #c5ac8b;
   --color-grey-light: #f5f2f0;
   --color-grey-medium: #e6e0db;
-  --color-grey-dark: #f5f2f0;
+  --color-grey-dark: #c8c3c1;
   --color-green: #9cca6c;
   --color-yellow: #f7ad08;
   --color-purple: #ca85d8;
@@ -75,7 +75,7 @@
 /* Base/reset styles in a layer so Tailwind utilities override them when applied */
 @layer base {
   :root {
-    --page--color: #f7f4ee;
+    --page-color: #f7f4ee;
   }
 
   html {
@@ -118,7 +118,11 @@
   }
 
   a {
-    @apply text-black font-normal underline decoration-(--page--color) decoration-[.15rem] hover:decoration-inherit duration-200;
+    @apply text-black font-normal underline decoration-(--page-color) decoration-[.15rem] hover:decoration-[currentColor] focus:decoration-[currentColor] duration-200;
+
+    &[href^='#user-content-fn'] {
+      @apply decoration-[currentColor]/30 hover:decoration-[currentColor] focus:decoration-[currentColor];
+    }
 
     pre {
       @apply underline decoration-current/30;
@@ -187,6 +191,43 @@
 
     iframe {
       @apply w-full h-auto aspect-video my-[1.6rem];
+    }
+
+    .sandbox {
+      .sp-wrapper,
+      .sp-layout,
+      .sp-editor,
+      .sp-preview {
+        @apply w-full! h-full!;
+      }
+
+      .sp-layout {
+        @apply border-none! rounded-none!;
+      }
+
+      .sp-tabs {
+        @apply bg-grey-medium/50! border-none!;
+
+        .sp-tab-container {
+          @apply p-0! has-[button:focus]:outline-none!;
+        }
+
+        button {
+          @apply text-[.8em]! text-black-subtle! border-b-[.15rem]! data-[active="false"]:border-b-transparent! data-[active="true"]:text-black! data-[active="true"]:border-b-black! focus:border-t-0! focus:border-l-0! focus:border-r-0! focus:text-black! hover:text-black! transition-all! duration-120! focus-visible:outline-1! focus-visible:outline-offset-[-.3rem]!;
+        }
+      }
+
+      .sp-preview {
+        iframe {
+          @apply my-0;
+        }
+      }
+
+      .sp-preview-actions {
+        button {
+          @apply rounded-none!;
+        }
+      }
     }
 
     @media (min-width: 1460px) {

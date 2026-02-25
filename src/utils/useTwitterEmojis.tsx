@@ -2,7 +2,6 @@
 
 import { usePathname } from 'next/navigation';
 import { useLayoutEffect } from 'react';
-import twemoji from 'twemoji';
 
 export function useTwitterEmojis() {
   const pathname = usePathname();
@@ -13,11 +12,11 @@ export function useTwitterEmojis() {
       return;
     }
 
-    twemoji.parse(window.document.body, {
-      ext: '.svg',
-      size: 'svg',
-      base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
-    });
+    // twemoji.parse(window.document.body, {
+    //   ext: '.svg',
+    //   size: 'svg',
+    //   base: 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/',
+    // });
   }, [pathname]);
 }
 

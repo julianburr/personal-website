@@ -1,7 +1,17 @@
 import { CodeBlock } from '@/components/markdown/code/CodeBlock';
-import { CodeEditor } from '@/components/markdown/code/CodeEditor';
+import { InlineCode } from '@/components/markdown/code/InlineCode';
+import { CodeSandbox } from '@/components/markdown/code/sandbox';
 
 import type { ReactNode } from 'react';
+
+type Meta = {
+  sandbox?: boolean;
+  sandboxId?: string;
+  sandboxTemplate?: string;
+  sandboxFile?: string;
+  language?: string;
+  alt?: string;
+};
 
 type Props = {
   children: ReactNode;
@@ -9,29 +19,20 @@ type Props = {
   node?: any;
 };
 
-export function Code({ children, className }: Props) {
-  const raw = String(children).trim();
-  const language = className?.match(/language-(\w+)/)?.[1];
+export function Code({ children, className, node }: Props) {
+  const code = String(children).trim();
+  const meta = JSON.parse(node?.data?.meta || '{}') as Meta;
 
-  const alt = raw.match(/--alt: (.+)/)?.[1];
-  const isSandbox = !!raw.split('\n').find((line) => line === '--sandbox');
-
-  const code = raw
-    .replace(/--sandbox/, '')
-    .replace(/--alt: (.+)/, '')
-    .trim();
+  const isSandbox = meta.sandbox;
+  const language = meta.language || className?.match(/language-(\w+)/)?.[1];
 
   if (!language) {
-    return (
-      <pre className="bg-[currentColor]/4 inline-block px-[.2rem] font-mono text-[.9em]">
-        {code}
-      </pre>
-    );
+    return <InlineCode code={code} />;
   }
 
   if (isSandbox) {
-    return <CodeEditor code={code} language={language} alt={alt} />;
+    return <CodeSandbox code={code} meta={meta} language={language} />;
   }
 
-  return <CodeBlock code={code} language={language} alt={alt} />;
+  return <CodeBlock code={code} meta={meta} language={language} />;
 }
