@@ -13,7 +13,6 @@ import { useCodeSandbox } from './Provider';
 
 import type { ComponentProps } from 'react';
 
-console.log({ githubLight });
 const customTheme: ComponentProps<typeof Sandpack>['theme'] = {
   ...githubLight,
   colors: {

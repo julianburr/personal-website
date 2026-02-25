@@ -9,7 +9,6 @@ type Props = {
 };
 
 export function Demo({ node }: Props) {
-  console.log('@@demo', node);
   const Demo = demos[node.properties?.id as keyof typeof demos];
 
   if (!Demo) {
