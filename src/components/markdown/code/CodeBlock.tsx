@@ -17,6 +17,7 @@ const customTheme: ComponentProps<typeof Prism>['style'] = {
   ['pre[class*="language-"]']: {
     ...prism['pre[class*="language-"]'],
     backgroundColor: 'var(--color-grey-light)',
+    margin: 0,
   },
   operator: {
     ...prism.operator,
@@ -32,14 +33,14 @@ type Props = {
 
 export function CodeBlock({ code, language, meta }: Props) {
   return (
-    <div className="flex flex-col gap-[.2rem] my-[1.2rem]">
+    <div className="flex flex-col gap-[.2rem] my-[2.4rem]">
       <Prism language={language} style={customTheme}>
         {code}
       </Prism>
       {meta?.alt && (
         <>
-          <Caption>{meta.alt}</Caption>
           <Spacer h=".2rem" />
+          <Caption>{meta.alt}</Caption>
         </>
       )}
     </div>

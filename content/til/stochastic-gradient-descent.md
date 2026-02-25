@@ -5,25 +5,33 @@ date: 2026-02-25
 tags: ml
 ---
 
-I'm currently diving deep into ML training and challenges, especially around biases, that come with it. While reading ["The Alignment Problem" by Brian Christian](/library/the-alignment-problem) I found a great example for ["stochastic gradient descent"[^1]]() training.
+I'm currently diving deep into ML training and challenges, especially around biases, that come with it. While reading ["The Alignment Problem" by Brian Christian](/library/the-alignment-problem) I found a great example for "stochastic gradient descent" training.
 
-I also learned the term "grokking today" 😅
+I also learned the term "grokking" today 😅
 
-## Training the model
+## Training approach
 
-The idea is that you want to train a model ["modular addition"[^2]](). This is a great demo use case, because the modular part of the calculation means there will be a recognisable pattern in the results. It's also just maths, so you can easily create a training data set through a for loop.
+The core idea of stochastic gradient descent is that we start with a model with completely random ("stochastic") weights. Then, to train it, we take a labelled dataset, and use it as inputs to feed into the model and see what it returns.
 
-```ts
+From the output, [we calculate the "loss"](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html) (a number that measures how bad the prediction is). From that loss, we can use gradient descent to adjust the model to become more accurate.
+
+## Modular addition
+
+The demo example is to train a model on ["modular addition"[^1]](). This is a great use case, because "modulo" is pure maths, so we can easily create a big dataset. So what we do:
+
+- create a huge dataset with inputs and (what we know to be) correct results
+- split that dataset into a training set and a test (or validation) set
+- we then randomly feed the model inputs from the dataset, but only adjust it when the inputs came from the training set
+
+This allows us to keep track of both the models accuracy of the data we trained it on, as well as data is hasn't been specifically trained on.
+
+```ts {"alt": "Simplified example for creating the dataset. We then split this into a training and a test set." }
 /**
- * Simplified example for creating the training data set
  * E.g. if we wanted to train the model on `(a + b) % 5`
  */
 
 const size = 100; // size of the training data set
 const dataset = [];
-
-// Helper function for mathematical modulo to ensure non-negative results.
-const mathematicalModulo = (a, b) => (a + b) % 5;
 
 for (let i = 0; i < size; i++) {
   // Generate random integers within a reasonable range
@@ -31,7 +39,7 @@ for (let i = 0; i < size; i++) {
   const input2 = Math.floor(Math.random() * 100);
 
   // Calculate the result of their sum modulo
-  const result = mathematicalModulo(a, b);
+  const result = (a, b) => (a + b) % 5;
 
   // Add the sample to the dataset
   dataset.push({
@@ -42,39 +50,37 @@ for (let i = 0; i < size; i++) {
 }
 ```
 
-In the real example we want the divisor to also change, but you get the gist. Once we have this, we can "simply" train a model, and then start feeding it inputs that were not in the dataset.
-
-Because it's just maths, we can then check the models response against what the actual mathematically correct result would be, and use that to align the model and measure our error rate over time.
-
 ## Grokking
 
-The fascinating thing here, and why this is a common demo example in the world of ML and gradient descent learning, is that you can see if you plot the error rate of the model, that it start really high and stays there for quite some time.
+The fascinating thing is that, if we plot out the error rates for training vs. test data, we can see that it training error goes down pretty quickly, basically immediately when we start the training. The test error however stays at 100% for a while.
 
-What this means is that for the most part, in the beginning after the model has been trained, it doesn't actually know anything. It mostly just memoised the training data, and gives random gibberish for anything it hasn't seen before. But through gradient descent, it will eventually find the relevant pattern, and seeminlgy suddenly the error rate will drop massively. That's what is called "grokking" in ML training context.
+This means during that initial training phase, the model might seem like its getting smarter, but it's really just memoising the correct responses based on our adjustments. Any data we haven't specially trained it on, it still gets wrong.
+
+If you keep training though, after a while the test error will suddenly start dropping quite drastically as well. This is the "grokking" moment, when the model suddenly finds an accurate pattern that allows it to predict the results even for inputs it hasn't seen before.
+
+It might just be me, but this blew my mind when I first read about it.
 
 ## Over-fitting
 
-On the other end of the spectrum, there's another interesting phenomenon called "over-fitting". It describes what happens when you keep training the model, even beyond the point where its good, it will start deterioating at some point, because it starts finding very nieche patterns that are just true for the training set.
+On the other end of the spectrum, if we would keep training, we might eventually hit a spot where the test error starts rising again. That's what we would call "over-fitting", the model starts refining the patterns it thinks it sees, but narrows down too specifcally on the training set.
 
-Again, modulo addition (or any other mathematical challenge you train a model on) is great, because it's black and white whether the models prediction is correct or not. We can very easily test the correctness using the mathimatical formula, it's a universal truth.
+This is fascinating, because is means there's a sweet spot for well trained models. But what I find even more interesting is the implications this has on more sophisticated training.
 
-Where all of this becomes extremely interesting (at least for me) is when we go outside of that real. What if we want to train models on something that has more nuance, no clear "right" or "wrong", or even better, something that requires "morals" to evaluate. How do we know when the grokking has happened and the model is fully accurate? How do we know if we went to far and over-fitted the model?
+In our demo example, this is all fine because we have a part of the dataset we held back that we use to visualise the test error. We know the right results for those inputs, we just don't tell the model. But imagine we didn't have that. What if the results of the model were much more nuanced and up for interpretation? What if they involved some level of morals? How would we know when the model is optimised (aka "grokking" has happened, but we haven't over-fitted it yet)?
 
-## Modular addition demo
+## The demo
 
 You can run the example below, which will let you start the training process of a model and plot the error rate over time on a graph.
 
-You can see that the "training errors" goes down pretty much immediately, meaning the amounts of errors the model does when given data it saw during the intiial training goes down. The "test errors" stays at 100% though, meaning the model always fails on data it hasn't seen during initial training.
-
-However, if you keep it running for long enough (for me usually around the 60,000 steps mark), the "test errors" will eventually and pretty suddenly drop. That is the "grokking" moment.
+As described before, when you start the training you will see the "training error" rate drop pretty much immediately, while the "test error" rate stays at 100%. However, if you keep it running for long enough (for me usually around the 60,000 steps mark), the "test errors" will eventually and pretty suddenly drop. That is the "grokking" moment.
 
 :demo{id="stochasticGradientDescent"}
+
+If you want to play around with this yourself, you can check out this [CodeSandbox](https://codesandbox.io/p/sandbox/95p7hm).
 
 ---
 
 [^1]:
-    Stochasic gradient descent works by initialising the model with random weights. Then the model is gradually updates with each sample, based on its error.
+    "Modulo" (often written as "mod") is a way to calculate the remainder after integer division. Basically, how often can you fit a into b without breaking it into fractions.
 
-    See [https://www.ibm.com](https://www.ibm.com/think/topics/stochastic-gradient-descent) for more details.
-
-[^2]: The "modulo" operation returns the remainder of a division, after one number is divided by another. E.g. "6 mod 4" would devide 6 by 4, and check for the remainder, in this case 2. In Javascript, the "modulo" opperation uses the "%" operator
+    For example, 18 mod 4 means: divide 18 by 4, which goes 4 times with a remainder of 2.

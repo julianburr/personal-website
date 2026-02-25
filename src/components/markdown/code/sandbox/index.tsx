@@ -4,8 +4,10 @@ import { SandpackProvider, type Sandpack } from '@codesandbox/sandpack-react';
 import { githubLight } from '@codesandbox/sandpack-themes';
 import { useEffect, useId, useState } from 'react';
 
+import { Caption } from '@/components/markdown/code/Caption';
 import { CodeSandboxEditor } from '@/components/markdown/code/sandbox/Editor';
 import { CodeSandboxPreview } from '@/components/markdown/code/sandbox/Preview';
+import { Spacer } from '@/components/spacer';
 
 import { useCodeSandbox } from './Provider';
 
@@ -74,9 +76,17 @@ export function CodeSandbox({ meta, code }: Props) {
       template={sandbox.template as any}
       customSetup={{ dependencies: meta.sandboxDependencies }}
     >
-      <div className="sandbox flex flex-col gap-[.2rem] my-[1.8rem] w-full h-[30rem] relative overflow-hidden">
-        <CodeSandboxEditor />
-        <CodeSandboxPreview show={showPreview} setShow={setShowPreview} />
+      <div className="w-full my-[2.4rem]">
+        <div className="sandbox w-full h-[30rem] relative overflow-hidden">
+          <CodeSandboxEditor />
+          <CodeSandboxPreview show={showPreview} setShow={setShowPreview} />
+        </div>
+        {meta?.alt && (
+          <>
+            <Spacer h=".2rem" />
+            <Caption>{meta.alt}</Caption>
+          </>
+        )}
       </div>
     </SandpackProvider>
   );
