@@ -5,11 +5,12 @@ export function usePersistedState<T = any>(key: string, fallback: T) {
     typeof window !== 'undefined'
       ? window.localStorage?.getItem(key)
       : undefined;
-  const fallbackValue = fromStorage
+
+  const initialValue = fromStorage
     ? (JSON.parse(fromStorage)?.value ?? fallback)
     : fallback;
 
-  const [state, setState] = useState<T>(fallbackValue);
+  const [state, setState] = useState<T>(initialValue);
 
   useEffect(() => {
     window.localStorage?.setItem(
