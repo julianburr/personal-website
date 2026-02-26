@@ -8,11 +8,11 @@ interface Props {
 
 export function PageMeta({ breadcrumbs, meta }: Props) {
   return (
-    <span className="flex flex-row items-center text-[.9rem] font-sub-heading p-0 leading-[1.2] mb-[.5rem]">
-      <nav className="font-heading text-[1rem] flex flex-row items-center mr-1 mt-[.2rem]">
+    <span className="p-0 mb-[.4rem] text-[.9rem] font-sub-heading leading-[.9rem]">
+      <nav className="font-heading m-0 p-0 inline text-[1rem] mr-1 mt-[.2rem]">
         {breadcrumbs.map((breadcrumb) => (
           <Link
-            role="menuitem"
+            role="menuitem leading-[.6rem]"
             key={breadcrumb.href}
             href={breadcrumb.href}
             className="text-[.9em]"
