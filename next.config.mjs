@@ -1,3 +1,10 @@
+import path from 'node:path';
+import url from 'node:url';
+
+// 1. Manually define __dirname for ESM
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const svgrOptions = {
   svgoConfig: {
     plugins: [
@@ -19,6 +26,7 @@ const nextConfig = {
   images: { unoptimized: true },
 
   turbopack: {
+    root: path.resolve(__dirname, '.'),
     rules: {
       '*.svg': {
         loaders: [

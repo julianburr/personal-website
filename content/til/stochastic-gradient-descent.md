@@ -13,7 +13,7 @@ I also learned the term "grokking" today 😅
 
 The core idea of stochastic gradient descent is that we start with a model with completely random ("stochastic") weights. Then, to train it, we take a labelled dataset, and use it as inputs to feed into the model and see what it returns.
 
-From the output, [we calculate the "loss"](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html) (a number that measures how bad the prediction is). From that loss, we can use gradient descent to adjust the model to become more accurate.
+From the output, [we calculate the "loss"](https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html) (a number that measures how bad the prediction is). From that loss, we can use [gradient descent](https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html) to adjust the model to become more accurate.
 
 ## Modular addition
 
