@@ -24,7 +24,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="canvas absolute z-0 inset-[.6rem] sm:inset-[3rem] overflow-hidden">
+      <div className="canvas absolute z-0 inset-(--body-padding) overflow-hidden">
         <ClientOnly>
           <ScrollContainer>
             <HomeIllustrationSvg className="w-[164vh] h-auto shrink-0" />

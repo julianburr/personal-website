@@ -38,6 +38,8 @@ export function ScrollContainer({ children }: PropsWithChildren) {
     e.preventDefault();
     e.stopPropagation();
 
+    window.document.body.style.overflowX = 'hidden';
+
     wasDraggingRef.current = false;
     clearTimeout(dragTimer.current!);
 
@@ -69,6 +71,7 @@ export function ScrollContainer({ children }: PropsWithChildren) {
         e.preventDefault();
         e.stopPropagation();
 
+        window.document.body.style.overflowX = 'auto';
         container.dataset.scrollX = deltaX.toString();
         setInitialX(deltaX);
         window.document.body.removeEventListener('mousemove', handleMouseMove);
@@ -95,6 +98,7 @@ export function ScrollContainer({ children }: PropsWithChildren) {
       e.stopPropagation();
     }
 
+    window.document.body.style.overflowX = 'auto';
     wasDraggingRef.current = false;
     clearTimeout(dragTimer.current!);
   };

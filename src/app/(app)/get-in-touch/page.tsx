@@ -24,7 +24,7 @@ export default function GetInTouchPage() {
         </p>
       </div>
 
-      <div className="canvas absolute z-0 inset-[.6rem] sm:inset-[3rem] overflow-hidden">
+      <div className="canvas absolute z-0 inset-(--body-padding) overflow-hidden">
         <BeachSvg className="absolute h-[84vh] bottom-[-2vh] left-[50%] translate-x-[-50%] w-auto shrink-0" />
       </div>
     </>

@@ -1,5 +1,5 @@
 svg .boat {
-  animation: float 240s ease-in-out infinite;
+  animation: float 480s ease-in-out infinite;
 }
 
 @keyframes float {
