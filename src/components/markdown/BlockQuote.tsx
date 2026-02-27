@@ -25,7 +25,7 @@ export function BlockQuote({ children, node, ...props }: Props) {
   }
 
   return (
-    <blockquote className="my-[2.4rem] text-[1.2rem] font-sub-heading text-black-subtle text-center w-[calc(100%-2rem)] max-w-xl mx-auto">
+    <blockquote className="relative my-[2.4rem] mx-auto w-[calc(100%-2rem)] max-w-[30rem] bg-grey-light p-[1.6rem] text-[1.2rem] leading-[1.3] font-sub-heading text-black-subtle text-center before:content-['“'] before:font-sub-heading before:absolute before:left-[.6rem] before:top-[.4rem] before:text-left before:text-[4rem] before:leading-none before:text-black-subtle before:opacity-[.1]">
       {children}
     </blockquote>
   );

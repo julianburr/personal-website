@@ -199,6 +199,15 @@
       }
     }
 
+    h1,
+    h2,
+    h3,
+    h4 {
+      &&& + pre > div {
+        @apply mt-[1.2rem]!;
+      }
+    }
+
     .sandbox {
       .sp-wrapper,
       .sp-layout,

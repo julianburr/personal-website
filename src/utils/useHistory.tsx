@@ -57,16 +57,13 @@ export function UseHistory() {
         <Link
           key={item.group}
           href={item.pathname}
+          data-active={group === item.group}
           className={classnames(
-            'flex  w-[1.6rem] h-[1.6rem] relative before:absolute before:inset-0 before:border-4 before:border-[var(--history--item-color)] before:transition-all before:opacity-0 hover:before:opacity-100',
-            {
-              'bg-[var(--history--item-color)]': group === item.group,
-              'bg-grey-medium': group !== item.group,
-            },
+            'flex w-[1.6rem] h-[1.6rem] relative bg-grey-medium hover:bg-(--history--item-color) focus:bg-(--history--item-color) data-[active="true"]:bg-(--history--item-color)',
           )}
-          style={
-            { '--history--item-color': getPathnameColor(item.pathname) } as any
-          }
+          style={{
+            ['--history--item-color' as any]: getPathnameColor(item.pathname),
+          }}
         />
       ))}
     </nav>

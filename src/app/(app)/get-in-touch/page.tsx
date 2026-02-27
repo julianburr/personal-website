@@ -1,7 +1,8 @@
-import BottleMessageIllustrationSvg from '@/assets/illustrations/bottle-message.svg';
-import PalmTreeIllustrationSvg from '@/assets/illustrations/palm-tree.svg';
+import BeachSvg from '@/assets/illustrations/beach.svg';
 
 import type { Metadata } from 'next';
+
+import '@/styles/get-in-touch.css';
 
 export const metadata: Metadata = {
   title: 'Get in touch — Julian Burr',
@@ -10,12 +11,12 @@ export const metadata: Metadata = {
 export default function GetInTouchPage() {
   return (
     <>
-      <div className="max-w-[26rem]">
+      <div className="max-w-[20rem] md:max-w-[26rem] relative z-10">
         <h1>Get in touch</h1>
+        <p>Hi there, you want to get in touch with me? Great!</p>
         <p>
-          Hi there, you want to get in touch with me? That’s great. I could give
-          you my personal email here, but I don’t check my inbox very frequently
-          and would probably miss your message.
+          I could give you my personal email here, but I don’t check my inbox
+          very frequently and would probably miss your message.
         </p>
         <p>
           So if you want to say hello or have a chat, just get in touch with me
@@ -23,17 +24,8 @@ export default function GetInTouchPage() {
         </p>
       </div>
 
-      <div className="absolute inset-0 z-1 overflow-hidden">
-        <div className="absolute left-0 right-0 bottom-0 h-[30%] bg-[#f0f6fc]" />
-        <a
-          href="https://twitter.com/messages/compose?recipient_id=866080743834886144"
-          target="_blank"
-          className="absolute left-[10%] bottom-[1rem] z-2 animate-float"
-          rel="noreferrer"
-        >
-          <BottleMessageIllustrationSvg className="h-[10rem] w-auto" />
-        </a>
-        <PalmTreeIllustrationSvg className="hidden lg:flex absolute right-[-33rem] bottom-0 h-[120%] w-auto z-3" />
+      <div className="canvas absolute z-0 inset-[.6rem] sm:inset-[3rem] overflow-hidden">
+        <BeachSvg className="absolute h-[84vh] bottom-[-2vh] left-[50%] translate-x-[-50%] w-auto shrink-0" />
       </div>
     </>
   );
