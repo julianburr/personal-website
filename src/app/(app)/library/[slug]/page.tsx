@@ -22,7 +22,14 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 
   const title = `Library: ${page.meta.title} — Julian Burr`;
-  return { title };
+  const description = page?.meta?.description
+    ? `${page.meta.description} by ${page.meta.author}`
+    : `by ${page.meta.author}`;
+
+  return {
+    title,
+    description,
+  };
 }
 
 export default async function LibraryDetailsPage({ params }: any) {

@@ -33,7 +33,7 @@ type Props = {
 
 export function CodeBlock({ code, language, meta }: Props) {
   return (
-    <div className="flex flex-col gap-[.2rem] my-[2.4rem]">
+    <div className="flex flex-col gap-[.2rem] my-[2.4rem] w-full overflow-hidden">
       <Prism language={language} style={customTheme}>
         {code}
       </Prism>

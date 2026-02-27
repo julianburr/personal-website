@@ -19,7 +19,12 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 
   const title = `Today I learned: ${page.meta.title} — Julian Burr`;
-  return { title };
+  const description = page.meta.description;
+
+  return {
+    title,
+    description,
+  };
 }
 
 export default async function TilDetailsPage({ params }: any) {

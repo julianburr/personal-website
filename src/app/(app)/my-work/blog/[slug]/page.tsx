@@ -9,6 +9,8 @@ import { getPageFromPath } from '@/utils/getPageFromPath';
 import { getPagesFromPath } from '@/utils/getPagesFromPath';
 import { getTimeToRead } from '@/utils/getTimeToRead';
 
+import ogImage from '@/assets/og-fallback.png';
+
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
@@ -20,10 +22,21 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 
   const title = `Blog: ${page.meta.title} — Julian Burr`;
+  const description = page?.meta?.description;
+  const image = page?.meta?.coverUrl || ogImage.src;
+
   return {
     title,
+    description,
     alternates: {
       canonical: page?.meta?.externalUrl,
+    },
+    openGraph: {
+      type: 'article',
+      images: [{ url: image }],
+    },
+    twitter: {
+      images: image,
     },
   };
 }

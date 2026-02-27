@@ -8,6 +8,7 @@ import { BodyWithColor } from '@/utils/usePageColor';
 import { UseTwitterEmojis } from '@/utils/useTwitterEmojis';
 
 import favicon from '@/assets/favicon.png';
+import ogImage from '@/assets/og-fallback.png';
 
 import type { Metadata } from 'next';
 
@@ -16,6 +17,14 @@ import '@/styles/globals.css';
 export const metadata: Metadata = {
   title: 'Julian Burr',
   icons: favicon.src,
+  openGraph: {
+    type: 'website',
+    images: [{ url: ogImage.src }],
+  },
+  twitter: {
+    creator: '@jburr90',
+    images: ogImage.src,
+  },
 };
 
 type Props = {
@@ -31,7 +40,7 @@ export default function RootLayout({ children }: Props) {
         >
           <div className="[--body-padding:.6rem] sm:[--body-padding:3rem] w-full min-h-full p-(--body-padding) font-default flex flex-row items-start">
             <Navigation />
-            <main className="p-[1.6rem] pl-[5rem] pt-[5rem] sm:p-[4rem] flex flex-col flex-1 w-full max-w-[54rem]">
+            <main className="p-[1.6rem] pl-[5rem] pt-[5rem] sm:p-[4rem] flex flex-col flex-1 w-full max-w-[54rem] overflow-x-hidden">
               <Suspense fallback={null}>{children}</Suspense>
             </main>
           </div>

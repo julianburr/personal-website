@@ -10,6 +10,8 @@ import { EventListItem } from '@/features/my-work/EventListItem';
 import { getPageFromPath } from '@/utils/getPageFromPath';
 import { getPagesFromPath } from '@/utils/getPagesFromPath';
 
+import ogImage from '@/assets/og-fallback.png';
+
 import type { TalkFrontmatter } from '@/features/my-work/TalkListItem';
 import type { Metadata } from 'next';
 
@@ -24,7 +26,18 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 
   const title = `Talk: ${page.meta.title} — Julian Burr`;
-  return { title };
+  const image = page?.meta?.coverUrl || ogImage.src;
+
+  return {
+    title,
+    openGraph: {
+      type: 'article',
+      images: [{ url: image }],
+    },
+    twitter: {
+      images: image,
+    },
+  };
 }
 
 export default async function TalkDetailsPage({ params }: any) {
