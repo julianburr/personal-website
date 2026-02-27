@@ -40,7 +40,7 @@ export default async function TalkDetailsPage({ params }: any) {
   const links = [
     {
       icon: <Icons.NewspaperIcon />,
-      label: 'Blog',
+      label: 'Blog post',
       href: page?.meta?.blogUrl,
       target: page?.meta?.blogUrl?.startsWith('http')
         ? ('_blank' as const)
@@ -86,7 +86,7 @@ export default async function TalkDetailsPage({ params }: any) {
 
         {!!links?.length && (
           <>
-            <h2>Further resources</h2>
+            <h2>Other resources</h2>
             <Grid>
               {links.map((link, index) => (
                 <ListItem
