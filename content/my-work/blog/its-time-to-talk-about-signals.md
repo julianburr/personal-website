@@ -4,11 +4,12 @@ description: What they are, how they work, and why the TC39 proposal is so excit
 type: write-up
 date: 2025-06-14
 platform: Substack
+talkUrl: /my-work/talks/its-time-to-talk-about-signals
 externalUrl: https://julianburr.substack.com/p/its-time-to-talk-about-signals
-coverUrl: https://substackcdn.com/image/fetch/$s_!b8QQ!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7068a5bb-0e71-4b4f-aafe-c5f3fbfc5ea9_2400x1480.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/blog-covers/its-time-to-talk-about-signals.png
 ---
 
-_This is a write-up of a [conference talk](https://www.julianburr.de/my-work/talks/its-time-to-talk-about-signals) I’ve given at [ReactSummit US 2025](https://gitnation.com/contents/from-pull-to-push-its-time-to-talk-about-signals) and other conferences, going a bit more into detail in some areas and linking out to further resources and references._
+_This is a write-up of a [conference talk](/my-work/talks/its-time-to-talk-about-signals) I’ve given at [ReactSummit US 2025](https://gitnation.com/contents/from-pull-to-push-its-time-to-talk-about-signals) and other conferences, going a bit more into detail in some areas and linking out to further resources and references._
 
 ---
 

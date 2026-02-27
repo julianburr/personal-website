@@ -4,12 +4,12 @@ description: Accessibility means usability and benefits everyone! Let's look at 
 type: write-up
 date: 2026-02-16
 platform: Substack
-talkUrl: https://www.julianburr.de/my-work/talks/the-web-is-your-a11y
+talkUrl: /my-work/talks/the-web-is-your-a11y
 externalUrl: https://julianburr.substack.com/p/the-web-is-your-a11y
-coverUrl: https://substackcdn.com/image/fetch/$s_!hZMM!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8992adc6-9a81-4fec-98b5-32b382944121_2400x1480.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/blog-covers/the-web-is-your-a11y.png
 ---
 
-_This is a write-up of a [conference talk](https://www.julianburr.de/my-work/talks/the-web-is-your-a11y) I've given at [../NEW 2025](https://slashnew.tech/) in Newcastle. It aims to add a bit more context and links to further resources._
+_This is a write-up of a [conference talk](/my-work/talks/the-web-is-your-a11y) I've given at [../NEW 2025](https://slashnew.tech/) in Newcastle. It aims to add a bit more context and links to further resources._
 
 ---
 

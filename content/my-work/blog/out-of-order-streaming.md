@@ -4,11 +4,12 @@ description: Streaming has been around forever, to improve performance of large 
 type: write-up
 date: 2025-12-04
 platform: Substack
+talkUrl: /my-work/talks/out-of-order-streaming
 externalUrl: https://julianburr.substack.com/p/out-of-order-streaming
-coverUrl: https://substackcdn.com/image/fetch/$s_!YjUY!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F32068b2e-f9d7-44ca-b3ae-970ded9a4d53_2400x1560.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/blog-covers/out-of-order-streaming.png
 ---
 
-_This is a write-up of a [conference talk given at multiple conferences](https://www.julianburr.de/my-work/talks/out-of-order-streaming), including [ReactSummit US 2024](https://gitnation.com/contents/lets-build-suspense) and [Øredev 2025](https://www.youtube.com/watch?v=TJ2JOa0w6QY)._
+_This is a write-up of a [conference talk given at multiple conferences](/my-work/talks/out-of-order-streaming), including [ReactSummit US 2024](https://gitnation.com/contents/lets-build-suspense) and [Øredev 2025](https://www.youtube.com/watch?v=TJ2JOa0w6QY)._
 
 ---
 

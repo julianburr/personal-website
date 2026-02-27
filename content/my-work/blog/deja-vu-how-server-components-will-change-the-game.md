@@ -4,11 +4,12 @@ description: A brief look at the history of web rendering, what problems differe
 type: write-up
 date: 2023-02-11
 platform: Substack
+talkUrl: /my-work/talks/deja-vu-how-server-components-will-change-the-game
 externalUrl: https://julianburr.substack.com/p/deja-vu
-coverUrl: https://substackcdn.com/image/fetch/$s_!V0MV!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1f00be1f-d02c-4858-a167-7c5fce65445d_2400x1480.png
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/blog-covers/dejavu-how-server-components-will-change-the-game.png
 ---
 
-_This is the write-up of a talk I gave at the [ReactBris meetup](https://www.meetup.com/reactbris/) (in a simplified form) and at [Web Directions Summit 2023](https://webdirections.org/summit/). You can find the original slides [here](https://www.julianburr.de/my-work/talks/dejavu-how-server-components-change-the-game/)._
+_This is the write-up of a talk I gave at the [ReactBris meetup](https://www.meetup.com/reactbris/) (in a simplified form) and at [Web Directions Summit 2023](https://webdirections.org/summit/). You can find the original slides [here](/my-work/talks/deja-vu-how-server-components-change-the-game/)._
 
 ---
 

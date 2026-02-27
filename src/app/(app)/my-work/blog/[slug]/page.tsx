@@ -3,6 +3,7 @@ import { notFound, redirect } from 'next/navigation';
 
 import { Markdown } from '@/components/markdown';
 import { TableOfContents } from '@/components/markdown/TableOfContents';
+import { PageActions } from '@/components/page/PageActions';
 import { PageMeta } from '@/components/page/PageMeta';
 import { Spacer } from '@/components/spacer';
 import { getPageFromPath } from '@/utils/getPageFromPath';
@@ -75,11 +76,19 @@ export default async function BlogDetailsPage({ params }: any) {
       {page?.meta?.coverUrl && (
         <>
           <Spacer h=".8rem" />
-          <img
-            role="presentation"
-            src={page?.meta?.coverUrl}
-            className="w-full h-auto"
-          />
+          <div className="w-full relative flex flex-col gap-[1.2rem]">
+            <PageActions
+              title={page?.meta?.title}
+              talkUrl={page?.meta?.talkUrl}
+              externalUrl={page?.meta?.externalUrl}
+              className="sm:absolute sm:right-[.4rem] sm:top-[.4rem]"
+            />
+            <img
+              role="presentation"
+              src={page?.meta?.coverUrl}
+              className="w-full h-auto"
+            />
+          </div>
         </>
       )}
 
