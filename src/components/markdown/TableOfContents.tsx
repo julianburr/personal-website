@@ -2,6 +2,8 @@
 
 import { useLayoutEffect, useState } from 'react';
 
+import { Tooltip } from '@/components/tooltip';
+
 type Heading = {
   id: string;
   content: string;
@@ -66,17 +68,32 @@ export function TableOfContents() {
   }, []);
 
   return (
-    <nav className="toc fixed top-[7rem] right-[3rem] z-10 hidden min-[1240px]:flex flex-col items-end">
+    <nav className="toc fixed top-[50%] translate-y-[-50%] right-[3rem] z-10 hidden min-[1240px]:flex flex-col items-end">
       {headings.map((heading) => (
-        <a
+        <Tooltip
           key={heading.id}
-          role="menuitem"
-          href={`#${heading.id}`}
-          title={heading.content}
-          data-level={heading.level}
-          data-active={activeHeadingId === heading.id}
-          className="flex py-[.25rem] before:content-[''] before:block before:h-px before:w-[1.6rem] data-[level='h3']:before:w-[.8rem] before:bg-black-subtle/30 data-[active='true']:before:bg-black-subtle hover:before:bg-black-subtle before:transition-all before:duration-200"
-        />
+          content={
+            <>
+              <span>{heading.content}</span>
+              <span
+                aria-hidden="true"
+                className="font-serif text-white opacity-[.4] ml-[.3rem]"
+              >
+                {heading.level === 'h2' ? '#' : '##'}
+              </span>
+            </>
+          }
+          placement="left"
+        >
+          <a
+            role="menuitem"
+            href={`#${heading.id}`}
+            title={heading.content}
+            data-level={heading.level}
+            data-active={activeHeadingId === heading.id}
+            className="flex py-[.25rem] before:content-[''] before:block before:h-px before:w-[1.6rem] data-[level='h3']:before:w-[.8rem] before:bg-black-subtle/30 data-[active='true']:before:bg-black-subtle hover:before:bg-black-subtle before:transition-all before:duration-200"
+          />
+        </Tooltip>
       ))}
     </nav>
   );
