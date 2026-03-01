@@ -49,7 +49,7 @@ export function PageActions({ title, talkUrl, externalUrl, className }: Props) {
           <Link
             href={talkUrl}
             target="_blank"
-            className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium/50 sm:bg-grey-medium/30 shadow-none hover:bg-grey-medium"
+            className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium opacity-[.5] sm:bg-white sm:opacity-[.3] shadow-none hover:opacity-[1] focus:opacity-[1]"
           >
             <span className="flex text-[1.4rem]">
               <Icons.MicrophoneStageIcon />
@@ -61,7 +61,7 @@ export function PageActions({ title, talkUrl, externalUrl, className }: Props) {
         <Tooltip key="share" content="Share blog post">
           <button
             onClick={() => navigator.share(shareData)}
-            className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium/50 sm:bg-grey-medium/30 shadow-none hover:bg-grey-medium"
+            className="cursor-pointer text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium opacity-[.5] sm:bg-white sm:opacity-[.3] shadow-none hover:opacity-[1] focus:opacity-[1]"
           >
             <span className="flex text-[1.4rem]">
               <Icons.ShareIcon />
@@ -73,7 +73,7 @@ export function PageActions({ title, talkUrl, externalUrl, className }: Props) {
           <button
             onClick={handleCopy}
             data-copied={copied}
-            className='text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium/50 sm:bg-grey-medium/30 shadow-none hover:bg-grey-medium data-[copied="true"]:bg-green'
+            className='text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium opacity-[.5] sm:bg-white sm:opacity-[.3] shadow-none hover:opacity-[1] focus:opacity-[1] data-[copied="true"]:bg-green data-[copied="true"]:opacity-[1]'
           >
             <span className="flex text-[1.4rem]">
               {copied ? <Icons.CheckIcon /> : <Icons.ShareIcon />}
@@ -87,7 +87,7 @@ export function PageActions({ title, talkUrl, externalUrl, className }: Props) {
             href={externalUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium/50 sm:bg-grey-medium/30 shadow-none hover:bg-grey-medium"
+            className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium opacity-[.5] sm:bg-white sm:opacity-[.3] shadow-none hover:opacity-[1] focus:opacity-[1]"
           >
             <span className="flex text-[1.4rem]">
               <Icons.ArrowSquareOutIcon />

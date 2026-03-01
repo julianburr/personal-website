@@ -38,7 +38,7 @@ Redux works really well with this because the state lives in an external store, 
 
 [Flux](https://facebook.github.io/flux/) is Facebook’s very own solution for state management, which [was and still is pretty popular](https://medium.com/swlh/the-case-for-flux-379b7d1982c6). If you haven’t looked at it yet, do. You’ll notice it’s very _(very)_ similar to Redux. And that is no accident.
 
-![Overview of flux architecture, taken from https://facebook.github.io/flux/docs/in-depth-overview](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Ek68XwgLgxwlAZl6hhxx1w.png)
+![Overview of flux architecture — https://facebook.github.io/flux/docs/in-depth-overview](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Ek68XwgLgxwlAZl6hhxx1w.png)
 
 According to Dan Abramov, Redux was supposed to be the implementation of the flux pattern, but with less boilerplate. Yes - as ironic as that might sound, given what everyone in the community these days seems to be complaining about, originally Redux was there to cut down the code needed for predictable state management. And as you can see him demonstrate in his talk, he definitely achieved that.
 
@@ -248,7 +248,7 @@ This doesn’t mean the same can be said for everyone else. You don’t know wha
 
 If you’re really expecting an answer here, you either haven’t been paying attention or you skipped everything written above.
 
-I can’t stress this enough: choose whatever works best for you and your team. Please don’t go from there and start preaching to others that they have to use the same solution you did. Rather go out and explain to the world why your solution worked so well for your specific use case. Help people make an informed decision around what to use for themselves.
+I can’t stress this enough: **choose whatever works best for you and your team**. Please don’t go from there and start preaching to others that they have to use the same solution you did. Rather go out and explain to the world why your solution worked so well for your specific use case. Help people make an informed decision around what to use for themselves.
 
 This also works the other way round. Use the community to gather information about what solutions work for which problems. Don’t strive for approval in the community, especially if they don’t relate to the problem you’re trying to solve. Whatever works for you and your team is, by definition, a good solution.
 

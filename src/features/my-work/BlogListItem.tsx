@@ -19,7 +19,7 @@ export function BlogListItem({ page }: BlogListItemProps) {
   const href = page?.markdown ? page?.pathname : page?.meta?.externalUrl;
   const cover = page?.meta?.type === 'blog' ? page?.meta?.coverUrl : undefined;
   const meta = page?.markdown
-    ? `${getTimeToRead(page?.markdown)} min`
+    ? `${getTimeToRead(page?.markdown)} min read`
     : undefined;
 
   return (
