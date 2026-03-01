@@ -27,6 +27,17 @@ export function UseHistory() {
     );
   }, [pathname, group]);
 
+  // HACK: manual scroll restoration to avoid scroll padding and smooth scrolling
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'instant',
+      });
+    }
+  }, [pathname]);
+
   // HACK: to avoid hydration errors, we only render after the page has
   // been mounted
   const [mounted, setMounted] = useState(false);
@@ -46,16 +57,13 @@ export function UseHistory() {
         <Link
           key={item.group}
           href={item.pathname}
+          data-active={group === item.group}
           className={classnames(
-            'flex  w-[1.6rem] h-[1.6rem] relative before:absolute before:inset-0 before:border-4 before:border-[var(--history--item-color)] before:transition-all before:opacity-0 hover:before:opacity-100',
-            {
-              'bg-[var(--history--item-color)]': group === item.group,
-              'bg-grey-medium': group !== item.group,
-            },
+            'flex w-[1.6rem] h-[1.6rem] relative bg-grey-medium hover:bg-(--history--item-color) focus:bg-(--history--item-color) data-[active="true"]:bg-(--history--item-color)',
           )}
-          style={
-            { '--history--item-color': getPathnameColor(item.pathname) } as any
-          }
+          style={{
+            ['--history--item-color' as any]: getPathnameColor(item.pathname),
+          }}
         />
       ))}
     </nav>

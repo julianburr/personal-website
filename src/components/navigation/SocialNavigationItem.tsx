@@ -27,7 +27,7 @@ export function SocialNavigationItem({ id, href, title, Icon }: Props) {
         rel="noreferrer"
         className={`flex p-[.4rem] sm:p-[.1rem] group text-black hover:text-[currentColor]`}
       >
-        <Icon className="h-[2.4rem] sm:h-[1.6rem] w-auto transition-all  group-hover:translate-y-[-.2rem]" />
+        <Icon className="h-[2.4rem] sm:h-[1.8rem] w-auto transition-all  group-hover:translate-y-[-.2rem]" />
       </a>
     </li>
   );

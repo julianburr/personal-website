@@ -5,24 +5,24 @@ date: 2019-01-30
 tags: js, node, perf
 ---
 
-Similar to other [Dev Tool features](../using-chrome-dev-tools-in-node) with headless Chrome there is a very easy way to use Lighthouse on the website you're currently on, all within node.
+Similar to other [Dev Tool features](/til/using-chrome-dev-tools-in-node) with headless Chrome there is a very easy way to use Lighthouse on the website you're currently on, all within node.
 
 As I mentioned in the other TIL, I usually use puppeteer to automate and test. The ability to automatically run and evaluate Lighthouse performance audits is absolutely awesome.
 
 While setting up this website I also experimented with automatic performance reviews for it, using exactly this, Lighthouse in headless Chrome. And it's dead simple.
 
 ```js
-const lighthouse = require("lighthouse");
-const launcher = require("chrome-launcher");
+const lighthouse = require('lighthouse');
+const launcher = require('chrome-launcher');
 
 const options = {
-  chromeFlags: ["--headless"],
+  chromeFlags: ['--headless'],
 };
 
 launcher
   .launch(options)
   .then((chrome) => {
-    const url = "http://my-awesome-website.com";
+    const url = 'http://my-awesome-website.com';
     return lighthouse(url, options, null);
   })
   .then((results) => {

@@ -53,7 +53,7 @@ export function Galery({
           ))}
         </div>
       ) : (
-        <div className="absolute inset-0 bg-white">
+        <div className="absolute inset-0 bg-white no-underline">
           <a href={images?.[imageIndex - 1]} target="_blank" rel="noreferrer">
             <img
               key={imageIndex}
@@ -69,7 +69,7 @@ export function Galery({
         <Tooltip content="Back to map" placement="right">
           <Link
             href="/around-the-world"
-            className="text-inherit h-[3.2rem] w-[3.2rem] sm:h-[4.2rem] sm:w-[4.2rem] flex flex-shrink-0 justify-center items-center shadow-lg bg-white hover:bg-grey-light focus:bg-grey-light"
+            className="text-inherit h-[3.2rem] w-[3.2rem] sm:h-[4.2rem] sm:w-[4.2rem] flex shrink-0 justify-center items-center shadow-lg bg-white hover:bg-grey-light focus:bg-grey-light"
             aria-label="Go back to map"
           >
             <Icons.XIcon className="text-[1.4em]" />
@@ -79,7 +79,7 @@ export function Galery({
         <div className="flex flex-row bg-white shadow-lg items-center justify-between overflow-hidden">
           <Link
             href="?image=0"
-            className="flex flex-col text-inherit font-normal overflow-hidden h-[3.2rem] sm:h-[4.2rem] px-[.8rem] sm:px-[1.2rem] justify-center bg-white hover:bg-grey-light focus:bg-grey-light group hover:no-underline focus:no-underline"
+            className="flex flex-col text-inherit font-normal overflow-hidden h-[3.2rem] sm:h-[4.2rem] px-[.8rem] sm:px-[1.2rem] justify-center bg-white hover:bg-grey-light focus:bg-grey-light group no-underline hover:no-underline focus:no-underline"
             aria-label="Go to overview"
             onClick={(e) => {
               e.preventDefault();
@@ -87,10 +87,10 @@ export function Galery({
               setImageIndex(0);
             }}
           >
-            <h3 className="whitespace-nowrap break-all text-ellipsis overflow-hidden text-xl leading-[1.1] group-hover:underline group-focus:underline">
+            <h3 className="whitespace-nowrap break-all text-ellipsis overflow-hidden text-xl leading-[1.1] font-heading">
               {title || city}
             </h3>
-            <span className="text-xs opacity-[.64] leading-[1.1] whitespace-nowrap break-all text-ellipsis mt-[-.2rem]">
+            <span className="text-xs font-serif text-black-subtle leading-[1.1] whitespace-nowrap break-all text-ellipsis mt-[-.3rem]">
               {dayjs(date).format('MMM YYYY')} —{' '}
               {region ? (
                 <>
@@ -101,11 +101,11 @@ export function Galery({
               )}
             </span>
           </Link>
-          <div className="h-[3.2rem] sm:h-[4.2rem] px-[.8rem] sm:px-[1.2rem] font-heading text-xl flex flex-row flex-shrink-0 items-center border-l-grey-medium/50 border-l-[1px]">
+          <div className="h-[3.2rem] sm:h-[4.2rem] px-[.8rem] sm:px-[1.2rem] font-heading text-xl flex flex-row shrink-0 items-center border-l-black-subtle/7 border-l border-l-solid text-black-subtle">
             {!!imageIndex && (
               <Link
                 href={`?image=${imageIndex - 1}`}
-                className="text-inherit px-1"
+                className="px-1 no-underline text-inherit hover:text-black"
                 aria-label="Go to previous image"
                 onClick={(e) => {
                   e.preventDefault();
@@ -128,20 +128,20 @@ export function Galery({
                 </span>
               )}
             </div>
-            {imageIndex < images.length && (
-              <Link
-                href={`?image=${imageIndex + 1}`}
-                className="text-inherit px-1"
-                aria-label="Go to next image"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  setImageIndex((state) => state + 1);
-                }}
-              >
-                <Icons.ArrowRightIcon />
-              </Link>
-            )}
+            <Link
+              href={`?image=${imageIndex + 1}`}
+              className="px-1 no-underline text-inherit hover:text-black aria-disabled:opacity-20 aria-disabled:pointer-events-none"
+              tabIndex={imageIndex + 1 >= images.length ? -1 : 0}
+              aria-disabled={imageIndex + 1 >= images.length}
+              aria-label="Go to next image"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setImageIndex((state) => state + 1);
+              }}
+            >
+              <Icons.ArrowRightIcon />
+            </Link>
           </div>
         </div>
       </div>

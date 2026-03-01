@@ -1,11 +1,12 @@
 import { ListItem } from '@/components/list/ListItem';
+import { getTimeToRead } from '@/utils/getTimeToRead';
 
 import type { getPageFromPath } from '@/utils/getPageFromPath';
 
 export type BlogFrontmatter = {
   title: string;
   date: Date;
-  category?: 'post' | 'write-up';
+  type?: 'blog' | 'write-up';
   externalUrl?: string;
   coverUrl?: string;
 };
@@ -15,15 +16,21 @@ type BlogListItemProps = {
 };
 
 export function BlogListItem({ page }: BlogListItemProps) {
-  const href = page?.content?.raw ? page?.pathname : page?.meta?.externalUrl;
+  const href = page?.markdown ? page?.pathname : page?.meta?.externalUrl;
+  const cover = page?.meta?.type === 'blog' ? page?.meta?.coverUrl : undefined;
+  const meta = page?.markdown
+    ? `${getTimeToRead(page?.markdown)} min read`
+    : undefined;
+
   return (
     <ListItem
       key={page?.pathname}
       date={page?.meta?.date}
-      cover={page?.meta?.coverUrl}
+      cover={cover}
       title={page?.meta?.title}
+      meta={meta}
       href={href}
-      target={page?.content?.raw ? undefined : '_blank'}
+      target={page?.markdown ? undefined : '_blank'}
     />
   );
 }

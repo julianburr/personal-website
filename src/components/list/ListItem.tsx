@@ -16,7 +16,7 @@ type Action = {
 type Props = {
   cover?: string;
   coverVideo?: string;
-  coverAspectRatio?: 'landscape' | 'portrait';
+  coverAspectRatio?: 'landscape' | 'portrait' | 'square';
   date?: Date | string;
   dateFormat?: string;
   meta?: string;
@@ -58,9 +58,9 @@ export function ListItem({
         target={target}
         rel={href && target === '_blank' ? 'noopener noreferrer' : undefined}
         className={classNames(
-          'flex flex-col flex-1 shadow-none transition-all',
+          'flex flex-col flex-1 shadow-none transition-all no-underline relative z-1 hover:z-2 focus-within:z-2',
           {
-            'text-inherit drop-shadow-none hover:no-underline hover:drop-shadow-lg':
+            'text-inherit drop-shadow-none hover:no-underline before:content-[" "] before:absolute before:z-[-1] before:top-0 before:left-0 hover:before:top-[.15rem] hover:before:left-[.15rem] focus-within:before:top-[.15rem] focus-within:before:left-[.15rem] before:w-full before:h-full before:bg-grey-medium before:transition-all before:duration-200':
               !!href,
           },
         )}
@@ -74,6 +74,7 @@ export function ListItem({
               {
                 'aspect-video': coverAspectRatio === 'landscape',
                 'aspect-9/13': coverAspectRatio === 'portrait',
+                'aspect-square': coverAspectRatio === 'square',
               },
             )}
           />
@@ -87,7 +88,7 @@ export function ListItem({
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-          ></iframe>
+          />
         )}
 
         <div
@@ -96,16 +97,18 @@ export function ListItem({
           }
         >
           {!!(date || meta) && (
-            <span className="text-(--page--color) text-xs inline pr-[.2rem] translate-y-[-.1rem] leading-[1.2]">
+            <span className="text-(--page-color) text-xs inline pr-[.2rem] translate-y-[-.1rem] leading-[1.2]">
               {date && `${dayjs(date).format(dateFormat)}`}
               {date && meta && ' — '}
               {meta}
             </span>
           )}
 
-          <h3 className="p-0 mt-[.2rem] text-lg leading-[1.2]">{title}</h3>
+          <h3 className="p-0 mt-[.2rem] text-lg leading-[1.2] font-heading after:hidden after:content-['']">
+            {title}
+          </h3>
           {description && (
-            <p className="p-0 text-sm text-black/80 font-default">
+            <p className="p-0 text-sm text-black-subtle font-default">
               {description}
             </p>
           )}

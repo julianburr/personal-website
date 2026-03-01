@@ -6,7 +6,9 @@ import { getPageFromPath } from '@/utils/getPageFromPath';
 
 const contentRoot = path.resolve(process.cwd(), './content');
 
-export async function getPagesFromPath<Meta = any>(dirPath: string) {
+export async function getPagesFromPath<
+  Meta extends Record<string, any> = Record<string, any>,
+>(dirPath: string) {
   const filePaths = await glob(`${dirPath}/**/*.md`, {
     cwd: contentRoot,
     ignore: '**/DRAFT_*.md',

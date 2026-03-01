@@ -1,10 +1,16 @@
 import dayjs from 'dayjs';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 
+import { Markdown } from '@/components/markdown';
+import { TableOfContents } from '@/components/markdown/TableOfContents';
+import { PageActions } from '@/components/page/PageActions';
+import { PageMeta } from '@/components/page/PageMeta';
+import { Spacer } from '@/components/spacer';
 import { getPageFromPath } from '@/utils/getPageFromPath';
 import { getPagesFromPath } from '@/utils/getPagesFromPath';
 import { getTimeToRead } from '@/utils/getTimeToRead';
+
+import ogImage from '@/assets/og-fallback.png';
 
 import type { Metadata } from 'next';
 
@@ -17,7 +23,23 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   }
 
   const title = `Blog: ${page.meta.title} — Julian Burr`;
-  return { title };
+  const description = page?.meta?.description;
+  const image = page?.meta?.coverUrl || ogImage.src;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: page?.meta?.externalUrl,
+    },
+    openGraph: {
+      type: 'article',
+      images: [{ url: image }],
+    },
+    twitter: {
+      images: image,
+    },
+  };
 }
 
 export default async function BlogDetailsPage({ params }: any) {
@@ -28,21 +50,52 @@ export default async function BlogDetailsPage({ params }: any) {
     return notFound();
   }
 
+  if (!page?.markdown && page?.meta?.externalUrl) {
+    return redirect(page?.meta?.externalUrl);
+  }
+
   return (
     <>
-      <p className="font-heading p-0 leading-[1.2]">
-        <Link href="/my-work">My work</Link> —{' '}
-        {dayjs(page?.meta?.date).format('MMMM D, YYYY')} —{' '}
-        {getTimeToRead(page?.content?.raw)} min read
-      </p>
-      <h1 className="p-0 mt-1 mb-6">{page?.meta?.title}</h1>
-
-      <div
-        className="details"
-        dangerouslySetInnerHTML={{
-          __html: page?.content?.html || '',
-        }}
+      <PageMeta
+        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
+        meta={[
+          dayjs(page?.meta?.date).format('MMMM D, YYYY'),
+          `${getTimeToRead(page?.markdown)} min read`,
+        ]}
       />
+      <h1 className="p-0">{page?.meta?.title}</h1>
+      {page?.meta?.description && (
+        <>
+          <Spacer h=".3rem" />
+          <div className="font-serif italic text-[1.1em] text-black-subtle">
+            <Markdown content={page?.meta?.description} />
+          </div>
+        </>
+      )}
+
+      {page?.meta?.coverUrl && (
+        <>
+          <Spacer h=".8rem" />
+          <div className="w-full relative flex flex-col gap-[1.2rem]">
+            <PageActions
+              title={page?.meta?.title}
+              talkUrl={page?.meta?.talkUrl}
+              externalUrl={page?.meta?.externalUrl}
+              className="sm:absolute sm:right-[.4rem] sm:top-[.4rem]"
+            />
+            <img
+              role="presentation"
+              src={page?.meta?.coverUrl}
+              className="w-full h-auto"
+            />
+          </div>
+        </>
+      )}
+
+      <Spacer h="3.2rem" />
+      <Markdown content={page?.markdown} />
+
+      <TableOfContents />
     </>
   );
 }

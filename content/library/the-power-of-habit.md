@@ -3,12 +3,12 @@ title: The Power of Habit
 date: 2019-07-22
 tags: habits, self improvement
 author: Charles Duhigg
-cover: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545854312l/12609433._SY475_.jpg
+coverUrl: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1545854312l/12609433._SY475_.jpg
 externalUrl: https://www.goodreads.com/book/show/12609433-the-power-of-habit
 status: read
 ---
 
-Trying something new here: most of the [TIL entries](../../til) so far are directly development related, some small snippets of dev knowledge I picked up here and there. All of it with the intend to keep track of my learnings primarily for me, but also for others.
+Trying something new here: most of the [TIL entries](/til) so far are directly development related, some small snippets of dev knowledge I picked up here and there. All of it with the intend to keep track of my learnings primarily for me, but also for others.
 
 With the same intention, I also want to keep track of what I learn from books that I read. I like reading, I'm doing it way less regularly than I'd like to, and I also (or because of that) struggle a bit with the amount of books that I want to read. Hopefully keeping notes on what I learned from certain books and which ones were most interesting and helpful will in return also help me and potentially others to benefit from that. Who knows 😄
 

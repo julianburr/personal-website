@@ -7,7 +7,7 @@ export function List(props: HTMLProps<HTMLDivElement>) {
     <div
       {...props}
       role="list"
-      className={classNames(props.className, 'flex flex-col gap-1')}
+      className={classNames(props.className, 'flex flex-col gap-[.3rem]')}
     />
   );
 }

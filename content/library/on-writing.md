@@ -3,7 +3,7 @@ title: On Writing
 description: A Memoir of the Craft
 tags: writing, memoir
 author: Stephen King
-cover: https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436735207i/10569.jpg
+coverUrl: https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436735207i/10569.jpg
 externalUrl: https://www.goodreads.com/book/show/10569.On_Writing
 status: read
 ---
@@ -44,7 +44,7 @@ Put characters into a situation and let their choices move the plot. Story emerg
 
 Draft quickly and privately to discover the story without outside noise. Don’t polish while drafting; get the whole thing down first.
 
-**Revise with the door open**
+#### ...and revise with the door open
 
 Once the draft exists, bring in feedback and revise for clarity and impact. Revision is where you shape the story for the reader.
 

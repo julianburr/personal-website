@@ -3,7 +3,7 @@ title: The Design of Everyday Things
 description:
 tags: design, ux, accessibility
 author: Donald A. Norman
-cover: https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1711564631i/17290807.jpg
+coverUrl: https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1711564631i/17290807.jpg
 externalUrl: https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things
 status: read
 ---

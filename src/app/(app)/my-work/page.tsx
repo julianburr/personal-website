@@ -56,12 +56,19 @@ export default async function MyWorkPage() {
       [[], []],
     );
 
-  const blogPosts = blogs
-    .filter((blog) => blog?.meta?.category === 'post')
-    .toSorted(sortByDate);
-  const blogWriteUps = blogs
-    .filter((blog) => blog?.meta?.category === 'write-up')
-    .toSorted(sortByDate);
+  const [blogPosts] = blogs
+    .toSorted(sortByDate)
+    .reduce<[typeof blogs, typeof blogs]>(
+      (all, blog) => {
+        if (blog?.meta?.type === 'blog') {
+          all[0].push(blog);
+        } else {
+          all[1].push(blog);
+        }
+        return all;
+      },
+      [[], []],
+    );
 
   return (
     <>
@@ -107,12 +114,12 @@ export default async function MyWorkPage() {
         ))}
       </Grid>
 
-      <Spacer h="1.2rem" />
+      {/* <Spacer h="1.2rem" />
       <Grid>
         {blogWriteUps.map((blog) => (
           <BlogListItem key={blog?.pathname} page={blog} />
         ))}
-      </Grid>
+      </Grid> */}
 
       <Spacer h="1.2rem" />
       <h2>Open Source</h2>

@@ -5,7 +5,7 @@ date: 2019-07-13
 tags: git
 ---
 
-I use `git stash` a lot. Like, really a lot. Probably more than you should. It's just a really neat way to keep your changes somewhere while jumping around between branches, e.g. because you have to QA changes from collegues or just quickly want to confirm how things were working in another branch.
+I use `git stash` a lot. Like, really a lot. Probably more than I should. It's just a really neat way to keep your changes somewhere while jumping around between branches, e.g. because you have to QA changes from collegues or just quickly want to confirm how things were working in another branch.
 
 Another thing I use `stash` for is when pulling in latest changes from origin without having to commit my changes just yet. It's as easy as this:
 

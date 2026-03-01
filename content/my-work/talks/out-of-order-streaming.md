@@ -33,3 +33,7 @@ events:
       city: Chicago
       latlng: 41.8335928,-87.8966857
 ---
+
+As the pendulum of web development swings back towards the server, streaming has become increasingly popular. Specifically, out-of-order streaming through features like React Suspense, the magical powers behind Server Components.
+
+Let's build our very own simplified version to explore how it works, what problems we are trying to solve, and what this future of web development looks like.

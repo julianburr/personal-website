@@ -121,6 +121,16 @@ const redirects = [
     destination:
       'https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--react-summit-us-2025.pdf',
   },
+  {
+    source: 'brisjs-2026-a11y-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/the-web-is-your-a11y--brisjs-2026.pdf',
+  },
+  {
+    source: 'vuejs-amsterdam-2026-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/the-web-is-your-a11y--vuejs-amsterdam-2026.pdf',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {

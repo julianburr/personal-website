@@ -5,7 +5,7 @@ date: 2022-01-09
 tags: devops
 ---
 
-As [mentioned before](../github-actions/), I'm a big fan of Github Actions for CI/CD pipelines. So recently, I played around with ways to create reusable custom actions using a monorepo setup.
+As [mentioned before](/til/github-actions/), I'm a big fan of Github Actions for CI/CD pipelines. So recently, I played around with ways to create reusable custom actions using a monorepo setup.
 
 ## Why?
 
@@ -65,7 +65,7 @@ jobs:
         uses: ./.github/actions/custom-actions/another-awesome-custom-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          foo: "bar"
+          foo: 'bar'
 ```
 
 ## What about versioning?

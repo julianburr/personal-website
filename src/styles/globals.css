@@ -3,17 +3,25 @@
 /* Ensure Tailwind scans all source files (including conditional classNames) */
 @source "../**/*.{js,ts,jsx,tsx,mdx}";
 
-@theme {
+@theme inline {
+  /* Fonts reference CSS vars from layout */
+  --font-default: var(--font-sans-serif), 'Open Sans', sans-serif;
+  --font-heading: var(--font-sans-serif-heading), sans-serif;
+  --font-sub-heading: var(--font-serif), serif;
+  --font-mono: var(--font-mono), monospace;
+  --font-handwriting: var(--font-handwriting), serif;
+
   /* Colors */
   --color-white: #faf9f6;
   --color-black: #222;
-  --color-beige: #c5ac8b;
-  --color-grey-light: #f7f4ee;
-  --color-grey-medium: #e8e4de;
-  --color-grey-dark: #cac5be;
+  --color-black-subtle: #777;
+  --color-beige: #d8c1a9;
+  --color-grey-light: #f5f2f0;
+  --color-grey-medium: #e6e0db;
+  --color-grey-dark: #c8c3c1;
   --color-green: #9cca6c;
   --color-yellow: #f7ad08;
-  --color-purple: #ca85d8;
+  --color-purple: #cca0d5;
   --color-blue-medium: #599ae5;
   --color-blue-dark: #3176c5;
   --color-red: #da7a70;
@@ -64,97 +72,212 @@
   }
 }
 
-@theme inline {
-  /* Fonts reference CSS vars from layout */
-  --font-default: var(--font--default), 'Open Sans', sans-serif;
-  --font-heading: var(--font--heading), sans-serif;
-  --font-mono: var(--font--mono), monospace;
-}
-
 /* Base/reset styles in a layer so Tailwind utilities override them when applied */
 @layer base {
   :root {
-    --page--color: #f7f4ee;
+    --page-color: #f7f4ee;
+  }
+
+  html {
+    @apply scroll-smooth scroll-pt-[3rem];
+  }
+
+  body {
+    @apply leading-[1.5] font-[300];
   }
 
   /* Headings */
   h1,
   h2,
-  h3 {
-    @apply font-heading;
-  }
+  h3,
+  h4 {
+    @apply text-pretty;
 
-  h1:first-child,
-  h2:first-child,
-  h3:first-child {
-    @apply first:pt-0;
+    &:first-child {
+      @apply pt-0;
+    }
   }
 
   h1 {
-    @apply text-5xl pt-6 pb-2 leading-[1.15];
+    @apply text-[3.6rem] pt-6 pb-2 leading-none font-normal font-heading;
   }
 
   h2 {
-    @apply text-2xl pt-4 pb-1 leading-[1.3];
+    @apply text-[1.7rem] pt-[2rem] pb-[.3rem] leading-[1.2] font-semibold font-sub-heading;
   }
 
   h3 {
-    @apply text-xl pt-4 pb-1 leading-[1.3];
+    @apply text-[1.4rem] pt-[1.2rem] pb-[.3rem] leading-[1.2] font-semibold font-sub-heading;
+  }
+
+  h4 {
+    @apply text-[1.2rem] pt-[1rem] pb-[.2rem] leading-[1.2] font-semibold font-sub-heading;
   }
 
   /* Paragraphs */
   p {
-    @apply py-[.4rem];
+    @apply my-[.7em] p-0;
   }
 
   a {
-    @apply font-bold text-[var(--page--color)] hover:underline;
+    @apply text-black font-normal underline decoration-(--page-color) decoration-[.15rem] hover:decoration-[currentColor] focus:decoration-[currentColor] duration-200;
+
+    &[href^='#user-content-fn'] {
+      @apply decoration-[currentColor]/30 hover:decoration-[currentColor] focus:decoration-[currentColor];
+    }
+
+    pre {
+      @apply underline decoration-current/30;
+    }
+
+    &:hover pre,
+    &:focus-within pre {
+      @apply decoration-current;
+    }
+  }
+
+  strong,
+  b {
+    @apply font-extrabold;
   }
 
   /* Emojis */
   img.emoji {
-    @apply h-[1.2rem] w-auto mx-[.2rem] inline align-middle translate-y-[-.2rem];
+    @apply h-[1.1em] w-auto mx-[.2em] inline align-middle translate-y-[-.1em];
   }
 
   /* Markdown */
-  main ul {
-    @apply py-[.2rem] pl-[2rem];
+  .markdown {
+    h2 {
+      @apply after:content-['#'];
+    }
+
+    h3 {
+      @apply after:content-['##'];
+    }
+
+    h4 {
+      @apply after:content-['###'];
+    }
+
+    h2,
+    h3,
+    h4 {
+      @apply after:text-black-subtle/40 after:text-[.7em] after:mx-[.3rem];
+    }
+
+    ul,
+    ol {
+      @apply py-[.3rem] pl-8 [counter-reset:item-counter];
+
+      li {
+        @apply py-[.3rem] list-none relative before:absolute [counter-increment:item-counter] before:left-[-1.3rem];
+
+        p {
+          @apply first:mt-0 last:mb-0;
+        }
+      }
+    }
+
+    ul li {
+      @apply before:content-["—"];
+    }
+
+    ol li {
+      @apply before:mt-[.1em] before:content-[counter(item-counter)_"."] before:text-[.9em] before:font-serif before:text-black-subtle;
+    }
+
+    .katex-mathml + .katex-html {
+      @apply hidden;
+    }
+
+    iframe {
+      @apply w-full h-auto aspect-video my-[1.6rem];
+    }
+
+    figcaption {
+      p {
+        @apply first:mt-0 last:mb-0;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      &&& + pre > div {
+        @apply mt-[1.2rem]!;
+      }
+    }
+
+    .sandbox {
+      .sp-wrapper,
+      .sp-layout,
+      .sp-editor,
+      .sp-preview {
+        @apply w-full! h-full!;
+      }
+
+      .sp-layout {
+        @apply border-none! rounded-none!;
+      }
+
+      .sp-tabs {
+        @apply bg-grey-medium/50! border-none!;
+
+        .sp-tab-container {
+          @apply p-0! has-[button:focus]:outline-none!;
+        }
+
+        button {
+          @apply text-[.8em]! text-black-subtle! border-b-[.15rem]! data-[active="false"]:border-b-transparent! data-[active="true"]:text-black! data-[active="true"]:border-b-black! focus:border-t-0! focus:border-l-0! focus:border-r-0! focus:text-black! hover:text-black! transition-all! duration-120! focus-visible:outline-1! focus-visible:outline-offset-[-.3rem]!;
+        }
+      }
+
+      .sp-preview {
+        iframe {
+          @apply my-0;
+        }
+      }
+
+      .sp-preview-actions {
+        button {
+          @apply rounded-none!;
+        }
+      }
+    }
+
+    @media (min-width: 1460px) {
+      .footnotes {
+        h2 {
+          @apply hidden;
+        }
+
+        ol li {
+          --gap: 1.4rem;
+
+          @apply absolute left-[calc(100%+4.2rem)] w-[15rem] m-0 p-0 text-[.9em] font-handwriting text-black-subtle opacity-30 transition-opacity duration-200 before:text-[1em] before:mt-0 before:left-[-1rem] before:font-handwriting;
+
+          a[data-footnote-backref] {
+            @apply hidden;
+          }
+        }
+      }
+
+      hr:has(+ .footnotes) {
+        @apply hidden;
+      }
+    }
   }
 
-  main ul li {
-    @apply py-[.2rem] list-none relative before:content-["—"] before:absolute before:left-[-1.2rem];
-  }
+  .twitter-embed--content {
+    p {
+      @apply first:mb-0 last:mt-0;
+    }
 
-  main code {
-    @apply bg-grey-medium px-[.2rem] rounded-sm font-mono text-[.9em];
-  }
-
-  main .katex-mathml + .katex-html {
-    @apply hidden;
-  }
-
-  main pre[class*='language-'] {
-    @apply rounded-none border-none text-[.9em] leading-[1.6] font-mono mx-[.2rem] my-[1.4rem] w-[calc(100%_-.4rem)] p-[1.2rem] sm:mx-[.4rem] sm:p-[1.4rem] sm:w-[calc(100%_-.8rem)];
-  }
-
-  main pre[class*='language-'] code {
-    @apply bg-transparent p-0;
-  }
-
-  main hr {
-    @apply bg-grey-light my-[2.4rem] mx-auto w-full max-w-[12rem];
-  }
-
-  main .details section {
-    @apply pb-[.8rem] md:py-[.8rem];
-  }
-
-  main .details img:not(.emoji) {
-    @apply m-[.5rem] shadow-lg w-[calc(100%_-_1rem)] mx-auto;
-  }
-
-  main iframe.video-embed {
-    @apply w-full aspect-[16/9];
+    br {
+      @apply block mt-[-.5em] leading-[.5];
+    }
   }
 
   /* Tooltips -- NOTE: doesn't work nicely with tailwind for some reason, so using plain CSS here :| */

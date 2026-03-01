@@ -1,8 +1,33 @@
-.canvas {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.scroll-container {
+  opacity: 1;
+  transition:
+    opacity 400ms ease-in-out,
+    transform 50ms linear;
+
+  @starting-style {
+    opacity: 0;
+  }
 }
 
-.canvas::-webkit-scrollbar {
-  display: none;
+svg .light {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+svg .highlight {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+body:has(.lamp[data-light='true']) svg .light {
+  opacity: 1;
+}
+
+body:has(.lamp:hover, .lamp:focus) svg .highlight--lamp,
+body:has(.globe:hover, .globe:focus) svg .highlight--globe,
+body:has(.rubics-cube:hover, .rubics-cube:focus) svg .highlight--rubics-cube,
+body:has(.coffee:hover, .coffee:focus) svg .highlight--coffee,
+body:has(.books:hover, .books:focus) svg .highlight--books,
+body:has(.pen:hover, .pen:focus) svg .highlight--pen {
+  opacity: 0.2;
 }

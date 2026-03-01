@@ -13,7 +13,7 @@ import type { getPagesFromPath } from '@/utils/getPagesFromPath';
 
 import '@/styles/world-map.css';
 
-type Destination = null | {
+type Destination = {
   pathname?: string;
   meta: {
     country: string;
@@ -55,9 +55,10 @@ export function WorldMap({ destinations, talks }: WorldMapProps) {
     });
 
     talks?.forEach?.((talk) => {
-      Object.values(talk?.meta?.events || {})?.forEach((event) => {
-        if (event?.place?.latlng) {
-          const fixedLatLng = event.place.latlng?.replace(/\s/g, '');
+      Object.values(talk?.meta?.events || {})
+        ?.filter((event) => !!event?.place?.latlng)
+        ?.forEach((event) => {
+          const fixedLatLng = event.place.latlng?.replace(/\s/g, '') || '';
           if (!grouped[fixedLatLng]) {
             grouped[fixedLatLng] = [];
           }
@@ -67,15 +68,14 @@ export function WorldMap({ destinations, talks }: WorldMapProps) {
               country: event.place?.country || '',
               region: event.place?.region,
               city: event.place?.city || '',
-              latlng: event.place?.latlng,
+              latlng: event.place?.latlng || '',
               title: `${event.name} ${dayjs(event.date).format('YYYY')}`,
               subtitle: talk?.meta.title,
               type: 'talk',
               date: event.date.toString(),
             },
           });
-        }
-      });
+        });
     });
 
     return grouped;

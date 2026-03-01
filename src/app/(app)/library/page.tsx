@@ -9,7 +9,7 @@ import type { getPageFromPath } from '@/utils/getPageFromPath';
 import type { Metadata } from 'next';
 
 export type BookFrontmatter = {
-  cover: string;
+  coverUrl: string;
   author: string;
   title: string;
   description?: string;
@@ -48,7 +48,7 @@ export default async function LibraryPage() {
   const renderBook = (book: Book) => (
     <ListItem
       key={book?.pathname}
-      cover={book?.meta?.cover}
+      cover={book?.meta?.coverUrl}
       coverAspectRatio="portrait"
       meta={book?.meta?.author}
       title={book?.meta?.title}
@@ -74,14 +74,13 @@ export default async function LibraryPage() {
 
       {!!grouped[1].length && (
         <>
-          <Spacer h="1.2rem" />
           <h2>What I’m reading at the moment 🤓</h2>
           <Spacer h=".4rem" />
           <Grid size="small">{grouped[1].map(renderBook)}</Grid>
+          <Spacer h="1.2rem" />
         </>
       )}
 
-      <Spacer h="1.2rem" />
       <h2>Books I have read & recommend</h2>
       <p>
         This is by no means a complete list or anything, and you’ll also find
