@@ -56,7 +56,7 @@ export default async function MyWorkPage() {
       [[], []],
     );
 
-  const [blogPosts, blogWriteUps] = blogs
+  const [blogPosts] = blogs
     .toSorted(sortByDate)
     .reduce<[typeof blogs, typeof blogs]>(
       (all, blog) => {
@@ -114,12 +114,12 @@ export default async function MyWorkPage() {
         ))}
       </Grid>
 
-      <Spacer h="1.2rem" />
+      {/* <Spacer h="1.2rem" />
       <Grid>
         {blogWriteUps.map((blog) => (
           <BlogListItem key={blog?.pathname} page={blog} />
         ))}
-      </Grid>
+      </Grid> */}
 
       <Spacer h="1.2rem" />
       <h2>Open Source</h2>

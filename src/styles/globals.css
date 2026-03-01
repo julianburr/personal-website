@@ -91,6 +91,8 @@
   h2,
   h3,
   h4 {
+    @apply text-pretty;
+
     &:first-child {
       @apply pt-0;
     }
