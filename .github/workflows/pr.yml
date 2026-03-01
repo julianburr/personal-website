@@ -87,9 +87,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Debug
-        run: ls -a .
-
       - name: Deploy app to vercel
         id: deploy
         uses: ./.shared/vercel-deploy-app
