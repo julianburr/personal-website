@@ -14,6 +14,17 @@ events:
       region: New South Wales
       city: Newcastle
       latlng: -32.9762667,151.5248924
+  brisjs-2026:
+    date: 2026-03-02
+    name: BrisJS
+    url: https://brisjs.org/
+    type: meetup
+    slidesUrl: https://talk-web-is-your-a11y.vercel.app/brisjs/slide/0
+    place:
+      country: Australia
+      region: Queensland
+      city: Brisbane
+      latlng: -27.469,153.0235
   vuejs-amsterdam-2026:
     date: 2026-03-13
     name: VueJS Amsterdam
