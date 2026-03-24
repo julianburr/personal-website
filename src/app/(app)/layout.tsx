@@ -40,7 +40,7 @@ export default function RootLayout({ children }: Props) {
         >
           <div className="[--body-padding:.6rem] sm:[--body-padding:3rem] w-full min-h-full p-(--body-padding) font-default flex flex-row items-start">
             <Navigation />
-            <main className="p-[1.6rem] pl-[5rem] pt-[5rem] sm:p-[4rem] flex flex-col flex-1 w-full max-w-[54rem] overflow-x-hidden">
+            <main className="p-[1.6rem] pl-[5rem] pt-[5rem] sm:p-[4rem] flex flex-col flex-1 w-full max-w-[54rem]">
               <Suspense fallback={null}>{children}</Suspense>
             </main>
           </div>

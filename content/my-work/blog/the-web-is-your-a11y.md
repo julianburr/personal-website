@@ -15,77 +15,87 @@ _This is a write-up of a [conference talk](/my-work/talks/the-web-is-your-a11y) 
 
 ## Introduction
 
-This is not going to be a blog post about accessibility fundamentals. We will cover some core principles, but we won't dive too deep into the basics. Not because they aren't important, they _are_, but [they've been covered plenty by others[^1]]() and would just blow out the scope of what I want to focus on even more.
+The primary goal of this blog post is to highlight the capabilities of modern browsers, especially around built-in HTML, CSS and JS functionality that helps us build more accessible web apps more easily. We will cover some accessibility fundamentals to get everyone on the same page, but we won't dive too deep into those. Not because I don't think they are important, they _absolutely_ are, but I believe it would extend the scope of what already is a pretty long read too much. For what it's worth, there are [plenty good resources[^1]]() already on the basics, and I highly encourage everyone to brush up on them.
 
-Instead, in this blog post we'll focus on the more practical side of things. More specifically: how we can use modern HTML, CSS and even JS to help us build more accessible web apps with less effort.
+So, instead, I'm aiming to:
 
-In my opinion, there's a few big problems in our industry at the moment, that I am trying to cover here:
+- Highlight the importance of accessibility on the web
+- Showcase why we should use the platform instead of reinventing the wheel
+- Demo some of the newer built-in browser features you might not know
+- Have a quick look into accessibility debugging and testing
+- And finally, go through my view on whether [AI will fix everything for us[^2]]()
 
-- A lack of awareness about the importance of accessibility
-- A lack of awareness about the available built-in features the platform (aka "modern browsers") give us, and how to use them
-- More practical examples, but also thinking longer-term more purpose built tools and libraries as an abstraction layer on top of the platform
-- Better ways to actually verify and test the accessibility of our apps
-
-And one more question that's hanging in the room: [will AI fix everything for us?[^2]]()
+If you don't write much HTML or CSS yourself, e.g. because you've got abstraction layers like component libraries and design systems in place, I still think what I'm covering is going to be valuable. Having a good understanding of the fundamentals is always good, and allows you to evaluate and judge the abstraction you already have or you might be in the process of building.
 
 ## Part I: Why accessibility matters
 
-One of the things I hear the most often is something like "we don't have blind users, we don't need to worry about or focus on accessibility". Or "noone is using our product with screen readers". This infuriates me on multiple levels.
+Ok, let's start with the "why".
 
-For one, saying noone uses your web app with assistive technologies so you don't need to optimise it for assistive technologies is logically flawed. It's the usual trap of survivership bias: maybe you don't see anyone use it with these technologies because right now they can't.
+It is surprising to me how often you talk to engineering and product teams and hear things like "we don't really have disabled users, so we don't really focus on accessibility". Sometimes even confidently followed up by "we looked at our analytics, noone is using our app with screen readers. This infuriates me on multiple levels.
 
-But even if we ignore that, it highlights an extremely narrow and (in my opinion) wrong interpretation about what accessibility is about.
+For one, saying noone uses your app with assistive technologies so you don't need to optimise it for assistive technologies is logically backwards. It's the common trap of survivership bias: maybe you don't see anyone use it with these technologies because right now they can't?
 
-### Accessibility categories
+But even if we ignore that, it (in my opinion) highlights an extremely narrow and wrong interpretation of what accessibility is about.
 
 > An estimated **1.3 billion people** experience significant disability. This represents **16% of the world's population**, or 1 in 6 of us. — [https://www.who.int](https://www.who.int/news-room/fact-sheets/detail/disability-and-health)
 
-Firstly blind people, or even visually impaired more generally, are not the only ones with permanent disabilities. There are a lot of other groups that fall into that category: @@@TODO@@@.
+You might have seen this number before. It's often thrown in the mix when talking about accessibility. 16% of people in the world suffer from significant disabilities in one form or another. In Australia the number is actually even higher, [around 21%](https://australiandisabilitynetwork.org.au/resources/disability-statistics/). In America, it's [closer to 29%](https://www.cdc.gov/disability-and-health/articles-documents/disability-impacts-all-of-us-infographic.html). That's more than 1 in 4!
 
-According to studies, rougly 1.3 billion people world-wide today have some form of significant disabilities. That's 16% of all people in the world. In Australia, based on a [report of 2023 @@@TODO@@@](???) it's actually more than 20%. That's a lot. And those are the numbers usually quoted when making an argument for accessibility: if you don't optimise your web app, you eliminate 1/5th of the world as potential customers.
+This includes visually impaired, hard of hearing, people with mobiliy impairments, as well as cognitive disabilities like dyslexia and ADHD.
 
-On the one hand, that's good. It's true, and I think it deserves more attention. But on the other hand, I think it still misses the bigger picture. Besides permanent disabilities, there are two more categories we need to consider:
+Saying your user group does not include any of these people means you are willingly cutting out 16% your potential customers. 16% of potential revenue. That's pretty wild in itself, but this is _still_ not the full picture.
 
-- **Temporary disabilities:** @@@TODO@@@
-- **Situational disabilities:** @@@TODO@@@
+### Accessibility categories
+
+There are more categories of disabilities we need to look at, especially in the context of the web.
 
 ![The three categories of disabilities you should consider when talking about how we can build a more accessible world, including the web — https://www.ul.ie](https://substackcdn.com/image/fetch/$s_!AAV8!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F88436dcb-9015-4bab-8cb6-785450946983_2400x1480.png)
 
-The whole argument of "those 16% are not part of our user group, so we don't need to care about accessibility" becomes moot extremely quickly when you look at this. Literally everyone will be part of the second and third categories at one point or another. Accessibility matters for everyone, _literally_.
+- **Temporary disabilities:** These are usually caused by injuries or medical procedures, e.g. if you've broken your arm or if you recently had eye surgery. The impact is comparible to "permanent disabilities", but the impairment will heal or wear off over time.
+- **Situational disabilities:** These are often environmental. E.g. if you go outside and the sun glare makes it hard to see contrast on your screen. Or you're in a noisy environment, so you cannot hear the audio on a video. Or you're holding your cat, so your mobility is impacted for the moment.
+
+These last two categories will literally affect _everyone_ at one point or another. Meaning, the whole argument of "those 16% are not part of our user group, so we don't need to care about accessibility" should become moot extremely quickly once you look at it a bit zoomed out like this.
 
 ### Beyond screen readers
 
-On top of all that, I think the first thing people jump to when hearing the word "accessibility" is screen readers, maybe color contrasts. Again, that's good, they are definitely part of it, but it's too close-minded. It goes far beyond that.
+Another common problem I keep seeing (and I admit when I first started out as a developer I definitely also fell into this group): whenever people hear the word "accessibility", their mind immediately jumps to screen readers, mayve color contrasts, but that's it.
 
-A lot of the best practises will cover more generally different forms of input (e.g. keyboard, AI agent) and output (e.g. screen reader, even those popular AI agents). And again, improvements benefit everyone. Disabled users, power-users, users that [simply prefer specific forms of input or output[^3]]().
+Now, these things are definitely part of it, so it's good that people do think of them, but accessibility goes far beyond that. So reducing the meaning of "accessibility" to screen readers is pretty close minded, and dangerous if you are using this as an excuse why you don't need to invest in it.
 
-## Part II: Words matter
+A lot of the best practises we will cover here benefit all users. Those with disabilities, as well as your power users, or the ones that [simply prefer specific forms of input or output[^3]]().
 
 ### Usability
 
-I hope this shows why I think that attitude towards accessibility is fundamentally flawed. To mitigate it, I often suggest a different definition for accessibility, or even a different term all together. I personally like how Mozilla defines it:
+I hope this shows why I think that people's attitude towards accessibility is often fundamentally flawed. To mitigate it, I found myself (first subconciously, now more and more intentionally) use different terminology when discussing the matter with teams and stakeholders.
+
+I _really_ like how Mozilla defines it:
 
 > Accessibility is the practice of making your websites usable by as many people as possible. — [https://developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility/What_is_accessibility)
 
 The focus is on "usability" for as many users as possible. This does include catering for people with disabilities, but it doesn't stop there.
 
-It also suddenly includes things like:
+Framing it like this makes people immediately consider things they usually wouldn't associate with accessibility, e.g.:
 
 - **Performance optimisations:** Don't just build for users on the latest iPhones or MacBooks. Don't just build for users with the fastest internet connection.
 - **Cross-browser compatibility:** Don't just build for users on the latest Chrome version.
-- ... the list goes on and on. I hope you got the gist.
+- **Resillience:** Ensure your app handles internal and external failures, e.g. invalid inputs or the loss of network connection while filling out a form, as graceful as possible. That doesn't mean you have to go all-in on offline first, but at least make sure the whole experience doesn't break on flaky wifi.
+- **Support for different input and output devices:** As mentioned before, allow your users to choose how they want to interact with your app. With a mouse, just with the keyboard, on a touch screen without any cursor, etc.
 
-We already established improvements here will benefit all users, a win-win. But I'd even argue a lot of it also benefits your developers and your abilitity to ship things faster. Accessible code is usually more semantic, meaning it's more likely to "explain itself", aka being self-documenting. And, to finally segway into the actual topic of this blog post, it often can reduce the amount of code significantly, if you're using the platform where possible. So, win-win-win?
+This list goes on and on, but you get the gist. We already established improvements here will benefit all users, a win-win.
 
-**In summary:** my general strategy here and advice for anyone who is trying to advocate for accessibility at their company or in their circles: call it "usability".
+But I'd even argue a lot of them will also benefit your developers and your abilitity to ship things faster. Accessible code is usually more semantic, meaning it's more readable and more likely to "explain itself" (aka being self-documenting). And, to finally segway into the actual topic of this blog post, it often can reduce the amount of code significantly, if you're using the platform where possible. So, win-win-win?
 
-### Affordances
+**In summary:** my general strategy here and advice for anyone who is trying to advocate for accessibility at their work place or in other circles: lead the conversation with "usability". Yes, it's sad that we have to do this to get people into the right mindset, or to get their attention in the first place, but I personally found it's worth it given the results this can achieve once you've got people on board.
 
-> When affordances are taken advantage of, the user knows what to do just by looking: no picture, label, or instruction needed. — ["The Design of Everyday Things" by Donald A. Norman](https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things)
+## Part II: Affordances on the web
 
-Ok, for a moment let's take a step back from the web and look at the "real" world. And let's talk about "affordances".
+One more concept I want to talk about, before we dive into code. You might have heard about "affordances". Donald Norman made the term popular with his book ["The Design of Everyday Things"](/library/the-design-of-everyday-things) (which I definitely recommend if you haven't read it already).
 
-It's the idea of designing things in a way that their purpose and usage are clear without the need for a manual. The most common example, made popular by Donald Norman in his book "The Design of Everyday Things", is a teapot. Even if you've never seen a teapot in your life, the shape of the spout and handle will still guide you towards its correct usage. More specifically, Normal defines 5 key concepts that lead to that:
+This is how he defines it:
+
+> When affordances are taken advantage of, the user knows what to do just by looking: no picture, label, or instruction needed. — ["The Design of Everyday Things" by Donald A. Norman](/library/the-design-of-everyday-things)
+
+In essence, when looking at everyday objects and wether or not they are "well designed", there are several levers the designer can pull:
 
 - **Affordances:** What actions are available?
 - **Signifiers:** How do I interact with it?
@@ -93,27 +103,27 @@ It's the idea of designing things in a way that their purpose and usage are clea
 - **Feedback:** Communicate to the user that the action has been done.
 - **Contraints:** Don't allow wrong actions that could have damaging outcomes.
 
-I think, especially around web development, this is still very applicable. And it's where a lot of the conversations should start: semantic HTML. We should use semantics to describe our website in a way that anyone interpreting it (be it a human or a machine) knows what is what without needing further instructions.
+The idea with signifiers and affordances specifically is, if the object is indeed well designed, its purpose and how to use it should be clear just by looking at it. E.g. a teapot's shape indicates that it is meant for pouring, the hole at the top implies where to fill in the liquid to be poured. A toaster very clearly shows you the slots where it wants you to put the bread. Good design will guide the user and "tell" them what to do without the need of a manual.
 
-When we say semantic HTML, I think of three layers:
+Personally, I think this translates well to the web. And it's where a lot of the conversations around building accessible should start: semantic HTML.
+
+When we say semantic HTML, I think we usually refer to three layers:
 
 - **Landmarks:** These are specific HTML tags that allow us to describe the broader structure of our document. They can help users navigate through the site more efficiently. This is their primary purpose: to semantically describe what the content within them is. They usually don't have any functionality baked into them.
 - **Semantic Elements:** These are elements with actual functionality and behaviours baked into them. I know it almost feels like a bit of a meme at this stage. "Use the platform". But like most (good) memes, this keeps popping up because a lot of it stems from truth. The platform is where the juice is, and in our context, where the browsers do a lot of the work for you.
 - **WAI-ARIA attributes:** These attributes are decoupled from HTML elements, meaning they allow you to enhance the accessibility of any element you need. Like landmarks, most of these attributes don't actually give you functionality out of the box. Instead, you use them to describe the functionality you might have custom-built (e.g. in your Javascript) to ensure the browser and technologies like screen readers have access to the relevant information.
 
-A lot of people, when they hear "accessibility", mentally immediately jump to the last layer. I hope the code examples we'll explore in the next parts of this blog post can show you why this isn't a great approach.
-
-Instead, always go from the top down: is what I want to do just a container? Great, go with a landmark. Otherwise, does a tag exist for the functionality I need? Use it! If not, use attributes to describe the intended functionality, then implement it yourself.
+Again, a lot of people, when they hear "accessibility", mentally immediately jump to the last layer, which isn't great. Instead, I'd suggest always going from the top down: is what I want to do just a container? Great, go with a landmark. Otherwise, does a tag exist for the functionality I need? Use it! If not, use attributes to describe the intended functionality, then implement it yourself.
 
 ## Part III: About reinventing the wheel
 
-Enough theory, though. Let's look at real code examples to see what all of this means in practice.
+Enough theory, let's look at real code examples to see what all of this means in practice.
 
 ```html
 <div onClick="{handleClick}">Click me</div>
 ```
 
-Yes, yes. I know. This might seem like an exaggerated example. But, at the same time, I promise you most of us have actually seen it in the wild. It's the dictionary definition of the "I will just implement the accessibility stuff myself, how hard can it be" attritude.
+Yes, yes. I know. This might seem like an exaggerated example. But, at the same time, I'm sure most of us have actually seen it in the wild. It's the dictionary definition of the "I will just implement the accessibility stuff myself, how hard can it be" attitude.
 
 At first sight, the above might seem to work. When I click on the element, it triggers the callback. But we're smart, and we know that assistive technology like screen readers needs affordances to know that a clickable element is clickable. The semantic here is "button", so let's use an aria attribute to label our element accordingly (I know, I know).
 
@@ -121,9 +131,9 @@ At first sight, the above might seem to work. When I click on the element, it tr
 <div role="button" onClick="{handleClick}">...</div>
 ```
 
-Right, but ironically, most assistive technology uses affordances like the "role" attribute to announce the element type whenever it's focused. Right now, the user cannot focus on our element, because divs by default are not focusable (because they are usually not interactive).
+Right, but ironically, most assistive technologies announce the element type whenever it's focused. Right now, the user cannot focus on our element, because divs by default are not focusable (because they are usually not interactive).
 
-Let's fix that by adding a tabindex.
+Let's fix that by adding a [tabindex[^4]]().
 
 ```html
 <div role="button" tabindex="0" onClick="{handleClick}">...</div>
@@ -179,7 +189,7 @@ function handleClick(e) {
 }
 ```
 
-Besides styling considerations, the spec also says disabled elements [shouldn't receive any browsing events[^4]](). That doesn't only include the triggers we just disabled, but it also includes things like focus. So we need to adjust that accordingly.
+Besides styling considerations, the spec also says disabled elements [shouldn't receive any browsing events[^5]](). That doesn't only include the triggers we just disabled, but it also includes things like focus. So we need to adjust that accordingly.
 
 ```html
 <div
@@ -199,13 +209,13 @@ I'll stop here. I hope we can all see how much effort we need to go through to m
 
 ## Part IV: More code examples
 
-I've read somewhere that to ensure any given message sticks with your audience, you should [repeat it at least 7 times[^5]](). I'm not sure if that's true, but here we go, only a few more to go 😉
+I've read somewhere that to ensure any given message sticks with your audience, you should [repeat it at least 7 times[^6]](). I'm not sure if that's true, but here we go... 😉
 
 Jokes aside, though, I also just want to highlight some of the more recent additions to the capabilities of HTML and CSS you might not know about. Remember, the goal here is to start using built-in functionalities more within the custom components that we commonly build ourselves for our web apps.
 
 ### Dialogs & Popovers
 
-Let's start with one of the most abundant patterns on the web: dialogs. The [`dialog` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog) has been [baseline widely availble[^6]]() since 2022, so no excuses anymore!
+Let's start with one of the most abundant patterns on the web: dialogs. The [`dialog` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog) has been [baseline widely availble[^7]]() since 2022, so no excuses anymore!
 
 ```html
 <p>
@@ -224,19 +234,18 @@ Let's start with one of the most abundant patterns on the web: dialogs. The [`di
 </dialog>
 ```
 
-There are a few key parts to notice here:
+There are a few key parts worth explaining here:
 
-- The triggering element, the button within our main content, has two attributes: `command` and `commandfor`. These attributes tell the browser what this button is intended to trigger. In this case, we want to trigger the `show-modal` command, and `commandfor` tells the browser what dialog this is referring to. Another value of the `command` attribute is close, which we can use within the dialog to provide a button to close it.
+- The triggering element, the button within our main content, has two attributes: `command` and `commandfor`. These attributes tell the browser what this button is intended to trigger. In this case, we want to trigger the `show-modal` command, which opens the dialog in "modal" mode (which is most likely what you want). The `commandfor` tells the browser what dialog this is referring to. Another value of the `command` attribute is close, which we can use within the dialog to provide a button to close it.
 - The dialog itself then has the `id` we are pointing to with the `commandfor` attributes.
+- Within the dialog we have another button with a `command` attribute, this time to `close` the dialog
 
-Just like the `button` element, the `dialog` element takes care of a lot of functionality for us, including many accessibility concerns. This includes:
+Just like we saw before with the `button` element, the `dialog` element takes care of a lot of functionality for us, including many accessibility concerns. This includes:
 
 - Hiding the content until the dialog is activated
-- Rendering the dialog [on top of the current page content[^7]]() when active
-- [Trapping the focus[^8]]() within the dialog while it's active. This means, while the dialog is active, the browser will prevent the user from interacting with anything outside of the dialog, including both trigger and focus interactions.
-- Keyboard accessibility, e.g. closing the dialog by pressing the `escape` key, restoring focus to the last focused element within the document when closing a dialog, etc.
-
-All of this without any Javascript. However, you can use JS with it if you so wish. Like many other HTML elements, the `dialog` DOM element provides additional JS methods to interact with it.
+- Rendering the dialog [on top of the current page content[^8]]() when active
+- [Trapping the focus[^9]]() within the dialog while it's active. This means, while the dialog is active, the browser will prevent the user from interacting with anything outside of the dialog, including both trigger and focus interactions.
+- Keyboard accessibility, e.g. closing the dialog by pressing the `Escape` key, restoring focus to the last focused element within the document when closing a dialog, etc.
 
 It's also worth noting that you can fully control the look and feel of the dialog via CSS. E.g. a common thing to customise is the backdrop, the background that will sit on top of the page content but behind the dialog content. You can adjust it via the ::backdrop pseudo selector.
 
@@ -270,11 +279,11 @@ dialog:open {
 }
 ```
 
-Not only can we target the open state of the dialog via the `:open` selector, the new [`starting-style` at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style) allows us to do what we couldn't before. Animate elements in and out of existence. This is baseline newly available since 2024, meaning it's been in all major browsers since then.
+Not only can we target the open state of the dialog via the `:open` pseudo-selector, the new [`starting-style` at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style) allows us to do what we couldn't before: animate elements in and out of existence. And the best part, this has been supported by all major browsers since 2024.
 
 #### Popovers
 
-Popovers don’t have their own HTML element, instead you can turn any element into a popover using the new [`popover` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover) (baseline newly available since 2024).
+Popovers are very similar, however they don’t have their own HTML element. Instead you can turn any element into a popover using the new [`popover` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover).
 
 ```html
 <p>
@@ -291,13 +300,15 @@ Popovers don’t have their own HTML element, instead you can turn any element i
 </div>
 ```
 
-Other than that, the popover looks very similar to the dialog element we just explored. This time, unlike with most ARIA attributes, the attribute itself also controls all of the common functionality again, e.g.:
+Again, the built-in functionality takes care of all of the accessibility concerns for us, e.g.:
 
 - Hiding the content until the popover is activated
 - Automatically closing the popover when the user interacts with the document content (e.g. clicks on something in the main document)
-- Keyboard accessibility, e.g. closing the popover when pressing `escape`
+- Keyboard accessibility, e.g. closing the popover when pressing `Escape`
 
-One major thing to note is the default positioning of these popovers. Somewhat counter-intuitively, they are positioned centered on the screen by default, instead of anchored to the element that triggered it (which is what you probably would expect). However, you can easily fix that with some [CSS anchor-positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-anchor) (baseline newly available since 2026):
+One major thing you will notice though is the default positioning of these popovers. Somewhat counter-intuitively, they are positioned centered on the screen by default (like dialogs), instead of anchored to the element that triggered it, which is what you probably would expect.
+
+However, you can easily fix that with some [CSS anchor-positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-anchor), which finally hit baseline support in 2026:
 
 ```css
 button[popovertarget='demo-popover'] {
@@ -316,7 +327,7 @@ This will automatically position the popover relative to the trigger button, bas
 
 #### Tooltips
 
-As mentioned, tooltips are really just popovers, but instead of triggering them via click, we usually want to trigger them on hover.
+When you think about it, tooltips are really just popovers. But instead of triggering them via click, we usually want to trigger them on hover.
 
 Traditionally, HTML allowed us to have very basic tooltips via the `title` attribute. But this is limited. For one, we can only use plain text as the content, but probably more importantly, we cannot style the tooltips or adjust behaviours like the delay. All of that is fully controlled by the browser.
 
@@ -334,9 +345,9 @@ The new popover API changes that. To support hover as a trigger, browsers provid
 </div>
 ```
 
-Instead of `popovertarget`, we use `interestfor`. The rest can stay the same. By default, the interest invoker uses hover as its trigger (or press on touch devices that don’t have hover capabilities).
+Instead of `popovertarget`, we use [`interestfor`[^10]](). The rest can stay the same. By default, the interest invoker uses focus and hover as its triggers (or press on touch devices that don’t have hover capabilities).
 
-Not only does this allow us to completely customise the looks of the tooltip including enter and leave animations through CSS, but we can also control things like the delay for showing or hiding the tooltip.
+Not only does this allow us to completely customise the looks of the tooltip, including enter and leave animations through CSS, we can also control things like the delay for showing or hiding the tooltip.
 
 ```css
 [interestfor] {
@@ -349,11 +360,9 @@ Not only does this allow us to completely customise the looks of the tooltip inc
 }
 ```
 
-And I know I said it before, but I think you cannot stress this enough: all of this [without needing a single line of Javascript![^9]]() Magic!
-
 ### Accordions
 
-Another extremely common pattern on the web: having content collapsable, with a short summary that can toggle it between visible and hidden. It saves space and makes the site itself easier to scan without too much noise.
+Another extremely common pattern on the web. Especially for content-dense applications, being able to collapse and expand content on demand can massively increase the usability of your app.
 
 You might even know about the `details` and `summary` tags in HTML. They have been around for a while, and most developers stumble across it when looking for a way to render accordions in Github readmes 😅
 
@@ -375,12 +384,12 @@ In the example above, the `details` element defines the content of the accordion
 
 Out-of-the-box, without any Javascript, this gives you:
 
-- Keyboard accessibility (hopefully you start seeing a pattern here), e.g. expanding and collapsing the content using `Enter` or `Space`.
-- Assistive technology support, so the content gets announced appropriately.
-- Visual indication for the current state of the accordion
-- One of the coolest features ever, not enough people know about: automatic reveal of the content when the user is using the browser search functionality (Cmd+F) so search the page, when the accordion content includes matches 🤯
+- **Keyboard accessibility (hopefully you start seeing a pattern here):** e.g. expanding and collapsing the content using `Enter` or `Space`.
+- **Assistive technology:** so the content gets announced appropriately.
+- **State management:** we get visual indication and CSS state selectors for free
+- **Discoverability:** in my opinion one of the coolest features ever, not enough people know about: [automatic reveal of the content[^11]]() when the user is using the browser search functionality (Cmd+F) so search the page, when the accordion content includes matches 🤯
 
-Especially the last one is usually overlooked when people implement their own accordion components in their component library or design system. As someone who uses the browser search extensively, let me say this: if you are building any form of documentation website, and you use accordions, and your accordions don't auto-reveal their content on search, you are THE DEVIL, and I hold you personally accountable for that!
+Especially the last one is usually overlooked when people implement their own accordion components in their component library or design system. As someone who uses the browser search extensively, let me say this: if you are building any form of documentation website, and you use accordions, and your accordions don't auto-reveal their content on search, you are the devil, and I will hold you personally accountable for that!
 
 Jokes aside, though, I hope this further highlights (if that was even needed) that accessibility features more often than not benefit all users, not just the ones with disabilities.
 
@@ -419,6 +428,8 @@ Also, we can customise the behaviour. E.g. if we want to have a collection of ac
 <details name="demo-group">...</details>
 ```
 
+And we can still control the state programatically as well via Javascript if we really need to. All of it is exposed on the DOM API.
+
 ### Forms & inputs
 
 Another thing that's found in abundance on the web: forms. Most web apps are, in one way or another, really just a collection of tables and forms to update the data shown in the tables.
@@ -434,7 +445,7 @@ One of the capabilities introduced to HTML forms a while ago, but still often un
 </form>
 ```
 
-In the example above, if we try to submit the form without filling in the field we [marked as `required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/required), we will get a native error message pop-up that tells us we need to fill in that field.
+In the example above, if we try to submit the form without filling in the field we [marked as `required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/required), we will get a [native error message pop-up[^12]]() that tells us we need to fill in that field.
 
 Not only did we get the behaviour for free, but we also got free internationalisation. This error message will be in the user's language, based on the browser settings. We also get accessibility for free; the error will be announced appropriately by screen readers and other assistive technology. Something I personally didn't even know how to do manually correctly until very recently. And on top of that, we can use the validation status in our CSS to highlight invalid fields:
 
@@ -448,7 +459,7 @@ input:invalid {
 }
 
 input:user-invalid {
-  /* special pseudo selector that only triggers after submit attempt */
+  /* special pseudo-selector that only triggers after submit attempt */
 }
 
 div.field:has(input:user-invalid) {
@@ -456,9 +467,7 @@ div.field:has(input:user-invalid) {
 }
 ```
 
-If you use Javascript, you can even further control the behaviour of the error notifications. Instead of the default pop-up, you can inject the error message, e.g. into the field component itself.
-
-And the validation capabilities go beyond just required fields. We can use [input types](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#input_types) and other attributes to get more advanced validation:
+And the validation capabilities go beyond just required fields. We can use different input [types](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input#input_types) and other attributes to get more advanced validation:
 
 ```html
 <input type="url" />
@@ -467,7 +476,7 @@ And the validation capabilities go beyond just required fields. We can use [inpu
 <input type="number" min="5" max="40" />
 ```
 
-Input types do not only give us advanced validation rules. They can also control browser behaviour, e.g. what keyboard to show on mobile devices. E.g. the keyboard for an email input will be different from the standard keyboard, usually exposing characters like `@`, `-`, `_`, etc. The keyboard for an input of type tel will usually just be the keyboard, with access to the `+` character for country codes.
+Input types do not only give us advanced validation rules, they can also control browser behaviour, e.g. what keyboard to show on mobile devices. The keyboard for an `email` input for example will be different from the standard keyboard, usually exposing characters like `@`, `-` or `_` more prominently. The keyboard for an input of type `tel` will usually just be the number pad, with access to the `+` character for country codes.
 
 For anything that doesn't have a dedicated type, you can use the [`pattern` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/pattern) to give the browser a hint what kind of input you expect from the user, to potentially optimise the input controls:
 
@@ -476,7 +485,7 @@ For anything that doesn't have a dedicated type, you can use the [`pattern` attr
 <input type="text" name="otp" pattern="[0-9A-Z]{6}" />
 ```
 
-And then we have even more advanced form inputs that give us extended UIs for users to define specific values.
+Finally, we have even more advanced form inputs that give us extended UIs for users to define specific values.
 
 #### [search](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/search)
 
@@ -484,7 +493,7 @@ And then we have even more advanced form inputs that give us extended UIs for us
 <input type="search" />
 ```
 
-Again, this allows the browser to render optimised mobile keyboards, in this case including a "search" button that submits the search. It also adds a button to the UI within the text field to clear the search, which can also be triggered by pressing `Escape`.
+This again allows the browser to render optimised mobile keyboards (in this case including a "search" button that submits the search). It also adds a button to the UI within the text field to clear the search, which can also be triggered by pressing `Escape`.
 
 #### [date](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/date) / [time](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/time) / [datetime](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/datetime-local) / [week](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/week)
 
@@ -501,7 +510,7 @@ Again, this allows the browser to render optimised mobile keyboards, in this cas
 </script>
 ```
 
-These input types are possibly what cause you (and many others) to believe built-in inputs suck. They allow the user to input dates, date & time or specific weeks respectively. However, they are currently not very customisable when it comes to styles or behaviour, but I am hopeful with everything we're seeing in the ecosystem at the moment that this will change in the future.
+These input types are possibly what causes many of us to believe built-in inputs suck. They allow the user to input dates, date & time or specific weeks respectively. However, they are currently not very customisable when it comes to styles or behaviour, but I am hopeful with everything we're seeing in the ecosystem at the moment that this will change in the future.
 
 #### [range](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/range)
 
@@ -569,9 +578,9 @@ Again, yes, the picker itself is not very customisable. But at least the input c
 
 ### Custom selects
 
-Ok, this leads us to one of my personal favourites. Another input type that's been the pain for many of us over the past decades is "selects". Dropdowns and autocompletes, where you want to provide the user with a predefined list of options.
+This leads us to one of my personal favourites. Selects have been the pain for me and I'm sure many others for decades. But why?
 
-Focusing on selects, we've always (since 1995) had the `select` element. It allows you to do just that, define a list of predefined options, and the browser will render a select element and menu for you.
+We've had the `select` element basically forever (aka since 1995). It allows you to define a list of predefined options, and the browser will render a trigger and menu for you, again with a bunch of accessibility baked in.
 
 ```html
 <select name="starter">
@@ -585,7 +594,7 @@ This is great, but it has always been extremely limited. For one, we can't use a
 
 This means we can't create very common UI patterns, where our options should have icons or sub-labels. And we can't make the picker blend into the rest of our UI. Bummer!
 
-A [new experimental](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select) (baseline limited availability, only in Chrome and Chromium at the time of writing) `appearance` value for selects aims to change that.
+A [new experimental](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select) `appearance` value for selects aims to change that, currently only available in Chrome and Chromium-based browsers.
 
 ```html
 <select>
@@ -611,7 +620,11 @@ A [new experimental](https://developer.mozilla.org/en-US/docs/Learn_web_developm
 </style>
 ```
 
-With just those few lines of CSS, we finally have full control not only over the input itself, but over the picker and the options rendered within the picker as well, e.g:
+Those few lines of CSS essentially do a few things:
+
+- It gives us more styling capabilities, not only over the select itself, but also the picker menu
+- It allows us to use any HTML within the `option` tags, finally allowing us to create more advanced select menu items
+- It also enables us to define the select trigger button (if we so wish)
 
 ```css
 option {
@@ -632,9 +645,11 @@ option > span {
 }
 ```
 
-We can even customise what the trigger button of our select should look like and whats rendered within it as its selected state, via the new `selectedcontent` element.
+If we want to define a custom trigger button for the select, we can simply place a custom `button` element as the first child of the select. Again, previously this would have simply been ignored, because in the old `select` spec a `button` isn't a valid child element. But with the new appearance it is.
 
-Generally speaking, anything that's not an `option` will be treated as the trigger element in the new appearance mode. So we could do something like this:
+Additionally we get a new element: `selectedcontent`. This element is a handy shortcut, representing the inner HTML of the currently selected option.
+
+Combining these two, we can do something like this:
 
 ```html
 <select>
@@ -646,7 +661,7 @@ Generally speaking, anything that's not an `option` will be treated as the trigg
 </select>
 ```
 
-`selectedcontent` will render the inner HTML of the currently selected option element. But since we can target the element via CSS, we can again completely customise what we want to show, i.e. hide the `img` element to only show the text label.
+We can even target the `selectedcontent` element via CSS, again allowing us to completely customise what we want to show. E.g. we can hide the `img` element to only show the text label.
 
 ```css
 selectedcontent > img {
@@ -925,7 +940,7 @@ Ok, finally, let's have a look at AI, and how it might change the way we thing a
 #### Potential
 
 - **👍 Automation:** AI can potentially help with that automation issue we mentioned before. It can be trained on patterns and test for more advanced and more nuanced things more efficiently. At the very least, it can likely speed up the manual testing process.
-  - ⚠️ But this can also be dangerous if we don't stay in the loop and just "trust me, bro" the AI. Still, I think overall there is a lot of potential here, especially when we give AI agents access to the browser and with it to the [devtools protocol[^10]](), it can perform a lot more sophisticated checks.
+  - ⚠️ But this can also be dangerous if we don't stay in the loop and just "trust me, bro" the AI. Still, I think overall there is a lot of potential here, especially when we give AI agents access to the browser and with it to the [devtools protocol[^13]](), it can perform a lot more sophisticated checks.
 - **👍 Content generation:** AI can help with repetetive manual tasks like alt text generation. Again, I think we should always keep the human in the loop, so think of it more as speeding up your work, not doing your work for you.
 - **👍 Code generation:** big opportunity to improve default accessibility in new code, given the increasing amount of code gen, assuming models improve and evolve in the right direction
   - ⚠️ Which, at the same time, is probably the biggest risk. Right now I would say we're still quite far away from that, and if models are trained with bad code, the code they generate will also be bad. It's simple: garbage in, garbage out.
@@ -939,7 +954,7 @@ Like with everything, personally I think AI should be treated as a tool to impro
 
 ### The web is broken
 
-Before wrapping up, [I want to leave you with one final task[^11]](). Take a pen and paper, and the next time you browse the web and find something that doesn't work quite as you would have expected it to, make a note of it.
+Before wrapping up, [I want to leave you with one final task[^14]](). Take a pen and paper, and the next time you browse the web and find something that doesn't work quite as you would have expected it to, make a note of it.
 
 - @@TODO@@
 - @@TODO@@
@@ -956,39 +971,45 @@ The web, as it currently is, is broken. And I think we're at a pivot point in hi
 ---
 
 [^1]:
-    Here are a few resources I personally think are doing a very good job covering fundamentals in more depth:
+    Here are a few resources I personally think are doing a very good job covering fundamentals in more depth. This is not an exclusive list, just my personal favourites:
 
     **Blog posts:** @@@TODO@@@
 
     **Conference talks & videos:** @@@TODO@@@
 
-[^2]: Spoiler alert, I don't think it will...
+[^2]: Spoiler alert: I don't think it will...
 
-[^3]: This is [what the web was made for](@@@TODO@@@): to share information decoupled from its presentation, leaving that completely up to the consuming user. We obviously drifted away from that a bit since the 90s, but still... That was one of the core motivations for the web as an medium different from print.
+[^3]: This seems like a good time for a quick reminder that this is [what the web was made for](https://www.w3.org/press-releases/1997/ipo-announce/): to share information, decoupled from its presentation (leaving that completely up to the consuming user), accessible to as many people as possible.
 
-[^4]:
+[^4]: This should always be a red flag. If you have to add a tabindex, you very likely are using the wrong element for whatever you're trying to achieve.
+
+[^5]:
     This is actually a great example for not knowing what you don't know. I didn't know this behaviour was [part of the spec](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/disabled) until I made this demo...
 
     It's something I think needs to be discussed more often. Not only does re-implementing accessibility concerns yourself cost a lot more time and effort, you are also _very_ likely to get it wrong, e.g. because you're missing parts you didn't know about.
 
     Just don't do it if it can be avoided. Pretty please.
 
-[^5]: I wasn't sure where I actually read it, I couldn't find the original book or talk reference. But researching it, it looks like it's a [pretty common marketing rule-of-thumb](https://www.optimove.com/resources/blog/marketing-rule-of-7).
+[^6]: I wasn't sure where I actually read it, I couldn't find the original book or talk reference. But researching it, it looks like it's a [pretty common marketing rule-of-thumb](https://www.optimove.com/resources/blog/marketing-rule-of-7).
 
-[^6]:
+[^7]:
     ["Baseline"](https://web.dev/baseline) is a fairly recent initiative driven by the likes of Google and Mozilla to help developers understand whether or not certain web features are safe to use. We distinguish between: "widely available" (it is supported by all major browsers), "newly available" (it is supported by all major browsers, but support has been added recently) and "limited availability" (not supported by all major browsers).
 
     This doesn't mean that you can't use features with "limited availability", it just helps you understand which of the features you should treat as [progressive enhancement](https://developer.mozilla.org/en-US/docs/Glossary/Progressive_Enhancement), vs. which of them you can rely on for core functionality without any polyfills or fallbacks. This philosophy is going to be even more important once we start talking about more experimental features later on in this post, e.g. customisable selects and scroll markers for accessible carousels.
 
-[^7]: To "render the dialog on top of the current page content", the browser uses a different rendering layer for those elements. This means they will always be on top of the document content, independent of any z-index values provided.
+[^8]: To "render the dialog on top of the current page content", the browser uses a different rendering layer for those elements. This means they will always be on top of the document content, independent of any z-index values provided.
 
-[^8]:
+[^9]:
     The "trapping of the focus" generally works out-of-the-box with the dialog element. However, if you control the opening of the dialog via Javascript, make sure you use the [showModal](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/showModal) method (instead of just open), which will also trigger the focus trap.
 
     Also, when using Javascript, don't use the close method to close the dialog. Use [requestClose](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement/requestClose) instead, which will trigger a close event that you can hook into to prevent the close when necessary (e.g. to prevent unsaved changes from being lost, etc.)
 
-[^9]: Important: the [interest API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/interestForElement) is currently still experimental and only supported by Chrome and Chromium browsers like Edge and Brave. But it [is part](https://github.com/web-platform-tests/interop/blob/main/2026/README.md#dialogs-and-popovers) of the [Interop 2026](https://wpt.fyi/interop-2026) list, which is a list of features browser vendors are aiming to collaborate on to align their implementation and overall support. So hopefully we’ll get there soon.
+[^10]: Important: the [interest API](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/interestForElement) is currently still experimental and only supported by Chrome and Chromium browsers like Edge and Brave. But it [is part](https://github.com/web-platform-tests/interop/blob/main/2026/README.md#dialogs-and-popovers) of the [Interop 2026](https://wpt.fyi/interop-2026) list, which is a list of features browser vendors are aiming to collaborate on to align their implementation and overall support. So hopefully we’ll get there soon.
 
-[^10]: @@TODO@@ - Explain the devtools protocol and add some relevant links here
+[^11]: You can achieve the same more manually btw by using the "hidden" attribute: most browsers by now support the new ["until-found"](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/hidden#the_hidden_until_found_state) value for it, which behaves exactly the same way, where it hides the content by default, but when the user searches the page the user still looks within the hidden element and reveals it if there is a match.
 
-[^11]: This is heavily inspired by the sentiment [Rich Harris](https://bsky.app/profile/rich-harris.dev) shared (and I'm sure a lot of others did before and after him) in his talk at [JS Nation in 2024](https://youtu.be/UegUi2fWBaU?t=1010), where he describes his core motivations for creating Svelte and continuously innovating with it, and the values it represents. I highly recommend watching both the talk and reading through [this Github discussion](https://github.com/sveltejs/svelte/discussions/10085), which was a result of it and describes the values and "north star" Svelte is aiming for and why.
+[^12]: Using Javascript you can further control the behaviour of the error notifications. Instead of the default pop-up, you can e.g. inject the error message into the field component itself. But with great power comes great responsibility, if you do this make sure they are still getting announced correctly by screen readers and other assistive technologies. You'll also want to make sure you keep all the other [built-in accessibility features](https://www.w3.org/WAI/WCAG21/Understanding/error-identification.html), e.g. focusing on the first errored field etc., if you decide to disable the default behaviour.
+
+[^13]: @@TODO@@ - Explain the devtools protocol and add some relevant links here
+
+[^14]: This is heavily inspired by the sentiment [Rich Harris](https://bsky.app/profile/rich-harris.dev) shared (and I'm sure a lot of others did before and after him) in his talk at [JS Nation in 2024](https://youtu.be/UegUi2fWBaU?t=1010), where he describes his core motivations for creating Svelte and continuously innovating with it, and the values it represents. I highly recommend watching both the talk and reading through [this Github discussion](https://github.com/sveltejs/svelte/discussions/10085), which was a result of it and describes the values and "north star" Svelte is aiming for and why.
