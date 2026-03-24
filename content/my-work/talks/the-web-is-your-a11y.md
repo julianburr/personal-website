@@ -29,6 +29,8 @@ events:
     date: 2026-03-13
     name: VueJS Amsterdam
     url: https://vuejs.amsterdam/
+    type: conference
+    slidesUrl: https://talk-web-is-your-a11y.vercel.app/vuejs/slide/0
     place:
       country: Netherlands
       region: Amsterdam
