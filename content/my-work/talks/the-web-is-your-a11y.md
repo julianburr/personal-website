@@ -36,6 +36,16 @@ events:
       region: Amsterdam
       city: Amsterdam
       latlng: 52.3664009,4.6680082
+  react-summit-2026:
+    date: 2026-06-12
+    name: React Summit
+    url: https://reactsummit.com/
+    type: conference
+    place:
+      country: Netherlands
+      region: Amsterdam
+      city: Amsterdam
+      latlng: 52.3664009,4.6680082
 ---
 
 The web comes accessible out of the box, we just need to know how to use it. With modern advancements in HTML, CSS, and even JS, the tools to build an inclusive experience are more powerful than ever.
