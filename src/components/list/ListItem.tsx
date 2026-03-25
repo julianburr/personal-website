@@ -1,3 +1,5 @@
+'use client';
+
 import classNames from 'classnames';
 import dayjs from 'dayjs';
 import Link from 'next/link';
@@ -126,6 +128,9 @@ export function ListItem({
                           ? 'noopener noreferrer'
                           : undefined
                       }
+                      onClick={(e) => {
+                        e.stopPropagation();
+                      }}
                       className="text-inherit w-[2.4rem] h-[2.4rem] flex items-center justify-center transition-all bg-grey-medium/50 shadow-none hover:bg-grey-medium"
                     >
                       <span className="flex text-[1.4rem]">{action.icon}</span>
