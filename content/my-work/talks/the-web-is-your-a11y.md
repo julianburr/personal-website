@@ -46,6 +46,7 @@ events:
       region: Amsterdam
       city: Amsterdam
       latlng: 52.3664009,4.6680082
+      online: true
 ---
 
 The web comes accessible out of the box, we just need to know how to use it. With modern advancements in HTML, CSS, and even JS, the tools to build an inclusive experience are more powerful than ever.

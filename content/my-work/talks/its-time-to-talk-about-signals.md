@@ -45,6 +45,15 @@ events:
       region: New South Wales
       city: Sydney
       latlng: -33.868,151.21
+  jsworld-2026:
+    date: 2026-05-08
+    name: JSWorld
+    url: https://jsworldconference.com/
+    place:
+      country: Netherlands
+      region: Amsterdam
+      city: Amsterdam
+      latlng: 52.3664009,4.6680082
   tek-js-2026:
     date: 2026-05-20
     name: JSTek
