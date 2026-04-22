@@ -24,7 +24,7 @@ jobs:
         run: npm install -g corepack@latest --force
 
       - name: Setup node env
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
 
