@@ -50,6 +50,14 @@ events:
       region: Amsterdam
       city: Amsterdam
       latlng: 52.3664009,4.6680082
+  wad-world-congress-2026:
+    date: 2026-07-08
+    name: WAD World Congress
+    url: https://www.wearedevelopers.com/world-congress
+    place:
+      country: Germany
+      city: Berlin
+      latlng: 52.5068042,13.0951015
 ---
 
 As the pendulum of web development swings back towards the server, streaming has become increasingly popular. Specifically, out-of-order streaming through features like React Suspense, the magical powers behind Server Components.

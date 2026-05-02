@@ -63,6 +63,14 @@ events:
       region: Illinois
       city: Chicago
       latlng: 41.8335928,-87.8966857
+  devbcn-2026:
+    date: 2026-06-16
+    name: DevBcn
+    url: https://www.devbcn.com/
+    place:
+      country: Spain
+      city: Barcelona
+      latlng: 41.3922472,1.8283717
 ---
 
 With the active TC39 proposal in play, I think it’s about time we talk about Signals.
