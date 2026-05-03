@@ -1,12 +1,17 @@
 'use client';
 
 import dayjs from 'dayjs';
-import { useEffect, useMemo, useRef } from 'react';
-import { createRoot } from 'react-dom/client';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
+import { Tooltip } from '@/components/tooltip';
 import { usePersistedState } from '@/utils/usePersistedState';
 
-import { LocationPopout } from './LocationPopout';
+import {
+  addCategoryLayers,
+  destinationCategories,
+  emptyFeatureCollection,
+  getLayerIds,
+} from './WorldMapLayers';
 
 import type { TalkFrontmatter } from '@/features/my-work/TalkListItem';
 import type { getPagesFromPath } from '@/utils/getPagesFromPath';
@@ -27,30 +32,43 @@ type Destination = {
   };
 };
 
+type Categories = keyof typeof destinationCategories;
+type VisibleCategories = Record<Categories, boolean>;
+
 type WorldMapProps = {
   destinations: Destination[];
   talks: Awaited<ReturnType<typeof getPagesFromPath<TalkFrontmatter>>>;
 };
 
 export function WorldMap({ destinations, talks }: WorldMapProps) {
-  const popupRef = useRef<any>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<any>(null);
+  const [isMapReady, setIsMapReady] = useState(false);
 
   const [lastZoom, setLastZoom] = usePersistedState('worldmap/lastZoom', 0.9);
   const [lastCenter, setLastCenter] = usePersistedState<[number, number]>(
     'worldmap/setLastCenter',
     [26.3824618, 26.8447825],
   );
+  const [visibleCategories, setVisibleCategories] =
+    usePersistedState<VisibleCategories>('worldmap/visibleCategories', {
+      travel: true,
+      talk: true,
+    });
 
   const grouped = useMemo(() => {
-    const grouped: { [latlng: string]: Destination[] } = {};
+    const grouped: Record<Categories, { [latlng: string]: Destination[] }> = {
+      travel: {},
+      talk: {},
+    };
 
     destinations.forEach((dest) => {
       if (dest?.meta?.latlng) {
         const fixedLatLng = dest.meta.latlng?.replace(/\s/g, '');
-        if (!grouped[fixedLatLng]) {
-          grouped[fixedLatLng] = [];
+        if (!grouped.travel[fixedLatLng]) {
+          grouped.travel[fixedLatLng] = [];
         }
-        grouped[fixedLatLng].push(dest);
+        grouped.travel[fixedLatLng].push(dest);
       }
     });
 
@@ -59,10 +77,10 @@ export function WorldMap({ destinations, talks }: WorldMapProps) {
         ?.filter((event) => !!event?.place?.latlng)
         ?.forEach((event) => {
           const fixedLatLng = event.place.latlng?.replace(/\s/g, '') || '';
-          if (!grouped[fixedLatLng]) {
-            grouped[fixedLatLng] = [];
+          if (!grouped.talk[fixedLatLng]) {
+            grouped.talk[fixedLatLng] = [];
           }
-          grouped[fixedLatLng].push({
+          grouped.talk[fixedLatLng].push({
             pathname: talk?.pathname,
             meta: {
               country: event.place?.country || '',
@@ -81,113 +99,75 @@ export function WorldMap({ destinations, talks }: WorldMapProps) {
     return grouped;
   }, [destinations, talks]);
 
+  const sourceData = useMemo(() => {
+    return Object.keys(destinationCategories).reduce(
+      (all, key) => {
+        if (!visibleCategories[key as keyof typeof destinationCategories]) {
+          all[key] = emptyFeatureCollection;
+          return all;
+        }
+
+        all[key] = {
+          type: 'FeatureCollection',
+          features: Object.keys(
+            grouped[key as keyof typeof destinationCategories],
+          ).map((latlng) => {
+            return {
+              type: 'Feature',
+              properties: {
+                latlng,
+                category: key,
+                entries:
+                  grouped[key as keyof typeof destinationCategories][latlng],
+              },
+              geometry: {
+                type: 'Point',
+                coordinates: latlng
+                  .split(',')
+                  .map((str) => parseFloat(str))
+                  .reverse(),
+              },
+            };
+          }),
+        };
+
+        return all;
+      },
+      {} as Record<string, any>,
+    );
+  }, [grouped, visibleCategories]);
+
   useEffect(() => {
+    let shouldCancel = false;
+
     Promise.all([
       // eslint-disable-next-line
       // @ts-ignore
       import('mapbox-gl/dist/mapbox-gl.css'),
       import('mapbox-gl/dist/mapbox-gl.js'),
     ]).then(([, { default: mapboxgl }]) => {
-      popupRef.current = new mapboxgl.Popup({ offset: 10 });
+      if (shouldCancel || !mapContainerRef.current) {
+        return;
+      }
 
       mapboxgl.accessToken =
         'pk.eyJ1IjoiamJ1cnI5MCIsImEiOiJja3hoNGR6NHIxcmVyMnBva3Vjb3l6NDAzIn0.np-882fi1HIpZWtaQOOMig';
       const map = new mapboxgl.Map({
-        container: 'map',
+        container: mapContainerRef.current,
         style: 'mapbox://styles/jburr90/ckxh4iodd27z116pa15wjpadp',
         zoom: lastZoom,
         center: lastCenter,
       });
+      mapRef.current = map;
 
       map.on('load', () => {
-        map.addSource('places', {
-          type: 'geojson',
-          data: {
-            type: 'FeatureCollection',
-            features: Object.keys(grouped).map((latlng) => {
-              return {
-                type: 'Feature',
-                properties: {
-                  latlng,
-                  entries: grouped[latlng],
-                },
-                geometry: {
-                  type: 'Point',
-                  coordinates: latlng
-                    .split(',')
-                    .map((str) => parseFloat(str))
-                    .reverse(),
-                },
-              };
-            }),
-          },
-          cluster: true,
-          clusterRadius: 35,
+        Object.keys(destinationCategories).forEach((category) => {
+          addCategoryLayers(
+            map,
+            mapboxgl,
+            category as keyof typeof destinationCategories,
+          );
         });
-
-        map.addLayer({
-          id: 'clusters',
-          type: 'circle',
-          source: 'places',
-          filter: ['has', 'point_count'],
-          paint: {
-            'circle-color': [
-              'step',
-              ['get', 'point_count'],
-              '#D2849C',
-              5,
-              '#CF7A94',
-              10,
-              '#C76C88',
-            ],
-            'circle-radius': [
-              'step',
-              ['get', 'point_count'],
-              15,
-              5,
-              20,
-              10,
-              25,
-            ],
-          },
-        });
-
-        map.addLayer({
-          id: 'cluster-count',
-          type: 'symbol',
-          source: 'places',
-          filter: ['has', 'point_count'],
-          layout: {
-            'text-field': '{point_count_abbreviated}',
-            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-            'text-size': 12,
-          },
-        });
-
-        map.addLayer({
-          id: 'unclustered-point',
-          type: 'circle',
-          source: 'places',
-          filter: ['!', ['has', 'point_count']],
-          paint: {
-            'circle-color': '#D2849C',
-            'circle-radius': 8,
-          },
-        });
-
-        map
-          .on('mouseenter', 'clusters', () => {
-            map.getCanvas().style.cursor = 'pointer';
-          })
-          .on('mouseenter', 'unclustered-point', () => {
-            map.getCanvas().style.cursor = 'pointer';
-          })
-          .on('mouseleave', 'clusters', () => {
-            map.getCanvas().style.cursor = '';
-          })
-          .on('mouseleave', 'unclustered-point', () => {
-            map.getCanvas().style.cursor = '';
-          });
 
         map.on('zoomend', () => {
           setLastZoom(map.getZoom());
@@ -197,48 +177,60 @@ export function WorldMap({ destinations, talks }: WorldMapProps) {
           setLastCenter(map.getCenter().toArray());
         });
 
-        map.on('click', 'clusters', (e) => {
-          const features = map.queryRenderedFeatures(e.point, {
-            layers: ['clusters'],
-          });
-          const clusterId = features?.[0]?.properties?.cluster_id;
-          if (clusterId) {
-            const source = map.getSource('places') as any;
-            source.getClusterExpansionZoom(
-              clusterId,
-              (err: any, zoom: number) => {
-                if (err) return;
-
-                map.easeTo({
-                  center: (features[0].geometry as any).coordinates,
-                  zoom: zoom,
-                });
-              },
-            );
-          }
-        });
-
-        map.on('click', 'unclustered-point', (e: any) => {
-          const node = e.features[0];
-
-          const latlng = node.geometry.coordinates.slice();
-          while (Math.abs(e.lngLat.lng - latlng[0]) > 180) {
-            latlng[0] += e.lngLat.lng > latlng[0] ? 360 : -360;
-          }
-
-          const popupNode = document.createElement('div');
-          const root = createRoot(popupNode);
-          const entries = JSON.parse(node.properties.entries);
-          root.render(<LocationPopout entries={entries} />);
-
-          new mapboxgl.Popup()
-            .setLngLat(latlng)
-            .setDOMContent(popupNode)
-            .addTo(map);
-        });
+        setIsMapReady(true);
       });
     });
+
+    return () => {
+      shouldCancel = true;
+      mapRef.current?.remove();
+      mapRef.current = null;
+    };
   }, []);
 
-  return <div id="map" className="absolute inset-0" />;
+  useEffect(() => {
+    if (!isMapReady || !mapRef.current) {
+      return;
+    }
+
+    Object.keys(destinationCategories).forEach((category) => {
+      const source = mapRef.current.getSource(
+        getLayerIds(category as Categories).source,
+      );
+      source?.setData(sourceData[category]);
+    });
+  }, [isMapReady, sourceData]);
+
+  return (
+    <>
+      <div ref={mapContainerRef} id="map" className="absolute inset-0" />
+      <div className="fixed bottom-[1.6rem] right-[1.6rem] sm:bottom-[4.8rem] sm:right-[4.8rem] z-10 flex flex-row gap-1">
+        {Object.keys(destinationCategories).map((key) => {
+          const category = destinationCategories[key as Categories];
+          const isActive = visibleCategories[key as Categories];
+          return (
+            <Tooltip key={key} content={category.label}>
+              <button
+                aria-checked={isActive}
+                style={{
+                  background: isActive
+                    ? category.color
+                    : 'var(--color-grey-medium)',
+                }}
+                className="cursor-pointer w-[2.8rem] h-[2.8rem] flex items-center justify-center transition-all duration-120"
+                onClick={() =>
+                  setVisibleCategories((state) => ({
+                    ...state,
+                    [key]: !state[key as Categories],
+                  }))
+                }
+              >
+                {category.icon}
+              </button>
+            </Tooltip>
+          );
+        })}
+      </div>
+    </>
+  );
 }

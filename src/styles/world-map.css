@@ -26,3 +26,7 @@
 .mapboxgl-canvas.mapboxgl-canvas {
   filter: brightness(1.14);
 }
+
+.mapboxgl-ctrl-attrib {
+  display: none;
+}

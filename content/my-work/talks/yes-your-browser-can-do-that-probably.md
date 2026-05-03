@@ -13,6 +13,7 @@ events:
       country: Australia
       region: Victoria
       city: Melbourne
+      latlng: -37.9725665,145.0531353
   xtremejs-2024:
     date: 2024-11-12
     name: XtremeJS
