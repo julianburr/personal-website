@@ -7,8 +7,8 @@ export const destinationCategories = {
   travel: {
     icon: <Icons.PersonSimpleHikeIcon />,
     label: 'Travel',
-    color: '#D2849C',
-    clusterColors: ['#D2849C', '#CF7A94', '#C76C88'],
+    color: '#e5a0b5',
+    clusterColors: ['#e5a0b5', '#d693a8', '#cf8ca1'],
     translate: [-6, 0],
   },
   talk: {
