@@ -136,6 +136,16 @@ const redirects = [
     destination:
       'https://storage.googleapis.com/julianburr-me-assets/talk-slides/the-web-is-your-a11y--vuejs-amsterdam-2026.pdf',
   },
+  {
+    source: 'ndc-sydney-2026-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--ndc-sydney-2026.pdf',
+  },
+  {
+    source: 'devworld-2026-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--devworld-2026.pdf',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {
