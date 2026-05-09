@@ -40,6 +40,7 @@ events:
     date: 2026-04-23
     name: NDC Sydney
     url: https://ndcsydney.com/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--ndc-sydney-2026.pdf
     place:
       country: Australia
       region: New South Wales
