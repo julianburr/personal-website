@@ -45,10 +45,11 @@ events:
       region: New South Wales
       city: Sydney
       latlng: -33.868,151.21
-  jsworld-2026:
-    date: 2026-05-08
-    name: JSWorld
-    url: https://jsworldconference.com/
+  devworld-2026:
+    date: 2026-05-09
+    name: DevWorld
+    url: https://devworldconference.com/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--devworld-2026.pdf
     place:
       country: Netherlands
       region: Amsterdam
