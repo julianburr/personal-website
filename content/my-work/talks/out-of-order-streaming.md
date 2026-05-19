@@ -27,6 +27,7 @@ events:
     date: 2026-05-19
     name: JSTek
     url: https://jstek.io/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--jstek-2026.pdf
     place:
       country: US
       region: Illinois

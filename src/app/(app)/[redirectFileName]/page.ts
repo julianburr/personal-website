@@ -146,6 +146,16 @@ const redirects = [
     destination:
       'https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--devworld-2026.pdf',
   },
+  {
+    source: 'jstek-2026-streaming-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--jstek-2026.pdf',
+  },
+  {
+    source: 'jstek-2026-signals-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--jstek-2026.pdf',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {

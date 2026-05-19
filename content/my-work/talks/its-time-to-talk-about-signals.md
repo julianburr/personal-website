@@ -56,10 +56,11 @@ events:
       region: Amsterdam
       city: Amsterdam
       latlng: 52.3664009,4.6680082
-  tek-js-2026:
+  jstek-2026:
     date: 2026-05-20
     name: JSTek
     url: https://jstek.io/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--jstek-2026.pdf
     place:
       country: US
       region: Illinois
