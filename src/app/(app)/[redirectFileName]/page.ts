@@ -156,6 +156,11 @@ const redirects = [
     destination:
       'https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--jstek-2026.pdf',
   },
+  {
+    source: 'vueconf-2026-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--vueconf-2026.pdf',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {

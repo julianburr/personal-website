@@ -37,6 +37,7 @@ events:
     date: 2026-05-21
     name: Vueconf US
     url: https://2026.vueconf.us/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--vueconf-2026.pdf
     place:
       country: US
       region: Georgia
