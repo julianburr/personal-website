@@ -51,6 +51,8 @@ events:
     name: DevWorld
     url: https://devworldconference.com/
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--devworld-2026.pdf
+    videoEmbed: https://www.youtube.com/embed/cx8HeuT19kc
+    videoUrl: https://www.youtube.com/watch?v=cx8HeuT19kc
     place:
       country: Netherlands
       region: Amsterdam
