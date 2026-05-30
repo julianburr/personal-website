@@ -41,6 +41,8 @@ events:
     name: NDC Sydney
     url: https://ndcsydney.com/
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--ndc-sydney-2026.pdf
+    videoEmbed: https://www.youtube.com/embed/1g278F7qgj4
+    videoUrl: https://www.youtube.com/watch?v=1g278F7qgj4
     place:
       country: Australia
       region: New South Wales
