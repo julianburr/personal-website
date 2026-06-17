@@ -2,6 +2,14 @@
 title: Yes, Your Browser Can Do That (Probably)
 coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/yes-your-browser-can-do-that-probably.png
 events:
+  devbcn-2026:
+    date: 2026-06-17
+    name: DevBcn
+    url: https://www.devbcn.com/
+    place:
+      country: Spain
+      city: Barcelona
+      latlng: 41.3922472,1.8283717
   ndc-melbourne-2025:
     date: 2025-04-29
     name: NDC Melbourne

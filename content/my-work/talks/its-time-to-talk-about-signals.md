@@ -71,7 +71,7 @@ events:
       city: Chicago
       latlng: 41.8335928,-87.8966857
   devbcn-2026:
-    date: 2026-06-16
+    date: 2026-06-17
     name: DevBcn
     url: https://www.devbcn.com/
     place:

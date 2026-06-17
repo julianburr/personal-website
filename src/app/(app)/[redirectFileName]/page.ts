@@ -161,6 +161,16 @@ const redirects = [
     destination:
       'https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--vueconf-2026.pdf',
   },
+  {
+    source: 'devbcn-2026-signals-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--devbcn-2026.pdf',
+  },
+  {
+    source: 'devbcn-2026-web-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--devbcn-2026.pdf',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {
