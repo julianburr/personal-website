@@ -74,6 +74,7 @@ events:
     date: 2026-06-17
     name: DevBcn
     url: https://www.devbcn.com/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--devbcn-2026.pdf
     place:
       country: Spain
       city: Barcelona

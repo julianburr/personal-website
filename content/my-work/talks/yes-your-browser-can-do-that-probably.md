@@ -6,6 +6,7 @@ events:
     date: 2026-06-17
     name: DevBcn
     url: https://www.devbcn.com/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--devbcn-2026.pdf
     place:
       country: Spain
       city: Barcelona
