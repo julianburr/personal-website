@@ -171,6 +171,11 @@ const redirects = [
     destination:
       'https://storage.googleapis.com/julianburr-me-assets/talk-slides/yes-your-browser-can-do-that-probably--devbcn-2026.pdf',
   },
+  {
+    source: 'wad-world-congress-2026-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--world-congress-2026.pdf',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {

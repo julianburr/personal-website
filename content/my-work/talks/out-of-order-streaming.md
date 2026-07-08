@@ -56,6 +56,7 @@ events:
     date: 2026-07-08
     name: WAD World Congress
     url: https://www.wearedevelopers.com/world-congress
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--world-congress-2026.pdf
     place:
       country: Germany
       city: Berlin
