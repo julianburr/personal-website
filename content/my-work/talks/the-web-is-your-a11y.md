@@ -31,6 +31,8 @@ events:
     url: https://vuejs.amsterdam/
     type: conference
     slidesUrl: https://talk-web-is-your-a11y.vercel.app/vuejs/slide/0
+    videoEmbed: https://www.youtube.com/embed/BX0Xv73kXNk?si=otb4VyqTVYhuZq7R&amp;start=8928
+    videoUrl: https://www.youtube.com/watch?v=BX0Xv73kXNk&t=8928s
     place:
       country: Netherlands
       region: Amsterdam
