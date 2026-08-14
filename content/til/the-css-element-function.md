@@ -7,7 +7,7 @@ tags: css
 
 I can't believe this is a thing, it blew my mind when I found this today in my twitter feed:
 
-https://twitter.com/css/status/1092861635440578560
+_EDIT: the original tweet isn't available anymore, but here's the article it linked to: https://css-tricks.com/using-the-little-known-css-element-function-to-create-a-minimap-navigator/_
 
 The short take of this awesome article is that there is a CSS method called `element()`, that allows you to take a "snapshot" of a specific DOM element (given via CSS selector) and lets you use that snapshot afterwards e.g. as a background image. One obvious use case would be for creating a minimap like panel with a preview of the whole document, as it's common in most modern IDEs.
 

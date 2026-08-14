@@ -23,7 +23,9 @@ export function PageActions({ title, talkUrl, externalUrl, className }: Props) {
   };
 
   const canShare =
-    typeof navigator !== 'undefined' ? navigator.canShare(shareData) : false;
+    typeof navigator?.canShare !== 'undefined'
+      ? navigator.canShare?.(shareData)
+      : false;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(window.location.href);
