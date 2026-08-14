@@ -54,7 +54,7 @@ export default async function TranscriptDetailsPage({ params }: any) {
   return (
     <>
       <PageMeta
-        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
+        breadcrumbs={[{ title: 'Public speaking', href: '/talks' }]}
         meta={['Talk transcript', `${getTimeToRead(page?.markdown)} min read`]}
       />
       <h1 className="p-0">{page?.meta?.title}</h1>

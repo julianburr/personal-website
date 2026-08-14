@@ -19,6 +19,8 @@ events:
     name: Web Directions Code
     url: https://webdirections.org/code/
     slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/its-time-to-talk-about-signals--web-directions-code-2025.pdf
+    videoEmbed: https://player.mux.com/ytWhm6KurnLfzpAw009KvVzUUOfnwLV9V3yA9FB7BydY
+    videoUrl: https://conffab.com/presentation/its-time-to-talk-about-signals/?gl=sAjgkGVjyOEK
     place:
       country: Australia
       region: Victoria

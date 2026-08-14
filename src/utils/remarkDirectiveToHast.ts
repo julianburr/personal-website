@@ -1,7 +1,7 @@
 import { h } from 'hastscript';
 import { visit } from 'unist-util-visit';
 
-const allowedNodes = ['demo'];
+const allowedNodes = ['demo', 'sandbox', 'carousel'];
 
 export function remarkDirectiveToHast() {
   return (tree: any) => {

@@ -1,8 +1,4 @@
-import {
-  SandpackPreview,
-  UnstyledOpenInCodeSandboxButton,
-  useSandpack,
-} from '@codesandbox/sandpack-react';
+import * as SP from '@codesandbox/sandpack-react';
 import { ArrowClockwiseIcon } from '@phosphor-icons/react';
 import classNames from 'classnames';
 import { useCallback, type Dispatch, type SetStateAction } from 'react';
@@ -13,7 +9,7 @@ type Props = {
 };
 
 export function CodeSandboxPreview({ show, setShow }: Props) {
-  const sandpack = useSandpack();
+  const sandpack = SP.useSandpack();
 
   const handleRefresh = useCallback(() => {
     sandpack.dispatch({ type: 'refresh' });
@@ -29,7 +25,7 @@ export function CodeSandboxPreview({ show, setShow }: Props) {
       )}
     >
       <div className="absolute top-0 bottom-0 left-[.3rem] right-0 bg-[white]">
-        <SandpackPreview
+        <SP.SandpackPreview
           showOpenInCodeSandbox={false}
           showRefreshButton={false}
         />
@@ -49,9 +45,9 @@ export function CodeSandboxPreview({ show, setShow }: Props) {
       </button>
 
       <div className="absolute bottom-0 right-0 flex flex-row gap-[.2rem]">
-        <UnstyledOpenInCodeSandboxButton className="bg-grey-light hover:bg-grey-medium focus:bg-grey-medium text-black text-[.9rem] p-[.6rem] cursor-pointer font-heading whitespace-nowrap transition-all duration-200">
+        <SP.UnstyledOpenInCodeSandboxButton className="bg-grey-light hover:bg-grey-medium focus:bg-grey-medium text-black text-[.9rem] p-[.6rem] cursor-pointer font-heading whitespace-nowrap transition-all duration-200">
           Open in CodeSandbox
-        </UnstyledOpenInCodeSandboxButton>
+        </SP.UnstyledOpenInCodeSandboxButton>
         <button
           onClick={handleRefresh}
           className="bg-grey-light hover:bg-grey-medium focus:bg-grey-medium text-black text-[.9rem] p-[.6rem] cursor-pointer font-heading whitespace-nowrap transition-all duration-200"

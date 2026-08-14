@@ -2,8 +2,9 @@ import { getPathnameGroup } from '@/utils/getPathnameGroup';
 
 const colors = {
   home: 'var(--color-beige)',
-  'my-work': 'var(--color-red)',
-  til: 'var(--color-blue-medium)',
+  talks: 'var(--color-red)',
+  blog: 'var(--color-blue-medium)',
+  til: 'var(--color-blue-light)',
   library: 'var(--color-green)',
   'around-the-world': 'var(--color-teal)',
   'get-in-touch': 'var(--color-purple)',

@@ -51,6 +51,16 @@ const nextConfig = {
 
     return config;
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/my-work/:type*',
+        destination: '/:type*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

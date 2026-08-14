@@ -13,7 +13,7 @@ type EnhancedEvent = TalkFrontmatter['events'][string] & {
 export default async function TalkEventsPage() {
   const talks = await getPagesFromPath<TalkFrontmatter>('my-work/talks');
 
-  const [eventsWithEmbed, eventsWithExternalLink] = talks
+  const [eventsConffab, eventsYoutube, eventsWithExternalLink] = talks
     ?.reduce<EnhancedEvent[]>((all, talk) => {
       const talkEvents = Object.values(talk?.meta.events || {})
         .filter((event) => !!event.videoUrl)
@@ -21,37 +21,59 @@ export default async function TalkEventsPage() {
       return all.concat(talkEvents);
     }, [])
     ?.toSorted((a, b) => (a?.date > b?.date ? -1 : 1))
-    .reduce<[EnhancedEvent[], EnhancedEvent[]]>(
+    .reduce<[EnhancedEvent[], EnhancedEvent[], EnhancedEvent[]]>(
       (all, event) => {
-        if (event.videoEmbed) {
+        if (event.videoEmbed?.includes('player.mux.com')) {
           all[0].push(event);
-        } else {
+        } else if (event.videoUrl?.includes('youtube.com')) {
           all[1].push(event);
+        } else {
+          all[2].push(event);
         }
         return all;
       },
-      [[], []],
+      [[], [], []],
     );
 
   return (
     <>
       <PageMeta
-        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
-        meta={['Talks']}
+        breadcrumbs={[{ title: 'Public speaking', href: '/talks' }]}
+        meta={[]}
       />
       <h1 className="p-0">Videos</h1>
 
-      <h2>Recordings on YouTube</h2>
-      <Spacer h=".8rem" />
-      <Grid>
-        {eventsWithEmbed.map((event) => (
-          <EventTalkVideoListItem
-            key={event?.date?.toString()}
-            event={event}
-            talk={event.talk}
-          />
-        ))}
-      </Grid>
+      {eventsConffab.length > 0 && (
+        <>
+          <h2>Conffab</h2>
+          <Spacer h=".8rem" />
+          <Grid>
+            {eventsConffab.map((event) => (
+              <EventTalkVideoListItem
+                key={event?.date?.toString()}
+                event={event}
+                talk={event.talk}
+              />
+            ))}
+          </Grid>
+        </>
+      )}
+
+      {eventsYoutube.length > 0 && (
+        <>
+          <h2>YouTube</h2>
+          <Spacer h=".8rem" />
+          <Grid>
+            {eventsYoutube.map((event) => (
+              <EventTalkVideoListItem
+                key={event?.date?.toString()}
+                event={event}
+                talk={event.talk}
+              />
+            ))}
+          </Grid>
+        </>
+      )}
 
       <Spacer h="1.2rem" />
       <h2>External links to other recordings</h2>

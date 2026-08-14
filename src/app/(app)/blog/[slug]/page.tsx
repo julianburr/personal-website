@@ -57,7 +57,7 @@ export default async function BlogDetailsPage({ params }: any) {
   return (
     <>
       <PageMeta
-        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
+        breadcrumbs={[{ title: 'Blog', href: '/blog' }]}
         meta={[
           dayjs(page?.meta?.date).format('MMMM D, YYYY'),
           `${getTimeToRead(page?.markdown)} min read`,

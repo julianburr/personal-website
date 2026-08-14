@@ -39,31 +39,34 @@ export default async function TalkEventsPage() {
   return (
     <>
       <PageMeta
-        breadcrumbs={[{ title: 'My work', href: '/my-work' }]}
-        meta={['Talks']}
+        breadcrumbs={[{ title: 'Public speaking', href: '/talks' }]}
+        meta={[]}
       />
       <h1 className="p-0">Events</h1>
 
       {Object.keys(eventsMap)
         ?.toSorted((a, b) => (a > b ? -1 : 1))
-        ?.map((year, index) => (
-          <>
-            {index > 0 && <Spacer h="1.2rem" />}
-            <h2>{year}</h2>
+        ?.map(
+          (year, index) =>
+            eventsMap[year]?.length > 0 && (
+              <>
+                {index > 0 && <Spacer h="1.2rem" />}
+                <h2>{year}</h2>
 
-            <Spacer h=".4rem" />
-            <Grid>
-              {eventsMap[year].map((event) => (
-                <EventTalkListItem
-                  key={event?.date?.toString()}
-                  event={event}
-                  talk={event.talk}
-                  disabled={event?.date > now}
-                />
-              ))}
-            </Grid>
-          </>
-        ))}
+                <Spacer h=".4rem" />
+                <Grid>
+                  {eventsMap[year].map((event) => (
+                    <EventTalkListItem
+                      key={event?.date?.toString()}
+                      event={event}
+                      talk={event.talk}
+                      disabled={event?.date > now}
+                    />
+                  ))}
+                </Grid>
+              </>
+            ),
+        )}
     </>
   );
 }

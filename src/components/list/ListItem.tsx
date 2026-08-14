@@ -87,7 +87,7 @@ export function ListItem({
             className="bg-grey-medium/50 w-full aspect-video"
             src={coverVideo}
             title="Video embed player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />

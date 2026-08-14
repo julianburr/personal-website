@@ -15,12 +15,14 @@ import remarkSmartypants from 'remark-smartypants';
 
 import { Anchor } from '@/components/markdown/Anchor';
 import { BlockQuote } from '@/components/markdown/BlockQuote';
+import { Carousel } from '@/components/markdown/Carousel';
 import { Demo } from '@/components/markdown/Demo';
 import { Hr } from '@/components/markdown/Hr';
 import { Image } from '@/components/markdown/Image';
 import { Section } from '@/components/markdown/Section';
 import { Code } from '@/components/markdown/code';
-import { CodeSandboxProvider } from '@/components/markdown/code/sandbox/Provider';
+import { CodeSandbox } from '@/components/markdown/sandbox';
+import { CodeSandboxProvider } from '@/components/markdown/sandbox/Provider';
 import { remarkDirectiveToHast } from '@/utils/remarkDirectiveToHast';
 
 const remarkPlugins = [
@@ -49,6 +51,8 @@ const components = {
   hr: Hr,
   section: Section,
   demo: Demo,
+  sandbox: CodeSandbox,
+  carousel: Carousel,
 };
 
 type Props = {

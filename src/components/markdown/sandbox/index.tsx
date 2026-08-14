@@ -5,13 +5,30 @@ import { githubLight } from '@codesandbox/sandpack-themes';
 import { useEffect, useId, useState } from 'react';
 
 import { Caption } from '@/components/markdown/code/Caption';
-import { CodeSandboxEditor } from '@/components/markdown/code/sandbox/Editor';
-import { CodeSandboxPreview } from '@/components/markdown/code/sandbox/Preview';
 import { Spacer } from '@/components/spacer';
 
+import { CodeSandboxEditor } from './Editor';
+import { CodeSandboxPreview } from './Preview';
 import { useCodeSandbox } from './Provider';
 
 import type { ComponentProps } from 'react';
+
+type Sandbox = {
+  [id: string]: {
+    meta: {
+      sandboxId?: string;
+      sandboxTemplate?: string;
+      sandboxDependencies?: Record<string, string>;
+      alt?: string;
+    };
+    files: {
+      [filename: string]: string;
+    };
+    language?: string;
+  };
+};
+
+const configs: Sandbox = {};
 
 const customTheme: ComponentProps<typeof Sandpack>['theme'] = {
   ...githubLight,
@@ -31,40 +48,41 @@ const customTheme: ComponentProps<typeof Sandpack>['theme'] = {
 };
 
 type Props = {
-  code: string;
-  meta: any;
-  language?: string;
+  node: any;
 };
 
-export function CodeSandbox({ meta, code }: Props) {
+export function CodeSandbox({ node }: Props) {
+  const config = configs[node.properties?.id as keyof typeof configs];
+  if (!config) {
+    throw new Error(`Sandbox config not found for id: ${node.properties?.id}`);
+  }
+
   const ownerId = useId();
-  const sandboxId = meta.sandboxId as string;
+  const sandboxId = config?.meta?.sandboxId as string;
 
   const { register, unregister, sandboxes } = useCodeSandbox();
   const sandbox = sandboxes[sandboxId];
 
-  const [showPreview, setShowPreview] = useState(!!meta.sandboxPreview);
+  const [showPreview, setShowPreview] = useState(true);
 
   useEffect(() => {
     register({
       ownerId,
       sandboxId,
-      template: meta.sandboxTemplate as string,
-      meta,
-      files: {
-        [meta.sandboxFile as string]: code,
-      },
+      template: config?.meta?.sandboxTemplate as string,
+      meta: config?.meta,
+      files: config?.files,
     });
 
     return () => {
       unregister({
         sandboxId,
-        files: [meta.sandboxFile as string],
+        files: Object.keys(config?.files),
       });
     };
-  }, [ownerId, sandboxId, meta.sandboxTemplate, meta.sandboxFile, code]);
+  }, [ownerId, sandboxId, config]);
 
-  if (!sandbox || sandbox.ownerId !== ownerId) {
+  if (!sandbox) {
     return null;
   }
 
@@ -73,17 +91,17 @@ export function CodeSandbox({ meta, code }: Props) {
       theme={customTheme}
       files={sandbox.files}
       template={sandbox.template as any}
-      customSetup={{ dependencies: meta.sandboxDependencies }}
+      customSetup={{ dependencies: config?.meta?.sandboxDependencies }}
     >
       <div className="w-full my-[2.4rem]">
         <div className="sandbox w-full h-[30rem] relative overflow-hidden">
           <CodeSandboxEditor />
           <CodeSandboxPreview show={showPreview} setShow={setShowPreview} />
         </div>
-        {meta?.alt && (
+        {config?.meta?.alt && (
           <>
             <Spacer h=".2rem" />
-            <Caption>{meta.alt}</Caption>
+            <Caption>{config?.meta?.alt}</Caption>
           </>
         )}
       </div>

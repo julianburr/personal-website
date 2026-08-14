@@ -2,7 +2,6 @@ import LogoBluesky from '@/assets/social/bluesky.svg';
 import LogoGithub from '@/assets/social/github.svg';
 import LogoLinkedIn from '@/assets/social/linkedin.svg';
 import LogoNotist from '@/assets/social/notist.svg';
-import LogoSubstack from '@/assets/social/substack.svg';
 
 const items = [
   {
@@ -11,14 +10,19 @@ const items = [
     href: '/',
   },
   {
-    id: 'my-work',
-    label: 'My work',
-    href: '/my-work',
+    id: 'blog',
+    label: 'Blog',
+    href: '/blog',
   },
   {
     id: 'til',
     label: 'TIL',
     href: '/til',
+  },
+  {
+    id: 'talks',
+    label: 'Public speaking',
+    href: '/talks',
   },
   {
     id: 'library',
@@ -55,12 +59,6 @@ const socials = [
     href: 'https://bsky.app/profile/julianburr.de',
     title: '@julianburr.de on Bluesky',
     Icon: LogoBluesky,
-  },
-  {
-    id: 'substack',
-    href: 'https://julianburr.substack.com/',
-    title: '@julianburr on Substack',
-    Icon: LogoSubstack,
   },
   {
     id: 'github',
