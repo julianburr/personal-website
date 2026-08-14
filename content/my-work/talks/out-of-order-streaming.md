@@ -47,6 +47,8 @@ events:
     date: 2026-06-11
     name: JSNation
     url: https://jsnation.com/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--jsnation-2026.pdf
+    videoUrl: https://gitnation.com/contents/out-of-order-streaming-the-future-of-web-development
     place:
       country: Netherlands
       region: Amsterdam

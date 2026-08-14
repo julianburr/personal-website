@@ -43,6 +43,8 @@ events:
     name: React Summit
     url: https://reactsummit.com/
     type: conference
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/the-web-is-your-a11y--reactsummit-2026.pdf
+    videoUrl: https://gitnation.com/contents/the-web-is-your-a11y-building-accessible-web-apps-by-using-the-platform
     place:
       country: Netherlands
       region: Amsterdam
