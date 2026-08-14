@@ -23,7 +23,7 @@ export function PageActions({ title, talkUrl, externalUrl, className }: Props) {
   };
 
   const canShare =
-    typeof navigator?.canShare !== 'undefined'
+    typeof navigator !== 'undefined' && !!navigator?.canShare
       ? navigator.canShare?.(shareData)
       : false;
 
