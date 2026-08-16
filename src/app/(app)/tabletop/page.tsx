@@ -11,7 +11,7 @@ export type GameFrontmatter = {
   title: string;
   description?: string;
   externalUrl?: string;
-  status: 'played' | 'shelf';
+  status: 'playing' | 'played' | 'shelf';
   isLegacy?: boolean;
 };
 
@@ -29,20 +29,22 @@ export default async function TabletopPage() {
       const bTitle = b?.meta.title ?? '';
       return aTitle < bTitle ? -1 : 1;
     })
-    .reduce<[Game[], Game[], Game[]]>(
+    .reduce<[Game[], Game[], Game[], Game[]]>(
       (all, game) => {
-        if (game?.meta?.status === 'played') {
+        if (game?.meta?.status === 'playing') {
+          all[0].push(game);
+        } else if (game?.meta?.status === 'played') {
           if (game?.meta?.isLegacy) {
-            all[1].push(game);
+            all[2].push(game);
           } else {
-            all[0].push(game);
+            all[1].push(game);
           }
         } else if (game) {
-          all[2].push(game);
+          all[3].push(game);
         }
         return all;
       },
-      [[], [], []],
+      [[], [], [], []],
     );
 
   const renderGame = (game: Game) => (
@@ -60,14 +62,22 @@ export default async function TabletopPage() {
     <>
       <h1>Tabletop</h1>
 
+      {grouped[0].length > 0 && (
+        <>
+          <h2>What I’m playing at the moment 🤓</h2>
+          <Spacer h=".4rem" />
+          <Grid size="small">{grouped[0].map(renderGame)}</Grid>
+        </>
+      )}
+
       <h2>Great legacy games</h2>
       <Spacer h=".4rem" />
-      <Grid size="small">{grouped[1].map(renderGame)}</Grid>
+      <Grid size="small">{grouped[2].map(renderGame)}</Grid>
 
       <Spacer h="1.2rem" />
       <h2>Other board games I highly recommend</h2>
       <Spacer h=".4rem" />
-      <Grid size="small">{grouped[0].map(renderGame)}</Grid>
+      <Grid size="small">{grouped[1].map(renderGame)}</Grid>
 
       <Spacer h="1.2rem" />
       <h2>On my wishlist</h2>
@@ -76,7 +86,7 @@ export default async function TabletopPage() {
         of shame.
       </p>
       <Spacer h="1.2rem" />
-      <Grid size="small">{grouped[2].map(renderGame)}</Grid>
+      <Grid size="small">{grouped[3].map(renderGame)}</Grid>
     </>
   );
 }
