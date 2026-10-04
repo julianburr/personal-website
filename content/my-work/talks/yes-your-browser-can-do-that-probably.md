@@ -3,7 +3,7 @@ title: Yes, Your Browser Can Do That (Probably)
 coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/yes-your-browser-can-do-that-probably.png
 events:
   js-poland-2026:
-    date: 2026-06-18
+    date: 2026-11-18
     name: JS Poland
     url: https://js-poland.pl
     place:
