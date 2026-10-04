@@ -63,6 +63,14 @@ events:
       country: Germany
       city: Berlin
       latlng: 52.5068042,13.0951015
+  fullstackconf-2026:
+    date: 2026-10-29
+    name: Full Stack Conf
+    url: https://fullstackconf.com/
+    place:
+      country: Bulgaria
+      city: Sofia
+      latlng: 42.6954026,23.2415463
 ---
 
 As the pendulum of web development swings back towards the server, streaming has become increasingly popular. Specifically, out-of-order streaming through features like React Suspense, the magical powers behind Server Components.
