@@ -176,6 +176,11 @@ const redirects = [
     destination:
       'https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--world-congress-2026.pdf',
   },
+  {
+    source: 'devoxx-belgium-2026-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/post-quantum-today--devoxx-belgium-2026.pdf',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {

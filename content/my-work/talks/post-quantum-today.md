@@ -5,6 +5,7 @@ events:
     date: 2026-10-07
     name: Devoxx Belgium
     url: https://devoxx.be/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/post-quantum-today--devoxx-belgium-2026.pdf
     place:
       country: Belgium
       city: Antwerp
