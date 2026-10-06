@@ -1,5 +1,6 @@
 ---
 title: Post-Quantum Today — How Your Passwords Will Be Safe in a Quantum Future
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/post-quantum-today.png
 events:
   devoxx-belgium-2026:
     date: 2026-10-07
