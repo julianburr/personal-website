@@ -5,6 +5,7 @@ events:
     date: 2026-10-09
     name: next.app devcon
     url: https://www.nextappcon.com/reactcon
+    slidesUrl: https://talk-performant-by-design.vercel.app/reactcon/slide/0
     place:
       country: Germany
       city: Berlin

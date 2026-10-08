@@ -181,6 +181,11 @@ const redirects = [
     destination:
       'https://storage.googleapis.com/julianburr-me-assets/talk-slides/post-quantum-today--devoxx-belgium-2026.pdf',
   },
+  {
+    source: 'reactcon-2026-slides',
+    destination:
+      'https://talk-performant-by-design.vercel.app/reactcon/slide/0',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {
