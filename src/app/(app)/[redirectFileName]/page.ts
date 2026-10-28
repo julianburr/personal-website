@@ -186,6 +186,11 @@ const redirects = [
     destination:
       'https://talk-performant-by-design.vercel.app/reactcon/slide/0',
   },
+  {
+    source: 'fullstackconf-2026-slides.pdf',
+    destination:
+      'https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--fullstackconf-2026.pdf',
+  },
 ];
 
 export default async function AssetRedirectPage({ params }: any) {
