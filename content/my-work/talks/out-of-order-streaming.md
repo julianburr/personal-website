@@ -67,6 +67,7 @@ events:
     date: 2026-10-29
     name: Full Stack Conf
     url: https://fullstackconf.com/
+    slidesUrl: https://storage.googleapis.com/julianburr-me-assets/talk-slides/out-of-order-streaming--fullstackconf-2026.pdf
     place:
       country: Bulgaria
       city: Sofia

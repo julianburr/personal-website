@@ -1,5 +1,6 @@
 ---
 title: Performant by Design — Building Fast React Apps
+coverUrl: https://storage.googleapis.com/julianburr-me-assets/talk-covers/performant-by-design.png
 events:
   nextapp-2026:
     date: 2026-10-09
